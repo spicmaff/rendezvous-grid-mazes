@@ -1,0 +1,26 @@
+% Conceptual overview of existing results; not a new sufficiency assertion.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=1mm,y=1mm]
+ \foreach \x in {0,40,80,120}{\draw[lightpanel] (\x,0) rectangle (\x+37,39);}
+ \node[paneltitle] at (3,33) {$s=1$};
+ \draw[supportA] (9,21)--(27,21); \node[cell] at (9,21) {}; \node[cell] at (27,21) {};
+ \node[font=\footnotesize,align=center] at (18.5,8) {Tree support:\\one edge};
+ \node[paneltitle] at (43,33) {$s=2$};
+ \draw[edge,line width=1.2pt] (47,19)--(55,19)--(55,25)--(65,25)--(71,25);
+ \foreach \x/\y in {47/19,55/19,55/25,65/25,71/25}{\node[cell] at (\x,\y) {};}
+ \node[font=\footnotesize,align=center] at (58.5,8) {Tree support:\\a path};
+ \node[paneltitle] at (83,33) {$s=3$};
+ \draw[edge,line width=1.2pt] (88,20)--(96,20)--(103,20); \draw[edge,line width=1.2pt] (96,20)--(96,27);
+ \foreach \x/\y in {88/20,96/20,103/20,96/27}{\node[cell] at (\x,\y) {};}
+ \node[font=\footnotesize,align=center] at (98.5,8) {Branching possible;\\path matching constraint};
+ \node[paneltitle] at (123,33) {$s=4$};
+ \draw[edge] (126,20)--(135,20)--(135,26)--(149,26);
+ \foreach \x/\y in {126/20,135/20,135/26,149/26}{\node[cell] at (\x,\y) {};}
+ \draw[flow] (125,17)--(138,17)--(138,23)--(151,23) to[out=0,in=0] (151,29);
+ \draw[flow] (151,29)--(132,29)--(132,23)--(125,23) to[out=180,in=180] (125,17);
+ \node[font=\footnotesize,align=center] at (138.5,8) {One contour controller\\for every path};
+\end{tikzpicture}
+\caption{Memory constrains recurrent geometry: the first three panels summarize support capacity, while the last records the universal path controller of Section~\ref{sec:paths}. On three-state paths, matching is necessary; the compatibility theorem in Section~\ref{sec:realization} supplies the additional realization condition.}
+\label{fig:memory-geometry}
+\end{figure}

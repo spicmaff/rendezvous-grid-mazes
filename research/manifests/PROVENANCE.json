@@ -1,0 +1,3011 @@
+{
+  "archives": [
+    {
+      "extraction_prefix": "ROUND21_EDITORIAL_VISUAL_COMPRESSION_RETURN/manuscript/",
+      "file": "CURRENT_PAPER_AND_SLIM_SUPPLEMENT_ROUND21.zip",
+      "id": "r21",
+      "sha256": "0929a4426d5b34b751c60cddddb6c32a2227fb217260a6a2c464ddca1cc7a2fc"
+    },
+    {
+      "extraction_prefix": "ROUND22_FULL_PAPER_ADVERSARIAL_AUDIT_RETURN/fresh_checks/",
+      "file": "FULL_PAPER_ADVERSARIAL_AUDIT_ROUND22.zip",
+      "id": "r22",
+      "sha256": "8d694e33eb713608237fad4c89d22a4f6ffd6d212fa31073f7f91e8f04126e88"
+    },
+    {
+      "extraction_prefix": "ROUND13U_OBSTRUCTION_BASIS_RETURN/",
+      "file": "PRIMARY_OBSTRUCTION_CERTIFICATES_ROUND13U.zip",
+      "id": "r13",
+      "sha256": "a2e3bf4aa2f7c23efc7c3eabb6fa0c87fa77c5badd4b59a2d0ddfe821fd058f3"
+    }
+  ],
+  "author_license_finalization": {
+    "canonical_pdf_sha256": "e6bb45f73b6e0f511b041080bef86e7d437febfa0324a2e1c4b431ec1d635da8",
+    "changes": [
+      {
+        "action": "added",
+        "path": "AUTHOR_CONFIRMATION_CHECKLIST_24.md",
+        "rc1_sha256": null,
+        "release_sha256": "b154be3c21ea49d42892ff228fe13489c802848c6b5aecba78fc3a00d12dfcf2"
+      },
+      {
+        "action": "added",
+        "path": "AUTHOR_METADATA_24.md",
+        "rc1_sha256": null,
+        "release_sha256": "17379920f3df23c705bd71d2acc53fba40f9177d0fc9047ee87511e3d618e2c3"
+      },
+      {
+        "action": "added",
+        "path": "LICENSES/CODE-MIT.txt",
+        "rc1_sha256": null,
+        "release_sha256": "f13a2a57a0290c9a6bdbeb1c81084f920fc90dd16b7dcc412d96f7b8baf1589f"
+      },
+      {
+        "action": "added",
+        "path": "LICENSES/DATA-DOCS-CC-BY-4.0.txt",
+        "rc1_sha256": null,
+        "release_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      {
+        "action": "added",
+        "path": "LICENSES/LICENSE_MAP.json",
+        "rc1_sha256": null,
+        "release_sha256": "f40e44dc95383b862eb439587708aa8705c3d6bbb0945e1f273cca0496a418a0"
+      },
+      {
+        "action": "added",
+        "path": "LICENSES/LICENSE_TEXT_ORIGINS.json",
+        "rc1_sha256": null,
+        "release_sha256": "6e4eb8aa75a47a538eded4f0cf955eef0f357c563be7394bca29e690e797572e"
+      },
+      {
+        "action": "modified",
+        "path": "LICENSES/NOTICE.md",
+        "rc1_sha256": "03bd6400ccb876f31d9edd3b858dfc7da4f346fb98626493c310bd08bb5067ed",
+        "release_sha256": "bf64cc60c81198fee9228563bff6c16c03549f3ae377a14ebb6584247a242d4e"
+      },
+      {
+        "action": "added",
+        "path": "LICENSES/PAPER-RIGHTS.txt",
+        "rc1_sha256": null,
+        "release_sha256": "e88fe995659311a528fb69a02d400098214ca435234302735443d1043c5ef668"
+      },
+      {
+        "action": "added",
+        "path": "LICENSES/check_map.py",
+        "rc1_sha256": null,
+        "release_sha256": "e3e2e58330c94a9a6ea9fabd8dea060128e911196ebee6216ae13284e4f17f70"
+      },
+      {
+        "action": "modified",
+        "path": "README.md",
+        "rc1_sha256": "a3c36b779bcaaf1eaa7a50b7270b55a963bc16800802a6484806c4d31ec49c68",
+        "release_sha256": "1f8d97bbed4624c2d849ca29735a00ba041a0a891705001ad453c606bd49bdc9"
+      },
+      {
+        "action": "modified",
+        "path": "paper/main.pdf",
+        "rc1_sha256": "bfd1f8a6258f481847ffa310cd95a30a5adaddc0d5501f06e882743ac5572e06",
+        "release_sha256": "e6bb45f73b6e0f511b041080bef86e7d437febfa0324a2e1c4b431ec1d635da8"
+      },
+      {
+        "action": "modified",
+        "path": "paper/main.tex",
+        "rc1_sha256": "517822ba9bbff31286021ce0d77b310a5073de4d40d47355d523453dafce5b37",
+        "release_sha256": "dafb46e6d1317c72da27624fdffb9b9630faa6a5619a9969979c34881af37be9"
+      }
+    ],
+    "proof_expected_outputs_unchanged": true,
+    "regenerated_manifests": [
+      "manifests/FILES.json",
+      "manifests/PROVENANCE.json",
+      "manifests/SHA256SUMS.txt"
+    ],
+    "source_identifier_is_runtime_dependency": false,
+    "source_release_archive_sha256": "c5ea992f3141c31f85111f937c67c667319b25a24f72671e8ec6ad5f32f34223",
+    "source_release_id": "rendezvous-submission-rc1",
+    "source_release_tree_sha256": "2bba7c3ae59649021c63e211055c7bdf56b0f59b4c7c711e7b05ecf519ea98cd"
+  },
+  "generated": [
+    {
+      "action": "Administrative addition",
+      "bytes": 1680,
+      "origin": "Author/license finalization; exact license text origins in LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release": "AUTHOR_CONFIRMATION_CHECKLIST_24.md",
+      "release_sha256": "b154be3c21ea49d42892ff228fe13489c802848c6b5aecba78fc3a00d12dfcf2"
+    },
+    {
+      "action": "Administrative addition",
+      "bytes": 2540,
+      "origin": "Author/license finalization; exact license text origins in LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release": "AUTHOR_METADATA_24.md",
+      "release_sha256": "17379920f3df23c705bd71d2acc53fba40f9177d0fc9047ee87511e3d618e2c3"
+    },
+    {
+      "action": "Administrative addition",
+      "bytes": 1094,
+      "origin": "Author/license finalization; exact license text origins in LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release": "LICENSES/CODE-MIT.txt",
+      "release_sha256": "f13a2a57a0290c9a6bdbeb1c81084f920fc90dd16b7dcc412d96f7b8baf1589f"
+    },
+    {
+      "action": "Administrative addition",
+      "bytes": 18657,
+      "origin": "Author/license finalization; exact license text origins in LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release": "LICENSES/DATA-DOCS-CC-BY-4.0.txt",
+      "release_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "bytes": 1377,
+      "origin": "system license notice; see LICENSES/SYSTEM_NOTICE_ORIGINS.json",
+      "release": "LICENSES/GUST-FONT-LICENSE.txt",
+      "release_sha256": "49ea6cb9257bbee0a3979c48a774cd221550ac1c20c95549efe45fc99cc18050"
+    },
+    {
+      "action": "Administrative addition",
+      "bytes": 17848,
+      "origin": "Author/license finalization; exact license text origins in LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release": "LICENSES/LICENSE_MAP.json",
+      "release_sha256": "f40e44dc95383b862eb439587708aa8705c3d6bbb0945e1f273cca0496a418a0"
+    },
+    {
+      "action": "Administrative addition",
+      "bytes": 1783,
+      "origin": "Author/license finalization; exact license text origins in LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release": "LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release_sha256": "6e4eb8aa75a47a538eded4f0cf955eef0f357c563be7394bca29e690e797572e"
+    },
+    {
+      "bytes": 19109,
+      "origin": "system license notice; see LICENSES/SYSTEM_NOTICE_ORIGINS.json",
+      "release": "LICENSES/LPPL-1.3c.txt",
+      "release_sha256": "ee0021c27cf6bd3257e2024c858df748ae8d7317acf11276fab822c6f6571d77"
+    },
+    {
+      "bytes": 3951,
+      "finalization_action": "Administrative author/license documentation update",
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "rc1_sha256": "03bd6400ccb876f31d9edd3b858dfc7da4f346fb98626493c310bd08bb5067ed",
+      "release": "LICENSES/NOTICE.md",
+      "release_sha256": "bf64cc60c81198fee9228563bff6c16c03549f3ae377a14ebb6584247a242d4e"
+    },
+    {
+      "bytes": 4069,
+      "origin": "system license notice; see LICENSES/SYSTEM_NOTICE_ORIGINS.json",
+      "release": "LICENSES/OFL-1.1.txt",
+      "release_sha256": "f19c674290e5dc79f02e8efe16139ab56a06a7128876f5b1579ffd0db5bc897e"
+    },
+    {
+      "action": "Administrative addition",
+      "bytes": 779,
+      "origin": "Author/license finalization; exact license text origins in LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release": "LICENSES/PAPER-RIGHTS.txt",
+      "release_sha256": "e88fe995659311a528fb69a02d400098214ca435234302735443d1043c5ef668"
+    },
+    {
+      "bytes": 878,
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "release": "LICENSES/SYSTEM_NOTICE_ORIGINS.json",
+      "release_sha256": "b35ce296eee7a1b15f56b2f2318c0f28f0488c1bc5a4850a700860ad90475910"
+    },
+    {
+      "action": "Administrative addition",
+      "bytes": 5703,
+      "origin": "Author/license finalization; exact license text origins in LICENSES/LICENSE_TEXT_ORIGINS.json",
+      "release": "LICENSES/check_map.py",
+      "release_sha256": "e3e2e58330c94a9a6ea9fabd8dea060128e911196ebee6216ae13284e4f17f70"
+    },
+    {
+      "bytes": 6907,
+      "finalization_action": "Administrative author/license documentation update",
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "rc1_sha256": "a3c36b779bcaaf1eaa7a50b7270b55a963bc16800802a6484806c4d31ec49c68",
+      "release": "README.md",
+      "release_sha256": "1f8d97bbed4624c2d849ca29735a00ba041a0a891705001ad453c606bd49bdc9"
+    },
+    {
+      "bytes": 19862,
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "release": "manifests/PROOF_ARTIFACTS.json",
+      "release_sha256": "036fe84da9425e718d755a004d6cf34f6dd59d5f242df60ab31b97505598705b"
+    },
+    {
+      "bytes": 5159,
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "release": "paper/build.py",
+      "release_sha256": "168aff4001eb9aea22f286e7d57fcddacd4cc2852fae7572be60b7b7f67dd89e"
+    },
+    {
+      "bytes": 773433,
+      "finalization_action": "Rebuilt canonical PDF after author metadata update",
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "rc1_sha256": "bfd1f8a6258f481847ffa310cd95a30a5adaddc0d5501f06e882743ac5572e06",
+      "release": "paper/main.pdf",
+      "release_sha256": "e6bb45f73b6e0f511b041080bef86e7d437febfa0324a2e1c4b431ec1d635da8"
+    },
+    {
+      "bytes": 6826,
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "release": "supplement/README.md",
+      "release_sha256": "12cda0bb8c208d49d31d981882a9c0c7b1ef8332d68de143687c4bef73eb5614"
+    },
+    {
+      "bytes": 2653,
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "release": "supplement/common/integrity.py",
+      "release_sha256": "561d6605d394a624140c4f612664e17de5530b0c6f0ae08111c8470b1d9316e4"
+    },
+    {
+      "bytes": 6741,
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "release": "supplement/expected/replay_files.json",
+      "release_sha256": "e0fa2bfbde03c49f7e444e9b0a2943522319345ef66230c7aed5dd94cb73d09a"
+    },
+    {
+      "bytes": 11803,
+      "origin": "release engineering: generated documentation, manifest, verifier infrastructure or reproducibly built PDF",
+      "release": "supplement/verify_all.py",
+      "release_sha256": "c9386eb0dd4e638e73f8a26a4137453317e1bf36073dd908992f37a268025111"
+    }
+  ],
+  "normalized_proof_references": [
+    {
+      "id": "AX_EQUAL_S",
+      "original_source": "W9_FORCING_THEOREM.md §2; scripts/audit_front.py",
+      "release_source": "paper/sections/core_upper.tex#u:axis"
+    },
+    {
+      "id": "AX_EQUAL_N",
+      "original_source": "W9_FORCING_THEOREM.md §2; scripts/audit_front.py",
+      "release_source": "paper/sections/core_upper.tex#u:axis"
+    },
+    {
+      "id": "AX_TOGGLE",
+      "original_source": "W9_FORCING_THEOREM.md §2; scripts/audit_front.py",
+      "release_source": "paper/sections/core_upper.tex#u:axis"
+    },
+    {
+      "id": "AX_C0_RIGHT",
+      "original_source": "W9_FORCING_THEOREM.md §2; scripts/audit_front.py",
+      "release_source": "paper/sections/core_upper.tex#u:axis"
+    },
+    {
+      "id": "AX_C1_LEFT",
+      "original_source": "W9_FORCING_THEOREM.md §2; scripts/audit_front.py",
+      "release_source": "paper/sections/core_upper.tex#u:axis"
+    },
+    {
+      "id": "AX_LEFT_CLONE",
+      "original_source": "W9_FORCING_THEOREM.md §2; scripts/audit_front.py",
+      "release_source": "paper/sections/core_upper.tex#u:axis"
+    },
+    {
+      "id": "AX_RIGHT_CLONE",
+      "original_source": "W9_FORCING_THEOREM.md §2; scripts/audit_front.py",
+      "release_source": "paper/sections/core_upper.tex#u:axis"
+    },
+    {
+      "id": "RP_C0_C0",
+      "original_source": "W9_FORCING_THEOREM.md §3",
+      "release_source": "paper/sections/core_upper.tex#u:pocket"
+    },
+    {
+      "id": "RP_C0_C1",
+      "original_source": "W9_FORCING_THEOREM.md §3",
+      "release_source": "paper/sections/core_upper.tex#u:pocket"
+    },
+    {
+      "id": "RP_C1_C0",
+      "original_source": "W9_FORCING_THEOREM.md §3",
+      "release_source": "paper/sections/core_upper.tex#u:pocket"
+    },
+    {
+      "id": "RP_C1_C1",
+      "original_source": "W9_FORCING_THEOREM.md §3",
+      "release_source": "paper/sections/core_upper.tex#u:pocket"
+    },
+    {
+      "id": "Z1_E",
+      "original_source": "W9_FORCING_THEOREM.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed0"
+    },
+    {
+      "id": "Z1_S1",
+      "original_source": "W9_FORCING_THEOREM.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed0"
+    },
+    {
+      "id": "Z2",
+      "original_source": "W9_FORCING_THEOREM.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed0"
+    },
+    {
+      "id": "Z3_W",
+      "original_source": "W9_FORCING_THEOREM.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed0"
+    },
+    {
+      "id": "Z3_S1",
+      "original_source": "W9_FORCING_THEOREM.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed0"
+    },
+    {
+      "id": "Z4",
+      "original_source": "W9_FORCING_THEOREM.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed0"
+    },
+    {
+      "id": "O1_W",
+      "original_source": "W9_FORCING_THEOREM.md §5",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed1"
+    },
+    {
+      "id": "O1_N0",
+      "original_source": "W9_FORCING_THEOREM.md §5",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed1"
+    },
+    {
+      "id": "O2",
+      "original_source": "W9_FORCING_THEOREM.md §5",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed1"
+    },
+    {
+      "id": "O3_E",
+      "original_source": "W9_FORCING_THEOREM.md §5",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed1"
+    },
+    {
+      "id": "O3_N0",
+      "original_source": "W9_FORCING_THEOREM.md §5",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed1"
+    },
+    {
+      "id": "O4_S0",
+      "original_source": "W9_FORCING_THEOREM.md §5",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed1"
+    },
+    {
+      "id": "O4_S1",
+      "original_source": "W9_FORCING_THEOREM.md §5",
+      "release_source": "paper/appendices/upper_tables.tex#u:mixed1"
+    },
+    {
+      "id": "LOCK_H_EW",
+      "original_source": "CORNER_COMPATIBILITY.md §3",
+      "release_source": "paper/sections/core_upper.tex#u:corners"
+    },
+    {
+      "id": "LOCK_H_EE",
+      "original_source": "CORNER_COMPATIBILITY.md §3",
+      "release_source": "paper/sections/core_upper.tex#u:corners"
+    },
+    {
+      "id": "LOCK_V_SS",
+      "original_source": "CORNER_COMPATIBILITY.md §3",
+      "release_source": "paper/sections/core_upper.tex#u:corners"
+    },
+    {
+      "id": "B_ES0",
+      "original_source": "CORNER_COMPATIBILITY.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:bit-laws"
+    },
+    {
+      "id": "B_ES1",
+      "original_source": "CORNER_COMPATIBILITY.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:bit-laws"
+    },
+    {
+      "id": "B_NE0",
+      "original_source": "CORNER_COMPATIBILITY.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:bit-laws"
+    },
+    {
+      "id": "B_SW1",
+      "original_source": "CORNER_COMPATIBILITY.md §4",
+      "release_source": "paper/appendices/upper_tables.tex#u:bit-laws"
+    },
+    {
+      "id": "W9_TAIL",
+      "original_source": "CORNER_COMPATIBILITY.md §5",
+      "release_source": "paper/sections/core_upper.tex#u:nine"
+    },
+    {
+      "id": "G1",
+      "original_source": "JUNCTION_COMPLETION.md §§1–3",
+      "release_source": "paper/sections/core_upper.tex#u:junction"
+    },
+    {
+      "id": "G2",
+      "original_source": "JUNCTION_COMPLETION.md §§1–4",
+      "release_source": "paper/sections/core_upper.tex#u:junction"
+    }
+  ],
+  "release_id": "rendezvous-submission-rc2-authors",
+  "runtime_history_dependency": false,
+  "schema": "rendezvous.provenance.v1",
+  "sources": [
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": false,
+      "bytes": 950,
+      "note": "",
+      "release": "paper/appendices/branching_example.tex",
+      "release_sha256": "85a42cab51a5c577e003908aa138a28dbb21064b5f6aa6e5816968d2470a9613",
+      "source": "appendices/branching_example.tex",
+      "source_archive": "r21",
+      "source_sha256": "290e243d409772ce476cf64946e543f7f90bb8ec59c8827a92c1ae2366dcbf89"
+    },
+    {
+      "action": "reproducibility-only patch after first clean replay",
+      "byte_identical": false,
+      "bytes": 3587,
+      "note": "",
+      "release": "paper/appendices/computational_provenance.tex",
+      "release_sha256": "fff2eb44fc473eebae1568b7fdb0ff668dff478d80109d155f9181e2ff8133fe",
+      "source": "appendices/computational_provenance.tex",
+      "source_archive": "r21",
+      "source_sha256": "5dd041db3b25e52466ac837c1088bece096d5ec6f4fc636fa3c53b1cec7ed805"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 7336,
+      "note": "",
+      "release": "paper/appendices/realization_bookkeeping.tex",
+      "release_sha256": "ca47b14c40b8d87092441b8d4855b7cb7844f02dc39bfe437921061a6b4d8d22",
+      "source": "appendices/realization_bookkeeping.tex",
+      "source_archive": "r21",
+      "source_sha256": "ca47b14c40b8d87092441b8d4855b7cb7844f02dc39bfe437921061a6b4d8d22"
+    },
+    {
+      "action": "reproducibility-only patch after first clean replay",
+      "byte_identical": false,
+      "bytes": 915,
+      "note": "",
+      "release": "paper/appendices/reproducibility.tex",
+      "release_sha256": "743e343de519a6c8d076e46e853fb6f47775bd8c920c8da0c549230fb1e731a4",
+      "source": "appendices/reproducibility.tex",
+      "source_archive": "r21",
+      "source_sha256": "1df13fcf1707fe05b4e03b7b84f3579169a6880c979cf860e73f8c5b57ab3a1f"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 9073,
+      "note": "",
+      "release": "paper/appendices/structural_consequences.tex",
+      "release_sha256": "224976ada26628072d1af49f3a08b0d0b613476a72408aaf277c4d3a71434a48",
+      "source": "appendices/structural_consequences.tex",
+      "source_archive": "r21",
+      "source_sha256": "224976ada26628072d1af49f3a08b0d0b613476a72408aaf277c4d3a71434a48"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 5229,
+      "note": "",
+      "release": "paper/appendices/twig_tables.tex",
+      "release_sha256": "3ec2f38f999b3056f94a472802041b6804577f7766f645b633f6ac818ca84ab0",
+      "source": "appendices/twig_tables.tex",
+      "source_archive": "r21",
+      "source_sha256": "3ec2f38f999b3056f94a472802041b6804577f7766f645b633f6ac818ca84ab0"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 9103,
+      "note": "",
+      "release": "paper/appendices/upper_tables.tex",
+      "release_sha256": "3f596bb7dc4e2a9f411e8db1d7949df740c222683e620fd16bde12b6a3751bd5",
+      "source": "appendices/upper_tables.tex",
+      "source_archive": "r21",
+      "source_sha256": "3f596bb7dc4e2a9f411e8db1d7949df740c222683e620fd16bde12b6a3751bd5"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1358,
+      "note": "",
+      "release": "paper/figures/astar_u.tex",
+      "release_sha256": "190bab8cf71baccc03bc5a398b5228a24a8a143e0f9a6550fef67127890663cd",
+      "source": "figures/astar_u.tex",
+      "source_archive": "r21",
+      "source_sha256": "190bab8cf71baccc03bc5a398b5228a24a8a143e0f9a6550fef67127890663cd"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1757,
+      "note": "",
+      "release": "paper/figures/clean_attachment_schematic.tex",
+      "release_sha256": "b63409b9b56d778dfcd30c9820a58584ba7f410dbe2c483eca4b3997b2cff24c",
+      "source": "figures/clean_attachment_schematic.tex",
+      "source_archive": "r21",
+      "source_sha256": "b63409b9b56d778dfcd30c9820a58584ba7f410dbe2c483eca4b3997b2cff24c"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1237,
+      "note": "",
+      "release": "paper/figures/corner_path.tex",
+      "release_sha256": "d1e11e6fbb027696eeed58b6e9affc19a1323269a28074f07cefe976e919e8b2",
+      "source": "figures/corner_path.tex",
+      "source_archive": "r21",
+      "source_sha256": "d1e11e6fbb027696eeed58b6e9affc19a1323269a28074f07cefe976e919e8b2"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1292,
+      "note": "",
+      "release": "paper/figures/cut_stretching_schematic.tex",
+      "release_sha256": "a315960fd654a41d31e134085da85332347f99f58af5602ceb4deae880c24950",
+      "source": "figures/cut_stretching_schematic.tex",
+      "source_archive": "r21",
+      "source_sha256": "a315960fd654a41d31e134085da85332347f99f58af5602ceb4deae880c24950"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1412,
+      "note": "",
+      "release": "paper/figures/exceptional_path.tex",
+      "release_sha256": "226ae5de681d4dcb5cfe78c13eb47b32b9a0576392ea44a0972ecbd0fdc476f1",
+      "source": "figures/exceptional_path.tex",
+      "source_archive": "r21",
+      "source_sha256": "226ae5de681d4dcb5cfe78c13eb47b32b9a0576392ea44a0972ecbd0fdc476f1"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1248,
+      "note": "",
+      "release": "paper/figures/final_path.tex",
+      "release_sha256": "3e034897cab7e8290fd0dfcc80ca9ce1b850855bf627ffa358869220ca486c4a",
+      "source": "figures/final_path.tex",
+      "source_archive": "r21",
+      "source_sha256": "3e034897cab7e8290fd0dfcc80ca9ce1b850855bf627ffa358869220ca486c4a"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1449,
+      "note": "",
+      "release": "paper/figures/global_rail_assembly_schematic.tex",
+      "release_sha256": "2a4edccb1ff4533da6ab53a71f11b66ecd460f21e03c5db9ef6caa26ae16cdf9",
+      "source": "figures/global_rail_assembly_schematic.tex",
+      "source_archive": "r21",
+      "source_sha256": "2a4edccb1ff4533da6ab53a71f11b66ecd460f21e03c5db9ef6caa26ae16cdf9"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 2044,
+      "note": "",
+      "release": "paper/figures/junctions.tex",
+      "release_sha256": "d4fa68c22e355126337cc1c299dada6c7da278d195182099b2944f3cd89e8df4",
+      "source": "figures/junctions.tex",
+      "source_archive": "r21",
+      "source_sha256": "d4fa68c22e355126337cc1c299dada6c7da278d195182099b2944f3cd89e8df4"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1992,
+      "note": "",
+      "release": "paper/figures/maze_families.tex",
+      "release_sha256": "5bb8bca8c254752d1843662eb61c841c79598a6f645941bce6d95476b9c666bc",
+      "source": "figures/maze_families.tex",
+      "source_archive": "r21",
+      "source_sha256": "5bb8bca8c254752d1843662eb61c841c79598a6f645941bce6d95476b9c666bc"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1829,
+      "note": "",
+      "release": "paper/figures/memory_geometry_hierarchy.tex",
+      "release_sha256": "7046e23fce6f643b78e21a1abf45856605afcbdf804cc65938645ac606a07999",
+      "source": "figures/memory_geometry_hierarchy.tex",
+      "source_archive": "r21",
+      "source_sha256": "7046e23fce6f643b78e21a1abf45856605afcbdf804cc65938645ac606a07999"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1268,
+      "note": "",
+      "release": "paper/figures/memoryless_l_trap.tex",
+      "release_sha256": "5e84bdffe890957ed574ab3b440025ec1759a3494233662aa09d618386865e94",
+      "source": "figures/memoryless_l_trap_15g.tex",
+      "source_archive": "r21",
+      "source_sha256": "5e84bdffe890957ed574ab3b440025ec1759a3494233662aa09d618386865e94"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1414,
+      "note": "",
+      "release": "paper/figures/path_p8.tex",
+      "release_sha256": "3ab34feea11da7d13dc06a9c6d2e421b9b6923809d29919167603158a18fae7c",
+      "source": "figures/path_p8_15g.tex",
+      "source_archive": "r21",
+      "source_sha256": "3ab34feea11da7d13dc06a9c6d2e421b9b6923809d29919167603158a18fae7c"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1853,
+      "note": "",
+      "release": "paper/figures/realization_pipeline.tex",
+      "release_sha256": "c234ef8567bc0800f7269b5eb4f947d24dca2fcad3a269fb25f619422365c423",
+      "source": "figures/realization_pipeline.tex",
+      "source_archive": "r21",
+      "source_sha256": "c234ef8567bc0800f7269b5eb4f947d24dca2fcad3a269fb25f619422365c423"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1044,
+      "note": "",
+      "release": "paper/figures/reset_pocket.tex",
+      "release_sha256": "8bf19dac95bcaca22a7b3a6682f498c5dd4c33bc96b23d2f1c2f6a4f5e4ed3ea",
+      "source": "figures/reset_pocket.tex",
+      "source_archive": "r21",
+      "source_sha256": "8bf19dac95bcaca22a7b3a6682f498c5dd4c33bc96b23d2f1c2f6a4f5e4ed3ea"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": false,
+      "bytes": 1907,
+      "note": "",
+      "release": "paper/figures/visual_style.tex",
+      "release_sha256": "68092b6f0d88e5e9195256714a849dcc2c14b97e7a61cb11e0a9322bbe51743c",
+      "source": "figures/visual_style.tex",
+      "source_archive": "r21",
+      "source_sha256": "f7f57e0e6519c5893836446bb0f301d155b0359eabe7521a4288c1894b4d81a4"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": false,
+      "bytes": 4983,
+      "finalization_action": "Author/title metadata only",
+      "note": "",
+      "rc1_sha256": "517822ba9bbff31286021ce0d77b310a5073de4d40d47355d523453dafce5b37",
+      "release": "paper/main.tex",
+      "release_sha256": "dafb46e6d1317c72da27624fdffb9b9630faa6a5619a9969979c34881af37be9",
+      "source": "main.tex",
+      "source_archive": "r21",
+      "source_sha256": "517822ba9bbff31286021ce0d77b310a5073de4d40d47355d523453dafce5b37"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": false,
+      "bytes": 8522,
+      "note": "",
+      "release": "paper/references.bib",
+      "release_sha256": "04c1e203cdb913dd0810248720bf247394eb4f58ac8efafe6d83e81c82767d3d",
+      "source": "references.bib",
+      "source_archive": "r21",
+      "source_sha256": "1575ba5f5fafdddbdd5ea79499e954b6a4045e0df612751dcca12d6b843ff688"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 2274,
+      "note": "",
+      "release": "paper/sections/core_consequences.tex",
+      "release_sha256": "2797e04f49d6afdef39a4e15917335c85efb699b4b622f03f1b442e27c69cb7d",
+      "source": "sections/core_consequences.tex",
+      "source_archive": "r21",
+      "source_sha256": "2797e04f49d6afdef39a4e15917335c85efb699b4b622f03f1b442e27c69cb7d"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 2533,
+      "note": "",
+      "release": "paper/sections/core_extremal.tex",
+      "release_sha256": "daf454970be2626542180ee381f06d9c19afcce3a0387b9823d31f841017ffb3",
+      "source": "sections/core_extremal.tex",
+      "source_archive": "r21",
+      "source_sha256": "daf454970be2626542180ee381f06d9c19afcce3a0387b9823d31f841017ffb3"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 16113,
+      "note": "",
+      "release": "paper/sections/core_lower_cyclic.tex",
+      "release_sha256": "419216f2ee7b7f60541699aaf5e530813bb719ed777476f8882b77e98e0fc379",
+      "source": "sections/core_lower_cyclic.tex",
+      "source_archive": "r21",
+      "source_sha256": "419216f2ee7b7f60541699aaf5e530813bb719ed777476f8882b77e98e0fc379"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 25021,
+      "note": "",
+      "release": "paper/sections/core_lower_tree.tex",
+      "release_sha256": "4244327c091083c94a5a4cd6ad6d894bd8bb201526eeadc5213976ea52a7fbac",
+      "source": "sections/core_lower_tree.tex",
+      "source_archive": "r21",
+      "source_sha256": "4244327c091083c94a5a4cd6ad6d894bd8bb201526eeadc5213976ea52a7fbac"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 13641,
+      "note": "",
+      "release": "paper/sections/core_upper.tex",
+      "release_sha256": "b54cfdefe21b02ba7ef864b0a855f92fe34ca6391ba30802ee878a5b155494d9",
+      "source": "sections/core_upper.tex",
+      "source_archive": "r21",
+      "source_sha256": "b54cfdefe21b02ba7ef864b0a855f92fe34ca6391ba30802ee878a5b155494d9"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 5328,
+      "note": "",
+      "release": "paper/sections/finite_obstructions.tex",
+      "release_sha256": "9c32e229636df4b304ccee52180888358a5a6cdf3bdfca04852b27f80698308b",
+      "source": "sections/finite_obstructions.tex",
+      "source_archive": "r21",
+      "source_sha256": "9c32e229636df4b304ccee52180888358a5a6cdf3bdfca04852b27f80698308b"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 5658,
+      "note": "",
+      "release": "paper/sections/introduction.tex",
+      "release_sha256": "9f4b217c1355e3763d998ef8cfa27143ce22066bfecad8627c80a80baec7cd59",
+      "source": "sections/introduction.tex",
+      "source_archive": "r21",
+      "source_sha256": "9f4b217c1355e3763d998ef8cfa27143ce22066bfecad8627c80a80baec7cd59"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": false,
+      "bytes": 3593,
+      "note": "",
+      "release": "paper/sections/memoryless.tex",
+      "release_sha256": "cc83464a5690d4968396f98e4d7d41ed4046b70bf44517285144e28d3637b49e",
+      "source": "sections/memoryless.tex",
+      "source_archive": "r21",
+      "source_sha256": "f29786da1d65ea53683cf6384d931d9d098568a723d15b11d854db35e996c0be"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": false,
+      "bytes": 8024,
+      "note": "",
+      "release": "paper/sections/model.tex",
+      "release_sha256": "d0c95d1dc0f691bb49b53a4183b7f0aefe27088fd064a74da80b0accb4fef4d8",
+      "source": "sections/model.tex",
+      "source_archive": "r21",
+      "source_sha256": "d8bf7f4f0f536d5228217db39151ddc5c30bcb2f8e1e503b416d494108a8f93a"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1964,
+      "note": "",
+      "release": "paper/sections/open_problems.tex",
+      "release_sha256": "9fa8e57fe25772f36f3f7f403adb0387d4548e3cc320391f9054b33adf8319d2",
+      "source": "sections/open_problems.tex",
+      "source_archive": "r21",
+      "source_sha256": "9fa8e57fe25772f36f3f7f403adb0387d4548e3cc320391f9054b33adf8319d2"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": false,
+      "bytes": 8000,
+      "note": "",
+      "release": "paper/sections/paths.tex",
+      "release_sha256": "2ee853a534847bf7802d5bef0c0aca46f5a8f3fcee1f0d1b5f5ba9c3b460226e",
+      "source": "sections/paths.tex",
+      "source_archive": "r21",
+      "source_sha256": "34f72a0a949f46507a90efe8ae1f6b81e5df9569d7549a05a9f0b9f97caebba3"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 19920,
+      "note": "",
+      "release": "paper/sections/realization.tex",
+      "release_sha256": "41f7cc454349c07a5ebe5b5e2348eb7dd896cfa85c1d79b297095f5c86bb75b5",
+      "source": "sections/realization.tex",
+      "source_archive": "r21",
+      "source_sha256": "41f7cc454349c07a5ebe5b5e2348eb7dd896cfa85c1d79b297095f5c86bb75b5"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 12569,
+      "note": "",
+      "release": "paper/sections/related.tex",
+      "release_sha256": "3fcdb41d0d44b3066a4afeb105762fb556922aaa02d01a089ad9a7c9db34f8f8",
+      "source": "sections/related.tex",
+      "source_archive": "r21",
+      "source_sha256": "3fcdb41d0d44b3066a4afeb105762fb556922aaa02d01a089ad9a7c9db34f8f8"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 3543,
+      "note": "",
+      "release": "paper/sections/sharp_period.tex",
+      "release_sha256": "bc3adad81d80365f8fb08f4441caaea3cab84283bd2f83fcca62ebc7022e974b",
+      "source": "sections/sharp_period.tex",
+      "source_archive": "r21",
+      "source_sha256": "bc3adad81d80365f8fb08f4441caaea3cab84283bd2f83fcca62ebc7022e974b"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": false,
+      "bytes": 4660,
+      "note": "",
+      "release": "paper/sections/state_complexity.tex",
+      "release_sha256": "14b24ac67f9917ca3a377dbfbd4e9d046208b81a65377618169b2f23e481e117",
+      "source": "sections/state_complexity.tex",
+      "source_archive": "r21",
+      "source_sha256": "17288edc48cc2bf93bece7e734a6cd924696b21a66702042bd414ff3dd315a5d"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 6199,
+      "note": "",
+      "release": "paper/sections/support.tex",
+      "release_sha256": "41a55ad50692d3021842ae2156b7436dfddc2c4430b77a0b03ac996f8de6d0dc",
+      "source": "sections/support.tex",
+      "source_archive": "r21",
+      "source_sha256": "41a55ad50692d3021842ae2156b7436dfddc2c4430b77a0b03ac996f8de6d0dc"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 1226,
+      "note": "",
+      "release": "paper/sections/two_state.tex",
+      "release_sha256": "e95e04a07e5ce5e04b7664d7f550d6c8ee87be255d6c1006bf744472aac56282",
+      "source": "sections/two_state.tex",
+      "source_archive": "r21",
+      "source_sha256": "e95e04a07e5ce5e04b7664d7f550d6c8ee87be255d6c1006bf744472aac56282"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 13083,
+      "note": "",
+      "release": "paper/sections/universal_host.tex",
+      "release_sha256": "d59f7118f7a90331d07579a696dd2497fdcc1425feff89f02939d4b8860031ef",
+      "source": "sections/universal_host.tex",
+      "source_archive": "r21",
+      "source_sha256": "d59f7118f7a90331d07579a696dd2497fdcc1425feff89f02939d4b8860031ef"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 423,
+      "note": "",
+      "release": "paper/tables/branching_phase_counterexample.tex",
+      "release_sha256": "7b767e5910abfa1bde5fdd9208660d4c6f40824294078837628ddfd00332448f",
+      "source": "tables/branching_phase_counterexample_15g.tex",
+      "source_archive": "r21",
+      "source_sha256": "7b767e5910abfa1bde5fdd9208660d4c6f40824294078837628ddfd00332448f"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 825,
+      "note": "",
+      "release": "paper/tables/monotonicity_table.tex",
+      "release_sha256": "99f68995203734ee4ab7c0869154f0c660c0901d3cc7020d062cd67a32cf9366",
+      "source": "tables/monotonicity_table_15g.tex",
+      "source_archive": "r21",
+      "source_sha256": "99f68995203734ee4ab7c0869154f0c660c0901d3cc7020d062cd67a32cf9366"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 2353,
+      "note": "",
+      "release": "paper/tables/obstruction_modules.tex",
+      "release_sha256": "2263cbb98c51896ad0c4fd29e8b99dc688be1eb9ab1bc3a01e2ce41b3a4f38d8",
+      "source": "tables/obstruction_modules.tex",
+      "source_archive": "r21",
+      "source_sha256": "2263cbb98c51896ad0c4fd29e8b99dc688be1eb9ab1bc3a01e2ce41b3a4f38d8"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 702,
+      "note": "",
+      "release": "paper/tables/path_survivor_controller.tex",
+      "release_sha256": "9793d584506a2dc352b3a9b6887602059b5d383a28408755cc2b4d95e0800b4d",
+      "source": "tables/path_survivor_controller_15g.tex",
+      "source_archive": "r21",
+      "source_sha256": "9793d584506a2dc352b3a9b6887602059b5d383a28408755cc2b4d95e0800b4d"
+    },
+    {
+      "action": "copy; normalize input filename references only",
+      "byte_identical": true,
+      "bytes": 581,
+      "note": "",
+      "release": "paper/tables/state_complexity_table.tex",
+      "release_sha256": "35bec06e974d2b61acff062c4c0b3f9f7ae025d88e4fa147428cffb893218b41",
+      "source": "tables/state_complexity_table_15g.tex",
+      "source_archive": "r21",
+      "source_sha256": "35bec06e974d2b61acff062c4c0b3f9f7ae025d88e4fa147428cffb893218b41"
+    },
+    {
+      "action": "metadata normalization; mathematical arrays unchanged",
+      "byte_identical": false,
+      "bytes": 368397,
+      "note": "",
+      "release": "supplement/obstructions/basis144/family.json",
+      "release_sha256": "14308d421db6c6f4aef110070b5a1cb51e5383c70884b3b1fd74f8b82384faf0",
+      "source": "HUMAN_TEST_FAMILY.json",
+      "source_archive": "r13",
+      "source_sha256": "ef7473781f7e6177028c55a64ce2877643fe8014e1b4ca049a5b49b1d51a26ea"
+    },
+    {
+      "action": "update source digest only",
+      "byte_identical": false,
+      "bytes": 70823,
+      "note": "",
+      "release": "supplement/obstructions/basis144/normalized_candidates.json",
+      "release_sha256": "fd4390ba31c60825551b182fd6f74ca0ce294ed49a9ac3b0c087749e38d9e6a3",
+      "source": "certificates/optimization/normalized_candidates.json",
+      "source_archive": "r13",
+      "source_sha256": "0eabbe21ffc10cbd3fb7f3bc8256de285692b46be5f2e98a062b904f187b0412"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 9325,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H001.json",
+      "release_sha256": "04ad7b7b9326247adf40602a4d5d36fdeb0234f3e593d22deb2fbd5da535a7c3",
+      "source": "certificates/optimization/local_functions/H001.json",
+      "source_archive": "r13",
+      "source_sha256": "3c27b0596db3059ebe6ad6b6f4009d36cb4ec4568b2484aae988bf830f6ec939"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 3094,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H002.json",
+      "release_sha256": "42d2295b47bb143c5dd7168c209ee4f84e59ee7eb4ce263991d1108121684692",
+      "source": "certificates/optimization/local_functions/H002.json",
+      "source_archive": "r13",
+      "source_sha256": "6d6509c84762ab496f5d02c4cbbb2814febe3f765ab2ae34766b494c0342f0c1"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 9336,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H003.json",
+      "release_sha256": "2e05ebe2ffd201877387bd1d96ccdb498ac273c6fcc72b931d59dcf717d1efd5",
+      "source": "certificates/optimization/local_functions/H003.json",
+      "source_archive": "r13",
+      "source_sha256": "bb51e40e2388016f265d9ba27aa38d5f39d7b9e450a02d02fcc33061826f0a81"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 3097,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H004.json",
+      "release_sha256": "937eab772eb45833db63bb870c7478287218ff3d2f788258d9fbf922350a3ec9",
+      "source": "certificates/optimization/local_functions/H004.json",
+      "source_archive": "r13",
+      "source_sha256": "52044038e28d59e63f14744d2c07b63c700374a3549dc20ed08423128449e08b"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 2776,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H005.json",
+      "release_sha256": "c959c30e6da2dbcac6935dc1bf0156bd04fe6d45b062401798ecd317c9c3cb9e",
+      "source": "certificates/optimization/local_functions/H005.json",
+      "source_archive": "r13",
+      "source_sha256": "ecb32561033f3652851b4cf6464d7c367ebe8bfa52515c2842934f965bfd7597"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 2800,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H006.json",
+      "release_sha256": "45b48486d57a2d1e6de73e5536ede227bd4ca66615b069e007a9a26f58f94f35",
+      "source": "certificates/optimization/local_functions/H006.json",
+      "source_archive": "r13",
+      "source_sha256": "1631929b9be8b71e69bfcd3176a3fea3ca2f986a717771205446e1223d47d1c4"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 21229,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H007.json",
+      "release_sha256": "69c500c0ea959eaa5012e2f92ed96dd61c5ba243917a3012261ce8a8a917260a",
+      "source": "certificates/optimization/local_functions/H007.json",
+      "source_archive": "r13",
+      "source_sha256": "d8de9c0bc0169b0886e0e2f04dd566c87dba0d0befc4661bef848e97cb79ec2f"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 21886,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H008.json",
+      "release_sha256": "6f367dce629fe114f49735bc4e2bef1a05598b6d6a650a0f163b808fc3a2c23c",
+      "source": "certificates/optimization/local_functions/H008.json",
+      "source_archive": "r13",
+      "source_sha256": "83cf5c23a2afc01b140fa17b19fc2a9eac92d0cd4b59ed319ba24e447c3e916f"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 23953,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H009.json",
+      "release_sha256": "fc3bb480cd5a640f53d72195e625914f27b7cf216e8d0ebf06057fad3b4980b8",
+      "source": "certificates/optimization/local_functions/H009.json",
+      "source_archive": "r13",
+      "source_sha256": "21fb65d5fb3be94021b637de91ad8a91708c7a0aa27cf0e191f6a0c838229c8e"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 21886,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H010.json",
+      "release_sha256": "2c83cd5dcc0efb094845b7c4b5148ce1b93d3807d226b95fb0f5881260333eb2",
+      "source": "certificates/optimization/local_functions/H010.json",
+      "source_archive": "r13",
+      "source_sha256": "93ec5e626f51ee2159c10487d63be1c26aafd5f216c390c9af834c66f05ceacc"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 35808,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H011.json",
+      "release_sha256": "2ba889d5a2db30a926083bf482191f798ee3ff76239e4e7393320c017d9f7280",
+      "source": "certificates/optimization/local_functions/H011.json",
+      "source_archive": "r13",
+      "source_sha256": "1102cad5439f6794fb0b8fc9f970edfadf955c6e6914fe03e7b3c6f40698eda3"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 77135,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H012.json",
+      "release_sha256": "eee81130c35233657fcb38c03c6e287569b56c5509e00c3f4d064ea48942f5d9",
+      "source": "certificates/optimization/local_functions/H012.json",
+      "source_archive": "r13",
+      "source_sha256": "fd25dbe2bec149166ef697494e9329fba2be2ea7612d866a9727059fd5256c93"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 85294,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H013.json",
+      "release_sha256": "349ef80897061d0db08a751bd9afc1fbd51343b6b364f95d563a875b4511cd2e",
+      "source": "certificates/optimization/local_functions/H013.json",
+      "source_archive": "r13",
+      "source_sha256": "c93c9dd9700b0f7cfdd8e3ba448f6b813c13fdc99334f7e277174975137f955b"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 85279,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H014.json",
+      "release_sha256": "8c782db94c3d6fa4bb66a34f192f63336183497591d1cea3e6d01560566d86d5",
+      "source": "certificates/optimization/local_functions/H014.json",
+      "source_archive": "r13",
+      "source_sha256": "df6c987a4c8a831a9a2e4a27ec191d9f5decf61bf8ef6be9a575343c799123ed"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 33870,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H015.json",
+      "release_sha256": "0d5e509ee86ed96fe4f8ce1abf7b2ba5d7d27e0e21b5919d33841e0253cd34f5",
+      "source": "certificates/optimization/local_functions/H015.json",
+      "source_archive": "r13",
+      "source_sha256": "b09ccbe504bc06c65fcbd108a4a056bfaa0ef6a55eb35f3c941fd0c0cd6eeb38"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 77121,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H016.json",
+      "release_sha256": "444aa9f88a8d03e14726cd39c5aa0799e3ce6ec0f88b9aad6b737814beeae206",
+      "source": "certificates/optimization/local_functions/H016.json",
+      "source_archive": "r13",
+      "source_sha256": "0bf48fdd4310f359f554c16b8d74439ea6afc3ed11e7433f6ed81a3c74619ca7"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 106733,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H017.json",
+      "release_sha256": "0d7222649ec28c48036d306bf730f383fd0ea5e2b6ad3bbc3c883859271c988a",
+      "source": "certificates/optimization/local_functions/H017.json",
+      "source_archive": "r13",
+      "source_sha256": "f3a506e8c0c8c21339a3eb94a30e893673183d03853e6f9cc5472182f4c711df"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 205832,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H018.json",
+      "release_sha256": "a06df4851fa5017ca4373f1bd7b51688407a33c784ee69997fe2d7d9c633d149",
+      "source": "certificates/optimization/local_functions/H018.json",
+      "source_archive": "r13",
+      "source_sha256": "9d6bd7185e3a8e48204092f0dd9e21a85fa726a855ee27727eaedf061592f674"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 205760,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H019.json",
+      "release_sha256": "9c9efbc1fde0c3022ebffa4161dac9c5805d09c480748f9b7c79b5b2b8806a1e",
+      "source": "certificates/optimization/local_functions/H019.json",
+      "source_archive": "r13",
+      "source_sha256": "0ac0e0d528340df8c6c9033a2060dac223b36d26c9925030652ae431d55703c1"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 109075,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H020.json",
+      "release_sha256": "57fbd60ed45a5851182b42a092fedb596d193c837972615a83b52167b55d3b90",
+      "source": "certificates/optimization/local_functions/H020.json",
+      "source_archive": "r13",
+      "source_sha256": "29055e3c79d69efb3000959e5c0511325aa85963e4cd14016e81b885db88b615"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 205839,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H021.json",
+      "release_sha256": "b6420cdb346d49763f8bb7724633cb7ce883fe8ebcfb3270874110f55f1ca527",
+      "source": "certificates/optimization/local_functions/H021.json",
+      "source_archive": "r13",
+      "source_sha256": "82bf8362b9456809e587aff4d793135e30ad617c6d488b2b86c7bfcf6adfdd71"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 195235,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H022.json",
+      "release_sha256": "749f3f093e4aa7cf645aae09efd55745d9d000c71b903b30b7ae04a9dabaced3",
+      "source": "certificates/optimization/local_functions/H022.json",
+      "source_archive": "r13",
+      "source_sha256": "076ba07ba909f382e523f90446581a00895615af4a33b11fc8adce92e24d2199"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 106728,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H023.json",
+      "release_sha256": "0aa79f472f825d4c40aa8ccb5734898212478e3ddda81559ffc49b8f9f156bbe",
+      "source": "certificates/optimization/local_functions/H023.json",
+      "source_archive": "r13",
+      "source_sha256": "740206d339976246a46a93c7ea70f463becc12b6e70db45f4d0a86a0cd656b77"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 205853,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H024.json",
+      "release_sha256": "846c389146fffc7836d1f49e8a4132a026c0b952a49f2140bc351a0f250c7bb7",
+      "source": "certificates/optimization/local_functions/H024.json",
+      "source_archive": "r13",
+      "source_sha256": "5d62c150c2fbb7fc085500b8707cf66f1530bee70d584ec878a52212a06c7da5"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 195299,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H025.json",
+      "release_sha256": "5a7ec15c7862b11799b81e9e497df2067324962c7e5360e21256d62326650907",
+      "source": "certificates/optimization/local_functions/H025.json",
+      "source_archive": "r13",
+      "source_sha256": "f48798f3231653a95612a20bc2d58d6075b2a53d20f5dca798ec394ab4aa5428"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 35808,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H026.json",
+      "release_sha256": "c4fdab7178b878d5996e2ee715feef7fba6ac581daed442deff9ac19acedbc68",
+      "source": "certificates/optimization/local_functions/H026.json",
+      "source_archive": "r13",
+      "source_sha256": "9cd343ecf82fc0605ca3586d6f444e0b40b6e2dd448eac4b95726a775dea7e8a"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 78786,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H027.json",
+      "release_sha256": "73c651f8f58097d8894bb834ad0ef90568add6bc5c0eb2cc139690205add9f5f",
+      "source": "certificates/optimization/local_functions/H027.json",
+      "source_archive": "r13",
+      "source_sha256": "08aac3673f851b83ae0dc0b4b37baf07f6b87140d80a768d89fd2331da37f1a9"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 76755,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H028.json",
+      "release_sha256": "098e3f478bd720b374bd530a5f39ebf3875bb6f315ead1a5db2c9596e71ae0c8",
+      "source": "certificates/optimization/local_functions/H028.json",
+      "source_archive": "r13",
+      "source_sha256": "368ffb0775d9792af031b16a0887720a851a912dbed591ca2d28e22d425ae629"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 195347,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H029.json",
+      "release_sha256": "b06db564ee7b731d28e3b5ac3e12157f44c3ff0bc938d88e5220decac2138dd1",
+      "source": "certificates/optimization/local_functions/H029.json",
+      "source_archive": "r13",
+      "source_sha256": "e2be94ac1d0752f3755e461b6d1c3e7e1e9f6ba88427c0ffa4731d549b8e3e2b"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 205965,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H030.json",
+      "release_sha256": "7d66f6ee6e1c80415d7a0e8afecb673bb2c2d0588ffa2ba8b344d0c65d6c5e7a",
+      "source": "certificates/optimization/local_functions/H030.json",
+      "source_archive": "r13",
+      "source_sha256": "c0ac3bc263db9350a4400c78eb1be02dad1447ddadbb95ab5a61e5aaccede420"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 106763,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H031.json",
+      "release_sha256": "29f74d5bef1501561d429c7dc3b9c23a5c26e48ed97010e9e8ab6486b0fce7c6",
+      "source": "certificates/optimization/local_functions/H031.json",
+      "source_archive": "r13",
+      "source_sha256": "2308770f1074ef1d7d7bb6e88b9610f067b48972a74caa232305e0473c33385e"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 94979,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H032.json",
+      "release_sha256": "2290d45fa445576472c63802f9982464ab0d55294f48ddcdd75b3421c2cb3602",
+      "source": "certificates/optimization/local_functions/H032.json",
+      "source_archive": "r13",
+      "source_sha256": "f326ee8bbce628c65226849e0be490a8850e6834924b861a4e9862b027a33cf1"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 208588,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H033.json",
+      "release_sha256": "4ca56fd173b2acbce6d7e1aee329b875589bf8db51a59b33f7f6fec6e41965f2",
+      "source": "certificates/optimization/local_functions/H033.json",
+      "source_archive": "r13",
+      "source_sha256": "81cdb3cfe4dc46a36a817469611ceab1f4babb7acc36cddbeb4a721a98ec74d6"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 76768,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H034.json",
+      "release_sha256": "071ecd9c64ce9f4b4f0098eafaf47c20fa8683e0024a5e1eb5d947e72234e561",
+      "source": "certificates/optimization/local_functions/H034.json",
+      "source_archive": "r13",
+      "source_sha256": "1ddb161a59b0c8b3bacbc28381cb081d700a60d07920011c5cc101ddf16a2fd5"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 78789,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H035.json",
+      "release_sha256": "a8becc33cbfd3c96dc4f51f93a74783035d214661e317857a2f496d267ed0a44",
+      "source": "certificates/optimization/local_functions/H035.json",
+      "source_archive": "r13",
+      "source_sha256": "a8caaa7bc33661878376dae014a8eae93e7527a329e727081f76c6411f261ea4"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 35811,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H036.json",
+      "release_sha256": "ab59032fc1497c8469832855ef336aeee6a8805bb233b6d028308802fb3eb688",
+      "source": "certificates/optimization/local_functions/H036.json",
+      "source_archive": "r13",
+      "source_sha256": "c71c165a1572e0b6bd97551d5f2587aeb140ed8019e08c724a0276ccaea6bea0"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 109046,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H037.json",
+      "release_sha256": "024d657361cbc8f278bd75c5d21dff8be898f9afca9b96673cbb3444168a7811",
+      "source": "certificates/optimization/local_functions/H037.json",
+      "source_archive": "r13",
+      "source_sha256": "7338aac060d96d4542f02a47a358b57762a36a37c4ec95289ed98dfd7837df91"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 205818,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H038.json",
+      "release_sha256": "1eaddabfe9c196150d73bf41523c87ab34bb54bcbc45c3da9cd3d42092d5f44b",
+      "source": "certificates/optimization/local_functions/H038.json",
+      "source_archive": "r13",
+      "source_sha256": "ac05bc93097964965d95ebc45659dcae7bd940bcda34100d9ff107fe4f3b7cfa"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 195287,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H039.json",
+      "release_sha256": "51a1e946f301328c8825719b2fe3c649be9db4b7018cf62a425442aed53b48d7",
+      "source": "certificates/optimization/local_functions/H039.json",
+      "source_archive": "r13",
+      "source_sha256": "3d11c8bd1ec996d5c2eb9ecaaa993fffa343e4c6fda2f5c2bd547eeedf43f9a4"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 21247,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H040.json",
+      "release_sha256": "e3b2b87a138cca8a1f45260d5c0852b6e2299b07f2f0dcba58c1867bc45110a0",
+      "source": "certificates/optimization/local_functions/H040.json",
+      "source_archive": "r13",
+      "source_sha256": "c5c2c3051824c15cf4860f5233475a643011487792b12958f0470c5a7aeeee47"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 23437,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H041.json",
+      "release_sha256": "f98052d0ff34c5ed80268a3e6576df3c668f2bf4a63570cefe866f85c89617c5",
+      "source": "certificates/optimization/local_functions/H041.json",
+      "source_archive": "r13",
+      "source_sha256": "b0a3ec05cd8c875fcf9a207a578369a728328af22ea74fc348c1c6a2261bff71"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 206371,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H042.json",
+      "release_sha256": "4a037e62a12ca64b67913f39e901e7f1477f7c9e7d498dd4d55221b95ea6c4d6",
+      "source": "certificates/optimization/local_functions/H042.json",
+      "source_archive": "r13",
+      "source_sha256": "6ec809bed0b547c5e9cbb1b3844afd430e901c786c14e73ad06d700ee70643b2"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 88107,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H043.json",
+      "release_sha256": "0fb4d33651281d684113258f521a3769d2327b6eb51223dcbbe243652f5ca83f",
+      "source": "certificates/optimization/local_functions/H043.json",
+      "source_archive": "r13",
+      "source_sha256": "093949573e14b616fdfa2afa0de23acb57a1f340449d1c6734cd61453a04f0e7"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 23437,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H044.json",
+      "release_sha256": "1c51ff82118c667d75078199162b77b6acecd8ebe2f650159d38aceb2f1f5169",
+      "source": "certificates/optimization/local_functions/H044.json",
+      "source_archive": "r13",
+      "source_sha256": "e0d80ed3b22da553c52d8f292d5897b612157bf7b5c57f988c3dadf372b0171c"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 21249,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H045.json",
+      "release_sha256": "3a636e8e7ba4e53764c999f1dc05a96c9b3ba22e95c474f9e899335615dd7502",
+      "source": "certificates/optimization/local_functions/H045.json",
+      "source_archive": "r13",
+      "source_sha256": "7106d7fc69e5ff646db6876506dd07a207ced3a51864b91dae4e89e040742c13"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 23423,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H046.json",
+      "release_sha256": "6b1b22d69ac0d1878ae3523ba48bba79616fb6dc34d6f79320d13f4b086e37db",
+      "source": "certificates/optimization/local_functions/H046.json",
+      "source_archive": "r13",
+      "source_sha256": "5bd1e38c5ccb76c9d7dea0f21596e972b5950d952dd9d51ad7410771711374cf"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 21229,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H047.json",
+      "release_sha256": "3b95c869b39e9dca6a2133a0ab577c890ce73baa0d48403580aa6408f7c0f138",
+      "source": "certificates/optimization/local_functions/H047.json",
+      "source_archive": "r13",
+      "source_sha256": "d4cb843fa1f6627a2927b676423c10fb9dc64839d1712e1bf52712b6a6081c40"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 206316,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H048.json",
+      "release_sha256": "3c36589f25c7bffbc7df778a61d3f8589d0e0e263d248a8ab797ecefeeacd673",
+      "source": "certificates/optimization/local_functions/H048.json",
+      "source_archive": "r13",
+      "source_sha256": "94148a60575a23f01f48f52d6f41981629dea3c867ec3c545be9219f08e1d11d"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 88114,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H049.json",
+      "release_sha256": "f8a592777d7edd01e90bd8a80b2c8680454161e02ad032a8c9a17bae07bb46cd",
+      "source": "certificates/optimization/local_functions/H049.json",
+      "source_archive": "r13",
+      "source_sha256": "b52fb09c8bd2891ce67803f8add0c41243f527fbdd56a9a26d339003d62c0b37"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 195294,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H050.json",
+      "release_sha256": "68c8b710e8c5a0949489b3f46a66cfa39d0bf4762e92f00d833130629531c200",
+      "source": "certificates/optimization/local_functions/H050.json",
+      "source_archive": "r13",
+      "source_sha256": "1ffaf46f2ef41f2d3aed44dacac7acaab62c9be0d3b13504375018869783bc6a"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 205871,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H051.json",
+      "release_sha256": "9764f22f645939cbecf415df123aadf08192b91333df620f4ab99bd009e8232a",
+      "source": "certificates/optimization/local_functions/H051.json",
+      "source_archive": "r13",
+      "source_sha256": "2b129a704b571803f027ac73d25ad9e738d2e28dabb9642bc521e5598e96b86f"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 106761,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H052.json",
+      "release_sha256": "cd755c4be0c2e530b37ce1d02d4d154731f971d9457e6b97c2cba91770e863b2",
+      "source": "certificates/optimization/local_functions/H052.json",
+      "source_archive": "r13",
+      "source_sha256": "5b43c2f63b1d051ae0dd85d3aeffba238731f029607b2867b690b8620a5328cc"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 76784,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H053.json",
+      "release_sha256": "40259b76678f7ca39ee58435e8ee5cbff804e41eb52df5ae20179c3f67b0e0c9",
+      "source": "certificates/optimization/local_functions/H053.json",
+      "source_archive": "r13",
+      "source_sha256": "384b2e093a7e9a2f531a62ccc352ec7f1ddd92a54624c391dcf6a7893e6a72c9"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 78765,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H054.json",
+      "release_sha256": "b3cd22a0451b7183a3165c15e9e21316ce642c58204fc66eb8ad590ddf934e10",
+      "source": "certificates/optimization/local_functions/H054.json",
+      "source_archive": "r13",
+      "source_sha256": "b2bbbae88b557e738f64b94e8c7056a48bbecab16422f1d6cbb03d82c43fae68"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 35811,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H055.json",
+      "release_sha256": "cb07302c0732c81392847dc54ca834668aff3949fa411ab1786c7bc6abe894a4",
+      "source": "certificates/optimization/local_functions/H055.json",
+      "source_archive": "r13",
+      "source_sha256": "028d2e2285f54bca7dbf49454047f1d7f345a249537f8ead467a80d1283b4240"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 94973,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H056.json",
+      "release_sha256": "10021397c2daed62e5917c0099c6812d6cbf693a770e21123d4da55046abfab2",
+      "source": "certificates/optimization/local_functions/H056.json",
+      "source_archive": "r13",
+      "source_sha256": "2c516aec6f30bf9d9c5eb9bd1e9febd3ba2c80cb0a8f68b515aec8a775eee696"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 208494,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H057.json",
+      "release_sha256": "8b0f3dba9a91d0a0c6ec2e7142209b9946dd3cd630afb428fcf854b3f715523c",
+      "source": "certificates/optimization/local_functions/H057.json",
+      "source_archive": "r13",
+      "source_sha256": "a9849e3aad80a6924db8b020a0d5b825be844ddbf6c91c53933b799af43ceba3"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 85284,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H058.json",
+      "release_sha256": "309b49dd09a4800149f761c856b341563671ab63b6d2c5f573261473fef54420",
+      "source": "certificates/optimization/local_functions/H058.json",
+      "source_archive": "r13",
+      "source_sha256": "72db405f8ec85255ea3d2a21c02c7a923fcc0174e25d2d3fca4d933dc64806fd"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 33861,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H059.json",
+      "release_sha256": "58931e4aaf9805125146fe65efb91c43aaa9093d65b6608b06f9abeed19e4f1d",
+      "source": "certificates/optimization/local_functions/H059.json",
+      "source_archive": "r13",
+      "source_sha256": "c48d9a0a5b69c00ace4dffd34f3da7131131a882856f54a485bbda2f3b78f58d"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 77088,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H060.json",
+      "release_sha256": "b3217892fa243819a8dac165c07db9cbae75fca00a2b573a11ec8b69f20ffb7c",
+      "source": "certificates/optimization/local_functions/H060.json",
+      "source_archive": "r13",
+      "source_sha256": "0ad299de3583aef3e61762136ce89fdb5b856d9a74326077f715ea89955224b6"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 23974,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H061.json",
+      "release_sha256": "73db10fab6f08256fca6329e05ff7a9dc3d5846cfe1e2ac7b86b5fdc30630b01",
+      "source": "certificates/optimization/local_functions/H061.json",
+      "source_archive": "r13",
+      "source_sha256": "99d88eacc1bc8310be2033b35732f48b1e2c70cd6ab7ba5e8ec8af50d2771e49"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 21897,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H062.json",
+      "release_sha256": "537621f32783ca565a8bb7a1c00c70c6c685edcf732829a3cf9a01cf22d15d71",
+      "source": "certificates/optimization/local_functions/H062.json",
+      "source_archive": "r13",
+      "source_sha256": "b1dc831edc9047e7c0e05178ff9bad8eb18906a16d9e5e6adc425af723c41293"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 2779,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H063.json",
+      "release_sha256": "5e01c9c504f575e4f385349f74bd0aafc35e9a5b364f6fadd10a87651f8cb5ca",
+      "source": "certificates/optimization/local_functions/H063.json",
+      "source_archive": "r13",
+      "source_sha256": "292ba3940a563439ee1b6c54b336619a63534e8a2dce05e1aa62df9d3bca4dc0"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 2803,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H064.json",
+      "release_sha256": "3d5b36713fc0e5e9cc34cdd2b3bf589b8215127922fa1ade8387df327a458f43",
+      "source": "certificates/optimization/local_functions/H064.json",
+      "source_archive": "r13",
+      "source_sha256": "2ceea42ab3124029e15764d4a91eaaf86684bd1ab17ef4e1173519a3746f7fdd"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 95024,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H065.json",
+      "release_sha256": "2a93ab5b3e0a877fabb389bd952ff0a9118c10d85dc68693e0511eddb80dc957",
+      "source": "certificates/optimization/local_functions/H065.json",
+      "source_archive": "r13",
+      "source_sha256": "16a79470e67d3982dbfaff83cf3d1daeff5c0b9fbfa0f14c74d9fd1f9896541b"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 208705,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H066.json",
+      "release_sha256": "0ddb78b7fc97eec5a6cedad9e2ae40da94854ca732683fdbf11cfb9d52bf9e2e",
+      "source": "certificates/optimization/local_functions/H066.json",
+      "source_archive": "r13",
+      "source_sha256": "3bd992dcdc74ea52c9c720b83f86704fdef37f4544faac2bce0841c95bb306a2"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 195383,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H067.json",
+      "release_sha256": "b63309119c190394cd243003b35886561388a78534c75c9bc0d5cee4d635db2f",
+      "source": "certificates/optimization/local_functions/H067.json",
+      "source_archive": "r13",
+      "source_sha256": "d3c5688c5b730e930e507d67a27935d2902f2bec323700a0bab8c7e312831236"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 205950,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H068.json",
+      "release_sha256": "78ad63a654b13b8964b8e1535bfdb0b100d3cdcd5f3ed3510c168a9986736f6c",
+      "source": "certificates/optimization/local_functions/H068.json",
+      "source_archive": "r13",
+      "source_sha256": "682c522b10414ca290d42f027e26f3952655ef5dc3bc95f6d43f55605356b315"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 109100,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H069.json",
+      "release_sha256": "da77f0938b2c853134477c8a3f0f9d596e868e7a1aba9ff7906401e3079b9e9c",
+      "source": "certificates/optimization/local_functions/H069.json",
+      "source_archive": "r13",
+      "source_sha256": "47ea00cd25b049f3a4a73186e39bc5522d18f22eebe602240260665e3a5877ef"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 23984,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H070.json",
+      "release_sha256": "2d58c1b06a2dce14794e5316fb7cd99d43d97efb058b079111575ae52c0eca6c",
+      "source": "certificates/optimization/local_functions/H070.json",
+      "source_archive": "r13",
+      "source_sha256": "e322150f66074cd93227893c2e26d632a04a9486a4bc1d22ddcde6ae32b09d29"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 21915,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H071.json",
+      "release_sha256": "83fac7c374bc86c456f00290f3b6ec6c3488e6151bf4e5f30e0113c32bb694b9",
+      "source": "certificates/optimization/local_functions/H071.json",
+      "source_archive": "r13",
+      "source_sha256": "1d2ad31f1b21215891569dc1501be57093e4e5710776585b117e483f293c42b7"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 206475,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H072.json",
+      "release_sha256": "23ffbb3a6e60b3fd9cab9ec00557c60e7418689319b532f43597911b99b5617c",
+      "source": "certificates/optimization/local_functions/H072.json",
+      "source_archive": "r13",
+      "source_sha256": "f56cdb2e7fd17db4f985345f357bd798b1da473dd805158e6b9333727dc95e8b"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 88146,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H073.json",
+      "release_sha256": "cc7ade45d0a7fd53c5d6f91f16940d093944a518981c52622fb6396a282dbe2d",
+      "source": "certificates/optimization/local_functions/H073.json",
+      "source_archive": "r13",
+      "source_sha256": "aed086458eb6af263544bd69e13dcba4eef18140474ae9a933c13110f131ebf4"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 206396,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H074.json",
+      "release_sha256": "05cca615331b2075ea192b7b8246db64cdb387f585f9fe79fd4dcefa8c2b5b84",
+      "source": "certificates/optimization/local_functions/H074.json",
+      "source_archive": "r13",
+      "source_sha256": "8a2d8b8ce83755bb824d18c75b505f053b2d74acedc3be52b1aa9827f243f57f"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 88144,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H075.json",
+      "release_sha256": "f73fd43c2ad2afd9812988016e50bb4852264a366b49ad667acd39d767f43cfe",
+      "source": "certificates/optimization/local_functions/H075.json",
+      "source_archive": "r13",
+      "source_sha256": "14e4d11d638690f291cb72e9b7d5f5d5e80bf506cd876eeed1dc34f28d112642"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 195348,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H076.json",
+      "release_sha256": "01a82e888d055404505273132b6b0e285ff6d07d806cb07e9a3fcb3c09c85c4b",
+      "source": "certificates/optimization/local_functions/H076.json",
+      "source_archive": "r13",
+      "source_sha256": "268f150cafc8f543d90863b66ffbd7b90f06da153503b100aaef4012d322ee34"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 195329,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H077.json",
+      "release_sha256": "7677af8b8f4cfe14a0848f284181f23e8d4b88a9e59558476a1d9f07730977a6",
+      "source": "certificates/optimization/local_functions/H077.json",
+      "source_archive": "r13",
+      "source_sha256": "c75af83aa056c6ddbf4e633357082e6c575a068ecdc9403c352f4dd310ed107b"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 109122,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H078.json",
+      "release_sha256": "0142eb46613e3d33f99f9012981830dd7797c0e1139d6a8d480db630f332d62a",
+      "source": "certificates/optimization/local_functions/H078.json",
+      "source_archive": "r13",
+      "source_sha256": "ed23484ead11bc33d809674e595b822d4221da8c98296c68a59873badb1b65fe"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 95032,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H079.json",
+      "release_sha256": "d6c16e3279a129fc1359740835893f5761bbc6b1ab98db18e6f65fa4d0d90a6b",
+      "source": "certificates/optimization/local_functions/H079.json",
+      "source_archive": "r13",
+      "source_sha256": "4ead97d507980f2755e53121210cd6de8bfa85bfea532d3e98a36df8b0ad5196"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 208576,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H080.json",
+      "release_sha256": "17a0f233ceebe40ac6837fee85e54a239a3044a3daef9d81b85f1258122241d5",
+      "source": "certificates/optimization/local_functions/H080.json",
+      "source_archive": "r13",
+      "source_sha256": "2daeb8317f739bcbd66e06a844521e71211cd875cce3543d4b2c99ac71b075b8"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 85349,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H081.json",
+      "release_sha256": "ad6a5a4440f7a2b43c0fb129d5342d145c2d2b0c706809235dd78ef2d2984dc8",
+      "source": "certificates/optimization/local_functions/H081.json",
+      "source_archive": "r13",
+      "source_sha256": "99835f1ec32f7e695925da93f804f0c2fea062cabbe656e7575758a3550924d4"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 77140,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H082.json",
+      "release_sha256": "5120c426a28babfb8e1c078180cc7497f55c3473bc77ab49f4a6c7eaa81b8c93",
+      "source": "certificates/optimization/local_functions/H082.json",
+      "source_archive": "r13",
+      "source_sha256": "f09e7ba59c51bf930316ab7f863d6e5f4ecf66e87c8c6aed3e891093525bfad8"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 33875,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H083.json",
+      "release_sha256": "9f9673e6ea2c2982209faa10d84383479dc362746d615b80aac36e047a6e5998",
+      "source": "certificates/optimization/local_functions/H083.json",
+      "source_archive": "r13",
+      "source_sha256": "cdae81ab14a4c7db47c88af1ecc1f8a72282c1352d6895c13e5bed06dfaa1ff7"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 76819,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H084.json",
+      "release_sha256": "fa0b68f9c5f3a04d6171bb3c65175eb28712b2c5230790a716c65f523ac90e5a",
+      "source": "certificates/optimization/local_functions/H084.json",
+      "source_archive": "r13",
+      "source_sha256": "18614bec46a5e6e57e3e0fd211ed7fb37de703736b2e9372d43143348aa293f7"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 78807,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H085.json",
+      "release_sha256": "a5e025c43c8dafb2d7c9118a4b2e71e6e8916efdabfb167d1d7a77205516d9dd",
+      "source": "certificates/optimization/local_functions/H085.json",
+      "source_archive": "r13",
+      "source_sha256": "2fdcebb78cfc1310e5c49b8ab640c789f3b50d698641895f87eab47005ead6af"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 33884,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H086.json",
+      "release_sha256": "7ccbd6ea8749f700706d5162906f8cdcdb1054539faea0e70add034fedacd196",
+      "source": "certificates/optimization/local_functions/H086.json",
+      "source_archive": "r13",
+      "source_sha256": "ac68e2aeba914ad1756f479e474c69814fce0be5966e7e72fb41ce66382a845c"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 23439,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H087.json",
+      "release_sha256": "8d862de56c214bba521d623db9c1236c0421e99a14e59eed63b7336004e22733",
+      "source": "certificates/optimization/local_functions/H087.json",
+      "source_archive": "r13",
+      "source_sha256": "5163c91c039408cf42bbe3f0edaf1461858b61be4adeffdc8f8cdeb4a86aec2b"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 23965,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H088.json",
+      "release_sha256": "5cb59ce9a57bb8b423dcb814b46e05039a25725cd6d5463665eb83e664ecc410",
+      "source": "certificates/optimization/local_functions/H088.json",
+      "source_archive": "r13",
+      "source_sha256": "d41187928a0ff065deff2a8689538b69d0e412e339458046e96e87ab5cbdffc3"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 139375,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H089.json",
+      "release_sha256": "0899951a232837a0b8ba5cd9cecd7caa896ecaae022d8c57ca526e71fe862319",
+      "source": "certificates/optimization/local_functions/H089.json",
+      "source_archive": "r13",
+      "source_sha256": "c0c698ec5724fc7b26017f6a64d3ed4c4d29692540b1db2f556aa647441b45ad"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 139361,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H090.json",
+      "release_sha256": "2cfefd54ae50ee758aae1a3eb04295b0c402041798fd8abcc02e48b7501ab3a2",
+      "source": "certificates/optimization/local_functions/H090.json",
+      "source_archive": "r13",
+      "source_sha256": "ef8d54cdc58d67b13941174cd499fc74cf53dd4b142ad8b939861b49cae8b467"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 69051,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H091.json",
+      "release_sha256": "db835873cfd80635d236c278d6bbc6b5f50f6af723e82004fc236afeb9d7b18b",
+      "source": "certificates/optimization/local_functions/H091.json",
+      "source_archive": "r13",
+      "source_sha256": "3b3e2ce130d836a0543595093cfad15ea08f02eb5ac83ffe6c5584e0fdc8e9de"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 69027,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H092.json",
+      "release_sha256": "ec50c3ba5c61192afaafe68137df46babbe3f8a670fe045f81d3a35dd5453e26",
+      "source": "certificates/optimization/local_functions/H092.json",
+      "source_archive": "r13",
+      "source_sha256": "c56bb1874dbb3b1314b8c2b692b48e9dfdd219b7398e81e903e6df09ee1af575"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 73670,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H093.json",
+      "release_sha256": "a3b7cccd4b4d2565ed7297fa8791ba2cd13586ff5e641c6078b7ff3b9a23d676",
+      "source": "certificates/optimization/local_functions/H093.json",
+      "source_archive": "r13",
+      "source_sha256": "22f5a814d1e71c9e808a91f9f3c0632bea831ead251d9596b3b767a6daaffa05"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 194940,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H094.json",
+      "release_sha256": "310e29083d640b80ddd18d1429e06264a8f0b2fcdabdb4838f57b2269f39a156",
+      "source": "certificates/optimization/local_functions/H094.json",
+      "source_archive": "r13",
+      "source_sha256": "8f4f02c23255a76c65e894b6792449b765a8f3dc95b6a4da0cea41436b08af25"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 203905,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H095.json",
+      "release_sha256": "25d7be52f976e6e026f5e2289328cee60cd2bb6b6cf5ec9fa81c4d51158a25a6",
+      "source": "certificates/optimization/local_functions/H095.json",
+      "source_archive": "r13",
+      "source_sha256": "c4d490a0705c35b7cca45789f6f5e7f1fe2cef736095d7e8a95cf64e0de0b1f9"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 51793,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H096.json",
+      "release_sha256": "e66527a3fa8451125e8d6fea14e273b615091503f18d6701e89481f333cfb073",
+      "source": "certificates/optimization/local_functions/H096.json",
+      "source_archive": "r13",
+      "source_sha256": "aa76c2066c90fb9c56d6e8ffc36c35a1d2ef36587e4b5cadee334f2f886d3c27"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 51789,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H097.json",
+      "release_sha256": "b60e211d63af612b60cdb4636e3bd68e45786ba545839d7745f4d7f65b12e6c3",
+      "source": "certificates/optimization/local_functions/H097.json",
+      "source_archive": "r13",
+      "source_sha256": "bffa04be9cbc07e6296652d98f1ec445d228e42b4a7469376af282f581136e3e"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 123247,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H098.json",
+      "release_sha256": "2ddd5a625a2e078575c15d8fdbedd7543831acea0e1b6042f513abd31458bc3b",
+      "source": "certificates/optimization/local_functions/H098.json",
+      "source_archive": "r13",
+      "source_sha256": "0b494b8747ebaf5edacb337f185a58109e43fe73b25929b3a91efbb6d70da346"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 161936,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H099.json",
+      "release_sha256": "ec55eda126cad5d7ec7bdf4066ea243cc90311183493d3ad17e3ea5bafbced7a",
+      "source": "certificates/optimization/local_functions/H099.json",
+      "source_archive": "r13",
+      "source_sha256": "ae62a428a57ded50fef57ceb6c5977c654f1a0a954097c3bbb3f74208daac900"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 194996,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H100.json",
+      "release_sha256": "b6563267d34c359d8e7b19213210f0d49ea4cceaf290608037ef5aa834105497",
+      "source": "certificates/optimization/local_functions/H100.json",
+      "source_archive": "r13",
+      "source_sha256": "016052a0d9a61e391f09365c700fdc444637ce89ff073dc6c783dd2fa0f4c113"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 203953,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H101.json",
+      "release_sha256": "eb5c719bc1d4dd776a6c647eed8da82aa75e8731221b9a8f2ba89f5e73b9b24a",
+      "source": "certificates/optimization/local_functions/H101.json",
+      "source_archive": "r13",
+      "source_sha256": "0345621baf99d264fa82b91fbf57f98307f5a20fdd9790507a422e27257ae8ac"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 51794,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H102.json",
+      "release_sha256": "d9bf5566c51338ec65a2e146e1f79b80c9ce553322f18f5bb60c5f971d28ec02",
+      "source": "certificates/optimization/local_functions/H102.json",
+      "source_archive": "r13",
+      "source_sha256": "51c882f5a49ee34cd1c317c9238797a1f50e6dd9a04115bc1a2e0d9b1d6ebed8"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 51267,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H103.json",
+      "release_sha256": "9637de717e5e76eb228b6608d46416f805167744874b1470c71cdfe4afe50b37",
+      "source": "certificates/optimization/local_functions/H103.json",
+      "source_archive": "r13",
+      "source_sha256": "76c3004bca2af2c2c583e2e1cb4972d8196b17ddd5ac99853c91f59560582c39"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 123296,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H104.json",
+      "release_sha256": "9b7d9d691f8db88e48702ce15415cb2e813f42f07db21d8b50370adc9abe357b",
+      "source": "certificates/optimization/local_functions/H104.json",
+      "source_archive": "r13",
+      "source_sha256": "7c864895d24915615ed87038b746d1aedbd4581819732ae2db890fe7044c6944"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 161980,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H105.json",
+      "release_sha256": "d19eb8e93181f80c674c672d4245bf8afb3dc7f06d7dfc9686149a761b88ce25",
+      "source": "certificates/optimization/local_functions/H105.json",
+      "source_archive": "r13",
+      "source_sha256": "e4b776480747dd4b0a7583fed77fc258f038e47b5e1cb8df3cc0dca4fbf82ee7"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 124522,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H106.json",
+      "release_sha256": "4def538f624d24acccf9abd97b3919814959f346b09049a5b5f4284ec5c07992",
+      "source": "certificates/optimization/local_functions/H106.json",
+      "source_archive": "r13",
+      "source_sha256": "9bf6561febfddc8a41fd53e1c67c8a7165c83b75170bc9799cdb51751a874db4"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 136879,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H107.json",
+      "release_sha256": "7720ccfe9665466cc1115add798357113f8d23790b80c1b634f016b476ed3720",
+      "source": "certificates/optimization/local_functions/H107.json",
+      "source_archive": "r13",
+      "source_sha256": "68f008111bc9947ea88c11444a8eef914eba2f28401fef88c6e9d9f6ad2d1651"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 162059,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H108.json",
+      "release_sha256": "656c77bfddda3ede5d65cd29c611411304339305beb79a74e5caf481b4946671",
+      "source": "certificates/optimization/local_functions/H108.json",
+      "source_archive": "r13",
+      "source_sha256": "411694b9881f1d6c63b1682a423f72bfdd45f4467453161ae3bdf2a03f1e1732"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 123371,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H109.json",
+      "release_sha256": "664c9bd94058989c59836947846fbf666724fa7b9b6d69f27118aca579a3a79d",
+      "source": "certificates/optimization/local_functions/H109.json",
+      "source_archive": "r13",
+      "source_sha256": "427ea0a01c16fb57e9ecf3b9860a0de8498806917e480b48d43d611a287605cc"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 51291,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H110.json",
+      "release_sha256": "814b8cc9b49d31c70302382be593d2fea263eb4b1a180cd3bf89c4a39e5f565e",
+      "source": "certificates/optimization/local_functions/H110.json",
+      "source_archive": "r13",
+      "source_sha256": "46f0bc9b69668c9aaf4529d7f6962077e6e40a3ec0cc06fda5e4eb42191d5275"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 51822,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H111.json",
+      "release_sha256": "09e01e21abfae16b69c1708e443aa8d5a4bef5a2b94aeaa43cd2ee3d1f3cb62e",
+      "source": "certificates/optimization/local_functions/H111.json",
+      "source_archive": "r13",
+      "source_sha256": "5b39e36caddf86ca453837c4de73550397e66ccfdcdd7f2381f3fac4577b2bc8"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 170196,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H112.json",
+      "release_sha256": "6f48e80ac65256d6e5a461337e15d66ef9525be8fbbc416d31140bb47ee9c57e",
+      "source": "certificates/optimization/local_functions/H112.json",
+      "source_archive": "r13",
+      "source_sha256": "677234aa4110b1a0061a235ea63513afb46568fd138657c13534da62cd354bf7"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 124534,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H113.json",
+      "release_sha256": "91c0d67d3edc42c70f3b88348bd51ee4fffb8db69135613d56a3100c15d91c51",
+      "source": "certificates/optimization/local_functions/H113.json",
+      "source_archive": "r13",
+      "source_sha256": "03385ae6c52e82c6851c1c6379ba50b6df3c7d64b5308482d6bc68db2281a0c0"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 194990,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H114.json",
+      "release_sha256": "1d29c591b4a3d33f8dce4e26c8402ef8e2a76793ce213adeb13a57bc2e357294",
+      "source": "certificates/optimization/local_functions/H114.json",
+      "source_archive": "r13",
+      "source_sha256": "00334620ab267914c392da7051ae76484bf76885bf4cc5f072dfc58423b46ade"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 203926,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H115.json",
+      "release_sha256": "54b19b215b629b3efab4e096526612814bf9188d3a0feaf3042e01b4634d219e",
+      "source": "certificates/optimization/local_functions/H115.json",
+      "source_archive": "r13",
+      "source_sha256": "379f4ca1dd3644caf636fa494deafa183d26fb3b58f6ba3fcc1e2c4d55662473"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 73676,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H116.json",
+      "release_sha256": "156bf1e75852263a207a3b892d80bf139c59d9ab6eb477c10df22d530dc76e66",
+      "source": "certificates/optimization/local_functions/H116.json",
+      "source_archive": "r13",
+      "source_sha256": "1d66e7b287ecb1e53e9b5c1cf6e276f73ebb3bad5927127288bf62ac9a07e94c"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 162011,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H117.json",
+      "release_sha256": "3700d5add2c8b1a320fecced72b5947af9b474dcac21dfa10b0ff6b0ae44031d",
+      "source": "certificates/optimization/local_functions/H117.json",
+      "source_archive": "r13",
+      "source_sha256": "9ef4b786e882cdfa62d41ce5130548fab020c312dfb381ffd18624062cccc575"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 123317,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H118.json",
+      "release_sha256": "5ac7979c914f730e6d01cbf474d8d6d61db356b3b28d87ac6f1afdd5074dc758",
+      "source": "certificates/optimization/local_functions/H118.json",
+      "source_archive": "r13",
+      "source_sha256": "df29ae4f4ad1899200c3bdcc6e19778b2852f24d07b3fad7ab3da2342b4a3e95"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 51286,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H119.json",
+      "release_sha256": "c2ed33223b46c4cdbf0ae60a7293822f10cf37946b922a81addbf1957cef981b",
+      "source": "certificates/optimization/local_functions/H119.json",
+      "source_archive": "r13",
+      "source_sha256": "f32ea2ec8244c3ff4e322abbb8ab58788f298e529d8eb8834a9cbb9461b85252"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 51287,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H120.json",
+      "release_sha256": "1a175e528a6cab49f869ba4b132185b4c2a6cd3a21fafa17a7324a80f8ece4c2",
+      "source": "certificates/optimization/local_functions/H120.json",
+      "source_archive": "r13",
+      "source_sha256": "aa98a65db4f9fd872de07f79ffeba4b13f7b1517a2629531c316365f2debaee9"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 136885,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H121.json",
+      "release_sha256": "0d65a1bbda971925d848ff7f652fcda6d224d2b52f08e3e963f65e4b75b98706",
+      "source": "certificates/optimization/local_functions/H121.json",
+      "source_archive": "r13",
+      "source_sha256": "b8a044f23c485518d961492ad814bc128ac44bbeb6ff81e2c17ca2a3c7eb93d2"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 124550,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H122.json",
+      "release_sha256": "47450ed7a50ebf1fbb53cdd1148b9170c6f2b2e0ef3e156f4710cadfc543ad84",
+      "source": "certificates/optimization/local_functions/H122.json",
+      "source_archive": "r13",
+      "source_sha256": "83f8573c0bae18272e20c8f6bede465ec66fccf45e51e54144b6dfb199cc7bff"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 170100,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H123.json",
+      "release_sha256": "c7838ddcf1c9fb1c811ea1dfb7bf2b910fd9fdb37ed31d2414692490c440ee87",
+      "source": "certificates/optimization/local_functions/H123.json",
+      "source_archive": "r13",
+      "source_sha256": "135b9039f85ed01de2e25a731716aa29b5a2c290e425622413eb228fdb42180e"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 69019,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H124.json",
+      "release_sha256": "bb5a717cb652b040cbb682f9cde442f704e97d0135786c6e2ed60b75523a7b60",
+      "source": "certificates/optimization/local_functions/H124.json",
+      "source_archive": "r13",
+      "source_sha256": "0d79598e5ada4de9e9cee6fac22a0f7b0a2ab085c5291b25b8a5a22be15f4e2b"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 139317,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H125.json",
+      "release_sha256": "bd08b66a38da27b4f348af30bd56694a953d492233750a5cbcb3006c963cfac8",
+      "source": "certificates/optimization/local_functions/H125.json",
+      "source_archive": "r13",
+      "source_sha256": "b6c28ee53737ceea50a85cfa53bc062ad848df21c2ea13ffda114b0edf6382a4"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 73674,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H126.json",
+      "release_sha256": "a9e39330c3a3e6e03e866bb16518d06183f9f84cdc8acff1722896479894a6da",
+      "source": "certificates/optimization/local_functions/H126.json",
+      "source_archive": "r13",
+      "source_sha256": "a34b305f845dbd1791436b03a0ab6f0611f4d9664c0da431483414b5fd7efcb6"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 136791,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H127.json",
+      "release_sha256": "d6f5e1ae3f3d5c6d46b1abdf02eac657bc91465cda5896fb4e485b8ebab8af86",
+      "source": "certificates/optimization/local_functions/H127.json",
+      "source_archive": "r13",
+      "source_sha256": "f70f58745ce38ea3419b805e0ade152d3aa49c16ab34b8ed35a81b30e9542a35"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 135655,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H128.json",
+      "release_sha256": "2654fef37b142da624c1c48042863971acb339b2717468cd1675da047a0caebd",
+      "source": "certificates/optimization/local_functions/H128.json",
+      "source_archive": "r13",
+      "source_sha256": "5e5156eeebc931578e54af2030b5bf2f6ab50a645d38459b549c9202978b9f94"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 203961,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H129.json",
+      "release_sha256": "d399f3a96564cd0e9bc55f784788cc6b334f4305af21d8edd37999b4b6e72c7b",
+      "source": "certificates/optimization/local_functions/H129.json",
+      "source_archive": "r13",
+      "source_sha256": "9b34481dd55bdf4d6e3825a4e0b91b9031953987d4a9e0ee6041fc68efb98706"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 194959,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H130.json",
+      "release_sha256": "7e9378549f5815abe8165b1327970e043ff715616a33513702cebb7c1bb58fb0",
+      "source": "certificates/optimization/local_functions/H130.json",
+      "source_archive": "r13",
+      "source_sha256": "0a49883770f2fbc756da62caf4ce0495c32553d64710fe7876c0516bad895907"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 135684,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H131.json",
+      "release_sha256": "8c214bb6dea9b3de5cc3a4188e5f1e2fdab09d80ecc4d1927be10e9fc610514f",
+      "source": "certificates/optimization/local_functions/H131.json",
+      "source_archive": "r13",
+      "source_sha256": "7ea5490c6c7d7139bd3d046b1d4201762c32572b75dc4da1d5d2796e1b4e0804"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 73685,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H132.json",
+      "release_sha256": "8ad6a5b0a38332940d99dd2ae23e0eb239b2cc74b0067f120010e8d8f726e4d4",
+      "source": "certificates/optimization/local_functions/H132.json",
+      "source_archive": "r13",
+      "source_sha256": "17bd101fa3c3019240949bd51305b46ce2a5913f663f7e178e36f6a4d4f7bb8c"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 135723,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H133.json",
+      "release_sha256": "8699456d4692f9a7de8a4ed5800cb90452b616755c9c599b1e48b5eb808846b6",
+      "source": "certificates/optimization/local_functions/H133.json",
+      "source_archive": "r13",
+      "source_sha256": "1930e1548de54068813ffc6060a841fb3fdf480fb9c66cc6315526dd891c58f9"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 135708,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H134.json",
+      "release_sha256": "a0a04655692a88f09ff5c0c03db7eff47fc1f39d10ca476c20bbe53eef9be73d",
+      "source": "certificates/optimization/local_functions/H134.json",
+      "source_archive": "r13",
+      "source_sha256": "89bbe56e68bee69298daa0a8f2149f5c35f3534e71ea384f27d186ac91ba3781"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 72624,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H135.json",
+      "release_sha256": "2ba1b5ce2797d289c26c16d7622dc2b96b8bbd1f8b169a6ba4db996f97393a74",
+      "source": "certificates/optimization/local_functions/H135.json",
+      "source_archive": "r13",
+      "source_sha256": "3b8a2f738dbc2fb7eb6dbfbdd15225f1256ebb2c6b27eadbcab5d99f6a47f569"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 72688,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H136.json",
+      "release_sha256": "03a9fa4b8ba115604c21884d9bf92c7f830c22d881aa978ac4820a2f0f08a4f7",
+      "source": "certificates/optimization/local_functions/H136.json",
+      "source_archive": "r13",
+      "source_sha256": "785b20daff4d1ec726bc085ea17319e5b7ec11a13ed72ba66273cd1b051856f6"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 72678,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H137.json",
+      "release_sha256": "ec475e8338b54abfd39d2e08c9ca95b91b2a2a488b2d5203eb775a9873bdbd61",
+      "source": "certificates/optimization/local_functions/H137.json",
+      "source_archive": "r13",
+      "source_sha256": "8291e685962a85289a6b295a662176a8abe9f2980a490df87db4e1a5dbb65b6c"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 170303,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H138.json",
+      "release_sha256": "4a47575c843b665559e4257585ac06e271266a7c074600a1c63467529ccc26f5",
+      "source": "certificates/optimization/local_functions/H138.json",
+      "source_archive": "r13",
+      "source_sha256": "4cf029c4fd37a41d01184c82902e0e165a9527ed13200f6485d1bccdb57ad8b2"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 72641,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H139.json",
+      "release_sha256": "eacc917356ff4486145137f25d8ed34d6df3930076ad07726c5c979a158ccd83",
+      "source": "certificates/optimization/local_functions/H139.json",
+      "source_archive": "r13",
+      "source_sha256": "1f99024e92496d7cb66f3e53608a1b2ef3d4ba8e20d9e367f95ce5853b319c5c"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 136838,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H140.json",
+      "release_sha256": "bf08a4e15cf93f2158ecc9bbebc829fe993097b13aaaa3ccdfddc05f2222675f",
+      "source": "certificates/optimization/local_functions/H140.json",
+      "source_archive": "r13",
+      "source_sha256": "b4543584de274c535d8e774c188b74cd192a9a752be3ade6e2e735dd3900acc2"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 170172,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H141.json",
+      "release_sha256": "b2420b99cc01a861da97b2e975590c4e317e3a47e827a574ca7b5b249bcfc8a2",
+      "source": "certificates/optimization/local_functions/H141.json",
+      "source_archive": "r13",
+      "source_sha256": "f915f123f3ea01ef466cd3abfc263df0d4f5fb63d53d56f8c930a2f4762958a0"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 139402,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H142.json",
+      "release_sha256": "aaf6d7dbbbdc904a0a67e2af9b4117087b1a2c7fc35626e2fef5b00a3c9de80d",
+      "source": "certificates/optimization/local_functions/H142.json",
+      "source_archive": "r13",
+      "source_sha256": "86b7fd7d119f11e7c26e589d6b88ca93beb30a97831571c9d0d14da4b5cddf9c"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 69085,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H143.json",
+      "release_sha256": "bb82b3c822c7c6b1d29622126473086f3df3c80c857f42ea1cc49b74152bb023",
+      "source": "certificates/optimization/local_functions/H143.json",
+      "source_archive": "r13",
+      "source_sha256": "264c7686691541d6e84645f3118cc7012ba4ace5a694bffe84a98b0e87612228"
+    },
+    {
+      "action": "normalize schema identifier only; root and nodes unchanged",
+      "byte_identical": false,
+      "bytes": 124617,
+      "note": "",
+      "release": "supplement/obstructions/basis144/functions/H144.json",
+      "release_sha256": "184a6b2bcfd71c9048a4f68c0cba346eff79bd641a518207f0a484cfba3dadea",
+      "source": "certificates/optimization/local_functions/H144.json",
+      "source_archive": "r13",
+      "source_sha256": "f48f3177d8b43d96989cdf094e5dd4c98b8944d4473e7af7d49de76bde48d8dd"
+    },
+    {
+      "action": "normalize provenance, schema, paths/digests only; replace unused optimization-CNF reference by direct packing certificate",
+      "byte_identical": false,
+      "bytes": 329289,
+      "note": "",
+      "release": "supplement/obstructions/selected44/family.json",
+      "release_sha256": "b507e3095e58312c1a8bb82fe9e9ddacc083184e8e1e4dffe4f94c97b9020516",
+      "source": "MINIMIZED_TEST_FAMILY.json",
+      "source_archive": "r13",
+      "source_sha256": "ef699b18d36ea0e9a7aa0237bd61629efbfebb1672e055f9fcbd81f34bd48dd1"
+    },
+    {
+      "action": "normalize provenance, schema, paths/digests only; replace unused optimization-CNF reference by direct packing certificate",
+      "byte_identical": false,
+      "bytes": 78867,
+      "note": "",
+      "release": "supplement/obstructions/selected44/encoding_manifest.json",
+      "release_sha256": "3a18a2d34f8df54d18fc75e0b9ebb982d9b0b630b9b1899832e75d42bc2966ce",
+      "source": "certificates/optimization/encoding_manifest.json",
+      "source_archive": "r13",
+      "source_sha256": "9f7e3c62267d8c438f2aba6dbc9c7cc74d0682512e6f4dde4855b5c974d2a8dd"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 2530207,
+      "note": "",
+      "release": "supplement/obstructions/selected44/escaping.cnf",
+      "release_sha256": "35ca0c67a9ccf3f3ff8dfb8ccf247185e8ebcc76387322d58f6efd30fec8285b",
+      "source": "certificates/optimization/best_coverage.cnf",
+      "source_archive": "r13",
+      "source_sha256": "35ca0c67a9ccf3f3ff8dfb8ccf247185e8ebcc76387322d58f6efd30fec8285b"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 1063737,
+      "note": "",
+      "release": "supplement/obstructions/selected44/escaping.lrat",
+      "release_sha256": "3ecef94cd35707ceeb9c6fe3a224fea749166e07445c9caa3877f2a6deac2a39",
+      "source": "certificates/optimization/best_coverage.lrat",
+      "source_archive": "r13",
+      "source_sha256": "3ecef94cd35707ceeb9c6fe3a224fea749166e07445c9caa3877f2a6deac2a39"
+    },
+    {
+      "action": "normalize provenance, schema, paths/digests only; replace unused optimization-CNF reference by direct packing certificate",
+      "byte_identical": false,
+      "bytes": 186760,
+      "note": "",
+      "release": "supplement/obstructions/selected44/packing.json",
+      "release_sha256": "bb0274dec4d1a140bf4f41ad98a0963a967c73bfb12d4c08bc6c421bd5634e00",
+      "source": "certificates/optimization/packing_lower_bound.json",
+      "source_archive": "r13",
+      "source_sha256": "a5f3d90f83c5a7ab57a8738329bed1a560d3ccfd16d3b4b9baa2e2acc140c2ae"
+    },
+    {
+      "action": "normalize schema and source references only; all coordinates/ports/cuts unchanged",
+      "byte_identical": false,
+      "bytes": 754202,
+      "note": "",
+      "release": "supplement/obstructions/universal_host/host.json",
+      "release_sha256": "2a3a8d56500345d4746aabe4757444cb4f2e4747cfb0a0574607c38efe0d923c",
+      "source": "UNIVERSAL_MAZE.json",
+      "source_archive": "r13",
+      "source_sha256": "ad41dfe1987a49d61f34a0c75a111a9b68eae1b244085fa7b8fc9526085280d0"
+    },
+    {
+      "action": "retain exact grid primitives; omit discovery/stress driver",
+      "byte_identical": false,
+      "bytes": 2904,
+      "note": "",
+      "release": "supplement/common/grid.py",
+      "release_sha256": "0f5eb5fcf4380da53b99d76ba3fe54693daef55af8c83485a220e57c68045ae8",
+      "source": "grid_oracle.py",
+      "source_archive": "r22",
+      "source_sha256": "9b944187afa845107ca04f53276319875d2c14adfbf1a128123ac22db9c4824a"
+    },
+    {
+      "action": "serialize frozen ASTAR table; compare against paper Table tab:astar",
+      "byte_identical": false,
+      "bytes": 3026,
+      "note": "",
+      "release": "supplement/obstructions/universal_lower_bound/astar.json",
+      "release_sha256": "f7b7a62413884c25e8071e31dbb23f98d7580e306737930c29f51d9c7bef3911",
+      "source": "grid_oracle.py",
+      "source_archive": "r22",
+      "source_sha256": "9b944187afa845107ca04f53276319875d2c14adfbf1a128123ac22db9c4824a"
+    },
+    {
+      "action": "release driver: complete all-size<=7 conjugate coverage, all eligible pairs, no cutoff",
+      "byte_identical": false,
+      "bytes": 5629,
+      "note": "",
+      "release": "supplement/obstructions/universal_lower_bound/verify.py",
+      "release_sha256": "17d18f52550577705a678503d9176945d004c1fcb6bb905a3529ab1c211c8949",
+      "source": "grid_oracle.py",
+      "source_archive": "r22",
+      "source_sha256": "9b944187afa845107ca04f53276319875d2c14adfbf1a128123ac22db9c4824a"
+    },
+    {
+      "action": "retain symbolic physical proof, clause reconstruction and packing; add normalized-candidate checks and strict standalone RUP parser",
+      "byte_identical": false,
+      "bytes": 11966,
+      "note": "",
+      "release": "supplement/obstructions/selected44/verify.py",
+      "release_sha256": "9ca641466128b2bdc61120fd97a85baf04a65320f4baffc535037931b04475e8",
+      "source": "certificate_oracle.py",
+      "source_archive": "r22",
+      "source_sha256": "afdefac9c63aa3054685c8e6d53b6ab37e3ba887eb4091a35049993e62e8c66c"
+    },
+    {
+      "action": "extract and harden restricted RUP/LRAT verification; no RAT support, fail on malformed trace",
+      "byte_identical": false,
+      "bytes": 8022,
+      "note": "",
+      "release": "supplement/common/lrat_rup.py",
+      "release_sha256": "b9bad5d983eb0d6cc10a51d59cd6458d0607e1f8f3ac1297ab3c43735e365fbe",
+      "source": "certificate_oracle.py",
+      "source_archive": "r22",
+      "source_sha256": "afdefac9c63aa3054685c8e6d53b6ab37e3ba887eb4091a35049993e62e8c66c"
+    },
+    {
+      "action": "retain source predicates and complete-transient traversal; external deterministic output",
+      "byte_identical": false,
+      "bytes": 9536,
+      "note": "",
+      "release": "supplement/obstructions/basis144/upper_predicates.py",
+      "release_sha256": "f6b638d868c910c6da1feb56687b6e3bf908843623415cc578b262b606294a56",
+      "source": "upper_symbolic.py",
+      "source_archive": "r22",
+      "source_sha256": "8c72982e30be5bf79d93af196dded3c3566d5a3b2cc4f6d823593fa3413b99cf"
+    },
+    {
+      "action": "retain 144/172/host/extension checks; external deterministic output; add all saved-start checks",
+      "byte_identical": false,
+      "bytes": 14111,
+      "note": "",
+      "release": "supplement/obstructions/universal_host/verify.py",
+      "release_sha256": "abe0bca39eb0bfbba379912621f171207d46166091e40fb0d0afbde9b044eb66",
+      "source": "basis_host_oracle.py",
+      "source_archive": "r22",
+      "source_sha256": "59fb90e9c30902cdc51652c18306109762068ce3f8335880355c7009ff8e1bec"
+    },
+    {
+      "action": "retain both generators and exact simulator; mandatory external output; remove historical comments",
+      "byte_identical": false,
+      "bytes": 7280,
+      "note": "",
+      "release": "supplement/paths/check.py",
+      "release_sha256": "eafd3c651dac6ff42a037e97ae5b50a3e71e1f751b80174870a25431425a099e",
+      "source": "supplement/paths/check_g1_paths_fresh.py",
+      "source_archive": "r21",
+      "source_sha256": "b7b034389d882ce369e1d260420d690e45ff9e7347f205e006793f30e1a801fe"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 7725,
+      "note": "",
+      "release": "supplement/expected/path_certificate.json",
+      "release_sha256": "93f287fd27c96a67706165eeec32dab0a8fc3ca795dba99821d9b1116454db96",
+      "source": "supplement/paths/g1_fresh.json",
+      "source_archive": "r21",
+      "source_sha256": "93f287fd27c96a67706165eeec32dab0a8fc3ca795dba99821d9b1116454db96"
+    },
+    {
+      "action": "retain algorithm; explicit external data/executable arguments; deterministic logging",
+      "byte_identical": false,
+      "bytes": 12491,
+      "note": "",
+      "release": "supplement/realization/scripts/fresh_audit.cpp",
+      "release_sha256": "430ee8e46968aa64e592a775a0e140490072a2183b34b680ac378037e3edb010",
+      "source": "supplement/realization/scripts/fresh_audit.cpp",
+      "source_archive": "r21",
+      "source_sha256": "7a6d2173f42464ac09570fbf56bf82ddcfd8f102bd79ed4be6a06b44c3099165"
+    },
+    {
+      "action": "retain algorithm; explicit external data/executable arguments; deterministic logging",
+      "byte_identical": false,
+      "bytes": 8035,
+      "note": "",
+      "release": "supplement/realization/scripts/validate_evidence.py",
+      "release_sha256": "31039ecf9e493fe4bd0a2def312057f1a6293da6de9ed368487007e5eca2cd91",
+      "source": "supplement/realization/scripts/validate_evidence.py",
+      "source_archive": "r21",
+      "source_sha256": "c0e224d0c60a071e95d2732f183ec88a0da90756927fe196dbf12b4a5bfd0bb4"
+    },
+    {
+      "action": "retain algorithm; explicit external data/executable arguments; deterministic logging",
+      "byte_identical": false,
+      "bytes": 3321,
+      "note": "",
+      "release": "supplement/realization/scripts/negative_certificates.py",
+      "release_sha256": "d4f155d8d3ee89d5450bc467207921c922d56452a80f7a75800eba443b2e5c0d",
+      "source": "supplement/realization/scripts/negative_certificates.py",
+      "source_archive": "r21",
+      "source_sha256": "dd64ab437a746d413c04c5afb8be15bfec2f85edb7a051da5fbb0faba1507149"
+    },
+    {
+      "action": "retain algorithm; explicit external data/executable arguments; deterministic logging",
+      "byte_identical": false,
+      "bytes": 10697,
+      "note": "",
+      "release": "supplement/realization/scripts/seam_probes.py",
+      "release_sha256": "caeb32d5e64966d4b7d372d2289863fbe5b3eb2efc246ad93d396b6999113a7c",
+      "source": "supplement/realization/scripts/seam_probes.py",
+      "source_archive": "r21",
+      "source_sha256": "fb3267ae75beb475f652e86bc8f34597a4f41c77c15107509c3f482536ead677"
+    },
+    {
+      "action": "retain algorithm; explicit external data/executable arguments; deterministic logging",
+      "byte_identical": false,
+      "bytes": 8765,
+      "note": "",
+      "release": "supplement/realization/scripts/consequence_replay.py",
+      "release_sha256": "16561badb23ca22eb276ab9754022a0e5ca3b1a77401d1f277fbd5482fec6ea2",
+      "source": "supplement/realization/scripts/consequence_replay.py",
+      "source_archive": "r21",
+      "source_sha256": "f746ab6db24311299c70b0c4469884d12379958893b2526ca51d6d6ef177ec69"
+    },
+    {
+      "action": "copy; remove historical narrative from FORMAT.md only",
+      "byte_identical": false,
+      "bytes": 2154,
+      "note": "",
+      "release": "supplement/realization/data/FORMAT.md",
+      "release_sha256": "11bc102cdc5c24433d0dc73b73291e40694ebbc2c4604fe9c8aced0ab6930ce4",
+      "source": "supplement/realization/data/FORMAT.md",
+      "source_archive": "r21",
+      "source_sha256": "2388ee25846b06717bfb382584fd6d37d04d9bef23b422a027668c3ac766039d"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 1513,
+      "note": "",
+      "release": "supplement/realization/data/consequence_replay.json",
+      "release_sha256": "3993f60d05dabb7290150bc077cc5b0a357886846622781d1863d3ca635a0686",
+      "source": "supplement/realization/data/consequence_replay.json",
+      "source_archive": "r21",
+      "source_sha256": "3993f60d05dabb7290150bc077cc5b0a357886846622781d1863d3ca635a0686"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 2076,
+      "note": "",
+      "release": "supplement/realization/data/fresh_n2.jsonl",
+      "release_sha256": "2346cc8445f63f4f54655574a2b82b4a0cb4d20d4e1114d3d244f2284c25e31a",
+      "source": "supplement/realization/data/fresh_n2.jsonl",
+      "source_archive": "r21",
+      "source_sha256": "2346cc8445f63f4f54655574a2b82b4a0cb4d20d4e1114d3d244f2284c25e31a"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 11576,
+      "note": "",
+      "release": "supplement/realization/data/fresh_n3.jsonl",
+      "release_sha256": "6104e0b96425b355b4a7c6fdbcb8f61aeb09f6e95074724378f84f16fcc09ea1",
+      "source": "supplement/realization/data/fresh_n3.jsonl",
+      "source_archive": "r21",
+      "source_sha256": "6104e0b96425b355b4a7c6fdbcb8f61aeb09f6e95074724378f84f16fcc09ea1"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 64258,
+      "note": "",
+      "release": "supplement/realization/data/fresh_n4.jsonl",
+      "release_sha256": "0b29bad4ce24edf9b4da52058a8acb4c79c4ca75f7a716d3e945284025a33f52",
+      "source": "supplement/realization/data/fresh_n4.jsonl",
+      "source_archive": "r21",
+      "source_sha256": "0b29bad4ce24edf9b4da52058a8acb4c79c4ca75f7a716d3e945284025a33f52"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 304224,
+      "note": "",
+      "release": "supplement/realization/data/fresh_n5.jsonl",
+      "release_sha256": "8f636ee90349e8bd6ca9c19d8f8d79ec603d7c7ae1d7a90f40b065ad281bd847",
+      "source": "supplement/realization/data/fresh_n5.jsonl",
+      "source_archive": "r21",
+      "source_sha256": "8f636ee90349e8bd6ca9c19d8f8d79ec603d7c7ae1d7a90f40b065ad281bd847"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 1448578,
+      "note": "",
+      "release": "supplement/realization/data/fresh_n6.jsonl",
+      "release_sha256": "18885d6e9ab6ff00474ba8cdece9d2e406f1536486b00084fc3a4a936a51de3e",
+      "source": "supplement/realization/data/fresh_n6.jsonl",
+      "source_archive": "r21",
+      "source_sha256": "18885d6e9ab6ff00474ba8cdece9d2e406f1536486b00084fc3a4a936a51de3e"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 6567704,
+      "note": "",
+      "release": "supplement/realization/data/fresh_n7.jsonl",
+      "release_sha256": "ac7422d7b903ecd913e39760274c42bf095c10f4ca1f4a0ae8c7e7776b18ffe5",
+      "source": "supplement/realization/data/fresh_n7.jsonl",
+      "source_archive": "r21",
+      "source_sha256": "ac7422d7b903ecd913e39760274c42bf095c10f4ca1f4a0ae8c7e7776b18ffe5"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 28633458,
+      "note": "",
+      "release": "supplement/realization/data/fresh_n8.jsonl",
+      "release_sha256": "94c890e895c47aa515acd343c162ac7b919aba118aaa765046afcff5510ae506",
+      "source": "supplement/realization/data/fresh_n8.jsonl",
+      "source_archive": "r21",
+      "source_sha256": "94c890e895c47aa515acd343c162ac7b919aba118aaa765046afcff5510ae506"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 13698,
+      "note": "",
+      "release": "supplement/realization/data/fresh_phase_family.json",
+      "release_sha256": "4a9fcc00d2fe5a94cd56312391c022d87d4f22e38407c28822adc91ff3365a22",
+      "source": "supplement/realization/data/fresh_phase_family.json",
+      "source_archive": "r21",
+      "source_sha256": "4a9fcc00d2fe5a94cd56312391c022d87d4f22e38407c28822adc91ff3365a22"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 20878,
+      "note": "",
+      "release": "supplement/realization/data/fresh_sharp_family.json",
+      "release_sha256": "18f0dc21ec49da3fcf2d0cfee5db4198043db22b59346443844113e87ec4c252",
+      "source": "supplement/realization/data/fresh_sharp_family.json",
+      "source_archive": "r21",
+      "source_sha256": "18f0dc21ec49da3fcf2d0cfee5db4198043db22b59346443844113e87ec4c252"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 449636,
+      "note": "",
+      "release": "supplement/realization/data/fresh_staircase_certificates.json",
+      "release_sha256": "0b0a1f79083eaac46788d16d60729b9c1cc146af0eef4ef11061e73669c60e74",
+      "source": "supplement/realization/data/fresh_staircase_certificates.json",
+      "source_archive": "r21",
+      "source_sha256": "0b0a1f79083eaac46788d16d60729b9c1cc146af0eef4ef11061e73669c60e74"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 1169,
+      "note": "",
+      "release": "supplement/realization/data/fresh_summary.json",
+      "release_sha256": "081f3886d25c6727a5256da3613d6fc34037d232f93099a116b883a994d689ea",
+      "source": "supplement/realization/data/fresh_summary.json",
+      "source_archive": "r21",
+      "source_sha256": "081f3886d25c6727a5256da3613d6fc34037d232f93099a116b883a994d689ea"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 1060,
+      "note": "",
+      "release": "supplement/realization/data/probe_completion6.json",
+      "release_sha256": "2d44606197ddb89bc1e4042d8b88f9f0aef797cf3d0e395a8666f742b1f3e179",
+      "source": "supplement/realization/data/probe_completion6.json",
+      "source_archive": "r21",
+      "source_sha256": "2d44606197ddb89bc1e4042d8b88f9f0aef797cf3d0e395a8666f742b1f3e179"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 687,
+      "note": "",
+      "release": "supplement/realization/data/probe_nand5.json",
+      "release_sha256": "195bc159f6e4751b0d784e4dcee0f205f7a2452bcf7bdcd8697a2550d963e835",
+      "source": "supplement/realization/data/probe_nand5.json",
+      "source_archive": "r21",
+      "source_sha256": "195bc159f6e4751b0d784e4dcee0f205f7a2452bcf7bdcd8697a2550d963e835"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 808,
+      "note": "",
+      "release": "supplement/realization/data/probe_noncoset4.json",
+      "release_sha256": "269938b27af258848ec63127b7afae3f3b3bdc8f42ca1454a5592418de206a80",
+      "source": "supplement/realization/data/probe_noncoset4.json",
+      "source_archive": "r21",
+      "source_sha256": "269938b27af258848ec63127b7afae3f3b3bdc8f42ca1454a5592418de206a80"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 190,
+      "note": "",
+      "release": "supplement/realization/data/probe_one_double_unsat7.json",
+      "release_sha256": "1c7a6a3b079f0e7b5a279f1e267516f397e84007a9c173a05194bc6a4b54c682",
+      "source": "supplement/realization/data/probe_one_double_unsat7.json",
+      "source_archive": "r21",
+      "source_sha256": "1c7a6a3b079f0e7b5a279f1e267516f397e84007a9c173a05194bc6a4b54c682"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 4094,
+      "note": "",
+      "release": "supplement/realization/data/probe_saturated_nand8.json",
+      "release_sha256": "8fe17357af971fc872093074c80a49716583e9ce8012345f5b69ee6d9e12456c",
+      "source": "supplement/realization/data/probe_saturated_nand8.json",
+      "source_archive": "r21",
+      "source_sha256": "8fe17357af971fc872093074c80a49716583e9ce8012345f5b69ee6d9e12456c"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 203,
+      "note": "",
+      "release": "supplement/realization/data/probe_staircase6.json",
+      "release_sha256": "df600e8e4f722ab6497cb5bf5ebdf7a707b69e1beda025350122b2e6f46c83c8",
+      "source": "supplement/realization/data/probe_staircase6.json",
+      "source_archive": "r21",
+      "source_sha256": "df600e8e4f722ab6497cb5bf5ebdf7a707b69e1beda025350122b2e6f46c83c8"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 228,
+      "note": "",
+      "release": "supplement/realization/data/python_validation.json",
+      "release_sha256": "890a6ffb58bd4698c7fe5ac09a0ff585586a2909b57098f471580ab599089435",
+      "source": "supplement/realization/data/python_validation.json",
+      "source_archive": "r21",
+      "source_sha256": "890a6ffb58bd4698c7fe5ac09a0ff585586a2909b57098f471580ab599089435"
+    },
+    {
+      "action": "copy byte-for-byte",
+      "byte_identical": true,
+      "bytes": 3894,
+      "note": "",
+      "release": "supplement/realization/data/seam_summary.json",
+      "release_sha256": "7230034f31aae36f5af49cd9cbd72532b584ed8bb9691e3e7233d37c295a2049",
+      "source": "supplement/realization/data/seam_summary.json",
+      "source_archive": "r21",
+      "source_sha256": "7230034f31aae36f5af49cd9cbd72532b584ed8bb9691e3e7233d37c295a2049"
+    }
+  ],
+  "stage0_map_sha256": {
+    "PROOF_CRITICAL_ARTIFACT_MAP_23.md": "fc5c82810bdd1a27db2255b8871f30b8cbc37b53c74ad34f95dcaf4e097113d0",
+    "SOURCE_TO_RELEASE_MAP_23.md": "ae4df2b0781243338cdfa55d3f4ff21a6c605b394df34f728c27bb47acc962aa",
+    "proof_map_initial.json": "b746a0660c1cace630a98d0edd793db6f72d3fae998292efe96eb57f3da73c3d",
+    "source_map_initial.json": "509757e2cb2c33b7781d35da998d57e3ddb470ec7a5c3fe0680277fe6c0c09eb"
+  },
+  "transformation_policy": "Only release paths, schema/provenance metadata, external-output plumbing, validation hardening and explicitly documented reproducibility prose were changed. Mathematical source/certificate payloads are preserved. Manifest records do not hash themselves. The rc2-authors finalization changes only author/title metadata, the canonical PDF, project licensing/administrative documents and regenerated manifests. All scientific source outside the main title metadata, all computational input/output data and all inherited verification/build sources remain byte-identical to rc1."
+}

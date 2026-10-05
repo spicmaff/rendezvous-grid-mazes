@@ -1,0 +1,58 @@
+\subsection{An extremal controller and its seven-cell trap}\label{sec:extremal}
+
+Table~\ref{tab:astar} specifies all thirty entries of $\Astar$, with direction first and updated state second.
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+Mask type & Mask & State $0$ & State $1$\\
+\midrule
+End & $\N$ & $(\N,0)$ & $(\N,1)$\\
+ & $\E$ & $(\E,1)$ & $(\E,1)$\\
+ & $\Sdir$ & $(\Sdir,1)$ & $(\Sdir,1)$\\
+ & $\W$ & $(\W,1)$ & $(\W,0)$\\
+Straight & $\N\Sdir$ & $(\Sdir,1)$ & $(\Sdir,1)$\\
+ & $\E\W$ & $(\W,0)$ & $(\E,1)$\\
+Corner & $\N\E$ & $(\N,0)$ & $(\E,1)$\\
+ & $\E\Sdir$ & $(\Sdir,1)$ & $(\E,1)$\\
+ & $\Sdir\W$ & $(\W,0)$ & $(\Sdir,1)$\\
+ & $\N\W$ & $(\N,1)$ & $(\W,0)$\\
+Junction & $\N\E\Sdir$ & $(\Sdir,1)$ & $(\E,1)$\\
+ & $\N\E\W$ & $(\W,0)$ & $(\E,1)$\\
+ & $\N\Sdir\W$ & $(\Sdir,0)$ & $(\Sdir,0)$\\
+ & $\E\Sdir\W$ & $(\Sdir,1)$ & $(\Sdir,1)$\\
+Full & $\N\E\Sdir\W$ & $(\E,0)$ & $(\Sdir,1)$\\
+\bottomrule
+\end{tabular}
+\caption{The extremal controller $\Astar$. Every direction belongs to its mask. The distinguished initial state is $0$.}
+\label{tab:astar}
+\end{table}
+
+On a vertical straight segment both states move south and reset to $1$. On a horizontal straight segment state $0$ moves west and state $1$ moves east, each preserving its state. The masks $\N\E\Sdir$ and $\N\E\W$ behave like $\E\Sdir$ and $\E\W$, respectively, so their extra northern arms are never selected. The remaining three-way masks also avoid north. These local asymmetries will determine the possible recurrent supports.
+
+\begin{lemma}[Seven-cell sharpness witness]\label{a:trap}
+The controller $\Astar$ has a trap on the induced path
+\[
+ V_U=\{(0,0),(0,1),(0,2),(1,2),(2,2),(2,1),(2,0)\},
+\]
+with state-$0$ starts at $(0,0)$ and $(2,0)$.
+\end{lemma}
+\begin{proof}
+The bottom cells have mask $\N$, and their northern neighbours have mask $\N\Sdir$. The entire execution through the first repeated product state is
+\[
+\begin{array}{c|c|c|c}
+t&\text{first agent}&\text{second agent}&\text{distance}\\\hline
+0&(0,0)_0&(2,0)_0&2\\
+1&(0,1)_0&(2,1)_0&2\\
+2&(0,0)_1&(2,0)_1&2\\
+3&(0,1)_1&(2,1)_1&2\\
+4&(0,0)_1&(2,0)_1&2
+\end{array}
+\]
+Time $4$ repeats time $2$. Determinism gives separation two forever, including the transient. The product preperiod and period are both exactly two.
+\end{proof}
+
+\input{figures/astar_u}
+
+For the lower bound, we prove that $\Astar$ succeeds through six cells. Tagged recurrence matters: visits to one cell can carry different states, and separated eventual supports may still force transient contact.

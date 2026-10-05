@@ -1,0 +1,86 @@
+\section{Introduction}\label{sec:introduction}
+
+Finite-state navigation connects automata in labyrinths~\cite{Budach1978,KilibardaKudryavtsevUscumlic2003},
+graph exploration~\cite{FraigniaudEtAl2005,DisserKlimm2022} and deterministic
+rendezvous~\cite{Pelc2012Survey,FraigniaudPelc2011,CzyzowiczEtAl2014}.
+Their common memory constraint governs both the geometry of eventual motion and
+the compatibility of local decisions. Distinct visits to a cell on a least-period
+recurrent orbit need distinct states; on a tree this bounds incident edge
+multiplicities. Spatially distant cells with the same compass mask impose a second,
+global constraint: their visits must use one common controller table.
+
+We study identical agents moving synchronously in finite connected induced grid
+mazes. Each observes the open compass directions and must choose one; both start
+in a distinguished state. Success means coincidence or adjacency at an integer
+time. There is no waiting, marking, communication, arrival-port observation or
+continuous-time meeting event. Exploration failure need not keep two moving copies
+apart, and a recurrent cycle need not be accessible from the initial state.
+These distinctions also govern our comparison with finite-automaton rendezvous
+results~\cite{DasPelc2026}.
+
+For each controller, take its smallest trap and then maximize over controllers
+with at most $s$ states: this defines $F(s)$. The adversary chooses the maze and
+starts after the controller is fixed. We also treat restricted maze classes,
+arbitrary success radii, and the dual memory parameter $M_{\mathcal C,\rho}(n)$
+for solving every instance through size $n$.
+
+\paragraph{Memory, geometry and compatibility.}
+Degree constraints and contour traversal have exploration
+predecessors~\cite{DiksEtAl2004,Kilibarda1990}; our structural object is a weighted
+recurrent support. Its capacity law yields a sharp maximum path period for every
+$s\ge2$: $sn-2$ for even $n\ge3$, and $s(n-1)$ for odd $n\ge3$. Attainment is over
+geometries and controllers, not on every prescribed path. Two phases of one
+recurrent path cycle must attain distance one; branching trees need not have this
+property. For three states, capacity permits a contour with doubled edges forming
+a matching. Realization by one table requires more. In the setting neighboring
+local state annotations and scenario synthesis~\cite{Martynova2022,UlyantsevBuzhinskyShalyto2016},
+we reduce it to one shared finite profile and a sparse affine system over $\Ftwo$.
+Eliminating the profile can produce NAND, so a single XOR system is insufficient.
+The criterion concerns a cycle on the path with its own masks, not its basin.
+
+\paragraph{Sharp low-state thresholds.}
+Earlier exact low-state exploration results use port-based
+models~\cite{FraigniaudIlcinkasPelc2008}. For our distance-one problem,
+$F(1)=4$ belongs to the radius law $\lfloor\rho\rfloor+3$ for $\rho\ge1$ on paths,
+one-junction trees, grid trees and general grid mazes; the coincidence threshold
+is two. The technical centre is a proof of $F(2)=7$ without computational
+assistance, unchanged on induced grid trees. Small path gadgets force a nine-entry
+pattern, and two junction completions give the upper bound. An explicit controller
+$\Astar$ supplies the reverse bound through recurrent-support classification,
+initial-state gates and transient contact. On paths the threshold is eight, with
+an analytic upper bound and an exhaustive finite lower certificate. Four states
+suffice universally on paths; the three-state question remains open.
+
+\paragraph{From a test menu to one host.}
+Classical universal traps already strengthen individual-obstruction
+quantifiers~\cite{AntelmannBudachRollik1979,KilibardaReduction2021}.
+Here one must preserve distance-one failure and every queried compass mask.
+The two-state case proof yields an explicit complete test family; a certified
+smaller selection is optimal only within those candidates. Protected attachment
+and unused-cut stretching then embed the witnesses in one induced subcubic
+grid-tree host, fixed before the controller. Only the starts depend on it.
+
+\begin{table}[!htbp]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}P{.21\linewidth}YP{.24\linewidth}@{}}
+\toprule
+Layer & Principal conclusion & Proof basis \\
+\midrule
+Parameters & Exact $F/M$ duality; fixed-horizon finite memory & Deductive \\
+Recurrent structure & Tree capacity, sharp all-state period, path phase contact & Deductive \\
+Memoryless and core & Radius law; $F(1)=4$; $F(2)=F_{\mathcal T_{\rm grid},1}(2)=7$ & Deductive \\
+Path hierarchy & Threshold $8$ at two states; a universal controller at four & Finite lower certificate for $8$; analytic otherwise \\
+Three-state realization & Direction consistency and one consistent affine-profile system & Deductive iff; scans validate \\
+Obstruction uniformity & Complete test family; protected universal host & Deductive construction; certified selection and coordinate checks \\
+\bottomrule
+\end{tabularx}
+\caption{The theorem spine. Appendix~\ref{app:computational-provenance} separates deductive arguments, necessary finite certificates and implementation checks.}
+\label{tab:theorem-summary}
+\end{table}
+
+Sections~\ref{sec:support-structure}--\ref{sec:paths} establish the structural and
+low-state results, with the two-state proof in Section~\ref{sec:two-state}.
+Section~\ref{sec:realization} gives the realization criterion;
+Sections~\ref{sec:state-complexity}--\ref{sec:universal-host} develop complexity and
+uniform obstructions. Related work and open problems follow. The appendices retain
+the proof-essential local tables, affine bookkeeping and computational dependencies.

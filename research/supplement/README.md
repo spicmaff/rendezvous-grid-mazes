@@ -1,0 +1,34 @@
+# Reproducibility supplement
+
+Run `python3 supplement/verify_all.py --output /tmp/rendezvous-replay` from the release root, or use an absolute path to the script from any directory. Python 3.10+ and a GCC-compatible C++17 compiler are the only supplement requirements; all Python imports outside this tree are from the standard library. The default is full verification, with no network and no executable-bit requirement for supplied sources. The output directory must be new/empty and outside the release. Inputs may be mounted read-only.
+
+## What actually runs
+
+| Chain | Source and exact replay | Expected result | Role |
+| --- | --- | --- | --- |
+| Path lower certificate | `paths/check.py`; two independent fixed, oriented induced-path generators; frozen surviving controller; exact product-state recurrence | Sizes 1–7: 1,2,6,14,34,82,198 shapes; all 4042 initially-far unordered pairs meet | Computer-assisted lower half of the path threshold 8 |
+| Human finite test basis | `obstructions/basis144/family.json`, `upper_predicates.py`, host verifier | 144 oriented instances, 76 oriented geometries, 22 instance orbits, 13 geometric types | Exact data check accompanying the human completeness proof |
+| Selected complete family | All 144 physical DAGs, normalized candidates and `selected44/verify.py`; semantic reconstruction before formal checking | 21,049 variables, 146,795 clauses, exact CNF byte equality, 1,414 RUP additions ending in the empty clause | Computer-assisted completeness of the selected 44 |
+| Packing lower bound | `selected44/packing.json`; direct independent simulation of every witness on all 144 instances | 44 nonempty, pairwise-disjoint trapped-candidate sets, identical to the saved sets | Minimum 44 only within the supplied fixed 144-candidate family |
+| Universal-maze lower bound | `universal_lower_bound/astar.json` checked against the paper table; eight simultaneous compass conjugates; all fixed connected induced geometries through seven | 1,067 geometries; 760 of size seven; coverage counts 594/112/52/2 at coverage 0/1/2/4; all smaller cases survive | Computer-assisted lower bound 8; not an atlas assertion |
+| Ported fragments and host | 172 records, provenance/ports/cuts; coordinates reconstructed as an induced graph; complete transients protected | 5,212 vertices, 5,211 edges, degree at most 3, connected tree; every saved start far; extension ray clearance checked | Exact validation of human construction and exact-size extension |
+| Realization criterion implementation | Existing independent C++ congruence oracle and affine compiler regenerated through size eight | 203,260 specifications: 94,852 realizable, 105,128 direction rejections, 3,280 residual rejections; no mismatches | Finite validation only, not an all-size proof |
+| Realization witnesses/examples | Independent full-table reconstruction and trajectory checks, staircase XOR contradictions, NAND and construction families | 189,704 complete legal tables; 243 negative certificates; saturated NAND 20 solutions with projection 12/4/4/0 | Finite validation only |
+
+The path checker also runs the already supplied size-eight diagnostic; only its through-seven survival is the lower-bound certificate. The universal lower-bound generator retains absolute orientation and normalizes only translations. It checks every eligible unordered pair against every conjugate, using repetition of the full two-agent state rather than any time horizon. All 1,067 geometry records, including zero-coverage records and pair masks, are written to `u2/all_geometries.jsonl` in the output directory.
+
+The selected-family checker symbolically branches only on undecided controller rows reached by physical simulation and compares each physical stopping outcome with the full remaining DAG cofactor. It verifies every normalized candidate and every function, not merely the 44 selected functions. It reconstructs manifest numbering and every CNF clause, then compares the generated CNF byte-for-byte before calling the proof verifier. The packing simulation is a separate mathematical lower-bound chain, not a claim of global geometric optimality. Included irredundancy witnesses are replayed as well.
+
+## Formal-certificate format and limits
+
+`common/lrat_rup.py` supports exactly the ASCII RUP-style additions/deletions used by the supplied proof. A full format prepass checks monotone unique addition IDs, unique positive hints and correct terminators, rejects unsupported RAT/negative hints and tautological or duplicate-literal additions, and requires the final empty addition. Sequential replay validates every deletion and active clause reference, starts from the negation of each added clause, and checks each hinted unit propagation and the concluding contradiction. No malformed-reference or unused-tail shortcut is accepted. The supplied proof has no RAT additions; this is explicitly verified, not assumed. Twenty-one rejection controls and a valid control run in the default entrypoint. This is a transparent release verifier, not a claim of formal verification of its own code or a general LRAT implementation.
+
+## Outputs and failure policy
+
+The entrypoint writes `verification.json` progressively, with completed and missing stages. Successful deterministic outputs are described by `expected/replay_files.json`: all 30 files are freshly generated and must match the frozen hash/length expectations. Existing realization data are not overwritten and also compare byte-for-byte. `output_comparison.json` records the full comparison. `environment.json` records tool versions separately. Logs and generated C++ executable stay in the output directory and are not frozen scientific results.
+
+Every stage is mandatory for the full status. A missing compiler, certificate, stage or expected output is a failure, not an optional omission. A fresh output directory avoids stale-data acceptance. Checksums are verified before replay and again after; all release files must be unchanged. The code has no random algorithm or time cutoff, and deterministic comparison JSON contains no timing, timestamp, random seed or machine-specific absolute path. See `realization/data/FORMAT.md` for the different direction-bit conventions in that independent implementation.
+
+## Scientific scope
+
+The paper's proof-status table is authoritative: computer-assisted claims remain computer-assisted, deductive all-size claims remain deductive, and the three-state universal rendezvous questions remain open. Bounded scans do not prove those all-size statements. Machine-readable claim labels, exact source paths, checker paths, expected results and dependency roles are in `../manifests/PROOF_ARTIFACTS.json`; normalized artifact provenance is in `../manifests/PROVENANCE.json`. No research history is needed to execute the release.

@@ -1,0 +1,134 @@
+\section{Affine realization: gauges, elimination and witnesses}
+\label{app:realization-bookkeeping}
+
+\subsection{Coordinate choices and unused rows}
+The nonzero vectors of $H=\Ftwo^2$ are the three states. Every permutation of them
+extends uniquely to an element of $\operatorname{GL}(2,2)\cong S_3$. Applying this
+map simultaneously to all state constants, successor differences and occurrence
+expressions gives an isomorphic profile system. Swapping the two local paired
+roles replaces $z_v$ by $z_v+1$; changing an anchor replaces comparisons by their
+sums. Thus the construction does not depend on these presentational choices.
+An independent permutation at one mask, without transforming the successor
+links to other masks, is not a symmetry. Nor can different occurrences of one
+absolute mask be independently rotated by grid symmetries.
+
+At a load-two vertex the unused state is $b(a_M)+a_M(z_v+1)$. It is unused at that
+vertex, not necessarily at the other vertices of mask $M$. When both paired input
+states occur somewhere at $M$, $\kappa_M$ is their uniquely determined successor
+difference. When only one occurs, it is an auxiliary description of the observed
+transitions; it does not prescribe an unobserved output. In particular, the
+unobserved row must not be assigned an affine extrapolation that equals the zero
+vector. The arbitrary legal completion in the sufficiency proof avoids this
+error. Endpoint comparisons cannot be dropped even when both endpoints have
+load one: identical endpoint masks and states refer to the same controller row.
+
+\subsection{Exact completion by elimination}
+\label{app:linear-completion}
+Fix one profile and partition its variables into retained variables $x$ and
+variables $y$ to be completed. Write the system as
+\[
+ A_xx+A_yy=b.
+\]
+For a fixed $x$ there exists a completion precisely when
+\[
+ \lambda^T A_y=0\quad\Longrightarrow\quad
+ \lambda^T A_xx=\lambda^T b.
+\]
+Indeed, this is exactly the condition that $b-A_xx$ belong to the column space
+of $A_y$, by Gaussian elimination. This is the correct completion statement for
+load-two roles: additional constraints on retained roles can remain after
+elimination. Before fixing a profile the set of completions is a union of these
+affine sets and need not itself be affine. An automatic completion assertion
+based only on saturated correspondences is therefore not used.
+
+\subsection{Signed graphs and incidence pseudoforests}
+\label{app:forest-cases}
+In a fixed profile, first combine repeated terms in each scalar equation and
+retain constant equations. If every remaining equation has at most two variables,
+form a signed multigraph with a reference vertex $*$ of value zero. Represent
+$z_u=b$ by an edge $u*$ of gain $b$, and $z_u+z_v=b$ by an edge $uv$ of gain $b$.
+Parallel edges are retained. A constant $0=1$ rejects the system.
+
+\begin{proposition}[Graph balance]\label{prop:affine-graph-balance}
+After constant equations are checked, such a system is consistent if and only
+if the XOR of the gains around every cycle is zero. In particular, a forest is
+consistent, and a component with one cycle has exactly its one parity condition.
+\end{proposition}
+\begin{proof}
+A solution telescopes around each cycle. Conversely, choose a root in each
+component and propagate values along a spanning tree, fixing the root of the
+component containing $*$ to zero. Each non-tree edge is satisfied precisely when
+its fundamental cycle has gain zero. This also proves that the solution space
+has dimension $c-1$, where $c$ is the number of components including the one
+containing $*$.
+\end{proof}
+
+The incidence graph of a general scalar system is instead bipartite, with variable
+vertices and equation vertices. Its being a forest is \emph{not} by itself a
+consistency criterion: the two equations $z=0$ and $z=1$ have an incidence tree.
+Use the following exact reductions. Check constant equations; substitute every
+unary fixation; discard degree-zero variables as free; and remove a degree-one
+variable together with its unique incident equation, saving that equation for
+back-substitution. Each reduction preserves existence of a solution. A finite
+incidence forest has a leaf, so these reductions decide it completely.
+If each incidence component has at most one cycle, the residual nonempty core
+has degree two at every vertex and has equations
+\[
+ z_1+z_2=c_1,\ \ldots,\ z_{k-1}+z_k=c_{k-1},\ z_k+z_1=c_k.
+\]
+It is consistent precisely when $\sum_i c_i=0$. The constants here are the
+\emph{updated} constants after substitution, not necessarily the original ones.
+Solving the core and back-substituting reconstructs a solution. All these tests
+must use one shared profile across the components.
+
+For the general system an inclusion-minimal inconsistent set of rows is a
+minimal binary dependency whose coefficients cancel and whose right-hand sides
+sum to one. To see the minimality assertion, a proper coefficient dependency
+with right-hand side one would itself contradict minimality; one with right-hand
+side zero could be removed, leaving a smaller contradiction. These row circuits,
+not necessarily graph cycles, are the general algebraic obstructions. A failed
+profile is not a failed specification: every admissible profile must fail.
+
+\subsection{The saturated NAND witness}
+\label{app:nand-witnesses}
+For the specification of Proposition~\ref{prop:nand8}, the occurrence word is
+\[
+(0,1,0,1,2,3,2,3,4,5,6,7,6,7,6,5,4,3,2,1).
+\]
+With ordinary state names $0,1,2$, the following assignments, in this occurrence
+order, realize the three allowed pairs of saturated correspondence bits:
+\begin{align*}
+00:\quad &(0,0,2,1,1,0,2,1,1,1,1,0,2,1,0,2,0,2,0,2),\\
+01:\quad &(0,0,2,1,1,0,2,1,1,0,2,1,1,0,0,2,2,2,0,2),\\
+10:\quad &(0,0,2,1,1,2,0,1,1,1,1,2,0,1,2,2,0,0,2,2).
+\end{align*}
+The $x$-bit compares the W-pairs at occurrences $(1,19)$ and $(5,17)$;
+the $y$-bit compares the E-pairs at $(4,6)$ and $(10,12)$. Reading the successors
+verifies that each repeated $(q,M)$ has the same direction and next state.
+States at each spatial vertex are distinct. These explicit assignments establish
+the positive cases without an enumeration argument; the main-text four-state
+contradiction excludes $11$.
+
+\subsection{The six-vertex staircase}
+\label{app:staircase}
+Take directions $\E\N\E\N\E$, doubled edge indices $1,3$, and phases $0,1$,
+respectively. Its word is
+\[
+ (0,1,2,1,2,3,4,5,4,3,4,3,2,1).
+\]
+All four internal vertices are saturated. Put $w=q_{13}=q_{11}$ for the
+singleton W-state of mask $\N\W$, and $e=q_4=q_6$ for the singleton E-state
+of mask $\E\Sdir$. Let $x$ compare the N-pairs $(q_1,q_3)$ and $(q_5,q_9)$,
+and let $y$ compare the S-pairs $(q_2,q_{12})$ and $(q_8,q_{10})$.
+The N-rows have successor pairs $(q_2,e)$ and $(e,q_{10})$.
+Identity correspondence would force $q_2=e$, contradicting the two different
+direction roles at one mask. Hence $x=1$, and the swapped correspondence forces
+$q_2=q_{10}$, so $y=1$. The S-rows have successor pairs $(q_3,w)$ and $(q_9,w)$;
+$y=1$ would force $q_3=w$, again contradicting distinct roles. Thus $y=0$.
+Equivalently these constraints contain
+\[
+ x=1,\qquad x+y=0,\qquad y=0,
+\]
+whose sum is $0=1$. This proves impossibility directly. The separate assertion
+that no smaller direction-consistent specification is impossible is an exact
+finite check, not part of this argument.

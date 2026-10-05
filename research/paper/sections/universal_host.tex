@@ -1,0 +1,294 @@
+\section{A universal host maze}\label{sec:universal-host}
+\label{subsec:universal-host-construction}
+
+Joining traps can change a queried compass mask even when the new edge was never
+traversed. A universal induced maze therefore requires protection of the entire
+execution, not just its recurrent edges.
+
+A five-cell path already shows the issue.  Number a vertical path $0,1,2,3,4$ from
+bottom to top and start the agents at $0$ and $4$.  There are legal completions with
+straight-axis rows for which the complete spatial words are
+\[
+  (0,1,2,1)^\infty,
+  \qquad
+  (4,3)^\infty.
+\]
+The distances are $4,2,2,2$ and then repeat, but every old cell is visited.  Any proper
+connected induced extension changes the mask of some visited old cell.  Thus one
+cannot demand that each original trap already contain a clean attachment site.
+
+\subsection{Clean attachment}
+\label{subsubsec:clean-attachment}
+
+\begin{lemma}[Clean attachment]
+\label{lem:clean-attachment}
+Let $V$ be an induced grid maze and let
+\[
+  (x_t,q_t,y_t,r_t)_{t\ge0}
+\]
+be a complete trapped execution in $V$.  Put
+\[
+  R=\{x_t:t\ge0\}\cup\{y_t:t\ge0\}.
+\]
+Let $C$ be a finite set of new cells, disjoint from $V$, such that the induced extension
+$V'=V\cup C$ is a maze and
+\[
+  \operatorname{dist}_1(C,R)\ge2.
+\]
+Then the tagged execution from the same starts is identical in $V$ and $V'$.
+In particular the extension introduces no rendezvous.
+\end{lemma}
+
+\begin{proof}
+Induct on time.  Suppose that both tagged positions agree through time $t$.  Each
+current cell belongs to $R$, and no new cell is a grid neighbor of it.  Its complete
+compass mask is therefore unchanged.  The controller queries the same row, returns the
+same direction and next state, and the selected old neighbor is still present.  Hence
+both next tagged positions agree.  The conclusion follows simultaneously for the two
+agents.
+\end{proof}
+
+The set $R$ must include transient visits. New edges at unvisited old cells are
+harmless: the lemma protects queried masks, not every old mask.
+
+\begin{figure}[t]
+\centering
+\input{figures/clean_attachment_schematic.tex}
+\caption{Clean attachment: the gray distance-one halo protects every cell in the complete
+visited set $R$. The new connector meets only an unvisited old gate and stays outside
+the halo; the drawing illustrates the clearance condition, not a particular trap.}
+\label{fig:clean-attachment}
+\end{figure}
+
+\subsection{Unused-cut stretching}
+\label{subsubsec:unused-cut-stretching}
+
+The five-cell example above still has an unused edge cut.  Stretching such a cut makes
+room for a protected port without modifying the masks of the old cells.
+
+\begin{lemma}[Unused-cut stretching]
+\label{lem:unused-cut-stretching}
+Let the vertical cut $x=k+\tfrac12$ cross at least one edge of an induced grid maze
+$V$, and suppose that neither complete trapped trajectory ever traverses an edge that
+crosses this cut.  Define
+\[
+\phi(x,y)=
+\begin{cases}
+(x,y),&x\le k,\\
+(x+4,y),&x\ge k+1.
+\end{cases}
+\]
+For every old crossing edge $(k,y)(k+1,y)$ insert the four cells
+\[
+ (k+1,y),(k+2,y),(k+3,y),(k+4,y)
+\]
+between its image endpoints $(k,y)$ and $(k+5,y)$.  Then every old image cell has
+exactly its original compass mask, every actually selected move of the trapped
+execution joins the images of the same two old cells, and Manhattan distances between
+old image cells do not decrease.  Moreover every inserted cell in the middle column
+$x=k+2$ has Manhattan distance at least two from every old image cell.
+\end{lemma}
+
+\begin{proof}
+Within either half-plane, $\phi$ is a translation, so noncrossing adjacencies and
+compass directions are unchanged.  At a crossing edge the left endpoint still has an
+east neighbor and the right endpoint still has a west neighbor, now through the
+inserted straight corridor; no inserted cell is adjacent to any other old image.
+Thus every old mask is exactly preserved.
+
+Mask preservation would not by itself preserve an execution that actually used a
+crossing edge, because such a move would enter a new corridor cell.  The unused-cut
+hypothesis excludes this: every selected old edge lies wholly in one half-plane and
+therefore maps to the same old adjacency.  Induction on time transports the entire
+tagged execution.
+
+Distances on one side are unchanged.  For points on opposite sides the horizontal
+separation increases by four, so Manhattan distance cannot decrease.  Finally, old
+left images have $x\le k$ and old right images have $x\ge k+5$; a cell with $x=k+2$
+is therefore at horizontal distance at least $2$ from the former and at least $3$
+from the latter.  This is the protected lane required for Lemma~\ref{lem:clean-attachment}.
+\end{proof}
+
+The horizontal version is obtained by writing the same geometric construction with
+$x$ and $y$ interchanged.  This is a statement about the embedding of a fixed execution;
+it does \emph{not} rotate or reflect the fixed controller.
+
+For the cuts used below exactly one old tree edge crosses the cut.  The replacement
+therefore subdivides that edge, and a simple route from the protected middle lane to an
+external port preserves the tree property and maximum degree three.
+
+\begin{figure}[t]
+\centering
+\input{figures/cut_stretching_schematic.tex}
+\caption{An unused crossing edge before and after width-four stretching. Four inserted
+cells preserve the old endpoint masks; the lane $x=k+2$ has clearance for a protected
+branch.}
+\label{fig:cut-stretching}
+\end{figure}
+
+\subsection{Portability of the junction leaves}
+\label{subsubsec:junction-portability}
+
+All nonjunction leaves of the case tree are paths and admit an explicitly proved
+unused cut through an edge not traversed by either complete execution.  The two final
+junction leaves require separate arguments.
+
+For G2, the W9 symbolic words confine one execution to the cells $B,J,A,U$ while the
+other alternates on its separated two-cycle; the boundary cell $V$ is never visited.
+Its outward ray is therefore a clean port.  For G1, one execution is the fixed word
+\[
+ B^0,D^1,F^1,D^1,F^1,\ldots
+\]
+and neither visits $V$ nor traverses $JB$.  The other begins $A^0,J^1$.  The G1 proof
+implies the dichotomy
+\[
+  V\text{ is never visited}
+  \qquad\text{or}\qquad
+  JB\text{ is never traversed by either execution}.
+\]
+Indeed, a first visit to $B$ can occur only as $B^1$ and immediately repeats the
+already visited tagged state $J^1$, while a visit to $V$ enters the permanent
+$U^1,V^1$ two-cycle.  The same execution therefore cannot visit both $B$ and $V$.
+In the first alternative we use the clean outward ray of $V$; in the second we stretch
+the unused cut through $JB$.  Both G1 variants are included in the fixed host in
+advance.  The choice of which one supplies the witness may depend on the controller.
+
+\subsection{Assembly of the universal tree}
+\label{subsubsec:universal-tree-assembly}
+
+Applying these port constructions to the inverse compass transports required by the
+case tree gives $172$ ported fragments: $156$ unused-cut fragments and $16$
+clean-boundary fragments.  The number exceeds $144$ because one oriented test can
+have more than one relevant proof provenance or attachment method, and G1 requires
+both of its portable alternatives in advance.
+
+Place the $172$ fragment boxes from left to right with two empty columns between
+successive boxes.  Extend each exposed port by a vertical stalk to one top horizontal
+rail, and join the stalks along that rail.  The separation prevents unintended induced
+adjacencies between fragments or stalks, while each fragment has exactly one connection
+to the global rail.  The local pieces are trees of maximum degree three, the stalks are
+paths, and the rail joins them without cycles.  The induced union is therefore a
+subcubic tree.
+
+\begin{figure}[t]
+\centering
+\input{figures/global_rail_assembly_schematic.tex}
+\caption{Universal-host assembly, shown schematically. Each separated fragment joins the
+rail through one stalk; the three displayed cell counts are disjoint contributions
+to the exact construction.}
+\label{fig:global-rail}
+\end{figure}
+
+The exact audited realization contains $2{,}792$ cells in the disjoint ported
+fragments, $990$ stalk cells strictly between the fragment ports and the rail, and
+$1{,}430$ rail cells.  Hence
+\begin{equation}
+\label{eq:universal-maze-count}
+  |U|=2792+990+1430=5212.
+\end{equation}
+Its induced graph has $5{,}211$ edges and maximum degree $3$.
+
+\begin{theorem}[One universal two-state maze]
+\label{thm:universal-5212}
+There exists a fixed finite connected induced grid tree $U$ with $5{,}212$ cells and
+maximum degree three such that for every legal deterministic controller $A$ with at
+most two states there are state-$0$ starts $x_A,y_A\in U$, with
+$\|x_A-y_A\|_1\ge2$, for which the two copies of $A$ never reach Manhattan distance
+at most one.  Equivalently, the quantifier order is
+\[
+  \boxed{\exists U\;\forall A\;\exists(x_A,y_A).}
+\]
+\end{theorem}
+
+\begin{proof}
+Fix $A$.  The case tree and Theorem~\ref{thm:human-finite-basis} choose a
+terminal source trap together with one simultaneous compass normalization.  Its
+inverse-transported oriented instance is represented among the fixed ported fragments.
+For a path leaf, its proved full-execution unused cut gives the protected embedding;
+for G2 use the unvisited gate; for G1 use the clean-$V$/unused-$JB$ dichotomy.  The
+local attachment lemmas preserve the complete unsuccessful execution.  The separated
+global placement adds no new neighbor to any cell visited by that execution, so it is
+preserved once more in the same fixed maze $U$.  Only the choice of fragment and its
+recorded start pair depends on $A$.
+\end{proof}
+
+The obstruction basis and portability lemmas prove existence constructively.
+The exact $5{,}212$-cell placement is separately validated from all $172$ fragment
+records, their starts and embeddings, and the final induced graph; coordinate
+verification does not replace the assembly proof.
+
+\subsection{The universal-maze parameter}
+\label{subsec:universal-maze-parameter}
+
+Theorem~\ref{thm:universal-5212} suggests a parameter different from the
+controller-dependent quantity $F(2)$.  Let
+\[
+\begin{split}
+ u_2=\min\bigl\{|U|:\;& U\text{ is a finite connected induced grid maze and }\\
+ &\forall A,\ |Q_A|\le2,\ \exists x_A,y_A\in U\text{ trapping }A\bigr\},
+\end{split}
+\]
+where the starts are state-$0$ and initially noncontacting.  Theorem~\ref{thm:universal-5212}
+shows that this minimum is finite and gives $u_2\le5212$.
+
+\begin{corollary}[Every exact size above the construction]
+\label{cor:universal-exact-size}
+For every integer $n\ge5212$ there exists a universal induced grid tree of maximum
+degree three with exactly $n$ cells.
+\end{corollary}
+
+\begin{proof}
+Extend the exposed right end of the top rail by an induced horizontal ray of exactly
+$n-5212$ new cells.  In the explicit placement the first new cell is at Manhattan
+distance $8$ from the union of all copied original gadget-cell images, a superset of
+every preserved witness trajectory; distances only increase farther along the ray.
+Thus no mask queried by any preserved witness changes.  The first new cell has only the
+old rail endpoint as an old neighbor, so the extension is a path attached at one
+vertex.  Connectedness, acyclicity, inducedness, and maximum degree three are
+preserved.
+\end{proof}
+
+The opposite direction is currently computational.
+
+\begin{proposition}[Computer-assisted lower bound]
+\label{prop:u2-lower-eight}
+The universal-maze parameter satisfies
+\[
+  u_2\ge8.
+\]
+Consequently
+\[
+  \boxed{8\le u_2\le5212.}
+\]
+\end{proposition}
+
+\paragraph{Verification basis.}
+The lower bound is a quantifier-reversal statement.  It does not follow from the fact
+that every individual two-state controller has some trap on at most seven cells.
+Instead, an exhaustive checker enumerates every connected fixed induced grid cell set
+through size seven and tests the eight compass conjugates of the extremal controller
+$A^\star$.  The controller $A^\star$ has no trap below seven cells.  Among all
+seven-cell geometries, a single fixed geometry traps at most four of the eight
+conjugates, even when its start pair may be chosen separately for each conjugate.
+Thus no maze with at most seven cells is universal for this eight-controller subset.
+This proposition is computer-assisted; no deductive classification of all seven-cell
+universal candidates is claimed.
+
+It is also useful to isolate the tree-restricted version
+\[
+ u_{2,\mathrm{tree3}}
+ =\min\bigl\{|U|:\ U\text{ is universal and is an induced grid tree with }
+ \Delta(U)\le3\bigr\}.
+\]
+The construction proves
+\[
+  8\le u_2\le u_{2,\mathrm{tree3}}\le5212,
+\]
+while neither minimum is known.
+
+The displayed universal-host quantifiers concern distance-one failure, not the
+classical exploration-trap parameter of Section~\ref{sec:related}.
+\paragraph{Sharpness data for $A^\star$.}
+Minimal seven-cell traps of the extremal controller are not all trees; the exhaustive
+supplementary data also contain cyclic mechanisms.  No detailed classification of
+those traps is needed for Theorem~\ref{thm:universal-5212}.

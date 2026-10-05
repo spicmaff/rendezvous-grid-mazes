@@ -1,0 +1,23 @@
+{
+  "schema": "rendezvous.system-notice-origins.v1",
+  "notices": [
+    {
+      "file": "LICENSES/GUST-FONT-LICENSE.txt",
+      "origin": "texmf/doc/fonts/lm/GUST-FONT-LICENSE.TXT",
+      "source_sha256": "49ea6cb9257bbee0a3979c48a774cd221550ac1c20c95549efe45fc99cc18050",
+      "selection": "complete license text"
+    },
+    {
+      "file": "LICENSES/LPPL-1.3c.txt",
+      "origin": "doc/texlive-base/copyright",
+      "source_sha256": "d7f9a14c6f223e71df0329ad164351d2188291cc20a385a30c83f21eaa42de61",
+      "selection": "complete LPPL 1.3c text in section B, excluding wrapper headings"
+    },
+    {
+      "file": "LICENSES/OFL-1.1.txt",
+      "origin": "inkscape/doc/OFL-1.1.txt",
+      "source_sha256": "7d883ba6132ee00ba5dc7cc133a9fb476eb63cd29d07f4ebabafdd182241f45d",
+      "selection": "generic SIL OFL 1.1 license text, excluding unrelated font notices"
+    }
+  ]
+}

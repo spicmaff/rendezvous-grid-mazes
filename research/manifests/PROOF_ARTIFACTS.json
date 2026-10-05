@@ -1,0 +1,468 @@
+{
+  "schema": "rendezvous.proof-artifacts.v1",
+  "claims": [
+    {
+      "id": "PATH_LOWER",
+      "claim": "F_{P,1}(2)>7; lower half of F_{P,1}(2)=8, and dependent M_{P,1}(n)=2 for 4<=n<=7",
+      "proof_status": "COMPUTER-ASSISTED PROVED",
+      "proof_critical": true,
+      "required_full_stage": true,
+      "paper_labels": [
+        "thm:path-two-state",
+        "eq:M-path-small",
+        "prop:path-seven-survivor"
+      ],
+      "expected_deterministic_output": {
+        "path_counts_through_7": [
+          1,
+          2,
+          6,
+          14,
+          34,
+          82,
+          198
+        ],
+        "unordered_far_pairs": 4042,
+        "failures": 0,
+        "two_generators_equal": true
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/paths/check.py"
+      ],
+      "artifacts": [
+        "supplement/paths/check.py",
+        "supplement/expected/path_certificate.json"
+      ]
+    },
+    {
+      "id": "SELECTED44",
+      "claim": "Selected 44 instances are complete, restricted to the fixed 144-candidate menu",
+      "proof_status": "COMPUTER-ASSISTED PROVED",
+      "proof_critical": true,
+      "required_full_stage": true,
+      "paper_labels": [
+        "prop:44-candidate-minimum"
+      ],
+      "expected_deterministic_output": {
+        "physical_functions": 144,
+        "selected": 44,
+        "variables": 21049,
+        "clauses": 146795,
+        "base_clauses": 146751,
+        "lrat_rup_additions": 1414,
+        "empty_clause": true
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/obstructions/selected44/verify.py",
+        "supplement/common/lrat_rup.py"
+      ],
+      "artifacts": [
+        "supplement/obstructions/basis144/family.json",
+        "supplement/obstructions/basis144/normalized_candidates.json",
+        "supplement/obstructions/basis144/functions/H001.json",
+        "supplement/obstructions/basis144/functions/H002.json",
+        "supplement/obstructions/basis144/functions/H003.json",
+        "supplement/obstructions/basis144/functions/H004.json",
+        "supplement/obstructions/basis144/functions/H005.json",
+        "supplement/obstructions/basis144/functions/H006.json",
+        "supplement/obstructions/basis144/functions/H007.json",
+        "supplement/obstructions/basis144/functions/H008.json",
+        "supplement/obstructions/basis144/functions/H009.json",
+        "supplement/obstructions/basis144/functions/H010.json",
+        "supplement/obstructions/basis144/functions/H011.json",
+        "supplement/obstructions/basis144/functions/H012.json",
+        "supplement/obstructions/basis144/functions/H013.json",
+        "supplement/obstructions/basis144/functions/H014.json",
+        "supplement/obstructions/basis144/functions/H015.json",
+        "supplement/obstructions/basis144/functions/H016.json",
+        "supplement/obstructions/basis144/functions/H017.json",
+        "supplement/obstructions/basis144/functions/H018.json",
+        "supplement/obstructions/basis144/functions/H019.json",
+        "supplement/obstructions/basis144/functions/H020.json",
+        "supplement/obstructions/basis144/functions/H021.json",
+        "supplement/obstructions/basis144/functions/H022.json",
+        "supplement/obstructions/basis144/functions/H023.json",
+        "supplement/obstructions/basis144/functions/H024.json",
+        "supplement/obstructions/basis144/functions/H025.json",
+        "supplement/obstructions/basis144/functions/H026.json",
+        "supplement/obstructions/basis144/functions/H027.json",
+        "supplement/obstructions/basis144/functions/H028.json",
+        "supplement/obstructions/basis144/functions/H029.json",
+        "supplement/obstructions/basis144/functions/H030.json",
+        "supplement/obstructions/basis144/functions/H031.json",
+        "supplement/obstructions/basis144/functions/H032.json",
+        "supplement/obstructions/basis144/functions/H033.json",
+        "supplement/obstructions/basis144/functions/H034.json",
+        "supplement/obstructions/basis144/functions/H035.json",
+        "supplement/obstructions/basis144/functions/H036.json",
+        "supplement/obstructions/basis144/functions/H037.json",
+        "supplement/obstructions/basis144/functions/H038.json",
+        "supplement/obstructions/basis144/functions/H039.json",
+        "supplement/obstructions/basis144/functions/H040.json",
+        "supplement/obstructions/basis144/functions/H041.json",
+        "supplement/obstructions/basis144/functions/H042.json",
+        "supplement/obstructions/basis144/functions/H043.json",
+        "supplement/obstructions/basis144/functions/H044.json",
+        "supplement/obstructions/basis144/functions/H045.json",
+        "supplement/obstructions/basis144/functions/H046.json",
+        "supplement/obstructions/basis144/functions/H047.json",
+        "supplement/obstructions/basis144/functions/H048.json",
+        "supplement/obstructions/basis144/functions/H049.json",
+        "supplement/obstructions/basis144/functions/H050.json",
+        "supplement/obstructions/basis144/functions/H051.json",
+        "supplement/obstructions/basis144/functions/H052.json",
+        "supplement/obstructions/basis144/functions/H053.json",
+        "supplement/obstructions/basis144/functions/H054.json",
+        "supplement/obstructions/basis144/functions/H055.json",
+        "supplement/obstructions/basis144/functions/H056.json",
+        "supplement/obstructions/basis144/functions/H057.json",
+        "supplement/obstructions/basis144/functions/H058.json",
+        "supplement/obstructions/basis144/functions/H059.json",
+        "supplement/obstructions/basis144/functions/H060.json",
+        "supplement/obstructions/basis144/functions/H061.json",
+        "supplement/obstructions/basis144/functions/H062.json",
+        "supplement/obstructions/basis144/functions/H063.json",
+        "supplement/obstructions/basis144/functions/H064.json",
+        "supplement/obstructions/basis144/functions/H065.json",
+        "supplement/obstructions/basis144/functions/H066.json",
+        "supplement/obstructions/basis144/functions/H067.json",
+        "supplement/obstructions/basis144/functions/H068.json",
+        "supplement/obstructions/basis144/functions/H069.json",
+        "supplement/obstructions/basis144/functions/H070.json",
+        "supplement/obstructions/basis144/functions/H071.json",
+        "supplement/obstructions/basis144/functions/H072.json",
+        "supplement/obstructions/basis144/functions/H073.json",
+        "supplement/obstructions/basis144/functions/H074.json",
+        "supplement/obstructions/basis144/functions/H075.json",
+        "supplement/obstructions/basis144/functions/H076.json",
+        "supplement/obstructions/basis144/functions/H077.json",
+        "supplement/obstructions/basis144/functions/H078.json",
+        "supplement/obstructions/basis144/functions/H079.json",
+        "supplement/obstructions/basis144/functions/H080.json",
+        "supplement/obstructions/basis144/functions/H081.json",
+        "supplement/obstructions/basis144/functions/H082.json",
+        "supplement/obstructions/basis144/functions/H083.json",
+        "supplement/obstructions/basis144/functions/H084.json",
+        "supplement/obstructions/basis144/functions/H085.json",
+        "supplement/obstructions/basis144/functions/H086.json",
+        "supplement/obstructions/basis144/functions/H087.json",
+        "supplement/obstructions/basis144/functions/H088.json",
+        "supplement/obstructions/basis144/functions/H089.json",
+        "supplement/obstructions/basis144/functions/H090.json",
+        "supplement/obstructions/basis144/functions/H091.json",
+        "supplement/obstructions/basis144/functions/H092.json",
+        "supplement/obstructions/basis144/functions/H093.json",
+        "supplement/obstructions/basis144/functions/H094.json",
+        "supplement/obstructions/basis144/functions/H095.json",
+        "supplement/obstructions/basis144/functions/H096.json",
+        "supplement/obstructions/basis144/functions/H097.json",
+        "supplement/obstructions/basis144/functions/H098.json",
+        "supplement/obstructions/basis144/functions/H099.json",
+        "supplement/obstructions/basis144/functions/H100.json",
+        "supplement/obstructions/basis144/functions/H101.json",
+        "supplement/obstructions/basis144/functions/H102.json",
+        "supplement/obstructions/basis144/functions/H103.json",
+        "supplement/obstructions/basis144/functions/H104.json",
+        "supplement/obstructions/basis144/functions/H105.json",
+        "supplement/obstructions/basis144/functions/H106.json",
+        "supplement/obstructions/basis144/functions/H107.json",
+        "supplement/obstructions/basis144/functions/H108.json",
+        "supplement/obstructions/basis144/functions/H109.json",
+        "supplement/obstructions/basis144/functions/H110.json",
+        "supplement/obstructions/basis144/functions/H111.json",
+        "supplement/obstructions/basis144/functions/H112.json",
+        "supplement/obstructions/basis144/functions/H113.json",
+        "supplement/obstructions/basis144/functions/H114.json",
+        "supplement/obstructions/basis144/functions/H115.json",
+        "supplement/obstructions/basis144/functions/H116.json",
+        "supplement/obstructions/basis144/functions/H117.json",
+        "supplement/obstructions/basis144/functions/H118.json",
+        "supplement/obstructions/basis144/functions/H119.json",
+        "supplement/obstructions/basis144/functions/H120.json",
+        "supplement/obstructions/basis144/functions/H121.json",
+        "supplement/obstructions/basis144/functions/H122.json",
+        "supplement/obstructions/basis144/functions/H123.json",
+        "supplement/obstructions/basis144/functions/H124.json",
+        "supplement/obstructions/basis144/functions/H125.json",
+        "supplement/obstructions/basis144/functions/H126.json",
+        "supplement/obstructions/basis144/functions/H127.json",
+        "supplement/obstructions/basis144/functions/H128.json",
+        "supplement/obstructions/basis144/functions/H129.json",
+        "supplement/obstructions/basis144/functions/H130.json",
+        "supplement/obstructions/basis144/functions/H131.json",
+        "supplement/obstructions/basis144/functions/H132.json",
+        "supplement/obstructions/basis144/functions/H133.json",
+        "supplement/obstructions/basis144/functions/H134.json",
+        "supplement/obstructions/basis144/functions/H135.json",
+        "supplement/obstructions/basis144/functions/H136.json",
+        "supplement/obstructions/basis144/functions/H137.json",
+        "supplement/obstructions/basis144/functions/H138.json",
+        "supplement/obstructions/basis144/functions/H139.json",
+        "supplement/obstructions/basis144/functions/H140.json",
+        "supplement/obstructions/basis144/functions/H141.json",
+        "supplement/obstructions/basis144/functions/H142.json",
+        "supplement/obstructions/basis144/functions/H143.json",
+        "supplement/obstructions/basis144/functions/H144.json",
+        "supplement/obstructions/selected44/family.json",
+        "supplement/obstructions/selected44/encoding_manifest.json",
+        "supplement/obstructions/selected44/escaping.cnf",
+        "supplement/obstructions/selected44/escaping.lrat"
+      ]
+    },
+    {
+      "id": "PACKING44",
+      "claim": "No complete subfamily of the fixed 144 candidates has fewer than 44 members",
+      "proof_status": "COMPUTER-ASSISTED PROVED",
+      "proof_critical": true,
+      "required_full_stage": true,
+      "paper_labels": [
+        "prop:44-candidate-minimum"
+      ],
+      "expected_deterministic_output": {
+        "controllers": 44,
+        "instances_per_controller": 144,
+        "nonempty_badsets": true,
+        "pairwise_disjoint": true,
+        "saved_sets_match": true
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/obstructions/selected44/verify.py"
+      ],
+      "artifacts": [
+        "supplement/obstructions/selected44/packing.json",
+        "supplement/obstructions/basis144/family.json"
+      ]
+    },
+    {
+      "id": "BASIS144",
+      "claim": "144/76/22/13 inventory; completeness of the family remains a human proof",
+      "proof_status": "EXACT FINITE CHECK; HUMAN PROVED completeness",
+      "proof_critical": false,
+      "required_full_stage": true,
+      "paper_labels": [
+        "thm:human-finite-basis"
+      ],
+      "expected_deterministic_output": {
+        "source_records": 34,
+        "inverse_transports": 272,
+        "oriented_instances": 144,
+        "geometries": 76,
+        "instance_orbits": 22,
+        "geometric_types": 13
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/obstructions/universal_host/verify.py",
+        "supplement/obstructions/basis144/upper_predicates.py"
+      ],
+      "artifacts": [
+        "supplement/obstructions/basis144/family.json"
+      ]
+    },
+    {
+      "id": "HOST172",
+      "claim": "172 ported fragments and 5212-cell universal induced subcubic tree; protected exact-size extension for every n>=5212",
+      "proof_status": "EXACT FINITE CHECK; HUMAN PROVED construction",
+      "proof_critical": false,
+      "required_full_stage": true,
+      "paper_labels": [
+        "thm:universal-5212",
+        "cor:universal-exact-size"
+      ],
+      "expected_deterministic_output": {
+        "fragments": 172,
+        "vertices": 5212,
+        "edges": 5211,
+        "max_degree": 3,
+        "connected": true,
+        "acyclic": true,
+        "transport_cases": 928,
+        "extension_clearance": 8,
+        "all_saved_starts_far": true
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/obstructions/universal_host/verify.py",
+        "supplement/obstructions/basis144/upper_predicates.py"
+      ],
+      "artifacts": [
+        "supplement/obstructions/universal_host/host.json",
+        "supplement/obstructions/basis144/family.json"
+      ]
+    },
+    {
+      "id": "U2_LOWER",
+      "claim": "u_2>=8, including smaller-size premise; consequent 8<=u_2<=u_{2,tree3}<=5212",
+      "proof_status": "COMPUTER-ASSISTED PROVED",
+      "proof_critical": true,
+      "required_full_stage": true,
+      "paper_labels": [
+        "prop:u2-lower-eight"
+      ],
+      "expected_deterministic_output": {
+        "fixed_connected_counts": [
+          1,
+          2,
+          6,
+          19,
+          63,
+          216,
+          760
+        ],
+        "conjugates": 8,
+        "seven_cell_coverage_histogram": {
+          "0": 594,
+          "1": 112,
+          "2": 52,
+          "4": 2
+        },
+        "max_coverage": 4,
+        "all_smaller_failures": 0,
+        "complete_per_geometry_file": "all_geometries.jsonl"
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/obstructions/universal_lower_bound/verify.py",
+        "supplement/common/grid.py"
+      ],
+      "artifacts": [
+        "supplement/obstructions/universal_lower_bound/astar.json",
+        "supplement/common/grid.py"
+      ]
+    },
+    {
+      "id": "REALIZATION_CORPUS",
+      "claim": "Finite criterion/oracle comparison through eight vertices; does not prove all-size iff",
+      "proof_status": "VALIDATION ONLY; HUMAN PROVED all-size criterion",
+      "proof_critical": false,
+      "required_full_stage": true,
+      "paper_labels": [
+        "sec:realization",
+        "app:computational-provenance",
+        "thm:three-state-realization"
+      ],
+      "expected_deterministic_output": {
+        "specifications": 203260,
+        "realizable": 94852,
+        "direction_rejections": 105128,
+        "residual_rejections": 3280,
+        "mismatches": 0,
+        "corpus_byte_identity": true
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/realization/scripts/fresh_audit.cpp"
+      ],
+      "artifacts": [
+        "supplement/realization/scripts/fresh_audit.cpp",
+        "supplement/realization/data/fresh_n2.jsonl",
+        "supplement/realization/data/fresh_n3.jsonl",
+        "supplement/realization/data/fresh_n4.jsonl",
+        "supplement/realization/data/fresh_n5.jsonl",
+        "supplement/realization/data/fresh_n6.jsonl",
+        "supplement/realization/data/fresh_n7.jsonl",
+        "supplement/realization/data/fresh_n8.jsonl",
+        "supplement/realization/data/fresh_summary.json"
+      ]
+    },
+    {
+      "id": "REALIZATION_WITNESSES",
+      "claim": "Saved legal controller tables, affine profiles, tagged least periods and symmetry comparisons",
+      "proof_status": "VALIDATION ONLY",
+      "proof_critical": false,
+      "required_full_stage": true,
+      "paper_labels": [
+        "app:computational-provenance"
+      ],
+      "expected_deterministic_output": {
+        "complete_tables": 189704,
+        "positive_profiles": 94852,
+        "specifications": 203260,
+        "mismatches": 0
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/realization/scripts/validate_evidence.py"
+      ],
+      "artifacts": [
+        "supplement/realization/data/fresh_n2.jsonl",
+        "supplement/realization/data/fresh_n3.jsonl",
+        "supplement/realization/data/fresh_n4.jsonl",
+        "supplement/realization/data/fresh_n5.jsonl",
+        "supplement/realization/data/fresh_n6.jsonl",
+        "supplement/realization/data/fresh_n7.jsonl",
+        "supplement/realization/data/fresh_n8.jsonl",
+        "supplement/realization/data/python_validation.json"
+      ]
+    },
+    {
+      "id": "STAIRCASE_NAND",
+      "claim": "243 negative staircase certificates and saturated NAND projection 12/4/4/0; proof statuses unchanged",
+      "proof_status": "VALIDATION ONLY; HUMAN PROVED examples",
+      "proof_critical": false,
+      "required_full_stage": true,
+      "paper_labels": [
+        "app:computational-provenance",
+        "prop:nand8",
+        "app:nand-witnesses",
+        "app:staircase"
+      ],
+      "expected_deterministic_output": {
+        "staircase_profiles": 243,
+        "contradictions": 243,
+        "nand_solutions": 20,
+        "nand_projection": {
+          "00": 12,
+          "01": 4,
+          "10": 4,
+          "11": 0
+        }
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/realization/scripts/negative_certificates.py",
+        "supplement/realization/scripts/seam_probes.py"
+      ],
+      "artifacts": [
+        "supplement/realization/data/fresh_staircase_certificates.json",
+        "supplement/realization/data/probe_saturated_nand8.json",
+        "supplement/realization/scripts/validate_evidence.py"
+      ]
+    },
+    {
+      "id": "CONSTRUCTION_EXAMPLES",
+      "claim": "Sharp-period, four-state contour, phase-locking, U-family and incidence pseudoforest implementation checks",
+      "proof_status": "VALIDATION ONLY",
+      "proof_critical": false,
+      "required_full_stage": true,
+      "paper_labels": [
+        "app:structural-consequences",
+        "app:realization-bookkeeping",
+        "thm:four-state-path",
+        "thm:phase-locking",
+        "prop:affine-graph-balance",
+        "prop:residual-cycles"
+      ],
+      "expected_deterministic_output": {
+        "sharp_pairs": 748,
+        "four_state_geometries": 1612,
+        "phase_specs": 256,
+        "U_cases": 64,
+        "pseudoforest_systems": 23361,
+        "mismatches": 0
+      },
+      "provenance": "manifests/PROVENANCE.json",
+      "checkers": [
+        "supplement/realization/scripts/consequence_replay.py"
+      ],
+      "artifacts": [
+        "supplement/realization/data/consequence_replay.json",
+        "supplement/realization/data/fresh_sharp_family.json",
+        "supplement/realization/data/fresh_phase_family.json"
+      ]
+    }
+  ]
+}

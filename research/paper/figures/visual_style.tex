@@ -1,0 +1,32 @@
+% One vector-graphic language, shared by every scientific figure.
+\definecolor{rvInk}{HTML}{253846}
+\definecolor{rvBlue}{HTML}{175D87}
+\definecolor{rvOrange}{HTML}{B45E22}
+\definecolor{rvGray}{HTML}{E7EBEE}
+\definecolor{rvMid}{HTML}{77838B}
+\tikzset{
+ maze/.style={font=\small,line cap=round,line join=round,text=rvInk,
+   every label/.style={font=\footnotesize,inner sep=1.4pt,text=rvInk}},
+ cell/.style={circle,draw=rvInk,fill=white,line width=.6pt,inner sep=0pt,minimum size=4.4pt},
+ startA/.style={cell,draw=rvBlue,fill=rvBlue!15,line width=.9pt,minimum size=6pt},
+ startB/.style={rectangle,draw=rvOrange,fill=rvOrange!18,line width=.9pt,inner sep=0pt,minimum size=6pt},
+ gate/.style={rectangle,draw=rvMid,fill=white,line width=.7pt,inner sep=0pt,minimum size=5pt},
+ edge/.style={draw=rvInk!70,line width=.65pt},
+ quiet/.style={draw=rvMid,line width=.7pt},
+ supportA/.style={draw=rvBlue,line width=1.45pt},
+ supportB/.style={draw=rvOrange,line width=.65pt,double=white,double distance=.6pt},
+ transientA/.style={draw=rvBlue,line width=.8pt,densely dashed,-{Stealth[length=3.4pt]}},
+ transientB/.style={draw=rvOrange,line width=.8pt,densely dashed,-{Stealth[length=3.4pt]}},
+ flow/.style={draw=rvInk,line width=.7pt,-{Stealth[length=3.4pt]}},
+ paneltitle/.style={font=\small\sffamily\bfseries,anchor=west},
+ note/.style={font=\footnotesize,align=left,anchor=west},
+ lightpanel/.style={draw=rvGray,fill=rvGray!23,line width=.55pt,rounded corners=1mm},
+ protected/.style={fill=rvGray,draw=white,line width=.4pt}
+}
+% N is always up and E right in actual grid embeddings. For abstract preferred
+% directions the figure explicitly labels a,b instead, never a false compass.
+\newcommand{\mazeCompass}[2]{%
+ \begin{scope}[shift={(#1,#2)}]
+ \draw[flow] (0,0)--(0,.42) node[above,font=\scriptsize,inner sep=1pt] {$\N$};
+ \draw[flow] (0,0)--(.42,0) node[right,font=\scriptsize,inner sep=1pt] {$\E$};
+ \end{scope}}

@@ -1,0 +1,549 @@
+{
+  "instance": {
+    "id": "H001",
+    "n": 5,
+    "shape": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "start": [
+      0,
+      4
+    ],
+    "start_convention": "ordered"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "kind": "SUCCESS"
+    },
+    {
+      "id": 1,
+      "kind": "TRAP"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 4,
+        "state": 1
+      },
+      "id": 2,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 2,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 2,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 1
+      },
+      "id": 3,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 1
+      },
+      "id": 4,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 4,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 1,
+        "state": 1
+      },
+      "id": 5,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 3,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 5,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 0
+      },
+      "id": 6,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 4,
+        "state": 1
+      },
+      "id": 7,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 7,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 1
+      },
+      "id": 8,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 1,
+        "state": 1
+      },
+      "id": 9,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 9,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 1
+      },
+      "id": 10,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 8,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 10,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 0
+      },
+      "id": 11,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 6,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 11,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 4,
+        "state": 0
+      },
+      "id": 12,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 0
+      },
+      "id": 13,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 1,
+        "state": 1
+      },
+      "id": 14,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 14,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 0
+      },
+      "id": 15,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 13,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 15,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 1
+      },
+      "id": 16,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 0
+      },
+      "id": 17,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 17,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 13,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 5,
+        "state": 1
+      },
+      "id": 18,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 16,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 18,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 4,
+        "state": 0
+      },
+      "id": 19,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 12,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 19,
+          "direction": "N",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 1,
+        "state": 0
+      },
+      "id": 20,
+      "kind": "QUERY"
+    }
+  ],
+  "root": 20,
+  "schema": "rendezvous.exact-local-function.v1",
+  "stats": {
+    "choice_expansions": 49,
+    "dag_nodes": 21,
+    "hashcons_hits": 4,
+    "max_assigned_entries": 6,
+    "product_steps": 148,
+    "query_nodes": 19,
+    "raw_success_leaves": 62,
+    "raw_trap_leaves": 22,
+    "redundant_queries": 26,
+    "success_path_count": 31,
+    "symbolic_calls": 133,
+    "trap_path_count": 16
+  }
+}

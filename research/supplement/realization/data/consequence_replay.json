@@ -1,0 +1,121 @@
+{
+  "sharp_family": {
+    "pairs": 748,
+    "s_range": [
+      2,
+      12
+    ],
+    "n_range": [
+      3,
+      70
+    ],
+    "mismatches": 0
+  },
+  "four_state_contours": {
+    "geometries": 1612,
+    "mismatches": 0
+  },
+  "phase_locking_family": {
+    "specifications": 256,
+    "mismatches": 0
+  },
+  "U_family": {
+    "positive_cases": 64,
+    "mismatches": 0
+  },
+  "basin_separation": {
+    "good_cycles": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    ],
+    "bad_cycles": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ]
+    ],
+    "bad_pair_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "both_distances": 2
+  },
+  "forest_unicycle": {
+    "all_systems": 41449,
+    "pseudoforests": 23361,
+    "forests": 11714,
+    "mismatches": 0
+  }
+}

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript using the known author and title metadata."
+title: "Memory, Recurrent Geometry, and Rendezvous Traps in Induced Grid Mazes"
+type: software
+authors:
+  - family-names: "Fofonov"
+    given-names: "Michael"
+    affiliation: "Alferov University, 8/3 Khlopina Str., St. Petersburg 194021, Russia."
+  - family-names: "Antonchikov"
+    given-names: "Artem"
+    affiliation: "Moscow Institute of Physics and Technology (National Research University), 9 Institutskiy per., Dolgoprudny, Moscow Region 141700, Russian Federation."
+preferred-citation:
+  type: unpublished
+  title: "Memory, Recurrent Geometry, and Rendezvous Traps in Induced Grid Mazes"
+  authors:
+    - family-names: "Fofonov"
+      given-names: "Michael"
+    - family-names: "Antonchikov"
+      given-names: "Artem"

@@ -1,0 +1,68 @@
+{
+  "assignments": 324,
+  "solutions": 5,
+  "projection": {
+    "": 5
+  },
+  "relaxed_projection": [],
+  "witnesses": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      2,
+      0,
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      1
+    ]
+  ],
+  "correspondence_masks": [],
+  "directions": "EEEE",
+  "phases": "----",
+  "fixed_direction_projection": [
+    "00",
+    "01",
+    "10"
+  ]
+}

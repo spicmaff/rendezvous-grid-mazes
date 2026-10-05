@@ -1,0 +1,189 @@
+{
+  "schema": "rendezvous.controller.v1",
+  "paper_reference": "paper/sections/core_extremal.tex#tab:astar",
+  "states": 2,
+  "initial_state": 0,
+  "direction_bits": "NESW",
+  "entries": [
+    {
+      "state": 0,
+      "mask": 1,
+      "direction": "N",
+      "next_state": 0
+    },
+    {
+      "state": 0,
+      "mask": 2,
+      "direction": "E",
+      "next_state": 1
+    },
+    {
+      "state": 0,
+      "mask": 3,
+      "direction": "N",
+      "next_state": 0
+    },
+    {
+      "state": 0,
+      "mask": 4,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 0,
+      "mask": 5,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 0,
+      "mask": 6,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 0,
+      "mask": 7,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 0,
+      "mask": 8,
+      "direction": "W",
+      "next_state": 1
+    },
+    {
+      "state": 0,
+      "mask": 9,
+      "direction": "N",
+      "next_state": 1
+    },
+    {
+      "state": 0,
+      "mask": 10,
+      "direction": "W",
+      "next_state": 0
+    },
+    {
+      "state": 0,
+      "mask": 11,
+      "direction": "W",
+      "next_state": 0
+    },
+    {
+      "state": 0,
+      "mask": 12,
+      "direction": "W",
+      "next_state": 0
+    },
+    {
+      "state": 0,
+      "mask": 13,
+      "direction": "S",
+      "next_state": 0
+    },
+    {
+      "state": 0,
+      "mask": 14,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 0,
+      "mask": 15,
+      "direction": "E",
+      "next_state": 0
+    },
+    {
+      "state": 1,
+      "mask": 1,
+      "direction": "N",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 2,
+      "direction": "E",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 3,
+      "direction": "E",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 4,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 5,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 6,
+      "direction": "E",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 7,
+      "direction": "E",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 8,
+      "direction": "W",
+      "next_state": 0
+    },
+    {
+      "state": 1,
+      "mask": 9,
+      "direction": "W",
+      "next_state": 0
+    },
+    {
+      "state": 1,
+      "mask": 10,
+      "direction": "E",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 11,
+      "direction": "E",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 12,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 13,
+      "direction": "S",
+      "next_state": 0
+    },
+    {
+      "state": 1,
+      "mask": 14,
+      "direction": "S",
+      "next_state": 1
+    },
+    {
+      "state": 1,
+      "mask": 15,
+      "direction": "S",
+      "next_state": 1
+    }
+  ]
+}

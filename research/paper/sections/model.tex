@@ -1,0 +1,141 @@
+\section{Model and extremal parameters}\label{sec:general-model}\label{sec:model}
+
+Identify the compass directions with the unit vectors
+\[
+ \N=(0,1),\qquad \E=(1,0),\qquad \Sdir=(0,-1),\qquad \W=(-1,0),
+ \qquad D=\{\N,\E,\Sdir,\W\}.
+\]
+Juxtaposition abbreviates a mask, for example $\N\Sdir=\{\N,\Sdir\}$.
+A \emph{maze} is a finite nonempty set $V\subset\Z^2$ whose induced grid graph is connected.  Thus every pair of cells of Manhattan distance one is joined by an edge.  The mask observed at $x\in V$ is
+\[
+ M_V(x)=\{d\in D:x+d\in V\}.
+\]
+We write $d_V$ for graph distance in the induced grid graph and $d_1(x,y)=\|x-y\|_1$ for Manhattan distance; always $d_1(x,y)\le d_V(x,y)$.
+
+\begin{definition}[Controller and execution]\label{def:controller-general}
+A controller $A$ consists of a finite nonempty state set $Q_A$, a distinguished initial state $0$, and a deterministic legal transition table
+\[
+ \delta_A:Q_A\times(2^D\setminus\{\varnothing\})\longrightarrow D\times Q_A,
+ \qquad \delta_A(q,M)=(d,r),\quad d\in M.
+\]
+The direction is written first and the new state second.  Both agents use the same table and the same global compass, start in state $0$, and move synchronously.  There is no wait action, marking, communication, external clock, or access to coordinates.  For $|V|\ge2$ the one-agent map is
+\[
+ \Phi_{A,V}(x,q)=(x+d,r),\qquad (d,r)=\delta_A(q,M_V(x)).
+\]
+Starting from cells $x,y\in V$, the two copies iterate this map in parallel from $(x,0)$ and $(y,0)$.
+\end{definition}
+
+Fix a real success radius $\rho\ge0$.  The execution is successful if, for some integer time $t\ge0$,
+\[
+ d_1(X_t,Y_t)\le\rho.
+\]
+A pair that is already within radius $\rho$ succeeds at time zero.  Passing through the same edge in opposite directions creates no additional continuous-time event.  Since Manhattan distances on the grid are integral,
+\begin{equation}\label{eq:integer-radius}
+ d_1(X_t,Y_t)\le\rho
+ \quad\Longleftrightarrow\quad
+ d_1(X_t,Y_t)\le\lfloor\rho\rfloor .
+\end{equation}
+A singleton has only a time-zero success and requires no transition at the empty mask.
+Thus all three parameters below are unchanged when $\rho$ is replaced by $\lfloor\rho\rfloor$.
+
+Let $\mathcal G$ denote all finite connected induced grid mazes, $\mathcal T_{\rm grid}$ all induced grid trees, $\mathcal P$ all induced grid paths, and $\mathcal J$ the class consisting of paths together with induced grid trees having exactly one degree-three vertex and all other degrees at most two.  Then
+\[
+ \mathcal P\subseteq\mathcal J\subseteq\mathcal T_{\rm grid}\subseteq\mathcal G.
+\]
+
+\begin{definition}[Controller-dependent trap size and $F$]\label{def:F-general}
+For a nonempty maze class $\mathcal C$, let
+\[
+ \tau_{\mathcal C,\rho}(A)
+ =\min\Bigl\{|V|:\ V\in\mathcal C,\ \exists x,y\in V\ 
+       \forall t\ge0,\ d_1(X_t,Y_t)>\rho\Bigr\},
+\]
+with $\min\varnothing=\infty$.  Thus $\tau_{\mathcal C,\rho}(A)=\infty$ means that the one fixed controller $A$ succeeds from every start pair on every maze in $\mathcal C$.  For a state budget $s\ge1$, define
+\[
+ \boxed{F_{\mathcal C,\rho}(s)
+ =\max_{1\le |Q_A|\le s}\tau_{\mathcal C,\rho}(A).}
+\]
+The controller is chosen first; the adversary then chooses the maze and the starts.  The trapping maze may therefore depend on the controller.
+\end{definition}
+
+For a fixed state budget there are finitely many labelled legal transition tables.  Hence the maximum in Definition~\ref{def:F-general} is attained in $\mathbb N\cup\{\infty\}$.  In particular,
+\begin{equation}\label{eq:F-infinity-meaning}
+ F_{\mathcal C,\rho}(s)=\infty
+ \quad\Longleftrightarrow\quad
+ \text{one controller with at most $s$ states succeeds on all of $\mathcal C$.}
+\end{equation}
+The value $\infty$ is therefore not an unattained supremum of finite trap sizes.
+
+\begin{definition}[Finite-horizon state complexity]\label{def:M-general}
+For $n\in\mathbb N_0$, let
+\[
+ \boxed{M_{\mathcal C,\rho}(n)
+ =\min\Bigl\{|Q_A|:\ \forall V\in\mathcal C,\ |V|\le n,\ 
+       \forall x,y\in V,\ \exists t\ge0:\ d_1(X_t,Y_t)\le\rho\Bigr\},}
+\]
+again with an empty minimum equal to $\infty$.  Thus $M_{\mathcal C,\rho}(n)$ is the least number of states in one controller that succeeds on every legal instance through size $n$.
+\end{definition}
+
+The strict threshold relation between the two parameters is immediate but useful enough to record at once.
+
+\begin{theorem}[$F/M$ duality]\label{thm:FM-duality}
+For every finite $n$ and every finite state budget $s\ge1$,
+\[
+ \boxed{F_{\mathcal C,\rho}(s)>n
+ \quad\Longleftrightarrow\quad
+ M_{\mathcal C,\rho}(n)\le s.}
+\]
+\end{theorem}
+\begin{proof}
+By Definition~\ref{def:F-general}, $F_{\mathcal C,\rho}(s)>n$ holds exactly when there is a controller $A$ with $|Q_A|\le s$ and $\tau_{\mathcal C,\rho}(A)>n$.  The latter inequality says that no maze in $\mathcal C$ of size at most $n$, with any start pair, is a trap for $A$.  Equivalently,
+\[
+ \exists A,\ |Q_A|\le s:\ \forall V\in\mathcal C,\ |V|\le n,\ 
+ \forall x,y\in V,\ \exists t\ge0:\ d_1(X_t,Y_t)\le\rho,
+\]
+which is precisely $M_{\mathcal C,\rho}(n)\le s$.  The equivalence also covers $M=\infty$ and $F=\infty$ under the conventions above.
+\end{proof}
+
+\begin{proposition}[Monotonicities]\label{prop:general-monotonicities}
+The parameters are monotone in the directions shown in Table~\ref{tab:monotonicities}.  In addition,
+\[
+ F_{\mathcal C,\rho}(s)=F_{\mathcal C,\lfloor\rho\rfloor}(s),
+ \qquad
+ M_{\mathcal C,\rho}(n)=M_{\mathcal C,\lfloor\rho\rfloor}(n).
+\]
+\end{proposition}
+\begin{proof}
+Increasing the state budget enlarges the controller set over which $F$ is maximized.  Increasing $\rho$ can only turn failures into successes, so for each fixed controller its least trap cannot become smaller; maximizing preserves this direction.  If $\mathcal C_1\subseteq\mathcal C_2$, the adversary has fewer candidate traps in $\mathcal C_1$, so $\tau_{\mathcal C_1,\rho}(A)\ge\tau_{\mathcal C_2,\rho}(A)$ for every $A$, and hence the same inequality holds for $F$.
+
+For $M$, enlarging the size horizon or the maze class strengthens the universal success requirement and therefore cannot decrease the required number of states; enlarging the success radius weakens that requirement and therefore cannot increase it.  The floor identities are exactly \eqref{eq:integer-radius}.
+\end{proof}
+
+\input{tables/monotonicity_table}
+
+For the original model we abbreviate
+\[
+ F(s)=F_{\mathcal G,1}(s),\qquad M(n)=M_{\mathcal G,1}(n).
+\]
+At radius one we also use the fixed-radius shorthands
+$\tau_{\mathcal C}(A)=\tau_{\mathcal C,1}(A)$ and
+$F_{\mathcal C}(s)=F_{\mathcal C,1}(s)$, and write $\tau(A)=\tau_{\mathcal G,1}(A)$.
+For a fixed controller, $\Phi_V$ abbreviates $\Phi_{A,V}$ and $x_q$ denotes the tag $(x,q)$.
+An initially noncontacting start-labelled maze whose execution never succeeds is a
+\emph{trap instance}. These are shorthands for the same model, not new parameters.
+\begin{equation}\label{eq:class-monotonicity}
+\mathcal C_1\subseteq\mathcal C_2\quad\Longrightarrow\quad
+\tau_{\mathcal C_1,\rho}(A)\ge\tau_{\mathcal C_2,\rho}(A),\qquad
+F_{\mathcal C_1,\rho}(s)\ge F_{\mathcal C_2,\rho}(s).
+\end{equation}
+
+\begin{lemma}[Simultaneous compass transport]\label{m:transport}
+Let $g\in D_4$ be a rotation or reflection of the square grid. Define the transported controller $gA$ by
+\[
+ \delta_{gA}(q,gM)=(gd,r)\quad\hbox{when}\quad\delta_A(q,M)=(d,r).
+\]
+Transporting the maze and the starts by $g$ carries every execution of $A$ to an execution of $gA$ with the same internal states and the same contact times.
+\end{lemma}
+\begin{proof}
+The induced mask at $gx$ in $gV$ is $gM_V(x)$. Thus $\Phi_{gV}^{gA}(gx,q)=(g(x+d),r)$ whenever $\Phi_V^A(x,q)=(x+d,r)$. Iteration proves the execution identity, and $g$ preserves Manhattan distance.
+\end{proof}
+
+The lemma permits compass normalization of a controller-dependent upper witness. It does not permit rotating a maze while leaving a fixed controller unchanged. In the lower proof every orientation is absolute, and the initial state is never exchanged with state~$1$.

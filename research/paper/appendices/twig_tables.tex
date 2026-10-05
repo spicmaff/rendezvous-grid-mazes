@@ -1,0 +1,110 @@
+\section{Complete short-twig maps}\label{c:twig-appendix}
+
+This appendix completes the local calculation used in
+Lemma~\ref{c:twig}. Attach a path \(p-u-v\), where \(u\) has exactly
+the two neighbours \(p,v\) and \(v\) is a leaf. Write \(de\) for the
+directions \(p\to u\) and \(u\to v\). The condition \(e\ne-d\)
+ensures that the three vertices are distinct and leaves exactly twelve
+words. We stop upon returning to \(p\), so its other neighbours and
+outgoing rule play no role in this table.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllllll}
+\toprule
+\(de\) & Masks at \(u,v\) & \(u_0\to\) & \(u_1\to\)
+& \(v_0\to\) & \(v_1\to\) & Return or internal cycle \\
+\midrule
+\(\N\N\)&\(\N\Sdir,\Sdir\)&\(p_1\)&\(p_1\)&\(u_1\)&\(u_1\)&All return as 1\\
+\(\N\E\)&\(\E\Sdir,\W\)&\(p_1\)&\(v_1\)&\(u_1\)&\(u_0\)&All return as 1\\
+\(\N\W\)&\(\Sdir\W,\E\)&\(v_0\)&\(p_1\)&\(u_1\)&\(u_1\)&All return as 1\\
+\(\E\N\)&\(\N\W,\Sdir\)&\(v_1\)&\(p_0\)&\(u_1\)&\(u_1\)&All return as 0\\
+\(\E\E\)&\(\E\W,\W\)&\(p_0\)&\(v_1\)&\(u_1\)&\(u_0\)&All return as 0\\
+\(\E\Sdir\)&\(\Sdir\W,\N\)&\(p_0\)&\(v_1\)&\(u_0\)&\(u_1\)&\(u_0,v_0\) return; \((u_1,v_1)\)\\
+\(\Sdir\E\)&\(\N\E,\W\)&\(p_0\)&\(v_1\)&\(u_1\)&\(u_0\)&All return as 0\\
+\(\Sdir\Sdir\)&\(\N\Sdir,\N\)&\(v_1\)&\(v_1\)&\(u_0\)&\(u_1\)&All reach \((u_1,v_1)\)\\
+\(\Sdir\W\)&\(\N\W,\E\)&\(p_1\)&\(v_0\)&\(u_1\)&\(u_1\)&\(u_0\) returns; \((u_1,v_0)\)\\
+\(\W\N\)&\(\N\E,\Sdir\)&\(v_0\)&\(p_1\)&\(u_1\)&\(u_1\)&All return as 1\\
+\(\W\Sdir\)&\(\E\Sdir,\N\)&\(v_1\)&\(p_1\)&\(u_0\)&\(u_1\)&All return as 1\\
+\(\W\W\)&\(\E\W,\E\)&\(v_0\)&\(p_1\)&\(u_1\)&\(u_1\)&All return as 1\\
+\bottomrule
+\end{tabular}
+\caption{Complete stopped maps for two-cell twigs. Every arrow is a
+substitution in Table~\ref{tab:astar}. Parentheses in the final column
+denote the unique internal tagged cycle in the specified row.}
+\label{c:twig-table}
+\end{table}
+
+For the \(\N\E\) row, the longest return is
+\(v_0\to u_1\to v_1\to u_0\to p_1\); all other starting tags give
+suffixes of this route. The \(\E\E\) and \(\Sdir\E\) rows have the
+same four-step form, returning to \(p_0\). In each of the remaining
+nonabsorbing rows, the printed arrows give a return in at most four steps.
+For \(\E\Sdir\), the tags \(u_1,v_1\) form the displayed cycle and
+\(v_0\to u_0\to p_0\). For \(\Sdir\Sdir\),
+\(v_0\to u_0\to v_1\) joins \((u_1,v_1)\). For \(\Sdir\W\),
+\(v_1\to u_1\) joins \((u_1,v_0)\), while \(u_0\to p_1\).
+These routes verify every transient and every internal recurrent component.
+
+For a one-cell twig in direction \(d\), the leaf has mask \(\{-d\}\).
+The endpoint rows therefore return state one for
+\(d\in\{\N,\W\}\), preserve the arriving state for \(d=\Sdir\),
+and complement it for \(d=\E\).
+
+\subsection*{The permitted square ports}
+
+Use the absolute square coordinates
+\(a=(0,0),b=(1,0),c=(1,1),d=(0,1)\). In family \(\mathsf Q\)
+there are at most two exterior cells and no second square. For a two-cell
+twig at \(c\N\), a west continuation would meet the northwest corner,
+so the only words are \(\N\N,\N\E\). The same grid-edge check gives
+\(\E\E,\E\N\) at \(c\E\),
+\(\N\N,\N\W\) at \(d\N\), and
+\(\W\W,\W\N\) at \(d\W\).
+All these rows return every tag. This excludes an attractor in a dormant
+twig even for a trajectory that starts there.
+
+The four active ports have the complete behaviour in
+Table~\ref{c:active-ports}. The entry tag is obtained from the square
+corner table. The one-cell column records the return of that entry tag;
+an arbitrary tag on a one-cell twig also returns immediately, possibly in
+the other state. The all-tag assertions in the two-cell column include
+all four tags, not merely the tag entering from the core.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabularx}{\textwidth}{llllX}
+\toprule
+Port & Entry tag & One cell & Two-cell word & Complete effect \\
+\midrule
+\(a\Sdir\)&\(u_1\)&Return \(a_1\)&\(\Sdir\Sdir\) or \(\Sdir\W\)&
+The entering tag reaches the internal edge cycle. In the second word only
+\(u_0\) returns to \(a_1\).\\
+\addlinespace
+\(a\W\)&\(u_0\)&Return \(a_1\)&\(\W\W\) or \(\W\Sdir\)&
+Every tag returns to \(a_1\).\\
+\addlinespace
+\(b\E\)&\(u_1\)&Return \(b_0\)&\(\E\E\) or \(\E\Sdir\)&
+The first word returns every tag to \(b_0\). The second captures the
+entry tag; \(u_0,v_0\) return to \(b_0\).\\
+\addlinespace
+\(b\Sdir\)&\(u_0\)&Return \(b_0\)&\(\Sdir\E\) or \(\Sdir\Sdir\)&
+The first word returns every tag to \(b_0\). The second captures every
+tag on its outer state-one edge.\\
+\bottomrule
+\end{tabularx}
+\caption{Active square-port returns and absorbers. The one-cell return
+uses the listed entry tag. The two-cell options exclude continuations
+that make a second square.}
+\label{c:active-ports}
+\end{table}
+
+In the \(a\Sdir\) case with word \(\Sdir\W\), the returnable tag
+does not become trapped within the stopped twig map: the square sends it
+\(u_0\to a_1\to b_1\to a_0\to u_1\), after which it enters the
+absorber. Likewise the returnable tags of the \(\E\Sdir\) twig at
+\(b\E\) return to \(b_0\), travel through the square back to
+\(b_1\), and are then sent to \(u_1\). These uses of the square core
+are part of the proof of Lemma~\ref{c:square}, rather than extra assertions
+about an isolated twig.

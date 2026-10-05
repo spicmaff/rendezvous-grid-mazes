@@ -1,0 +1,26 @@
+% Exact U witness for Astar. Phase labels are copied from Lemma a:trap.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=9mm,y=9mm]
+ \coordinate (a) at (0,0); \coordinate (l) at (0,1);
+ \coordinate (c) at (0,2); \coordinate (m) at (1,2);
+ \coordinate (d) at (2,2); \coordinate (r) at (2,1);
+ \coordinate (b) at (2,0);
+ \draw[rvGray,line width=4pt] (l)--(c)--(m)--(d)--(r);
+ \draw[quiet] (l)--(c)--(m)--(d)--(r);
+ \draw[supportA] (a)--(l); \draw[supportB] (b)--(r);
+ \foreach \p in {l,c,m,d,r} {\node[cell] at (\p) {};}
+ \node[font=\footnotesize,left] at (l) {$l$};
+ \node[font=\footnotesize,right] at (r) {$r$};
+ \node[startA,label=below:{$a_0$}] at (a) {};
+ \node[startB,label=below:{$b_0$}] at (b) {};
+ \node[font=\scriptsize,fill=white,inner sep=1pt] at (1,1.75) {unvisited};
+ \node[paneltitle] at (3.1,2.0) {Separated through the transient};
+ \node[note] at (3.1,1.20) {$t=0:\ (a_0,b_0)\quad\longrightarrow\quad t=1:\ (l_0,r_0)$};
+ \node[note] at (3.1,.48) {$t\ge2:\ (a_1,b_1)\quad\longleftrightarrow\quad(l_1,r_1)$};
+ \node[note] at (3.1,-.23) {$b-a=r-l=(2,0),\qquad d_1=2$};
+ \mazeCompass{10.25}{1.15}
+\end{tikzpicture}
+\caption{The seven-cell U-trap for $A^\star$, with $a=(0,0)$ and $b=(2,0)$. The upper connector is never visited; from time $2$ both executions shuttle in state $1$ on the highlighted edges.}
+\label{f:astar-u}
+\end{figure}

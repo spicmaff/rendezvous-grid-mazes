@@ -1,0 +1,26 @@
+% A diagram of the existing finite-profile construction. All components share theta.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=1mm,y=1mm]
+ \foreach \x in {0,42,84,126}{\draw[lightpanel] (\x,17) rectangle (\x+34,42);}
+ \node[font=\footnotesize\sffamily\bfseries,align=center] at (17,36) {SPECIFICATION};
+ \draw[edge] (6,25)--(13,25)--(13,29)--(23,29)--(29,29);
+ \draw[supportA] (6,25)--(13,25); \draw[supportA] (23,29)--(29,29);
+ \foreach \x/\y in {6/25,13/25,13/29,23/29,29/29}{\node[cell] at (\x,\y) {};}
+ \node[font=\scriptsize] at (17,20) {path, matching, phases};
+ \node[font=\footnotesize\sffamily\bfseries,align=center] at (59,36) {ONE PROFILE $\theta$};
+ \node[font=\footnotesize,align=center] at (59,25) {roles; endpoint states\\differences $\kappa_M$};
+ \node[font=\footnotesize\sffamily\bfseries,align=center] at (101,36) {AFFINE SYSTEM};
+ \node[font=\small] at (101,27) {$A_\theta z=b_\theta$};
+ \node[font=\scriptsize] at (101,20) {one bit per internal cell};
+ \node[font=\footnotesize\sffamily\bfseries,align=center] at (143,36) {CONTROLLER};
+ \node[font=\footnotesize,align=center] at (143,25) {consistent used rows\\+ legal completion};
+ \foreach \x in {35,77,119}{\draw[flow] (\x,29.5)--(\x+6,29.5);}
+ \node[font=\footnotesize,anchor=west] at (1,8) {Repeated mask $M=\N\W$, paired port $\W$:};
+ \node[font=\footnotesize,anchor=west] at (90,8) {$Y_i+Y_j=\kappa_M(t_i+t_j)$};
+ \node[font=\footnotesize,anchor=west] at (1,0) {$t_i=t_j$ forces the same successor.};
+ \node[font=\footnotesize,anchor=west] at (83,0) {$\kappa_M=0$ allows merged outputs.};
+\end{tikzpicture}
+\caption{The realization construction, with $Y_i=X_{\sigma(i)}$. The same profile serves every repeated-mask component; varying the profile gives a finite union of affine solution sets, not one XOR system.}
+\label{fig:realization-pipeline}
+\end{figure}

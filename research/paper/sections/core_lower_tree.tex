@@ -1,0 +1,534 @@
+\subsection{Recurrent supports on trees}\label{sec:tree-lower}
+
+We first separate elementary contact principles from the special features of
+\(\Astar\). A \emph{tagged cycle} means a simple directed cycle of
+\(\Phi_V\), and its \emph{support} consists of the spatial vertices and edges
+used by that tagged cycle. In particular, the support does not include an
+ambient edge merely because both its endpoints occur. A tagged cycle is
+\emph{reachable} if some initial tag \((x,0)\), \(x\in V\), eventually enters it.
+We call a support \emph{long} if it has at least two edges.
+
+\begin{lemma}[Two-state path support]\label{t:path-support}
+For any compulsory-moving controller with at most two states, a primitive tagged cycle whose support is a tree has nonempty path support.  If that path has $a\ge2$ edges, the tagged cycle traverses each edge once in each direction and has period $2a$.  On a one-edge support the tagged period is two or four.
+\end{lemma}
+\begin{proof}
+The path-support conclusion is Corollary~\ref{cor:low-state-tree-supports}.  If the path has at least two edges, an internal vertex $v$ has two incident support edges.  Theorem~\ref{thm:support-capacity} gives
+\[
+ 2\le \sum_{e\ni v}k_e=r_v\le2,
+\]
+so both incident multiplicities equal one.  Propagation along the connected path gives $k_e=1$ on every edge, and Theorem~\ref{thm:support-capacity} then gives period $2a$.  On a single edge, $r_v=k_e\le2$, so $k_e\in\{1,2\}$ and the period is $2$ or $4$.
+\end{proof}
+
+\begin{lemma}[Contact on one tagged cycle]\label{t:same-cycle}
+If two trajectories eventually enter the same tagged cycle and its support is a path, they achieve distance-one contact.  Their initial tags and entry times may be arbitrary, and the ambient maze need not be a tree.
+\end{lemma}
+\begin{proof}
+This is Corollary~\ref{cor:same-cycle-path-contact}.
+\end{proof}
+
+\begin{lemma}[Contact through an edge support]\label{t:edge-contact}
+Suppose one eventual tagged cycle is supported on an edge \(uv\), and the
+other eventual tagged cycle visits \(u\) or \(v\). The trajectories achieve
+distance-one contact, independently of their entry times and phases.
+\end{lemma}
+\begin{proof}
+After both transients have ended, the first agent is always at \(u\) or
+\(v\). At any subsequent visit of the second agent to the shared endpoint,
+their distance is at most one. Such visits recur.
+\end{proof}
+
+\begin{lemma}[Order inversion]\label{t:order-inversion}
+Two synchronous nearest-neighbour walks on a path cannot reverse their
+strict spatial order without first achieving distance-one contact.
+In particular, contact occurs if their eventual disjoint support intervals
+occur in the opposite order from their initial positions.
+\end{lemma}
+\begin{proof}
+In path coordinates the difference of their positions changes by at most
+two at each step. As long as its absolute value is at least two, its sign
+cannot reverse. This proves the assertion, including the whole transient.
+\end{proof}
+
+The support hypothesis in Lemma~\ref{t:same-cycle} and the edge hypothesis
+in Lemma~\ref{t:edge-contact} will be established before either lemma is
+applied. Neither contact nor equality of spatial positions requires equality
+of the internal states.
+
+\subsubsection{A north-boundary invariant}
+
+For a support in a tree, call an edge from a support vertex to a vertex
+outside the support a \emph{boundary edge}, directed away from the support.
+All directions in the following statements refer to the fixed compass of
+Table~\ref{tab:astar}.
+
+\begin{lemma}[Exclusion of a full vertex]\label{t:no-full}
+On an induced grid tree, a long tagged cycle of \(\Astar\) contains no
+vertex with mask \(NESW\).
+\end{lemma}
+\begin{proof}
+Suppose first that a full vertex \(p\) occurs in state \(1\).
+Its next tag is \(s_1\), where \(s\) is its southern neighbour.
+If \(s\) is internal to the support, one of its two support exits is north,
+and its state-\(1\) exit must continue away from \(p\). The only masks
+with two distinct exits including north are \(NE\) and \(NW\).
+Accordingly \(s\) has an eastern or western neighbour. That neighbour,
+\(s\), \(p\), and the corresponding eastern or western neighbour of \(p\)
+form a unit square, contradicting inducedness and the tree hypothesis.
+If \(s\) is a support endpoint, returning north from state \(1\) requires
+mask \(N\) and returns to \(p_1\). This closes a two-tag cycle, contradicting
+long support.
+
+A full vertex occurring only in state \(0\) must be a support endpoint,
+by Lemma~\ref{t:path-support}. Its eastern neighbour is internal and is
+entered in state \(0\). To continue away from \(p\) in that state and
+return west in the other state, this neighbour must have mask \(NW\).
+Its northern neighbour and the northern neighbour of \(p\) again complete
+a unit square. This excludes the remaining case.
+\end{proof}
+
+\begin{lemma}[North boundary]\label{t:north-boundary}
+For \(\Astar\) on any finite induced grid tree, every boundary edge of a
+long tagged cycle points north.
+\end{lemma}
+\begin{proof}
+An internal support vertex uses both states and selects its two support
+edges. The masks with distinct selected directions are
+\(NE,ES,NW,EW,SW,NES,NEW,NESW\).
+Lemma~\ref{t:no-full} excludes \(NESW\). The mask \(NW\) is also impossible
+internally: to pass from its western support neighbour towards its
+northern support neighbour, the vertex must be entered in state \(0\).
+Every eastward move from a non-full vertex arrives in state \(1\), whereas
+the predecessor cannot be full.
+
+The remaining internal possibilities are displayed below. Here \(d/r\)
+denotes direction \(d\) and new state \(r\), in the convention
+\(\delta(q,M)=(d,r)\). The last column lists only neighbours outside the
+two selected support edges.
+\begin{center}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Internal mask & From \(0\) & From \(1\) & Possible boundary port\\
+\midrule
+\(EW,NEW\) & \(\W/0\) & \(\E/1\) & \(N\), for \(NEW\)\\
+\(NE\) & \(\N/0\) & \(\E/1\) & none\\
+\(SW\) & \(\W/0\) & \(\Sdir/1\) & none\\
+\(ES,NES\) & \(\Sdir/1\) & \(\E/1\) & \(N\), for \(NES\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+It remains to check support endpoints; no global assumption about the
+shape of the path is needed. Let \(c\) be an endpoint and \(v\) its adjacent
+internal support vertex.
+
+If \(v\) is east of \(c\), its westward return enters \(c\) in state \(0\).
+To avoid immediately repeating that return, the eastward move from \(c\)
+must arrive at \(v\) in state \(1\). Only an \(E\) leaf, used in state \(0\),
+does so.
+If \(v\) is west of \(c\), its eastward return enters \(c\) in state \(1\);
+the westward return from \(c\) must arrive at \(v\) in state \(0\).
+Exactly \(W\) and \(NW\) in state \(1\) have this behaviour.
+
+If \(v\) is north of \(c\), its southward move arrives at \(c_1\).
+The only state-\(1\) northward move is from an \(N\) leaf and arrives in
+state \(1\). The internal neighbour cannot be \(SW\), since this would
+repeat the same two tags immediately; it is \(ES\) or \(NES\).
+Finally, if \(v\) is south of \(c\), then \(v\) has mask \(NE\), whose
+northward move enters \(c_0\). The southward return must arrive at \(v\)
+in state \(1\).
+The candidate masks at \(c\) are \(S,NS,ES,NES,ESW\). Each of the last
+three requires an eastern neighbour; together with \(c,v\), and the
+eastern support neighbour of \(v\), it forms a unit square. Only
+\(S\) and \(NS\) remain.
+
+These four directional equations give the complete endpoint table.
+\begin{center}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Endpoint mask & Tag & Direction to support & Boundary port\\
+\midrule
+\(E\) & \(0\) & \(E\) & none\\
+\(N\) & \(1\) & \(N\), towards \(ES/NES\) & none\\
+\(S,NS\) & \(0\) & \(S\), towards \(NE\) & \(N\), for \(NS\)\\
+\(W,NW\) & \(1\) & \(W\) & \(N\), for \(NW\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every boundary port in the two tables points north.
+\end{proof}
+
+Both preceding lemmas are independent of maze size and of maximum degree.
+Inducedness is used when a required fourth side turns a local configuration
+into a spatial square.
+
+\subsubsection{Short supports and the six-cell budget}
+
+\begin{lemma}[Edge profiles]\label{t:edge-profiles}
+Every edge-supported tagged cycle of \(\Astar\), on any maze, has period
+two and belongs to one of the five rows of Table~\ref{t:edge-table}.
+On a connected induced tree with more than two cells and maximum degree
+at most three, these reduce to the five port profiles in
+Table~\ref{t:profile-table}. None has a south-pointing boundary edge.
+\end{lemma}
+\begin{proof}
+A four-tag horizontal cycle would require both states at the western
+endpoint to move east. Only an \(E\) leaf does this, and both moves arrive
+in state \(1\), which precludes four distinct tags. A four-tag vertical
+cycle requires an \(N\) leaf at the lower endpoint. At its upper endpoint
+both states must move south, and every such mask resets the state to a
+constant. This again precludes four distinct tags.
+
+For period two, solve the two endpoint equations in the semantic table.
+For example, a lower state-\(0\) tag that moves north as \(0\) has mask
+\(N\) or \(NE\); the upper tag returns south as \(0\) precisely with mask
+\(NSW\). This gives the first row. A lower \(0\) that arrives north as
+\(1\) requires \(NW\), and its upper \(1\) must return south as \(0\),
+again with \(NSW\). A lower \(1\) moving north requires \(N\), and its
+upper \(1\) must move south as \(1\), giving the third row. Horizontally,
+an eastward arrival as \(0\) requires the full western vertex in state
+\(0\), followed by a state-\(0\) westward return; an eastward arrival as
+\(1\) followed by return to western state \(0\) requires the western
+\(E\) leaf and an eastern \(W\) or \(NW\) tag in state \(1\).
+A western tag in state \(1\) would require a westward arrival as \(1\),
+which is available only from an eastern \(W\) leaf in state \(0\);
+no state-\(1\) eastward move can return to that eastern tag in state \(0\).
+These are all possible state pairs and directions.
+
+\begin{table}[!htbp]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Orientation; endpoint tags & Western/lower mask & Eastern/upper mask\\
+\midrule
+Vertical; \(0,0\) & \(N,NE\) & \(NSW\)\\
+Vertical; \(0,1\) & \(NW\) & \(NSW\)\\
+Vertical; \(1,1\) & \(N\) & \(S,NS,SW,ESW,NESW\)\\
+Horizontal; \(0,0\) & \(NESW\) & \(EW,NEW,SW\)\\
+Horizontal; \(0,1\) & \(E\) & \(W,NW\)\\
+\bottomrule
+\end{tabular}
+\caption{All local edge-supported tagged cycles of \(\Astar\). The two
+tags are ordered west--east or south--north.}\label{t:edge-table}
+\end{table}
+
+The second row forces western neighbours at both endpoints and therefore
+a unit square; it is excluded on an induced tree. The fourth row and
+the full-mask option of the third are excluded by the degree bound.
+A horizontal \(E\)--\(W\) pair or a vertical \(N\)--\(S\) pair forms an
+entire two-cell connected component, excluded by the size assumption.
+The remaining possibilities are exactly Table~\ref{t:profile-table}.
+\end{proof}
+
+\begin{table}[!htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}l l l X c@{}}
+\toprule
+Profile & Tail/head masks & Tagged cycle & Boundary ports & Cells required\\
+\midrule
+\(H\) & \(E;NW\) & \(u_0,h_1\) & \(N\) at \(h\) & \(1\)\\
+\(D_N\) & \(N;NS\) & \(u_1,h_1\) & \(N\) at \(h\) & \(1\)\\
+\(D_W\) & \(N;SW\) & \(u_1,h_1\) & \(W\) at \(h\) & \(1\)\\
+\(D_{EW}\) & \(N;ESW\) & \(u_1,h_1\) & \(E,W\) at \(h\) & \(2\)\\
+\(Z\) & \(N\) or \(NE;NSW\) & \(u_0,h_0\) &
+\(N,W\) at \(h\), and \(E\) at \(u\) if \(u\) has mask \(NE\) & \(2\) or \(3\)\\
+\bottomrule
+\end{tabularx}
+\caption{The five edge profiles on subcubic induced trees with more than
+two cells. The tail \(u\) lies west of the head \(h\) in \(H\), and south
+of it otherwise. The last column counts required cells outside the
+two-cell support, before a connecting path is chosen.}\label{t:profile-table}
+\end{table}
+
+\begin{lemma}[Disjointness of recurrent supports]\label{t:disjoint}
+Distinct tagged cycles of \(\Astar\) on a subcubic induced grid tree have
+disjoint spatial supports.
+\end{lemma}
+\begin{proof}
+An internal support vertex uses both tags and cannot occur on a second
+tagged cycle. A shared spatial vertex must therefore be an endpoint of
+both supports, in opposite states. The endpoint table in the proof of
+Lemma~\ref{t:north-boundary} allows no mask in both endpoint states, so
+two long supports cannot intersect.
+
+Comparing that table with Table~\ref{t:profile-table} leaves two possible
+mask coincidences for a long and an edge support. An \(NS\) endpoint in
+state \(0\) could coincide with a \(D_N\) head in state \(1\), but its
+southern neighbour would have to be both an internal \(NE\) vertex and
+an \(N\) leaf. An \(N\) endpoint in state \(1\) could coincide with the
+lower \(Z\) endpoint in state \(0\), but its northern neighbour would
+have to be both \(ES/NES\) and \(NSW\). Neither is possible.
+For two edge supports the only opposite-state coincidence is an \(N\)
+tail in states \(0\) and \(1\); its upper neighbour would require mask
+\(NSW\) for the former and \(NS,SW,\) or \(ESW\) for the latter.
+Thus it is impossible as well. The two-cell maze has only its single
+edge cycle, so it creates no omitted exception.
+\end{proof}
+
+\begin{lemma}[Uniqueness of a long support through six]\label{t:long-unique}
+If \(|V|\le6\), \(V\) is a subcubic induced grid tree, and \(\Astar\)
+has a long tagged cycle on \(V\), it has no other tagged cycle.
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{t:disjoint}, another support would be disjoint. A long
+support has only north boundary edges, whereas any other support has
+no south boundary edge, by Lemmas~\ref{t:north-boundary}
+and~\ref{t:edge-profiles}. Direct adjacency between the supports is
+therefore impossible. Their unique connecting path has an intermediate
+vertex.
+
+Two long supports require at least \(3+3+1=7\) vertices. A long support
+of at least four vertices paired with an edge support also requires
+at least seven. The only remaining budget is a three-vertex long
+support, a two-vertex edge support, and one connecting vertex.
+An edge profile \(D_{EW}\) or \(Z\) requires another branch off this
+minimal union, giving a seventh vertex. For \(H\) or \(D_N\), both
+boundary ports are north, so the two-step connector would be \(NS\)
+and return to its starting point. For \(D_W\), it must be \(NE\).
+The southern support leaf of the \(D_W\) head is then adjacent to the
+starting support vertex. It either overlaps the long support or closes
+a unit square. Every case is excluded.
+\end{proof}
+
+\begin{lemma}[The four short-support configurations]\label{t:four-patterns}
+If a subcubic induced grid tree of at most six cells contains two
+edge-supported tagged cycles of \(\Astar\), then, up to translation,
+it is exactly one of the four six-cell sets in
+Table~\ref{t:pattern-coordinates}. Each has exactly two tagged cycles.
+\end{lemma}
+\begin{proof}
+The supports are disjoint by Lemma~\ref{t:disjoint}. Let their unique
+connector have \(k\) edges, excluding the two support edges themselves.
+The union already has \(k+3\) vertices. A required port off this union
+costs a further distinct vertex: identifying that neighbour with the
+union would create a spatial cycle. A connector attached to a
+\(D_{EW}\) head has one such extra cost. At a \(Z\) head the cost is
+one; when it attaches at the eastern port of the lower \(Z\) vertex,
+the cost is two. The other profiles have no extra cost after their
+unique boundary port has been selected.
+
+The resulting fifteen unordered comparisons are recorded in
+Table~\ref{t:pair-table}. Connector words are read from the first named
+profile to the second. Exchanging their names only relabels the
+connector endpoints and does not transform compass directions.
+
+\begin{table}[!htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule
+Profile pair & Budget & Outcome\\
+\midrule
+\(H,H\) & \(k\le3\) & North--north obstruction\\
+\(H,D_N\) & \(k\le3\) & North--north obstruction\\
+\(D_N,D_N\) & \(k\le3\) & North--north obstruction\\
+\(D_W,D_W\) & \(k\le3\) & West--west obstruction\\
+\(H,D_W\) & \(k\le3\) & Only \(NEE\); gives \(P_H\)\\
+\(D_N,D_W\) & \(k\le3\) & Only \(NEE\); gives \(P_N\)\\
+\(H,D_{EW}\) & \(k\le2\) & Square or overlapping supports\\
+\(D_N,D_{EW}\) & \(k\le2\) & Square\\
+\(D_W,D_{EW}\) & \(k\le2\) & Only \(WW\); gives \(P_E\)\\
+\(D_{EW},D_{EW}\) & \(k\le1\) & Adjacent southern leaves close a square\\
+\(H,Z\) & \(k\le2\) at head; \(\le1\) below &
+Square at head; incompatible lower-port directions\\
+\(D_N,Z\) & \(k\le2\) at head; \(\le1\) below &
+Square at head; incompatible lower-port directions\\
+\(D_W,Z\) & \(k\le2\) at head; \(\le1\) below &
+Square at head; direct \(W\) into the lower vertex gives \(P_Z\)\\
+\(D_{EW},Z\) & \(k\le1\) at head &
+Square; lower attachment exceeds the budget\\
+\(Z,Z\) & \(k\le1\) between heads &
+No compatible direct ports; other attachments exceed the budget\\
+\bottomrule
+\end{tabularx}
+\caption{All fifteen pairings of the five edge profiles. The proof gives
+the direction and square obstruction behind every rejected row. No
+compass orientations are identified.}\label{t:pair-table}
+\end{table}
+
+Here are the complete route arguments. Two north ports require a
+connector beginning \(N\) and ending \(S\). At length at most three,
+the only simple possibilities are \(NES,NWS\); their endpoint heads
+are horizontally adjacent, so the induced edge closes a square.
+Shorter possibilities revisit a vertex. For two west ports the
+corresponding words are \(WNE,WSE\), and the vertically adjacent
+heads again close a square. A north port joined to a west port
+requires final step \(E\). The length-two word \(NE\) closes a
+square through the second head's southern leaf. At length three,
+\(NNE\) closes the same square one level higher, and \(NEE\) is the
+only other simple word. This proves the first six rows.
+
+A \(D_{EW}\) attachment requires a horizontal final step. From a north
+port, the budget allows only \(NE\) or \(NW\); the southern support
+leaf of the second head is adjacent to the first head, closing a
+square or overlapping a support. From a west port, a one-step
+connection makes the southern leaves adjacent and closes a square;
+among two-step words, \(WE\) repeats the starting vertex and \(WW\)
+survives. Two \(D_{EW}\) heads have only the already excluded one-step
+geometry. This proves rows seven through ten.
+
+A \(Z\) head accepts outside neighbours north and west, so a connector
+entering it ends in \(S\) or \(E\). From a north port with \(k\le2\),
+the only simple word is \(NE\), which closes a square through the
+lower \(Z\) support vertex. From a west port, \(WE\) repeats the start,
+and \(WS\) closes a square through the first head's southern leaf.
+Direct westward entry would approach the forbidden eastern side of
+the \(Z\) head. At the lower \(Z\) endpoint the outside port is east;
+the two extra head neighbours force \(k\le1\), and the one-step
+westward connection matches only a \(D_W\) head. A \(D_{EW}\)--\(Z\)
+head connection has only one step available: its compatible horizontal
+direction again leaves adjacent southern support vertices and hence
+a square. Connecting instead to the lower \(Z\) vertex would need
+at least seven cells. Finally, a direct \(Z\)--\(Z\) head connector
+would have to begin in \(N\) or \(W\) and end in \(S\) or \(E\), which
+is impossible in one step; any use of a lower port exceeds the
+budget. This proves the remaining five rows.
+
+\begin{table}[!htbp]
+\centering
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Pattern & Cell set\\
+\midrule
+\(P_N\) & \(\{(0,-1),(0,0),(0,1),(1,1),(2,1),(2,0)\}\)\\
+\(P_E\) & \(\{(-1,0),(0,-1),(0,0),(1,0),(2,0),(2,-1)\}\)\\
+\(P_Z\) & \(\{(0,0),(0,1),(0,2),(-1,1),(1,0),(1,-1)\}\)\\
+\(P_H\) & \(\{(-1,0),(0,0),(0,1),(1,1),(2,1),(2,0)\}\)\\
+\bottomrule
+\end{tabular}
+\caption{The four possible subcubic six-cell trees with two tagged
+cycles. Coordinates retain absolute orientation.}\label{t:pattern-coordinates}
+\end{table}
+
+The surviving words and required port cells give exactly the four
+displayed sets. Their masks satisfy the stated edge profiles, so
+both tagged cycles exist, and no additional branch fits. A third tagged cycle
+would have disjoint support and use only the two vertices outside
+the first two supports. In \(P_N,P_H\), those two vertices have
+masks \(ES,EW\), which do not form any row of Table~\ref{t:edge-table}.
+In \(P_E,P_Z\), they are not adjacent. Thus there is no third tagged
+cycle, including one supported on connector vertices.
+\end{proof}
+
+\subsubsection{Initial-state gates and transient contact}
+
+Two spatially separated tagged cycles do not by themselves constitute a
+trap. We must determine which state-\(0\) roots reach them and whether
+the approach trajectories have already contacted.
+
+\begin{lemma}[Three closed state-\(0\) gates]\label{t:reset-gates}
+In each of \(P_N,P_E,P_Z\), every state-\(0\) root reaches the same
+tagged cycle.
+\end{lemma}
+\begin{proof}
+In all three patterns the right cycle is the state-\(1\) vertical edge
+at a \(D_W\) head \(r\) and its southern \(N\) leaf \(b\). However,
+\(r_0\) moves west as \(0\), and \(b_0\) first enters \(r_0\).
+These are escape routes from the right support.
+
+For \(P_N\), put \(\ell=(0,0)\), \(a=(0,-1)\), \(p=(0,1)\),
+\(m=(1,1)\), \(r=(2,1)\), and \(b=(2,0)\). The \(NS\) head
+\(\ell\) sends both states south into the cycle
+\((\ell_1,a_1)\). Every state-\(0\) root reaches it, as witnessed by
+\[
+ a_0\to\ell_0\to a_1,\qquad
+ p_0\to\ell_1,\qquad
+ m_0\to p_0,\qquad r_0\to m_0,\qquad b_0\to r_0.
+\]
+The potentially east-going tag \(p_1\) is never reached by a
+state-\(0\) root.
+
+For \(P_E\), put \(\ell=(0,0)\), \(a=(0,-1)\), \(w=(-1,0)\),
+\(m=(1,0)\), \(r=(2,0)\), and \(b=(2,-1)\). The \(ESW\) head
+\(\ell\) sends both states to \(a_1\), and the left cycle is
+\((\ell_1,a_1)\). The remaining roots satisfy
+\[
+ w_0\to\ell_1,\qquad a_0\to\ell_0,\qquad
+ m_0\to\ell_0,\qquad r_0\to m_0,\qquad b_0\to r_0.
+\]
+Thus every root again enters the left cycle.
+
+For \(P_Z\), write \(z=(0,0)\), \(t=(0,1)\), \(n=(0,2)\),
+\(w=(-1,1)\), \(r=(1,0)\), \(b=(1,-1)\).
+The left cycle is \((z_0,t_0)\). The leaves \(n,w\) both enter
+\(t_1\), and the \(NSW\) rule sends that tag to \(z_0\).
+The other roots are on the cycle or satisfy
+\[
+ r_0\to z_0,\qquad b_0\to r_0.
+\]
+Consequently the east-going tag \(z_1\) is unreachable from the
+distinguished initial state.
+\end{proof}
+
+\begin{lemma}[The exceptional path]\label{t:exceptional-path}
+All pairs of state-\(0\) roots on \(P_H\) achieve distance-one contact.
+\end{lemma}
+\begin{proof}
+Name its vertices
+\[
+ w=(-1,0),\quad h=(0,0),\quad p=(0,1),\quad
+ m=(1,1),\quad r=(2,1),\quad b=(2,0).
+\]
+Their induced path order is \(w,h,p,m,r,b\).
+The complete twelve-tag map is
+\begin{center}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Cell & Mask & From \(0\) & From \(1\)\\
+\midrule
+\(w\) & \(E\) & \(h_1\) & \(h_1\)\\
+\(h\) & \(NW\) & \(p_1\) & \(w_0\)\\
+\(p\) & \(ES\) & \(h_1\) & \(m_1\)\\
+\(m\) & \(EW\) & \(p_0\) & \(r_1\)\\
+\(r\) & \(SW\) & \(m_0\) & \(b_1\)\\
+\(b\) & \(N\) & \(r_0\) & \(r_1\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Its two tagged cycles are \(L=(w_0,h_1)\) and \(R=(r_1,b_1)\).
+The only state-\(0\) root reaching \(R\) is \(h_0\), along
+\(h_0\to p_1\to m_1\to r_1\). Every other root reaches \(L\):
+\(w_0\) lies on it and \(p_0,m_0,r_0,b_0\) move successively
+left towards it.
+
+Pairs in the same basin contact by Lemma~\ref{t:same-cycle}.
+For a cross-basin pair, one root is \(h\). Its only predecessor
+in path order is \(w\), which is initially adjacent. Every other
+root lies to the right of \(h\), yet its eventual support \(L\)
+lies to the left of \(R\). These walks reverse their strict order
+and therefore contact by Lemma~\ref{t:order-inversion}.
+The argument includes all entry times and the complete transients.
+\end{proof}
+
+\input{figures/exceptional_path}
+
+\begin{samepage}
+\begin{proposition}[Small subcubic trees]\label{t:small-trees}
+Two copies of \(\Astar\), both started in state \(0\), achieve
+distance-one contact on every induced grid tree of maximum degree
+at most three with at most six cells.
+\end{proposition}
+\begin{proof}
+The one- and two-cell cases succeed at time zero. On a larger
+finite tree every trajectory eventually enters a tagged cycle,
+whose support is a path by Lemma~\ref{t:path-support}.
+If a long support exists, its tagged cycle is unique by
+Lemma~\ref{t:long-unique}, so Lemma~\ref{t:same-cycle} applies.
+If all supports are edges, there is either one tagged cycle,
+handled by the same lemma, or the maze is one of the four
+configurations of Lemma~\ref{t:four-patterns}.
+Lemma~\ref{t:reset-gates} and then Lemma~\ref{t:same-cycle}
+handle \(P_N,P_E,P_Z\); Lemma~\ref{t:exceptional-path}
+handles \(P_H\).
+\end{proof}
+\end{samepage}
+
+Trees containing a degree-four vertex are covered by the full-centre
+analysis below. The distinction matters: at such a vertex, two
+different tagged cycles may share a spatial endpoint in opposite
+states, a configuration excluded by Lemma~\ref{t:disjoint} only under
+its stated degree bound.

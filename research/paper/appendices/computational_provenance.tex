@@ -1,0 +1,61 @@
+\section{Proof status and computational provenance}
+\label{app:computational-provenance}\label{app:provenance}
+
+A deductive proof below does not depend on bounded search; it is not a claim of
+proof-assistant verification. A computer-assisted proof requires a finite
+certificate. Computations accompanying deductive theorems validate examples or
+implementations, not the all-size arguments.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}P{.32\textwidth}P{.18\textwidth}Y@{}}
+\toprule
+Results & Proof basis & Computational dependency \\
+\midrule
+Radius law; $F(1)=4$; $F(2)=7$ and grid-tree value; capacity, period and phase contact
+& Deductive & None; table replay is validation. \\
+Four-state path universality; duality; fixed-horizon finiteness; affine realization and phase locking
+& Deductive & None; finite criterion/oracle agreement validates implementations. \\
+Path value $F_{\mathcal P,1}(2)=8$
+& Computer-assisted & Analytic upper bound; exhaustive path-survival lower certificate. \\
+Completeness of $\mathcal U_{\mathrm{hum}}$
+& Deductive & $144/76/22/13$ are exact inventory counts. \\
+Selected $44$ tests; optimum within $144$
+& Computer-assisted & Physical encoding and LRAT upper certificate; disjoint packing lower certificate. \\
+Protected attachment, stretching and host assembly; exact-size extension
+& Deductive construction & Finite validation of $172$ pieces, the $5{,}212$-cell base and extension site. \\
+$u_2\ge8$
+& Computer-assisted & Exhaustive small-maze check against eight fixed conjugates. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Exact finite scopes.}
+The path lower certificate checks all $4{,}042$ initially far unordered pairs on
+$337$ translated shapes through seven cells, preserving absolute orientation
+(Section~\ref{sec:paths}); it does not prove unrestricted path universality.
+The independent affine comparison covers $203{,}260$ specifications through eight
+vertices: $94{,}852$ realizable, $105{,}128$ direction rejections and $3{,}280$
+residual rejections, with no criterion/oracle mismatch. Identifying path reversal
+halves this same corpus, not an independent sample. Saved full assignments,
+profiles and periods yield $189{,}704$ reconstructed tables from two witness sets
+and checks of all $94{,}852$ positive profiles. There are $243$ normalized
+staircase certificates. The saturated NAND check has $20$ normalized solutions,
+with counts $12,4,4,0$ for $00,01,10,11$; the displayed witnesses and contradiction,
+rather than these counts, prove the relation.
+
+\paragraph{Certificate and geometry boundaries.}
+The $144$-test menu comes from terminal lemmas, not controller-space exhaustion.
+For the selected $44$, LRAT verification must be accompanied by validation of the
+physical-instance encoding; packing proves a lower bound only within the candidates.
+The host has $5{,}212$ vertices, $5{,}211$ induced edges and maximum degree three.
+These finite facts validate its construction, not optimality.
+
+\paragraph{Available replay.}
+The supplied checks replay path survival, all $144$ physical decision functions,
+semantic CNF reconstruction and the selected $44$ LRAT certificate, the independent
+packing lower bound, and the universal lower-bound enumeration from $A^\star$.
+They also validate all $172$ ported fragments, host geometry and exact-size
+extension, and regenerate the finite realization corpus, complete controller
+witnesses and staircase certificates. All dependencies are included; no historical
+archive or network access is required. Finite validation does not replace any
+all-size deductive proof.

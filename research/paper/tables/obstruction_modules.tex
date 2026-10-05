@@ -1,0 +1,37 @@
+% Exact selector summary. Full terminal proofs stay in section 5 and appendix A.
+\begin{table}[!htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\linewidth}{@{}lP{.44\linewidth}Y@{}}
+\toprule
+Module & Regime / first failed condition & Geometry and noncontact mechanism \\
+\midrule
+$\mathrm{AX}$ & Straight directions coincide, or a normalized opposed-direction toggle/reset/endpoint test fails.
+& Line or U-path, $\le7$ cells. Terminal shuttles or disjoint line supports; parity covers adjacent supports. \\
+\addlinespace[3pt]
+$\mathrm{RP}$ & After the front tests, both axes reset: $C_i,C_j\in\{C_0,C_1\}$.
+& Two three-edge arms, $7$ cells. Closed pockets leave the shared corner unvisited. \\
+\addlinespace[3pt]
+$\mathrm Z$ & One axis is $C_0$, the other $I$; exchange axes if needed. Six successive corner alternatives.
+& L/U/offset path, $\le7$ cells. Closed arm regions or forced prefixes; separation or parity. \\
+\addlinespace[3pt]
+$\mathrm O$ & One axis is $C_1$, the other $I$. Seven successive corner alternatives.
+& L/U/offset path, $\le7$ cells. Closed pockets and forced corner prefixes; separation or parity. \\
+\addlinespace[3pt]
+$\mathrm{LOCK}$ & Both axes are $I$. After drift/diagonal normalization, the first of three corner-direction tests fails.
+& Paired terminal-arm path, $\le7$ cells. Locked disjoint translated supports. \\
+\addlinespace[3pt]
+$\mathrm{BIT}$ & All three direction tests pass; the first of four required corner output bits fails.
+& Six-cell path. Closed tagged regions or a prefix into disjoint cycles; gap or parity. \\
+\addlinespace[3pt]
+$\mathrm{TAIL}$ & Lock and bit tests pass, but the final two W9 entries do not both hold.
+& Seven-cell path. A forced shuttle versus a separated left region, including the transient. \\
+\addlinespace[3pt]
+$\mathrm J$ & W9 holds. For $u=\delta(0,NSW)$, $v=\delta(1,NSW)$, choose G2 if $v=(S,0)$ or $[u=(S,0),\ v\in\{(N,0),(W,1)\}]$; otherwise G1.
+& Seven-cell one-junction tree. Exact tagged words separate the executions through the transient. \\
+\bottomrule
+\end{tabularx}
+\caption{The eight terminal modules: $C_0,C_1$ are reset next-state maps and $I$ is identity. These selectors guide the complete terminal proofs; only $\mathrm J$ needs a junction rather than a path.}
+\label{tab:obstruction-modules}
+\end{table}

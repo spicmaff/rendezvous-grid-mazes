@@ -1,0 +1,28 @@
+% Exact geometry and phases from eq:p8-coordinates / eq:p8-w9-rows.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=8.7mm,y=8.7mm]
+ \coordinate (p0) at (1,0); \coordinate (p1) at (1,1);
+ \coordinate (p2) at (0,1); \coordinate (p3) at (0,2);
+ \coordinate (p4) at (0,3); \coordinate (p5) at (1,3);
+ \coordinate (p6) at (2,3); \coordinate (p7) at (2,2);
+ \draw[quiet] (p1)--(p2)--(p3)--(p4)--(p5)--(p6);
+ \draw[supportA] (p0)--(p1); \draw[supportB] (p7)--(p6);
+ \node[startA,label=below:{$(p_0)_0$}] at (p0) {};
+ \node[cell,label=right:{$(p_1)_1$}] at (p1) {};
+ \node[cell,label=left:{$p_2$}] at (p2) {};
+ \node[cell,label=left:{$p_3$}] at (p3) {};
+ \node[cell,label=above:{$p_4$}] at (p4) {};
+ \node[cell,label=above:{$p_5$}] at (p5) {};
+ \node[cell,label=above right:{$(p_6)_1$}] at (p6) {};
+ \node[startB,label=right:{$(p_7)_0$}] at (p7) {};
+ \node[paneltitle] at (4.05,2.85) {Two synchronized tagged cycles};
+ \node[note] at (4.05,1.95) {Even: $((p_0)_0,(p_7)_0)$};
+ \node[note] at (4.05,1.20) {Odd:\ $((p_1)_1,(p_6)_1)$};
+ \node[note] at (4.05,.35) {$Y_t-X_t=(1,2),\qquad d_1(X_t,Y_t)=3$};
+ \draw[rvMid,line width=.4pt] (3.72,.0)--(3.72,3.1);
+ \mazeCompass{11.2}{2.0}
+\end{tikzpicture}
+\caption{The eight-cell path obstruction under the two W9 rows in \eqref{eq:p8-w9-rows}. The circle and square mark state-$0$ starts; both phases have the same displacement $(1,2)$.}
+\label{fig:path-p8}
+\end{figure}

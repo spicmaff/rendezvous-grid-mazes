@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{graphicx,xcolor,tikz,subcaption}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\input{figures/visual_style}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+% Body type, page dimensions and margins are unchanged from the baseline.
+\captionsetup{font=small,labelfont=bf,skip=5pt}
+\setlength{\textfloatsep}{14pt plus 2pt minus 2pt}
+\setlength{\floatsep}{10pt plus 2pt minus 2pt}
+\setlength{\intextsep}{11pt plus 2pt minus 2pt}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage[section]{placeins}
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{5}
+\setcounter{totalnumber}{10}
+\renewcommand{\topfraction}{.9}
+\renewcommand{\bottomfraction}{.85}
+\renewcommand{\textfraction}{.08}
+\renewcommand{\floatpagefraction}{.7}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,
+ pdftitle={Memory, Recurrent Geometry, and Rendezvous Traps in Induced Grid Mazes},
+ pdfauthor={Michael Fofonov; Artem Antonchikov},pdfsubject={Finite-state controllers, recurrent cycles, and obstruction theory}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\N}{\mathrm{N}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Sdir}{\mathrm{S}}
+\newcommand{\W}{\mathrm{W}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Ftwo}{\mathbb F_2}
+\newcommand{\Astar}{A^{\star}}
+\newcommand{\calT}{\mathcal T}
+\newcommand{\rank}{\operatorname{rank}}
+\setlength{\emergencystretch}{2em}
+\AtBeginDocument{%
+ \setlength{\abovedisplayskip}{9pt plus 2pt minus 2pt}% baseline 11pt plus 3pt minus 6pt
+ \setlength{\belowdisplayskip}{9pt plus 2pt minus 2pt}%
+ \setlength{\abovedisplayshortskip}{0pt plus 2pt}%
+ \setlength{\belowdisplayshortskip}{5pt plus 2pt minus 2pt}% baseline 6.5pt
+}
+\setcounter{tocdepth}{1}
+\title{Memory, Recurrent Geometry, and Rendezvous Traps\\in Induced Grid Mazes}
+\author{%
+Michael Fofonov\thanks{Alferov University, 8/3 Khlopina Str., St. Petersburg 194021, Russia.}
+\and
+Artem Antonchikov\thanks{Moscow Institute of Physics and Technology (National Research University),
+9 Institutskiy per., Dolgoprudny, Moscow Region 141700, Russian Federation.}
+}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Two identical deterministic finite-state agents move synchronously and compulsorily
+in a finite connected induced subgraph of the square grid. They share an absolute
+compass, observe the open-neighbour mask, and start in one distinguished state.
+Rendezvous means attaining Manhattan distance at most one at an integer time.
+We relate the memory budget to recurrent geometry, global transition compatibility,
+and the size and uniformity of rendezvous obstructions. A support-capacity law bounds
+the multiplicities of a least-period tagged walk on a tree, and an explicit family
+attains the sharp maximum path period for every state budget. The exact smallest-trap
+thresholds are $F(1)=4$ and $F(2)=7$, with the two-state value unchanged on induced
+grid trees; both are proved without computational assistance. On induced paths the two-state threshold is eight,
+with an analytic upper bound and an exact finite lower certificate, whereas one fixed
+four-state controller succeeds on every path. For three states we give an all-size
+constructive realization criterion for prescribed contour-plus-matching cycles:
+a finite local profile selects a sparse affine system over $\Ftwo$, whose consistency
+is necessary and sufficient. Non-affine phase projections show why one global XOR
+system is insufficient. Finally, the two-state obstruction proof yields an
+explicit finite complete test family and, through protected attachment, one universal
+induced subcubic grid-tree host. Recurrent-cycle realization is distinguished from
+initial-state accessibility; universal three-state rendezvous remains open.
+\end{abstract}
+\input{sections/introduction}
+\input{sections/model}
+\input{sections/support}
+\input{sections/memoryless}
+\input{sections/two_state}
+\input{sections/paths}
+\input{sections/realization}
+\input{sections/state_complexity}
+\input{sections/finite_obstructions}
+\input{sections/universal_host}
+\input{sections/related}
+\input{sections/open_problems}
+\FloatBarrier
+\appendix
+\input{appendices/upper_tables}
+\input{appendices/twig_tables}
+\input{appendices/realization_bookkeeping}
+\input{appendices/structural_consequences}
+\input{appendices/computational_provenance}
+\input{appendices/reproducibility}
+\FloatBarrier
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

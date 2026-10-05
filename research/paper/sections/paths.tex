@@ -1,0 +1,133 @@
+\section{Paths and the memory hierarchy}\label{sec:paths}
+
+The full-grid theorem of Section~\ref{sec:two-state} has a sharp path-only analogue, but its proof has a different status: the upper bound is analytic, while the matching lower bound is an exact finite certificate.
+
+\begin{theorem}[Two states on induced paths]\label{thm:path-two-state}
+For radius-one rendezvous on finite induced grid paths,
+\[
+ \boxed{F_{\mathcal P,1}(2)=8.}
+\]
+The upper bound $F_{\mathcal P,1}(2)\le8$ is analytic. The lower bound $F_{\mathcal P,1}(2)>7$ is established by exhaustive finite verification. The equality therefore has a computer-assisted proof.
+\end{theorem}
+
+\subsection{An analytic eight-cell upper bound}
+
+The path-forcing part of the two-state upper proof in Section~\ref{sec:two-state} implies the following W9 consequence: if a two-state controller succeeds on every induced path with at most seven cells, then after one simultaneous dihedral symmetry of the compass and grid its table contains
+\begin{equation}\label{eq:p8-w9-rows}
+ \delta(0,\N)=(\N,1),
+ \qquad
+ \delta(1,\Sdir\W)=(\Sdir,0).
+\end{equation}
+These are two rows of the nine-entry pattern of Lemma~\ref{u:nine}.
+
+Consider the cells, in endpoint order,
+\begin{equation}\label{eq:p8-coordinates}
+\begin{aligned}
+ p_0&=(1,0),& p_1&=(1,1),& p_2&=(0,1),& p_3&=(0,2),\\
+ p_4&=(0,3),& p_5&=(1,3),& p_6&=(2,3),& p_7&=(2,2).
+\end{aligned}
+\end{equation}
+Their masks in this order are
+\[
+ \N,\quad \Sdir\W,\quad \N\E,\quad \N\Sdir,
+ \quad \E\Sdir,\quad \E\W,\quad \Sdir\W,\quad \N.
+\]
+There is no unit-distance pair among nonconsecutive cells, so the induced graph is exactly a path.
+
+Start both agents in state $0$ at $p_0$ and $p_7$.  The two rows in \eqref{eq:p8-w9-rows} give the complete executions
+\[
+ (p_0,0)\longleftrightarrow(p_1,1),
+ \qquad
+ (p_7,0)\longleftrightarrow(p_6,1).
+\]
+At even times the displacement is $p_7-p_0=(1,2)$; at odd times it is $p_6-p_1=(1,2)$.  The Manhattan distance is therefore exactly three at every integer time.
+
+\input{figures/path_p8}
+
+If a controller with at most two states already has a path trap through seven cells, the desired upper bound is immediate.  A one-state controller has a four-cell path trap by Corollary~\ref{cor:one-state-radius-one}.  Otherwise a genuine two-state path survivor satisfies the W9 consequence after simultaneous compass transport, and the inverse symmetry carries the displayed eight-cell trap back to the original controller.  Hence
+\[
+ F_{\mathcal P,1}(2)\le8.
+\]
+
+\subsection{Exact finite lower certificate}
+
+For the reverse inequality, use the two-state controller in Table~\ref{tab:path-survivor}.
+
+\input{tables/path_survivor_controller}
+
+\begin{proposition}[Finite path-survival certificate]\label{prop:path-seven-survivor}
+The controller of Table~\ref{tab:path-survivor} succeeds from every state-zero start pair on every induced grid path with at most seven cells.
+\end{proposition}
+
+\paragraph{Exact verification.}
+The proof is computational and exhaustive.  Paths are enumerated up to translation only, so absolute compass orientation is retained.  The numbers of path shapes on $1,\ldots,7$ cells are
+\[
+ 1,\ 2,\ 6,\ 14,\ 34,\ 82,\ 198,
+\]
+for a total of $337$.  Across those paths there are exactly $4042$ unordered start pairs whose initial Manhattan distance exceeds one.  For each pair, the deterministic product trajectory is followed until either distance-one contact occurs or a complete product tag repeats.  A repeated product tag before contact is an exact infinite-failure certificate, so no time cutoff is used.  All $4042$ pairs succeed.  An independently written connected-cell-set generator reproduces the same path sets through seven cells.  The checker, data, and enumeration specification belong to the computational supplement.
+
+Proposition~\ref{prop:path-seven-survivor} gives $F_{\mathcal P,1}(2)>7$.  Together with the analytic upper bound it proves Theorem~\ref{thm:path-two-state} with the stated mixed status.
+
+\subsection{Four states solve every finite path}
+
+The behavior changes qualitatively by four states.  Let
+\[
+ Q=\{\N,\E,\Sdir,\W\}
+\]
+with any one label, say $\N$, designated as the initial state.  Fix the cyclic order
+\[
+ \N,\E,\Sdir,\W.
+\]
+For a nonempty mask $M$ and state $q$, let $\operatorname{succ}_M(q)$ be the first member of $M$ encountered strictly after $q$ in this cyclic order, wrapping around if necessary.  Define
+\begin{equation}\label{eq:four-state-rotor}
+ d=\operatorname{succ}_M(q),
+ \qquad
+ \delta(q,M)=(d,-d).
+\end{equation}
+After the first move, the state records the compass port leading back to the cell just left; the next move takes the next open port in cyclic order.
+
+\begin{proposition}[Contour recurrence on grid trees]\label{prop:four-state-contour}
+On every finite induced grid tree $T$ with at least two cells, the controller \eqref{eq:four-state-rotor} has one recurrent cycle on the arrival-port tags
+\[
+ H=\{(v,q):q\in M_T(v)\}.
+\]
+This cycle has length $2|E(T)|$ and traverses every directed tree edge exactly once.  Every tag outside $H$ enters $H$ after one step.
+\end{proposition}
+\begin{proof}
+If the controller moves from $v$ in direction $d$, then at the new cell the state is $-d$, the port leading back to $v$.  Hence every transition lands in $H$.
+
+Restricted to $H$, the map takes an incoming port to the next incident port in the fixed cyclic order.  It is a permutation: for an arrival tag $(v,q)$, the previous cell must be $u=v+q$; choosing at $u$ the incident port immediately preceding $-q$ makes the next selected direction equal to $-q$, which lands at $(v,q)$.
+
+To prove that this permutation has one cycle, induct on the number of edges.  A single edge gives the two-tag shuttle.  If $z$ is a leaf adjacent to $v$, remove $z$.  By induction the smaller tree has one contour cycle.  Restoring the leaf inserts its incident port into the cyclic order at $v$: one old successor transition is replaced by the detour $v\to z\to v$ followed by the formerly chosen next edge.  Thus the two directed tags of the restored edge are inserted into, rather than separated from, the existing cycle.  Repeating this leaf insertion yields one cycle on all of $H$.  Finally
+\[
+ |H|=\sum_{v\in V(T)}\deg_T(v)=2|E(T)|.
+\]
+\end{proof}
+
+This proposition is a contour statement, not a rendezvous theorem on branching trees.  On a path, however, the contour support is itself a path, so Section~\ref{sec:support-structure} applies directly.
+
+\begin{theorem}[Universal four-state path controller]\label{thm:four-state-path}
+The controller \eqref{eq:four-state-rotor} succeeds from every start pair on every finite induced grid path at radius one.
+\end{theorem}
+\begin{proof}
+A singleton succeeds at time zero.  On any nonsingleton path, Proposition~\ref{prop:four-state-contour} puts every trajectory on the same recurrent tagged cycle after at most one move.  Its spatial support is the whole path.  The two trajectories are therefore phase shifts of one periodic path walk, and Corollary~\ref{cor:same-cycle-path-contact} forces distance-one contact.
+\end{proof}
+
+\begin{corollary}[Infinite path threshold from four states onward]\label{cor:path-infinity}
+For every real $\rho\ge1$ and every $s\ge4$,
+\[
+ \boxed{F_{\mathcal P,\rho}(s)=\infty.}
+\]
+\end{corollary}
+\begin{proof}
+The one fixed controller in Theorem~\ref{thm:four-state-path} has no finite path trap at radius one, and hence none at any larger radius.  It is admissible under every budget $s\ge4$.  Equation~\eqref{eq:F-infinity-meaning} gives the conclusion.
+\end{proof}
+
+The remaining path transition is exactly the three-state case:
+\[
+ F_{\mathcal P,1}(1)=4,\qquad
+ F_{\mathcal P,1}(2)=8,\qquad
+ F_{\mathcal P,1}(3)\ \text{is undetermined},\qquad
+ F_{\mathcal P,1}(s)=\infty\ (s\ge4).
+\]
+The branching counterexample in Appendix~\ref{app:branching-example} explains why the two-state path-support mechanism does not extend automatically once three states are available; it does not settle the three-state path problem.

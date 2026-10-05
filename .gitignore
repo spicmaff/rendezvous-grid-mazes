@@ -1,0 +1,7 @@
+/dist/
+/replay/
+/paper-build/
+/preview/
+__pycache__/
+*.pyc
+.DS_Store

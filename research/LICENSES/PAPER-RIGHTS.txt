@@ -1,0 +1,13 @@
+Copyright (c) 2026 Michael Fofonov and Artem Antonchikov. All rights reserved.
+
+This statement applies to the manuscript text, its LaTeX and TikZ manuscript
+sources, bibliography, mathematical figures and tables, and canonical PDF.
+No Creative Commons license is granted for these manuscript materials in
+this pre-submission release. Journal/publication terms may later govern
+the accepted or published manuscript following a publication agreement.
+No journal acceptance of these terms is asserted.
+
+The project software and non-paper supplement data, certificates and
+project documentation are licensed separately; see LICENSE_MAP.json and
+NOTICE.md. Embedded third-party font subsets remain subject to their
+original notices and are not relicensed by this copyright statement.

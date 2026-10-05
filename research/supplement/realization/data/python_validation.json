@@ -1,0 +1,10 @@
+{
+  "specifications": 203260,
+  "positives": 94852,
+  "full_controllers": 189704,
+  "profile_checks": 94852,
+  "d4_comparisons": 1626080,
+  "reversal_comparisons": 203260,
+  "state_permutation_checks": 1536,
+  "mismatches": 0
+}

@@ -1,0 +1,7767 @@
+{
+  "instance": {
+    "id": "H134",
+    "n": 7,
+    "shape": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "start": [
+      0,
+      3
+    ],
+    "start_convention": "ordered"
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "kind": "SUCCESS"
+    },
+    {
+      "id": 1,
+      "kind": "TRAP"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 2,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 2,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 3,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 3,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 4,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 5,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 5,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 6,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 6,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 7,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 8,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 8,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 9,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 10,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 10,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 11,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 11,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 12,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 8,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 8,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 13,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 12,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 13,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 12,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 14,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 7,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 9,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 7,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 14,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 15,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 15,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 16,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 5,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 5,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 17,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 3,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 3,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 17,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 3,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 3,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 18,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 6,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 18,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 19,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 7,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 20,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 12,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 21,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 21,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 15,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 22,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 20,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 22,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 23,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 4,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 16,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 19,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 23,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 24,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 9,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 25,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 9,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 26,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 25,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 8,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 26,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 27,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 3,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 28,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 7,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 29,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 21,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 15,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 30,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 29,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 30,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 31,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 6,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 18,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 32,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 15,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 33,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 28,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 31,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 32,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 33,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 34,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 35,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 36,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 10,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 10,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 37,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 35,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 36,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 37,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 38,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 11,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 38,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 39,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 25,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 25,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 39,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 40,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 11,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 38,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 41,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 26,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 26,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 41,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 42,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 40,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 13,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 42,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 43,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 24,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 27,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 34,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 43,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 44,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 4,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 28,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 2,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 45,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 46,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 46,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 47,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 48,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 49,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 49,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 50,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 49,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 50,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 51,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 51,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 52,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 53,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 54,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 54,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 55,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 55,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 56,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 56,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 57,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 52,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 53,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 46,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 57,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 53,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 58,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 48,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 58,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 59,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 47,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 59,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 60,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 46,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 61,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 49,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 62,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 62,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 49,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 63,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 63,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 64,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 54,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 65,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 65,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 66,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 66,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 67,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 64,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 53,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 46,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 67,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 53,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 68,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 48,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 68,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 69,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 61,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 69,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 70,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 60,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 70,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 71,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 6,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 72,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 72,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 21,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 73,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 72,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 74,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 8,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 75,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 12,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 13,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 12,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 76,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 72,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 75,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 72,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 76,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 77,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 77,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 21,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 78,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 74,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 78,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 79,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 4,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 73,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 19,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 79,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 80,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 75,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 81,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 75,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 82,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 81,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 8,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 82,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 83,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 72,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 84,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 77,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 21,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 85,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 84,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 85,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 86,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 72,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 21,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 87,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 28,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 86,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 32,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 87,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 88,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 89,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 90,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 10,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 10,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 91,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 89,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 90,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 91,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 92,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 92,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 11,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 93,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 81,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 81,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 93,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 94,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 92,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 11,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 95,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 82,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 82,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 95,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 96,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 94,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 13,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 96,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 97,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 80,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 83,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 88,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 97,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 98,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 4,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 19,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 99,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 8,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 100,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 28,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 32,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 101,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 2,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 13,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 102,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 99,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 100,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 101,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 102,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 103,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 44,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 45,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 71,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 98,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 103,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 104,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 2,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 105,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 105,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 106,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 12,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 107,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 107,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 7,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 108,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 5,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 5,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 109,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 105,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 105,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 109,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 105,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 105,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 110,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 110,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 6,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 111,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 7,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 9,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 7,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 14,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 112,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 107,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 112,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 113,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 113,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 20,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 114,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 106,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 108,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 111,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 114,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 115,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 105,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 116,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 107,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 112,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 117,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 117,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 29,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 118,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 110,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 6,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 119,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 107,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 7,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 120,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 116,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 118,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 119,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 120,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 121,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 115,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 27,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 121,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 43,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 122,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 106,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 116,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 2,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 123,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 124,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 124,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 125,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 50,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 126,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 126,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 127,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 128,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 54,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 55,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 129,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 129,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 130,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 127,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 128,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 124,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 130,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 128,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 131,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 131,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 48,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 132,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 125,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 132,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 133,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 124,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 134,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 62,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 135,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 135,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 136,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 65,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 54,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 137,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 137,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 138,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 136,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 128,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 124,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 138,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 128,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 139,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 139,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 48,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 140,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 134,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 140,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 141,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 133,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 141,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 142,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 72,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 75,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 72,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 76,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 143,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 143,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 144,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 143,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 107,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 145,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 145,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 74,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 146,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 106,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 144,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 111,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 146,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 147,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 143,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 107,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 148,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 148,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 84,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 149,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 143,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 150,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 116,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 149,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 119,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 150,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 151,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 147,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 83,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 151,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 97,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 152,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 106,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 111,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 153,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 116,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 119,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 154,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 153,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 100,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 154,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 102,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 155,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 122,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 123,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 142,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 152,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 155,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 156,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 104,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 156,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 0
+      },
+      "id": 157,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 5,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 158,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 3,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 3,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 17,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 3,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 3,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 159,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 158,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 159,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 160,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 158,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 161,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 162,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 162,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 163,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 162,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 162,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 164,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 165,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 165,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 166,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 166,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 167,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 164,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 167,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 167,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 168,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 161,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 163,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 161,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 168,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 169,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 169,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 170,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 161,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 171,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 167,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 172,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 172,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 169,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 173,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 171,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 173,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 174,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 160,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 170,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 4,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 174,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 175,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 163,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 176,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 163,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 177,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 162,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 176,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 177,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 178,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 158,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 159,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 179,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 161,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 180,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 172,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 169,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 181,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 180,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 181,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 182,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 169,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 183,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 179,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 182,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 28,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 183,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 184,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 165,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 165,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 185,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 49,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 36,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 185,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 186,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 166,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 186,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 187,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 176,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 187,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 176,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 188,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 166,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 186,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 189,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 177,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 189,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 177,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 190,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 164,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 188,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 190,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 191,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 175,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 178,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 184,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 191,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 192,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 193,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 35,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 194,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 35,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 194,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 195,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 195,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 196,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 89,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 197,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 197,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 198,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 198,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 199,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 196,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 53,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 46,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 199,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 53,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 200,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 193,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 200,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 201,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 201,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 47,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 202,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 35,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 203,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 203,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 35,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 204,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 204,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 205,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 89,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 206,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 206,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 207,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 207,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 208,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 205,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 53,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 46,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 208,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 53,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 209,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 193,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 209,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 210,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 210,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 61,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 211,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 202,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 211,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 212,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 158,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 213,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 213,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 172,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 214,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 213,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 215,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 162,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 216,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 164,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 167,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 167,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 217,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 213,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 216,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 213,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 217,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 218,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 218,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 172,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 219,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 215,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 219,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 220,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 160,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 214,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 4,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 220,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 221,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 216,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 222,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 216,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 223,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 162,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 222,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 223,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 224,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 213,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 225,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 218,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 172,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 226,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 225,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 226,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 227,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 213,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 172,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 228,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 179,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 227,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 28,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 228,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 229,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 165,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 165,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 230,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 54,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 90,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 230,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 231,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 231,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 166,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 232,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 222,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 232,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 222,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 233,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 231,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 166,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 234,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 223,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 234,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 223,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 235,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 164,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 233,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 2,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 235,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 236,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 221,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 224,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 229,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 236,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 237,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 160,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 4,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 238,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 162,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 239,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 179,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 28,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 240,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 164,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 2,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 241,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 238,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 239,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 240,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 241,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 242,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 192,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 45,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 212,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 237,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 242,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 243,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 105,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 105,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 109,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 105,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 105,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 244,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 244,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 158,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 245,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 167,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 246,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 246,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 161,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 247,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 161,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 163,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 161,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 168,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 248,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 246,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 248,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 249,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 249,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 171,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 250,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 245,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 247,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 106,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 250,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 251,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 244,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 158,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 252,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 246,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 248,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 253,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 253,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 180,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 254,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 246,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 161,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 255,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 252,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 254,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 116,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 255,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 256,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 251,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 178,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 256,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 191,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 257,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 194,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 258,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 258,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 259,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 89,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 197,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 260,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 260,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 261,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 259,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 128,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 124,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 261,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 128,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 262,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 262,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 193,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 263,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 263,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 125,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 264,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 203,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 0
+      },
+      "id": 265,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 265,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 266,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 206,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 89,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 267,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 267,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 268,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 266,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 128,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 124,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 268,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 128,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 0
+      },
+      "id": 269,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 269,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 193,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 270,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 270,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 134,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 1
+      },
+      "id": 271,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 264,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 271,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 272,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 213,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 216,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 213,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 217,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 0
+      },
+      "id": 273,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 273,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 274,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 273,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 246,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 275,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 275,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 215,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 276,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 245,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 274,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 106,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 276,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 277,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 273,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 246,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 0
+      },
+      "id": 278,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 278,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 225,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 279,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 273,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 1,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 8,
+        "state": 1
+      },
+      "id": 280,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 252,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 279,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 116,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 280,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 3,
+        "state": 1
+      },
+      "id": 281,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 277,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 224,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 281,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 236,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 282,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 245,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 106,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 283,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 252,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 116,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 1
+      },
+      "id": 284,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 283,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 239,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 284,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 241,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 10,
+        "state": 1
+      },
+      "id": 285,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 0,
+          "direction": "N",
+          "next_state": 0
+        },
+        {
+          "child": 257,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 123,
+          "direction": "W",
+          "next_state": 0
+        },
+        {
+          "child": 272,
+          "direction": "N",
+          "next_state": 1
+        },
+        {
+          "child": 282,
+          "direction": "S",
+          "next_state": 1
+        },
+        {
+          "child": 285,
+          "direction": "W",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 13,
+        "state": 1
+      },
+      "id": 286,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 243,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 0
+        },
+        {
+          "child": 286,
+          "direction": "E",
+          "next_state": 1
+        },
+        {
+          "child": 0,
+          "direction": "S",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 6,
+        "state": 0
+      },
+      "id": 287,
+      "kind": "QUERY"
+    },
+    {
+      "arcs": [
+        {
+          "child": 157,
+          "direction": "E",
+          "next_state": 0
+        },
+        {
+          "child": 287,
+          "direction": "E",
+          "next_state": 1
+        }
+      ],
+      "entry": {
+        "mask": 2,
+        "state": 0
+      },
+      "id": 288,
+      "kind": "QUERY"
+    }
+  ],
+  "root": 288,
+  "schema": "rendezvous.exact-local-function.v1",
+  "stats": {
+    "choice_expansions": 5111,
+    "dag_nodes": 289,
+    "hashcons_hits": 1724,
+    "max_assigned_entries": 12,
+    "product_steps": 23808,
+    "query_nodes": 287,
+    "raw_success_leaves": 3076,
+    "raw_trap_leaves": 8064,
+    "redundant_queries": 3100,
+    "success_path_count": 1912,
+    "symbolic_calls": 16251,
+    "trap_path_count": 3448
+  }
+}

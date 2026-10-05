@@ -1,0 +1,510 @@
+{
+  "schema_version": 1,
+  "components": [
+    {
+      "id": "model",
+      "component": "Overview / sandbox",
+      "claim": "Identical deterministic agents, synchronous compulsory moves, absolute compass masks, state-0 starts; success iff Manhattan distance <=1 at integer t including t=0. Singleton only time-zero success.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/model.tex",
+      "paper_label": "def:controller-general; sec:model",
+      "data_sources": [],
+      "semantic_sources": [
+        "research/supplement/common/grid.py"
+      ],
+      "presentation": "derived",
+      "overstatement_risk": "No waiting, coordinates as observations, sequential updates, or edge-crossing event.",
+      "public_occurrences": [
+        "site/index.html#overview",
+        "site/index.html#simulator",
+        "site/index.html#hierarchy",
+        "README.md"
+      ]
+    },
+    {
+      "id": "hero",
+      "component": "Hero trap",
+      "claim": "Exact seven-cell U path and A-star trajectory with separation two, product preperiod 2 and period 2.",
+      "status": "EXACT_FINITE_REPLAY",
+      "paper_source": "research/paper/sections/core_extremal.tex",
+      "paper_label": "a:trap",
+      "data_sources": [
+        "research/supplement/obstructions/universal_lower_bound/astar.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/common/grid.py",
+        "research/supplement/obstructions/universal_lower_bound/verify.py"
+      ],
+      "presentation": "exact geometry parsed from source; replay",
+      "overstatement_risk": "This is one controller witness, not a fixed trap for all controllers.",
+      "public_occurrences": [
+        "site/index.html#overview"
+      ]
+    },
+    {
+      "id": "capacity",
+      "component": "Support capacity",
+      "claim": "Primitive tagged cycle, tree used support: r_v=sum incident k_e <=s, L=2 sum k_e, k_e>=1, degree <=min(s,4).",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/support.tex",
+      "paper_label": "thm:support-capacity; cor:low-state-tree-supports",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "derived",
+      "overstatement_risk": "Used tree support, not all ambient edges; least tagged period essential.",
+      "public_occurrences": [
+        "site/index.html#overview",
+        "site/index.html#geometry",
+        "README.md"
+      ]
+    },
+    {
+      "id": "capacity-star",
+      "component": "Capacity animation",
+      "claim": "Grid-star construction realizes degree min(s,4); tagged centre visits and bidirectional edge traversals.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/support.tex",
+      "paper_label": "paragraph following cor:low-state-tree-supports",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "exact construction; pedagogical animation",
+      "overstatement_risk": "Capacity-permitted weighted shapes in arbitrary masks need not be realizable.",
+      "public_occurrences": [
+        "site/index.html#geometry"
+      ]
+    },
+    {
+      "id": "period",
+      "component": "Sharp-period calculator",
+      "claim": "For s>=2: n=2 ->2s; n>=3 even ->sn-2, odd ->s(n-1). Inputs are arbitrary integers (BigInt).",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/sharp_period.tex",
+      "paper_label": "thm:sharp-period",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "derived",
+      "overstatement_risk": "n is used-support vertices; maximum over geometries/controllers, not every fixed path.",
+      "public_occurrences": [
+        "site/index.html#periods",
+        "README.md"
+      ]
+    },
+    {
+      "id": "period-construction",
+      "component": "Alternating path animation",
+      "claim": "ENEN... construction with east k=s-1, north k=1 attains formula for n>=3; standalone edge uses separate table.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/sharp_period.tex",
+      "paper_label": "proof of thm:sharp-period",
+      "data_sources": [],
+      "semantic_sources": [
+        "research/supplement/realization/scripts/consequence_replay.py"
+      ],
+      "presentation": "exact construction; bounded visual replay",
+      "overstatement_risk": "Calculator unbounded integers but rendered construction capped for performance; not an input limit on theorem.",
+      "public_occurrences": [
+        "site/index.html#periods"
+      ]
+    },
+    {
+      "id": "threshold-one",
+      "component": "One-state ladder",
+      "claim": "F(1)=4 and radius law 2 for rho<1, floor(rho)+3 for rho>=1 in P,J,grid trees,G.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/memoryless.tex",
+      "paper_label": "thm:memoryless-radius; cor:one-state-radius-one",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "derived",
+      "overstatement_risk": "States at most 1; rho nonnegative; one-state tree support not general cyclic support.",
+      "public_occurrences": [
+        "site/index.html#hierarchy",
+        "README.md"
+      ]
+    },
+    {
+      "id": "threshold-two",
+      "component": "Two-state ladder",
+      "claim": "F(2)=7 unchanged on induced grid trees and J.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/two_state.tex",
+      "paper_label": "thm:B; thm:C",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "derived",
+      "overstatement_risk": "Human/deductive proof, not exhaustive controller-space proof; paths-only upper is not 7.",
+      "public_occurrences": [
+        "site/index.html#overview",
+        "site/index.html#hierarchy",
+        "README.md"
+      ]
+    },
+    {
+      "id": "threshold-path",
+      "component": "Two-state path ladder",
+      "claim": "F_P,1(2)=8; analytic upper, exact finite lower certificate through 7.",
+      "status": "COMPUTER_ASSISTED_CERTIFICATE",
+      "paper_source": "research/paper/sections/paths.tex",
+      "paper_label": "thm:path-two-state; prop:path-seven-survivor",
+      "data_sources": [
+        "research/supplement/expected/path_certificate.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/paths/check.py"
+      ],
+      "presentation": "derived",
+      "overstatement_risk": "Whole equality is mixed/computer-assisted; size-eight diagnostic is not lower proof.",
+      "public_occurrences": [
+        "site/index.html#hierarchy",
+        "README.md"
+      ]
+    },
+    {
+      "id": "four-state",
+      "component": "Four-state universality / preset",
+      "claim": "One fixed cyclic-port controller succeeds on every finite induced path at radius 1; initial N renamed 0.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/paths.tex",
+      "paper_label": "eq:four-state-rotor; thm:four-state-path",
+      "data_sources": [],
+      "semantic_sources": [
+        "research/supplement/realization/scripts/consequence_replay.py"
+      ],
+      "presentation": "exact formula-generated table",
+      "overstatement_risk": "No general-maze/tree rendezvous universality claim.",
+      "public_occurrences": [
+        "site/index.html#hierarchy",
+        "site/index.html#simulator",
+        "README.md"
+      ]
+    },
+    {
+      "id": "three-open",
+      "component": "Three-state boundary",
+      "claim": "Universal three-state path rendezvous remains open; recurrent-cycle realization does not settle state-0 accessibility.",
+      "status": "OPEN",
+      "paper_source": "research/paper/sections/open_problems.tex",
+      "paper_label": "sec:open-problems",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "derived",
+      "overstatement_risk": "Do not infer universality from finite scans or cycle existence.",
+      "public_occurrences": [
+        "site/index.html#overview",
+        "site/index.html#three",
+        "site/index.html#hierarchy",
+        "README.md"
+      ]
+    },
+    {
+      "id": "three-normal",
+      "component": "Contour and matching",
+      "claim": "For simple 3-state tagged cycles with used path n>=3, doubled edges form matching; contour insertion phases are geometric normal form only.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/realization.tex",
+      "paper_label": "prop:three-normal-form",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "derived",
+      "overstatement_risk": "Own path masks for converse; one-edge multiplicity exception; geometric form not sufficient.",
+      "public_occurrences": [
+        "site/index.html#three"
+      ]
+    },
+    {
+      "id": "three-criterion",
+      "component": "Profile and affine explanation",
+      "claim": "Direction condition plus existence of one consistent shared finite profile with sparse A_theta z=b_theta over F2 is necessary and sufficient for prescribed own-mask cycles.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/realization.tex",
+      "paper_label": "thm:three-state-realization; eq:real-system",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "derived",
+      "overstatement_risk": "Must share one profile across components; not one global XOR system before choosing profile.",
+      "public_occurrences": [
+        "site/index.html#three",
+        "README.md"
+      ]
+    },
+    {
+      "id": "three-nand",
+      "component": "Exact positive NAND examples / relation",
+      "claim": "Fixed ENENNNE, phases 0-0---0: correspondence projection {00,01,10}, not affine; x/y compare saturated state pairs, not insertion phases.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/realization.tex",
+      "paper_label": "prop:nand8; app:nand-witnesses",
+      "data_sources": [
+        "research/supplement/realization/data/probe_saturated_nand8.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/realization/scripts/seam_probes.py",
+        "research/supplement/realization/scripts/validate_evidence.py"
+      ],
+      "presentation": "exact data-backed replay; theorem supported by deductive proof",
+      "overstatement_risk": "JSON finite validation not all-size proof; reject 11 only for specified correspondences.",
+      "public_occurrences": [
+        "site/index.html#three"
+      ]
+    },
+    {
+      "id": "three-staircase",
+      "component": "Exact negative staircase",
+      "claim": "ENENE, phases -0-1- has no simple 3-state realization; x=1,x+y=0,y=0 sum to 0=1.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/appendices/realization_bookkeeping.tex",
+      "paper_label": "app:staircase; thm:phase-locking",
+      "data_sources": [
+        "research/supplement/realization/data/probe_staircase6.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/realization/scripts/seam_probes.py",
+        "research/supplement/realization/scripts/validate_evidence.py"
+      ],
+      "presentation": "exact geometry/data and proof constraints",
+      "overstatement_risk": "One failing profile generally insufficient; staircase has direct all-profile argument, no minimality claimed.",
+      "public_occurrences": [
+        "site/index.html#three"
+      ]
+    },
+    {
+      "id": "basin",
+      "component": "Accessibility comparison",
+      "claim": "Two completions on ENE preserve same contour but all state-0 starts reach it in good table and none in bad table.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/appendices/structural_consequences.tex",
+      "paper_label": "app:basins",
+      "data_sources": [
+        "research/supplement/realization/data/consequence_replay.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/realization/scripts/consequence_replay.py"
+      ],
+      "presentation": "exact source-derived controller replay",
+      "overstatement_risk": "One cycle is preserved but bad completion adds cycles; do not say identical full recurrent structure.",
+      "public_occurrences": [
+        "site/index.html#three",
+        "site/index.html#simulator"
+      ]
+    },
+    {
+      "id": "family144",
+      "component": "Full test explorer",
+      "claim": "144 absolutely oriented state-0 start-labelled tests on <=7 cells; 76 fixed geometries, 22 instance orbits, 13 geometry types; completeness deductive.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/finite_obstructions.tex",
+      "paper_label": "thm:human-finite-basis",
+      "data_sources": [
+        "research/supplement/obstructions/basis144/family.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/obstructions/universal_host/verify.py",
+        "research/supplement/obstructions/selected44/verify.py"
+      ],
+      "presentation": "exact normalized cells and starts",
+      "overstatement_risk": "Do not rotate instances while retaining controller; different starts are different tests.",
+      "public_occurrences": [
+        "site/index.html#tests"
+      ]
+    },
+    {
+      "id": "family44",
+      "component": "Certified selected explorer",
+      "claim": "44 selected candidates form complete family and are minimum within fixed 144 candidates only.",
+      "status": "COMPUTER_ASSISTED_CERTIFICATE",
+      "paper_source": "research/paper/sections/finite_obstructions.tex",
+      "paper_label": "prop:44-candidate-minimum",
+      "data_sources": [
+        "research/supplement/obstructions/selected44/family.json",
+        "research/supplement/obstructions/selected44/packing.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/obstructions/selected44/verify.py",
+        "research/supplement/common/lrat_rup.py"
+      ],
+      "presentation": "exact selected identifiers and packing sets",
+      "overstatement_risk": "No global-minimum claim; browser does not recheck full proof.",
+      "public_occurrences": [
+        "site/index.html#overview",
+        "site/index.html#tests",
+        "README.md"
+      ]
+    },
+    {
+      "id": "packing",
+      "component": "Packing / certificate narrative",
+      "claim": "Selected escape CNF unsatisfiable via 1414 RUP additions; 44 disjoint nonempty trapped-candidate sets from packing witnesses force restricted lower bound.",
+      "status": "COMPUTER_ASSISTED_CERTIFICATE",
+      "paper_source": "research/paper/sections/finite_obstructions.tex",
+      "paper_label": "Certificate sketch following prop:44-candidate-minimum",
+      "data_sources": [
+        "research/supplement/obstructions/selected44/packing.json",
+        "research/supplement/obstructions/selected44/encoding_manifest.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/obstructions/selected44/verify.py"
+      ],
+      "presentation": "derived",
+      "overstatement_risk": "Specialized RUP verifier, not general LRAT/formal verification of code.",
+      "public_occurrences": [
+        "site/index.html#tests"
+      ]
+    },
+    {
+      "id": "host",
+      "component": "Exact host viewer",
+      "claim": "5212 canonical cells, 5211 induced edges, connected tree, max degree3; 172 ported fragments, 2792 fragment +990 stalk+1430 rail cells.",
+      "status": "EXACT_FINITE_REPLAY",
+      "paper_source": "research/paper/sections/universal_host.tex",
+      "paper_label": "eq:universal-maze-count; thm:universal-5212",
+      "data_sources": [
+        "research/supplement/obstructions/universal_host/host.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/obstructions/universal_host/verify.py",
+        "research/supplement/common/grid.py"
+      ],
+      "presentation": "exact coordinates and metadata; derive induced edges",
+      "overstatement_risk": "Structural validation accompanies human construction, does not prove portability alone.",
+      "public_occurrences": [
+        "site/index.html#host"
+      ]
+    },
+    {
+      "id": "host-quantifiers",
+      "component": "Host theorem / extension",
+      "claim": "Exists fixed U forall legal <=2-state A exists initially noncontacting state-0 bad starts; every exact n>=5212 has subcubic induced tree construction.",
+      "status": "DEDUCTIVE",
+      "paper_source": "research/paper/sections/universal_host.tex",
+      "paper_label": "thm:universal-5212; cor:universal-exact-size",
+      "data_sources": [],
+      "semantic_sources": [],
+      "presentation": "derived",
+      "overstatement_risk": "Starts depend on controller; geometry fixed before controller; upper bound not minimum.",
+      "public_occurrences": [
+        "site/index.html#overview",
+        "site/index.html#host",
+        "README.md"
+      ]
+    },
+    {
+      "id": "host-bound",
+      "component": "Universal-host range",
+      "claim": "8 <=u2<=u2,tree3<=5212; neither exact minimum known.",
+      "status": "COMPUTER_ASSISTED_CERTIFICATE",
+      "paper_source": "research/paper/sections/universal_host.tex",
+      "paper_label": "prop:u2-lower-eight; sec:open-problems",
+      "data_sources": [
+        "research/supplement/obstructions/universal_lower_bound/astar.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/obstructions/universal_lower_bound/verify.py"
+      ],
+      "presentation": "derived",
+      "overstatement_risk": "Lower bound requires computation; individual F(2)=7 does not imply universal-host size7.",
+      "public_occurrences": [
+        "site/index.html#host",
+        "README.md"
+      ]
+    },
+    {
+      "id": "preset-astar",
+      "component": "Exact A-star sandbox",
+      "claim": "Complete paper A-star table and seven-cell trap from a:trap.",
+      "status": "EXACT_FINITE_REPLAY",
+      "paper_source": "research/paper/sections/core_extremal.tex",
+      "paper_label": "tab:astar; a:trap",
+      "data_sources": [
+        "research/supplement/obstructions/universal_lower_bound/astar.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/obstructions/universal_lower_bound/verify.py",
+        "research/supplement/common/grid.py"
+      ],
+      "presentation": "exact table and parsed TeX geometry",
+      "overstatement_risk": "Any user edits become illustrative, not paper witnesses.",
+      "public_occurrences": [
+        "site/index.html#simulator"
+      ]
+    },
+    {
+      "id": "preset-path8",
+      "component": "Exact path survivor sandbox",
+      "claim": "Frozen path survivor with first canonical 8-cell sample failure. Degree>=3 rows completed via canonical grid default.",
+      "status": "EXACT_FINITE_REPLAY",
+      "paper_source": "research/paper/sections/paths.tex",
+      "paper_label": "tab:path-survivor; prop:path-seven-survivor",
+      "data_sources": [
+        "research/supplement/expected/path_certificate.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/paths/check.py",
+        "research/supplement/common/grid.py"
+      ],
+      "presentation": "exact path rows; explicit legal completion",
+      "overstatement_risk": "Off-path completed rows carry no paper guarantee; changed examples illustrative.",
+      "public_occurrences": [
+        "site/index.html#simulator"
+      ]
+    },
+    {
+      "id": "toy",
+      "component": "Editable toy sandbox",
+      "claim": "Curated straight/bent tiny maze with compass-priority legal controller; edits and user-selected starts illustrate exact model.",
+      "status": "ILLUSTRATIVE_TOY",
+      "paper_source": "research/paper/sections/model.tex",
+      "paper_label": "def:controller-general",
+      "data_sources": [],
+      "semantic_sources": [
+        "research/supplement/common/grid.py"
+      ],
+      "presentation": "pedagogical",
+      "overstatement_risk": "No toy is proof or released controller witness; simulator is educational not proof engine.",
+      "public_occurrences": [
+        "site/index.html#simulator"
+      ]
+    },
+    {
+      "id": "repro",
+      "component": "Artifact page / commands",
+      "claim": "Frozen full 15-stage verification, 30 deterministic comparisons, integrity-only and external paper build commands; browser is not full verifier.",
+      "status": "EXACT_FINITE_REPLAY",
+      "paper_source": "research/paper/appendices/reproducibility.tex",
+      "paper_label": "app:reproducibility; app:computational-provenance",
+      "data_sources": [
+        "research/manifests/PROOF_ARTIFACTS.json",
+        "research/supplement/expected/replay_files.json"
+      ],
+      "semantic_sources": [
+        "research/supplement/verify_all.py",
+        "research/supplement/common/integrity.py",
+        "research/paper/build.py"
+      ],
+      "presentation": "exact commands and release-declared statuses, new run reported separately",
+      "overstatement_risk": "Do not invent fresh replay success; distinguish deductive/certificate/validation.",
+      "public_occurrences": [
+        "site/index.html#reproduce",
+        "README.md"
+      ]
+    },
+    {
+      "id": "authors",
+      "component": "Paper / citation",
+      "claim": "Known title, ordered authors, canonical affiliations, canonical PDF; no assigned publication URLs.",
+      "status": "EXACT_FINITE_REPLAY",
+      "paper_source": "research/paper/main.tex",
+      "paper_label": "title; author; PDF metadata",
+      "data_sources": [
+        "research/AUTHOR_METADATA_24.md",
+        "research/paper/main.pdf"
+      ],
+      "semantic_sources": [],
+      "presentation": "exact metadata; derived BibTeX/CFF",
+      "overstatement_risk": "No fabricated date of publication, DOI/arXiv/journal/email/ORCID; license confirmations outstanding.",
+      "public_occurrences": [
+        "site/index.html#paper",
+        "README.md"
+      ]
+    }
+  ]
+}

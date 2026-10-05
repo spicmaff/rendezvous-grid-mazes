@@ -1,0 +1,15 @@
+\subsection{Why path support is essential}\label{app:branching-example}
+Path support cannot be replaced by arbitrary tree support, even if the one-agent functional graph has a unique recurrent tagged cycle.  For an explicit example, take the seven-cell triod
+\[
+ c=(0,0),\quad n=(0,1),\quad n_2=(0,2),\quad
+ s=(0,-1),\quad s_2=(0,-2),\quad e=(1,0),\quad e_2=(2,0),
+\]
+and the following three-state rows; unused rows may be completed arbitrarily.
+
+\input{tables/branching_phase_counterexample}
+
+These rows give the unique recurrent tagged cycle
+\[
+ c_0,n_0,(n_2)_2,n_1,c_1,s_1,(s_2)_1,s_0,c_2,e_0,(e_2)_0,e_1.
+\]
+Every off-cycle tag enters it in one step.  Nevertheless the state-zero starts $n_0$ and $s_0$, which are six phases apart, remain at Manhattan distance exactly two at all twelve phases.  Thus branching invalidates the one-dimensional sign argument and marks a real obstruction to extending the two-state method directly to three states.

@@ -1,0 +1,170 @@
+\section{Boundary cases and consequences of realization}
+\label{app:structural-consequences}
+
+\subsection{One-edge supports with their actual masks}
+\begin{lemma}\label{lem:one-edge-realization}
+Let a support consist of one edge $uv$, let its directional multiplicity be $k$,
+and read the actual ambient masks $M_u,M_v$. An $s$-state simple tagged cycle
+exists exactly when $k\le s$ if $M_u\ne M_v$, and exactly when $2k\le s$ if
+$M_u=M_v$.
+\end{lemma}
+\begin{proof}
+Each endpoint needs $k$ distinct states. If the masks are equal, the two sets
+must be disjoint because their outgoing directions are opposite. These are the
+necessary inequalities. If the masks differ, use states $0,\ldots,k-1$ at both
+ends and prescribe
+\[
+ \delta(i,M_u)=(d,i),\qquad
+ \delta(i,M_v)=(-d,i+1\bmod k),
+\]
+where $d$ points from $u$ to $v$. If the masks agree, use disjoint sets with
+$\delta(i,M)=(d,k+i)$ and $\delta(k+i,M)=(-d,i+1\bmod k)$.
+These rows produce the required cycle and can be completed legally.
+\end{proof}
+Thus a doubled edge is possible with three states when it is the entire path,
+but not when both its endpoints have the same straight ambient mask. The
+multiplicity-three exception on an entire one-edge path is outside the
+contour-plus-matching input of Theorem~\ref{thm:three-state-realization}.
+
+\subsection{Two-state contours and a strict memory separation}
+For a support of at least three vertices, the two-state capacity law forces
+every edge multiplicity to be one. This is a necessary normal form, not an
+automatic realization theorem. Fix an order of the two ports of every internal
+mask $M$, and let $h_M\in\Ftwo$ be the outgoing state for its first port; the
+other state is $h_M+1$. Choose endpoint states, giving at most four endpoint
+profiles. At internal occurrences group equal $(M,d)$ and equate their successor
+states. At endpoints group equal $(M,q)$ and do the same. The resulting equations
+in the $h_M$ are scalar XOR equations, including constants.
+
+This criterion is exact. Necessity follows because both states are used at
+each internal vertex and its two outgoing directions differ. For sufficiency,
+the two assigned states there are distinct, and each repeated controller key
+has both its direction and successor fixed consistently by precisely the stated
+groups. Complete unused rows legally. Thus one of these at most four systems is
+consistent if and only if the ordinary contour is realizable with two states.
+There are at most six internal masks, so this particular recognition construction
+is linear in the word length for the fixed compass alphabet.
+
+A useful strict separation is the family with directions
+\[
+ \E^a\N^b\W^c,\qquad a,c\ge2,\quad b\ge3.
+\]
+Its ordinary contour requires exactly three states. For the two-state
+impossibility, let $\alpha$ be the N-state of the $\N\W$ corner and $\beta$ the
+S-state of the $\Sdir\W$ corner. The shared E-row of the straight horizontal
+mask forces $\alpha=\beta$, by comparing its transitions into the two corners.
+The straight vertical N-row compared with the upper corner forces its state to
+be $1-\beta$; the vertical S-row compared with the lower corner forces its state
+to be $1-\alpha$. These are then equal, contradicting the two directions at a
+straight vertical vertex. For sufficiency, the following used rows give one
+three-state controller for the whole family; blank rows may be completed legally:
+\begin{center}
+\begin{tabular}{c@{\qquad}ccc}
+\toprule
+Mask & State 0 & State 1 & State 2\\
+\midrule
+$\E\W$ & $(\E,0)$ & $(\W,1)$ & ---\\
+$\N\Sdir$ & --- & $(\Sdir,1)$ & $(\N,2)$\\
+$\N\W$ & $(\N,2)$ & $(\W,1)$ & ---\\
+$\Sdir\W$ & $(\Sdir,1)$ & --- & $(\W,1)$\\
+$\E$ & --- & $(\E,0)$ & ---\\
+\bottomrule
+\end{tabular}
+\end{center}
+Start at the lower left endpoint in state 1. The horizontal directions use
+states 0 and 1, the vertical directions states 2 and 1, and the two corners
+use states $(0,1)$ and $(2,0)$. Directly following these rows gives the contour
+and distinct tags at each vertex. Minimality of its eight-vertex representative
+among all two-state contour failures is only a finite-check assertion.
+
+\subsection{Proper intervals retain ambient ports}
+\label{app:boundary-aware}
+Suppose the prescribed support is an interval $I$ of an ambient induced path
+$P$, with at least three vertices. Masks must still be read in $P$. Use the
+internal profiles of Section~\ref{sec:realization} and choose injective endpoint
+states. When an endpoint mask $M$ also occurs internally, require
+\[
+ X_i=a_M\quad\Longleftrightarrow\quad d_i=u_M.
+\]
+For a paired-side endpoint, its chosen state is $b(a_M)+a_Mt_i$ for a determined
+constant $t_i\in\Ftwo$. Include these endpoint occurrences in the same U/B
+comparisons as internal occurrences. If a mask occurs only at endpoints, group
+by $(M,X_i)$, reject a group with differing outgoing directions, and otherwise
+equate successors in that group. The one-edge case is Lemma~\ref{lem:one-edge-realization}.
+
+These additions give the exact boundary-aware version of the affine criterion.
+For necessity, the real controller gives the same singleton/paired partition
+whenever that mask occurs internally; it therefore obeys the direction gate
+and all comparisons. For sufficiency the gate checks directions at shared
+endpoint/internal keys, U/B checks their successors, and the remaining endpoint
+groups check all boundary-only keys. This exhausts every repeated row, while
+all prescribed directions stay in $I$. Legal completion is performed using the
+ambient masks. The system still has linear size and a bounded profile family.
+Deleting the exterior ports instead would change the realization question.
+
+For a fixed known controller, its internal direction partition, singleton state
+and paired successor difference are already fixed. Equate each actual successor
+to its known row output (affine on the two paired inputs) and impose the endpoint
+rows directly. At most 36 endpoint injections remain. This is an exact linear
+recognition test for a prescribed support and word in that fixed controller,
+not a solution of the basin problem over all paths.
+
+\subsection{Full-support cycles and their residual competitors}
+\label{app:basins}
+\begin{proposition}\label{prop:residual-cycles}
+Let a three-state controller have a recurrent cycle $C$ using every vertex of a
+path $P$ with $n\ge3$. Every other recurrent cycle has a one-edge support and
+length two. If $R_v$ denotes the states unused by $C$ at $v$, these other cycles
+are exactly the pairs
+\[
+ (u,q)\longmapsto(v,r)\longmapsto(u,q),\qquad
+ uv\in E(P),\quad q\in R_u,\quad r\in R_v.
+\]
+If the vertices unsaturated by $C$ form an independent set, $C$ is the unique
+cycle and every tag enters it within $3n-|C|$ steps.
+\end{proposition}
+\begin{proof}
+Distinct cycles of a deterministic map have disjoint tags. The full-support
+cycle uses at least two states at each internal vertex. A second cycle with
+at least two support edges would need two further states at an internal vertex
+of its support, which is also internal in $P$, an impossibility. A one-edge
+competitor has an endpoint internal in $P$, where at most one state remains;
+its multiplicity is therefore one. This proves the exact residual-row test.
+If the unsaturated vertices are independent, no support edge can have residual
+states at both ends, so no competitor exists. A trajectory outside $C$ cannot
+repeat a tag before entering $C$, since repetition would give another cycle.
+There are $3n-|C|$ tags outside it, giving the stated entrance bound.
+\end{proof}
+When all internal vertices are saturated the independent-set hypothesis holds.
+In the three-state sharp-period family of Section~\ref{sec:sharp-period}, this
+gives entrance within two steps for even $n$ and three for odd $n$. Once both
+agents are on the unique cycle, path phase contact applies. This consequence
+concerns that one explicit family of paths, not all path geometries.
+
+The accessibility limitation is concrete already on the four-vertex path with
+directions $\E\N\E$. Consider the same cycle in two controllers,
+\[
+ C=(0_2,1_1,2_1,3_1,2_2,1_2).
+\]
+Their rows in states 1 and 2 agree; state 0 differs as follows:
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+Mask & State 1 & State 2 & State 0, good & State 0, bad\\
+\midrule
+$\E$ & $(\E,1)$ & $(\E,1)$ & $(\E,1)$ & $(\E,0)$\\
+$\N\W$ & $(\N,1)$ & $(\W,2)$ & $(\N,1)$ & $(\W,0)$\\
+$\E\Sdir$ & $(\E,1)$ & $(\Sdir,2)$ & $(\E,1)$ & $(\E,0)$\\
+$\W$ & $(\W,2)$ & $(\W,2)$ & $(\W,2)$ & $(\W,0)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+At every other nonempty mask choose its first port in a fixed compass order and
+next state 0, completing both tables. The good controller sends every state-zero
+start to $C$ in one step; the other unused tags do so too. For the bad controller,
+$0_0\leftrightarrow1_0$ and $2_0\leftrightarrow3_0$ are accessible cycles, whereas
+$C$ is not state-zero accessible. Starts $0_0,2_0$ alternate between spatial
+pairs $(0,2)$ and $(1,3)$, always at distance two. Thus the same realized cycle
+can coexist with different basin behavior.
+
+\input{appendices/branching_example}

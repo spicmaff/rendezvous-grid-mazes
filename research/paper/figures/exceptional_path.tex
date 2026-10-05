@@ -1,0 +1,27 @@
+% The only marked start is h_0. L and R denote cycle supports, not two starts.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=10mm,y=10mm]
+ \coordinate (w) at (-1,0); \coordinate (h) at (0,0);
+ \coordinate (p) at (0,1); \coordinate (m) at (1,1);
+ \coordinate (r) at (2,1); \coordinate (b) at (2,0);
+ \draw[quiet] (h)--(p)--(m)--(r);
+ \draw[supportA] (w)--(h); \draw[supportB] (r)--(b);
+ \node[cell,label=below:{$w$}] at (w) {};
+ \node[startA,label=below:{$h_0$}] at (h) {};
+ \node[cell,label=above left:{$p$}] at (p) {};
+ \node[cell,label=above:{$m$}] at (m) {};
+ \node[cell,label=above right:{$r$}] at (r) {};
+ \node[cell,label=below:{$b$}] at (b) {};
+ \draw[transientA] (.13,.09)--(.13,.86)--(.88,.86);
+ \draw[transientA] (1.12,.86)--(1.87,.86);
+ \node[font=\footnotesize,anchor=north] at (-.5,-.55) {$L=(w_0,h_1)$};
+ \node[font=\footnotesize,anchor=north] at (2,-.55) {$R=(r_1,b_1)$};
+ \node[paneltitle] at (3.25,1.05) {One exceptional state-zero root};
+ \node[note] at (3.25,.36) {$h_0\to p_1\to m_1\to r_1$ reaches $R$.};
+ \node[note] at (3.25,-.33) {All other state-zero roots reach $L$.};
+ \mazeCompass{9.1}{.15}
+\end{tikzpicture}
+\caption{The exceptional path $P_H$, in order $w,h,p,m,r,b$ with $h=(0,0)$. The dashed route is the unique state-zero entry to $R$; initially far pairs in different basins must reverse their spatial order before settling.}
+\label{f:exceptional-path}
+\end{figure}

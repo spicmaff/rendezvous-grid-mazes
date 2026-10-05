@@ -1,0 +1,104 @@
+\section{Finite obstruction bases}
+\label{sec:finite-obstructions-universal}
+
+The two-state case proof supplies three levels of obstruction uniformity:
+\begin{equation}
+\label{eq:three-obstruction-quantifiers}
+\begin{aligned}
+  &\text{controller-dependent trap complexity:}
+  &&\forall A\;\exists I_A,\\
+  &\text{finite complete test family:}
+  &&\exists\mathcal U\text{ finite}\;\forall A\;\exists I\in\mathcal U,\\
+  &\text{one universal host maze:}
+  &&\exists U\;\forall A\;\exists(x_A,y_A)\in U^2.
+\end{aligned}
+\end{equation}
+Here $A$ ranges over legal controllers with at most two states, and each test
+or start pair is initially noncontacting. The successive lines fix the controller,
+then a menu, then the host itself. Finite controller space already gives an abstract
+finite menu from $F(2)<\infty$; the construction below instead extracts a small
+explicit family from the proof without enumerating controllers.
+
+\subsection{An explicit proof-derived obstruction basis}
+\label{subsec:human-obstruction-basis}
+
+A \emph{test instance} is a triple $I=(V,x_0,y_0)$ consisting of an absolutely
+oriented finite connected induced grid maze and two distinct state-$0$ starts with
+$\|x_0-y_0\|_1\ge2$.  We say that $I$ \emph{traps} $A$ when the two synchronous
+copies of $A$ started at $x_0,y_0$ never reach Manhattan distance at most one.
+Compass orientation is part of the instance.
+
+\begin{theorem}[Explicit finite obstruction basis]
+\label{thm:human-finite-basis}
+There is an explicit family $\mathcal U_{\mathrm{hum}}$ of $144$ absolutely oriented,
+start-labelled test instances, each on at most seven cells, such that every legal
+deterministic controller with at most two states is trapped by at least one member of
+$\mathcal U_{\mathrm{hum}}$.
+
+The family uses $76$ fixed oriented maze geometries.  Under simultaneous $D_4$
+transport and exchange of the two identical agents it has $22$ instance orbits, and
+its maze geometries have $13$ $D_4$-types.
+\end{theorem}
+
+\begin{proof}
+The upper proof has $30$ primitive terminal predicates.  Making explicit the
+two equal-direction variants and the four reset-bit variants produces $34$ normalized
+source records.  In every branch the proof applies one global element $g\in D_4$ to
+the controller, masks, directions, maze and starts; it never rotates only the maze.
+The selected normalized trap is therefore transported back by $g^{-1}$.  We take all
+eight inverse transports of all $34$ source records, then quotient only by common
+translation, exchange of the two identical state-$0$ agents, and literal identity.
+Rotation and reflection are \emph{not} quotient operations on the concrete family,
+because the compass is absolute.  This yields exactly the $144$ instances stated
+above.
+
+The completeness implication itself is the original case tree.  For an
+arbitrary two-state controller that tree reaches one of its terminal source records;
+the corresponding normalized execution is trapped by the terminal lemma.  Simultaneous
+$D_4$ conjugacy preserves tagged executions and Manhattan distance, so the inverse
+transport traps the original controller.  That transported instance belongs to
+$\mathcal U_{\mathrm{hum}}$.  A one-state controller is included by viewing it as a
+two-state table whose state-$0$ rows always return state $0$.
+\end{proof}
+
+The counting in Theorem~\ref{thm:human-finite-basis} is finite bookkeeping rather
+than a premise of completeness.  The $34$ normalized source records and all $144$
+transported instances are supplied in the supplementary data.  Their terminal
+conditions organize into the eight proof modules summarized in
+Table~\ref{tab:obstruction-modules}.
+
+\input{tables/obstruction_modules}
+
+\subsection{A computer-minimized subfamily}
+\label{subsec:44-subfamily}
+
+The proof-derived family is intentionally faithful to the proof rather than optimized for
+cardinality.  Exact computation gives a smaller complete menu, but its scope must be
+stated carefully.
+
+\begin{proposition}[Minimum within the proof-derived candidate family]
+\label{prop:44-candidate-minimum}
+There exists a complete test family of $44$ instances, all chosen from
+$\mathcal U_{\mathrm{hum}}$.  Moreover, no complete subfamily of
+$\mathcal U_{\mathrm{hum}}$ has fewer than $44$ members.
+\end{proposition}
+
+The existence and candidate-restricted optimum in this proposition are
+computer-assisted results, unlike the deductive completeness of the full family.
+\paragraph{Certificate sketch.}
+For the upper bound, the full physical transition function of each of the $144$
+instances was reconstructed, and a SAT encoding of a legal controller escaping the
+selected $44$ instances was proved unsatisfiable by an independently checked LRAT
+certificate.  For the lower bound, there are $44$ explicit legal controllers
+$P_1,\ldots,P_{44}$.  If
+\[
+  S_i=\{I\in\mathcal U_{\mathrm{hum}}: I\text{ traps }P_i\},
+\]
+then each $S_i$ is nonempty and the $44$ sets are pairwise disjoint.  Any complete
+subfamily of the $144$ candidates must therefore choose a distinct member from each
+$S_i$.  This packing argument is a direct exact finite check of the full physical
+instances and does not use SAT.
+
+The $44$ tests are complete, but optimality is \emph{restricted to the $144$
+supplied candidates}. Whether an arbitrary complete family can have at most $43$
+members remains open.

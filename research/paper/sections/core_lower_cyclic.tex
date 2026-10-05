@@ -1,0 +1,368 @@
+\subsection{The remaining small mazes}\label{sec:cyclic}
+
+We now account for full vertices and spatial cycles. This part of the proof
+works for arbitrary initial tags. Compass directions remain absolute
+throughout: translations are used to name cells, but no rotation of the fixed
+controller \(\Astar\) is assumed.
+
+\begin{lemma}[Small-maze geometry]\label{c:geometry}
+Every connected induced grid maze with \(3\le |V|\le6\) belongs to exactly one
+of the following structural families, with \(\mathsf X\) given priority:
+\(\mathsf X\), a full vertex, its four neighbours, and at most one further
+cell; \(\mathsf T\), a tree of maximum degree at most three;
+\(\mathsf Q\), a unit square with at most two attached tree cells, with no
+full vertex and no second square; or \(\mathsf R\), either absolute
+orientation of the \(2\times3\) rectangle.
+\end{lemma}
+\begin{proof}
+A degree-four vertex already accounts for five cells, so connectivity gives
+\(\mathsf X\). In its absence an acyclic maze belongs to \(\mathsf T\).
+A shortest spatial cycle in the remaining maze has length four or six,
+because the grid is bipartite. A simple six-edge grid cycle has two vertical
+and four horizontal edges, or four vertical and two horizontal edges. In the
+first case the two vertical edges join two adjacent rows, and each row
+contributes the straight two-edge segment between their endpoints. The six
+vertices form a \(3\times2\) rectangle. Inducedness supplies its middle
+vertical edge, and hence a unit square. Interchanging the roles of the axes
+proves the same geometric assertion in the other case.
+
+Thus a unit square is present and at most two cells remain. If these cells
+create another spatial cycle, they supply a three-edge detour between two
+adjacent square vertices. A one-cell exterior detour is impossible: the
+common grid neighbours of opposite square vertices are already in the
+square. The three-edge detour supplies a second unit square sharing an
+edge with the first, and their union is a \(2\times3\) rectangle. Otherwise
+the remaining cells are trees attached at single square vertices, giving
+\(\mathsf Q\). The four families are disjoint under the stated priority.
+\end{proof}
+
+\input{figures/maze_families}
+
+\begin{lemma}[Full-centre routing]\label{c:full-centre}
+On every maze in \(\mathsf X\), two copies of \(\Astar\) rendezvous from
+arbitrary initial tags.
+\end{lemma}
+\begin{proof}
+Translate the full vertex to \(p=(0,0)\), and write
+\(n=(0,1),e=(1,0),s=(0,-1),w=(-1,0)\). If a sixth cell \(x\) is present,
+it must neighbour an arm, so
+\[
+x\in\{(0,2),(2,0),(0,-2),(-2,0),(1,1),(-1,1),(1,-1),(-1,-1)\}.
+\]
+Table~\ref{c:cross-cycles} lists all tagged cycles. A parenthesized word is
+read cyclically. We verify both the words and their exhaustion directly from
+Table~\ref{tab:astar}.
+
+\begin{table}[!htbp]
+\centering\small
+\begin{tabular}{lll}
+\toprule
+Extra cell & Complete list of tagged cycles & Support type \\
+\midrule
+None, \((0,2),(-2,0),(-1,1)\) & \((p_1,s_1)\) & One edge \\
+\((0,-2)\) & \((s_1,x_1)\) & One edge \\
+\((2,0)\) & \((p_0,e_0)\), \((p_1,s_1)\) & Edges meeting at \(p\) \\
+\((1,1)\) & \((p_0,e_0,x_1,e_1)\), \((p_1,s_1)\) & Shuttle and edge at \(p\) \\
+\((1,-1)\) & \((p_0,e_0)\) & One edge \\
+\((-1,-1)\) & \((s_1,x_0,w_0,x_1)\) & Path \(s-x-w\) \\
+\bottomrule
+\end{tabular}
+\caption{All full-centre cases through six cells, grouped by their tagged
+recurrence. Coordinates are absolute relative to the full vertex \(p\).}
+\label{c:cross-cycles}
+\end{table}
+
+In the first row, \(p_0\to e_0\to p_1\leftrightarrow s_1\), while
+\(e_1\to p_0\) and \(s_0\to p_0\). With no extra cell the north and west
+arms send both tags to \(p_1\). For a north extension both tags at \(n\)
+go to \(p_1\), and both tags at \(x\) go to \(n_1\). For a west extension,
+\(w_0\to x_0\to w_1\to p_1\), and \(x_1\to w_1\). For the northwest
+diagonal the remaining transitions are
+\[
+w_0\to x_0\to w_1\to p_1,\qquad
+n_0\to x_0,\quad n_1\to p_1,\quad x_1\to n_1.
+\]
+These routes include every tag in those four geometries.
+
+For a south extension both tags at \(s\) go to \(x_1\), and
+\(x_1\to s_1\), \(x_0\to s_0\). The north and west leaves enter
+\(p_1\); the east leaf returns to \(p_1\) from state zero and to \(p_0\)
+from state one. Since \(p_0\to e_0\to p_1\to s_1\), every tag reaches
+the displayed outer edge.
+
+For an east extension the horizontal straight rule gives
+\(p_0\leftrightarrow e_0\), and \(p_1\leftrightarrow s_1\).
+All other tags enter those words through
+\[
+e_1\to x_1\to e_0,\quad x_0\to e_1,\quad
+n_q\to p_1,\quad w_q\to p_1,\quad s_0\to p_0.
+\]
+Here and below \(q\in\{0,1\}\). For the northeast diagonal the east arm
+has mask \(\N\W\), and \(x\) has mask \(\Sdir\W\), producing
+\(p_0\to e_0\to x_1\to e_1\to p_0\). The southern edge remains
+\((p_1,s_1)\), and the remaining tags satisfy
+\[
+n_0\to p_1,\quad n_1\to x_1,\quad w_q\to p_1,
+\quad x_0\to n_0,\quad s_0\to p_0.
+\]
+In each of these two geometries one tagged cycle has edge support and the
+other visits \(p\), so Lemma~\ref{t:edge-contact} applies to cross-cycle
+pairs.
+
+For the southeast diagonal the east arm has mask \(\Sdir\W\), giving
+\(p_0\leftrightarrow e_0\). The other tags enter this edge through
+\[
+p_1\to s_1\to x_1\to s_0\to p_0,
+\qquad e_1\to x_1,\qquad x_0\to e_1,
+\]
+together with the north and west leaf returns to \(p_1\). Finally, for the
+southwest diagonal the masks of \(s,x,w\) are
+\(\N\W,\N\E,\E\Sdir\). They give
+\(s_1\to x_0\to w_0\to x_1\to s_1\). The remaining tags follow
+\[
+p_1\to s_1,\quad p_0\to e_0\to p_1,\quad e_1\to p_0,
+\quad n_q\to p_1,\quad w_1\to p_1,\quad s_0\to p_1.
+\]
+Every single-cycle case has path support, and every tagged cycle in the
+two-cycle cases also has path support. Lemma~\ref{t:same-cycle} handles
+pairs entering the same tagged cycle. This proves the claim for all nine
+geometric possibilities and all initial tags.
+\end{proof}
+
+\begin{lemma}[Short twig returns]\label{c:twig}
+Attach a one- or two-cell path to a core vertex \(p\), with no further
+neighbours at the new cells, and stop a trajectory at its first return to
+\(p\). For a one-cell twig in direction \(d\), the returned state is one
+if \(d\in\{\N,\W\}\), is the incoming state if \(d=\Sdir\), and is
+its complement if \(d=\E\).
+
+For a two-cell twig \(p-u-v\), write \(de\) for the directions from
+\(p\) to \(u\) and from \(u\) to \(v\). All four twig tags return,
+except for the following three cases: \(\E\Sdir\) has the internal edge
+cycle \((u_1,v_1)\), with \(u_0,v_0\) returning to \(p_0\);
+\(\Sdir\Sdir\) sends every tag to \((u_1,v_1)\); and
+\(\Sdir\W\) sends every tag other than \(u_0\) to \((u_1,v_0)\),
+while \(u_0\to p_1\). Every return in the other cases takes at most four
+steps. The exact maps are given in Table~\ref{c:twig-table}.
+\end{lemma}
+\begin{proof}
+The one-cell rule is the corresponding opposite-direction endpoint row of
+Table~\ref{tab:astar}. For two cells there are exactly twelve words \(de\),
+because \(e\ne-d\). Table~\ref{c:twig-table} prints all four successors
+for each word, so following its arrows proves every stated return or
+absorption. For example, the \(\E\E\) row has
+\(v_0\to u_1\to v_1\to u_0\to p_0\); the \(\Sdir\Sdir\) row has
+\(u_0,u_1\to v_1\to u_1\) and \(v_0\to u_0\); and the
+\(\Sdir\W\) row has \(u_0\to p_1\),
+\(u_1\to v_0\to u_1\), and \(v_1\to u_1\).
+The appendix verifies the remaining rows and the square-port restrictions
+used below.
+\end{proof}
+
+\begin{lemma}[Square routing]\label{c:square}
+On every maze in \(\mathsf Q\), two copies of \(\Astar\) rendezvous from
+arbitrary initial tags.
+\end{lemma}
+\begin{proof}
+Translate the unique square so that
+\[
+a=(0,0),\quad b=(1,0),\quad c=(1,1),\quad d=(0,1).
+\]
+At most one exterior port occurs at each corner, because full vertices were
+assigned to \(\mathsf X\). Table~\ref{c:square-table} gives all corner
+responses. Expressions such as \((a+\Sdir)_1\) name the exterior
+neighbour and its arriving state.
+
+\begin{table}[!htbp]
+\centering\small
+\begin{tabular}{llll}
+\toprule
+Corner & Mask & Successor from state 0 & Successor from state 1 \\
+\midrule
+\(a\) & \(\N\E\) & \(d_0\) & \(b_1\) \\
+ & \(\N\E\Sdir\) & \((a+\Sdir)_1\) & \(b_1\) \\
+ & \(\N\E\W\) & \((a+\W)_0\) & \(b_1\) \\
+\addlinespace
+\(b\) & \(\N\W\) & \(c_1\) & \(a_0\) \\
+ & \(\N\E\W\) & \(a_0\) & \((b+\E)_1\) \\
+ & \(\N\Sdir\W\) & \((b+\Sdir)_0\) & \((b+\Sdir)_0\) \\
+\addlinespace
+\(c\) & \(\Sdir\W\) & \(d_0\) & \(b_1\) \\
+ & \(\N\Sdir\W\) & \(b_0\) & \(b_0\) \\
+ & \(\E\Sdir\W\) & \(b_1\) & \(b_1\) \\
+\addlinespace
+\(d\) & \(\E\Sdir\) & \(a_1\) & \(c_1\) \\
+ & \(\N\E\Sdir\) & \(a_1\) & \(c_1\) \\
+ & \(\E\Sdir\W\) & \(a_1\) & \(a_1\) \\
+\bottomrule
+\end{tabular}
+\caption{Every possible nonfull square-corner row. Exterior ports occur in
+at most two additional cells in total.}
+\label{c:square-table}
+\end{table}
+
+The exterior ports at \(c\) and \(d\) are never selected. This fact alone
+does not exclude an external attractor. At ports \(c\N,c\E,d\N,d\W\),
+the allowed two-cell words are, respectively,
+\[
+\{\N\N,\N\E\},\quad \{\E\E,\E\N\},\quad
+\{\N\N,\N\W\},\quad \{\W\W,\W\N\}.
+\]
+The omitted continuation would touch the neighbouring square corner and
+produce \(\mathsf R\). Lemma~\ref{c:twig} proves that every tag in every
+allowed dormant twig returns to the square. Once such a tag has returned,
+the twig cannot be entered again. Also \(d\) can be entered recurrently
+only from \(a\) by a northward move arriving in state zero, or from
+\(c\) by a westward move arriving in state zero. Hence \(d_1\) is
+transient, even though a dormant-twig root may visit it once.
+
+The active ports are \(a\Sdir,a\W,b\E,b\Sdir\). Their complete
+return rules are in Table~\ref{c:active-ports}. If one port already uses a
+cell, each other twig has at most one cell. Every tag on a one-cell twig
+returns immediately to the square; the specific return states used below
+refer to its entry from the core. The possible masks at \(b\) now give
+four routing regimes.
+
+\emph{First, let \(b=\N\W\) and
+\(c\in\{\Sdir\W,\E\Sdir\W\}\).}
+Both tags at \(c\) feed the left core, whose fixed route is
+\[
+d_0\longrightarrow a_1\longrightarrow b_1\longrightarrow a_0.
+\]
+If \(a=\N\E\), it closes through \(a_0\to d_0\), giving the unique
+tagged cycle \((d_0,a_1,b_1,a_0)\), with path support \(d-a-b\).
+If \(a\) has a south or west port, only \(a_0\) leaves through it.
+A one-cell twig returns to \(a_1\), as does every tag on a two-cell west
+twig. The resulting unique tagged cycle is a shuttle extending \(b-a\)
+by that twig. A two-cell south twig has word \(\Sdir\Sdir\) or
+\(\Sdir\W\), and \(a_0\) enters it as \(u_1\), which belongs to
+its absorbing basin. In the latter case the only returning tag is
+\(u_0\), and it follows
+\(u_0\to a_1\to b_1\to a_0\to u_1\).
+Thus all roots reach the same internal edge cycle. The unused tag
+\(b_0\) enters \(c_1\), and all other exterior tags return from dormant
+twigs, so no other tagged cycle remains.
+
+\emph{Second, let \(b=\N\W\) and \(c=\N\Sdir\W\).}
+The north port at \(c\) costs at least one exterior cell. There is an edge
+cycle \(b_0\to c_1\to b_0\). The left route
+\(d_0\to a_1\to b_1\to a_0\) closes through \(d_0\), or through
+a one-cell twig at \(a\) returning to \(a_1\). That twig cannot have
+two cells because of the port at \(c\). Hence the other tagged cycle is a
+four-tag shuttle on a three-vertex path and contains \(b_1\). The
+dormant twig at \(c\) returns and then enters \(b_0\); a dormant twig at
+\(d\) also returns to the square. The displayed corner transitions
+exhaust all other tags. The two supports share \(b\), and one is an edge,
+so Lemma~\ref{t:edge-contact} applies.
+
+\emph{Third, let \(b=\N\E\W\).}
+There is an eastern twig, \(b_0\to a_0\), and \(b_1\) exits east in
+state one. Every square tag eventually reaches \(b_1\): the tags at
+\(c\) enter \(b_0,b_1\), or \(d_0\), while \(d_0\to a_1\to b_1\).
+At \(a_0\), either the route through \(d_0\) reaches \(b_1\), or a
+twig at \(a\) returns to \(a_1\) and then \(b_1\). Such a twig has
+at most one cell. A one-cell eastern twig returns to \(b_0\), and a
+two-cell \(\E\E\) twig returns every tag to \(b_0\). In these cases
+there is one tagged cycle, supported on the path from the left cap
+(\(d\), or the single twig cell at \(a\)) through \(a,b\) to the
+eastern twig. If the eastern twig has word \(\E\Sdir\), the departure
+from \(b_1\) enters its edge absorber. Its returnable tags \(u_0,v_0\)
+first return to \(b_0\), then reach \(b_1\), and next enter the same
+absorber. Thus this alternative has a unique edge-supported tagged cycle.
+Dormant twig returns again account for all exterior roots.
+
+\emph{Fourth, let \(b=\N\Sdir\W\).}
+Both tags at \(b\) exit south in state zero. Every square tag reaches
+\(b\); any twig at \(a\) has at most one cell and returns to \(a_1\),
+which goes directly to \(b_1\). A one-cell southern twig returns to
+\(b_0\), giving an edge cycle. A two-cell \(\Sdir\E\) twig also
+returns all tags to \(b_0\), and the tagged cycle still uses only \(b\)
+and its first twig cell. A two-cell \(\Sdir\Sdir\) twig captures every
+tag on its outer state-one edge. All other roots feed the indicated unique
+tagged cycle.
+
+These regimes cover all possible corner masks. All displayed tagged cycles
+have path support. Lemma~\ref{t:same-cycle} handles same-cycle pairs, and
+Lemma~\ref{t:edge-contact} additionally handles the second regime.
+Hence all initial tags are covered.
+\end{proof}
+
+\begin{lemma}[The two rectangle orientations]\label{c:rectangles}
+On both mazes in \(\mathsf R\), two copies of \(\Astar\) rendezvous from
+arbitrary initial tags.
+\end{lemma}
+\begin{proof}
+For the horizontal rectangle label the bottom row
+\(a=(0,0),b=(1,0),c=(2,0)\) and the top row
+\(d=(0,1),e=(1,1),f=(2,1)\).
+For the vertical rectangle use
+\(a=(0,0),b=(1,0),c=(0,1),d=(1,1),e=(0,2),f=(1,2)\).
+The two complete maps are printed separately in
+Table~\ref{c:rectangle-maps}.
+
+\begin{table}[!htbp]
+\centering\small
+\begin{minipage}[t]{.48\textwidth}
+\centering
+Horizontal rectangle\par\smallskip
+\begin{tabular}{llll}
+\toprule
+Cell & Mask & From 0 & From 1 \\
+\midrule
+\(a\)&\(\N\E\)&\(d_0\)&\(b_1\)\\
+\(b\)&\(\N\E\W\)&\(a_0\)&\(c_1\)\\
+\(c\)&\(\N\W\)&\(f_1\)&\(b_0\)\\
+\(d\)&\(\E\Sdir\)&\(a_1\)&\(e_1\)\\
+\(e\)&\(\E\Sdir\W\)&\(b_1\)&\(b_1\)\\
+\(f\)&\(\Sdir\W\)&\(e_0\)&\(c_1\)\\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\textwidth}
+\centering
+Vertical rectangle\par\smallskip
+\begin{tabular}{llll}
+\toprule
+Cell & Mask & From 0 & From 1 \\
+\midrule
+\(a\)&\(\N\E\)&\(c_0\)&\(b_1\)\\
+\(b\)&\(\N\W\)&\(d_1\)&\(a_0\)\\
+\(c\)&\(\N\E\Sdir\)&\(a_1\)&\(d_1\)\\
+\(d\)&\(\N\Sdir\W\)&\(b_0\)&\(b_0\)\\
+\(e\)&\(\E\Sdir\)&\(c_1\)&\(f_1\)\\
+\(f\)&\(\Sdir\W\)&\(e_0\)&\(d_1\)\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\caption{All twelve tagged-state transitions in each absolute rectangle
+orientation. These are two separate controller calculations.}
+\label{c:rectangle-maps}
+\end{table}
+
+The horizontal map has the tagged cycle
+\((a_0,d_0,a_1,b_1,c_1,b_0)\), supported on \(d-a-b-c\).
+Every remaining tag reaches it: \(c_0\to f_1\to c_1\),
+\(d_1\to e_1\to b_1\), \(e_0\to b_1\), and
+\(f_0\to e_0\). Lemma~\ref{t:same-cycle} proves contact.
+
+The vertical map has the two tagged cycles
+\((a_0,c_0,a_1,b_1)\) and \((b_0,d_1)\), supported on \(c-a-b\)
+and \(b-d\). The remaining tags satisfy
+\(c_1,d_0\to d_1,b_0\), respectively,
+\(e_0\to c_1\), \(e_1\to f_1\to d_1\), and \(f_0\to e_0\).
+Thus these words exhaust recurrence. Lemma~\ref{t:same-cycle} handles
+same-cycle pairs, and Lemma~\ref{t:edge-contact} handles cross-cycle pairs
+at the common vertex \(b\).
+\end{proof}
+
+\begin{proposition}[Six-cell success]\label{c:six-cell}
+The controller \(\Astar\) succeeds from every pair of state-zero starts
+on every connected induced grid maze with at most six cells.
+\end{proposition}
+\begin{proof}
+On one or two cells every pair is already successful at time zero.
+For larger mazes Lemma~\ref{c:geometry} is exhaustive.
+The family \(\mathsf T\) is covered by Proposition~\ref{t:small-trees};
+the other three families are covered by Lemmas~\ref{c:full-centre},
+\ref{c:square}, and~\ref{c:rectangles}.
+\end{proof}

@@ -1,0 +1,242 @@
+{
+  "third_oracle_through_5": {
+    "specifications": 1808,
+    "assignments": 1033296,
+    "mismatches": 0,
+    "completion_projection_mismatches": 0
+  },
+  "noncoset4": {
+    "assignments": 54,
+    "solutions": 7,
+    "projection": {
+      "": 7
+    },
+    "relaxed_projection": [],
+    "correspondence_masks": [],
+    "directions": "EEE",
+    "phases": "---",
+    "relative_permutations": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ]
+  },
+  "nand5": {
+    "assignments": 324,
+    "solutions": 5,
+    "projection": {
+      "": 5
+    },
+    "relaxed_projection": [],
+    "correspondence_masks": [],
+    "directions": "EEEE",
+    "phases": "----",
+    "fixed_direction_projection": [
+      "00",
+      "01",
+      "10"
+    ]
+  },
+  "completion6": {
+    "assignments": 3888,
+    "solutions": 6,
+    "projection": {
+      "0": 6
+    },
+    "relaxed_projection": [
+      "0",
+      "1"
+    ],
+    "correspondence_masks": [
+      9
+    ],
+    "directions": "ENENE",
+    "phases": "--0-0"
+  },
+  "staircase6": {
+    "assignments": 1944,
+    "solutions": 0,
+    "projection": {},
+    "relaxed_projection": [],
+    "correspondence_masks": [
+      6,
+      9
+    ],
+    "directions": "ENENE",
+    "phases": "-0-1-"
+  },
+  "one_double_unsat7": {
+    "assignments": 11664,
+    "solutions": 0,
+    "projection": {},
+    "relaxed_projection": [],
+    "correspondence_masks": [],
+    "directions": "ENENEN",
+    "phases": "----0-"
+  },
+  "saturated_nand8": {
+    "assignments": 279936,
+    "solutions": 20,
+    "projection": {
+      "00": 12,
+      "01": 4,
+      "10": 4
+    },
+    "relaxed_projection": [],
+    "correspondence_masks": [
+      6,
+      9
+    ],
+    "directions": "ENENNNE",
+    "phases": "0-0---0"
+  },
+  "endpoint_omission": {
+    "d": "ENNW",
+    "p": "----",
+    "word": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      3,
+      2,
+      1
+    ],
+    "q": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "passes_without_endpoint_rows": true,
+    "full_rows": false
+  },
+  "unused_output_zero_trap": {
+    "d": "EEE",
+    "q": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "Q_vectors": [
+      2,
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "singleton_E": 1,
+    "used_W_input": 2,
+    "used_W_output": 2,
+    "admissible_observational_kappa": 2,
+    "invented_unused_output": 0,
+    "legal_completion_exists": true
+  },
+  "illegal_mask_state_gauge": {
+    "d": "EEEN",
+    "q": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "mutated": [
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "mask": 6,
+    "global_rows_after_local_rename": false
+  },
+  "illegal_independent_D4": {
+    "d": "ENE",
+    "q": [
+      0,
+      1,
+      1,
+      0,
+      2,
+      2
+    ],
+    "actual_rows": true,
+    "independently_rotated_corner_rows": false
+  },
+  "adjacent_doubles": {
+    "d": "EN",
+    "p": "00",
+    "load_at_middle": 4,
+    "rejected_before_compilation": true,
+    "message": "adjacent doubled edges"
+  },
+  "period_distinction": {
+    "spatial_word": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "states": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "spatial_least_period": 2,
+    "tagged_least_period": 4
+  },
+  "shared_profile_quantifier_test": {
+    "type": "algebraic quantifier regression, not a newly claimed path counterexample",
+    "component1_profiles": [
+      0
+    ],
+    "component2_profiles": [
+      1
+    ],
+    "common_profiles": []
+  },
+  "two_state_contours": {
+    "geometries": 1612,
+    "negative": [
+      "EENNNWW",
+      "EESSSWW",
+      "NNEEESS",
+      "NNWWWSS",
+      "WWNNNEE",
+      "WWSSSEE",
+      "SSEEENN",
+      "SSWWWNN"
+    ],
+    "mismatches": 0,
+    "minimum_negative_vertices": 8
+  }
+}

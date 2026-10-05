@@ -1,0 +1,27 @@
+\section{Exact two-state traps in grid mazes}\label{sec:two-state}
+
+The general capacity and contact lemmas isolate the recurrent part of the argument,
+but the exact threshold also requires control of transients and of the distinguished
+initial state. We prove both bounds without computational assistance.
+
+\begin{theorem}[Exact two-state trap threshold]\label{thm:B}\label{thm:C}
+For synchronous radius-one rendezvous in the stated model,
+\[
+ F(2)=F_{\mathcal J,1}(2)=F_{\mathcal T_{\rm grid},1}(2)=7.
+\]
+Every controller with at most two states has a trap of at most seven cells that is
+an induced path or a tree with exactly one degree-three vertex. The controller
+$\Astar$ below succeeds on every connected induced grid maze through six cells and
+has a seven-cell induced-path trap.
+\end{theorem}
+
+The upper argument first constrains the table by path
+witnesses and then uses a junction; it does not assert a paths-only upper bound of
+seven. The lower argument treats subcubic trees structurally before exhausting the
+remaining geometries through six cells.
+
+\input{sections/core_upper}
+\input{sections/core_extremal}
+\input{sections/core_lower_tree}
+\input{sections/core_lower_cyclic}
+\input{sections/core_consequences}

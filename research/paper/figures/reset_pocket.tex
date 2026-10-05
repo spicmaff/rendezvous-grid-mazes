@@ -1,0 +1,20 @@
+% Exact geometry: C=(0,0), S_j=(0,-j); other neighbours of C omitted.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=8mm,y=8mm]
+ \fill[rvGray!60,rounded corners=2mm] (-.28,-3.27) rectangle (.28,-.72);
+ \draw[quiet] (0,0)--(0,-1);
+ \draw[supportA] (0,-1)--(0,-2)--(0,-3);
+ \node[gate,label=above:{$C=(0,0)$}] at (0,0) {};
+ \node[cell,label=left:{$S_1$}] at (0,-1) {};
+ \node[startA,label=left:{$(S_2)_0$}] at (0,-2) {};
+ \node[cell,label=left:{$S_3$}] at (0,-3) {};
+ \node[paneltitle] at (1.35,-.25) {Closed reset pocket};
+ \node[note] at (1.35,-1.02) {$f=C_0,\quad d=\Sdir$};
+ \node[note] at (1.35,-1.82) {$\mathcal P=\{(S_1)_0,(S_2)_0,(S_2)_1,(S_3)_0\}$};
+ \node[note] at (1.35,-2.65) {Start in $\mathcal P$; the corner is never visited.};
+ \mazeCompass{9.2}{-2.1}
+\end{tikzpicture}
+\caption{The closed tagged pocket for reset state $0$ and direction $\Sdir$; unshown neighbours of $C$ do not affect it. Other reset directions transport both the geometry and the controller directions together.}
+\label{f:reset-pocket}
+\end{figure}

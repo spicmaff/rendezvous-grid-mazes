@@ -1,0 +1,26 @@
+{
+  "runtime_network_required": false,
+  "schema": "rendezvous.license-text-origins.v1",
+  "sources": [
+    {
+      "canonical_plaintext_url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT.txt",
+      "canonical_url": "https://spdx.org/licenses/MIT",
+      "file": "LICENSES/CODE-MIT.txt",
+      "local_origin": "pydot-4.0.1.dist-info/licenses/LICENSES/MIT.txt",
+      "local_origin_sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "release_sha256": "f13a2a57a0290c9a6bdbeb1c81084f920fc90dd16b7dcc412d96f7b8baf1589f",
+      "source_kind": "SPDX canonical text in a local distribution, checked against the official SPDX page",
+      "transformation": "Only Copyright (c) <year> <copyright holders> replaced by the supplied year and names; grant, conditions and disclaimer unchanged."
+    },
+    {
+      "canonical_plaintext_url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+      "canonical_url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "file": "LICENSES/DATA-DOCS-CC-BY-4.0.txt",
+      "local_origin": "texmf-dist/tex/latex/doclicense/license-texts/doclicense-CC-by-4.0-plaintext.tex",
+      "local_origin_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "release_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "source_kind": "TeX Live doclicense local copy, checked against official Creative Commons legal text; normative body independently matched to the pypdfium2 5.8.0 distributed copy after whitespace normalization",
+      "transformation": "None; complete local canonical plaintext including prefatory guidance, all eight sections and the concluding legal-text notice copied byte-for-byte."
+    }
+  ]
+}

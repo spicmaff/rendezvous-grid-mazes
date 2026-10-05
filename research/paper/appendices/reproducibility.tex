@@ -1,0 +1,14 @@
+\section{Data availability and reproducibility}
+\label{app:reproducibility}
+
+The source distribution includes complete LaTeX and TikZ sources, the
+$25$-item bibliography and one canonical PDF. Supplementary data are organized as
+\texttt{paths/}, \texttt{obstructions/} and \texttt{realization/}. The release README
+specifies source-build and full-verification commands; manifests record file
+hashes, provenance and the claim-to-checker map. The default verifier runs every
+declared finite chain, regenerates the realization corpus, compares deterministic
+outputs and confirms that frozen inputs are unchanged. All generated files go to
+an explicitly selected external directory. A clean offline replay without
+historical directories passed all stages; the full success status is
+\texttt{PASS\_FULL\_REPRODUCIBILITY}. These checks preserve the proof-status
+boundaries in Appendix~\ref{app:computational-provenance}.

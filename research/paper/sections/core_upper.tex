@@ -1,0 +1,345 @@
+\subsection{A seven-cell tree obstruction}\label{u:section}
+
+We prove a slightly sharper upper bound than required: every controller
+with at most two states has a trap of size at most seven that is either
+an induced path or an induced tree with one vertex of degree three.
+Throughout this section, an action is written
+$\delta(q,M)=(d,r)$, with direction first. We call a controller a
+\emph{path survivor} if it succeeds from every pair of state-zero starts
+on every induced grid path with at most seven cells.
+
+Two elementary observations will certify the traps. If two executions
+stay in regions whose cross-distances are at least two, they cannot
+succeed. If instead their regions are merely disjoint, the same conclusion
+holds when their starts have equal checkerboard color: compulsory
+synchronous motion preserves equality of their colors, whereas adjacent
+cells have different colors. In every application below the regions
+contain the initial positions, or an explicit entry prefix is given.
+
+All compass normalizations act on the controller as well as on the
+maze. For $g\in D_4$, define
+\[
+ (g\delta)(q,gM)=(gd,r)\quad\text{when }\delta(q,M)=(d,r).
+\]
+Induction on time conjugates the complete tagged executions under
+$(x,q)\mapsto(gx,q)$. Manhattan distance and initial state zero are
+preserved. In particular, a trap for the transported controller gives
+a trap for the original controller by applying $g^{-1}$.
+
+\subsubsection{Straight-axis rigidity}
+
+\begin{lemma}[Axis reduction]\label{u:axis}
+For a path survivor, one simultaneous compass symmetry makes the
+straight rows
+\[
+\begin{array}{ll}
+\delta(0,\mathrm{NS})=(\Sdir,f_v(0)),&
+\delta(1,\mathrm{NS})=(\N,f_v(1)),\\
+\delta(0,\mathrm{EW})=(\W,f_h(0)),&
+\delta(1,\mathrm{EW})=(\E,f_h(1)).
+\end{array}
+\]
+Each map $f=f_v,f_h$ is a constant map $C_0,C_1$ or the identity $I$.
+Write $L_q$ for the next-state bit at the negative endpoint of an axis
+and $R_q$ for that at its positive endpoint. The necessary restrictions are
+\[
+\begin{array}{c|l}
+f&\text{endpoint restrictions}\\ \hline
+C_0&L_0=1,\ R_0=0,\\
+I&L_0=1,\ (R_0,R_1)\ne(1,1),\\
+C_1&L_1=1,\ (R_0,R_1)\ne(1,1).
+\end{array}\tag{\ref{u:axis}a}
+\]
+All unlisted endpoint bits remain arbitrary.
+\end{lemma}
+
+\begin{proof}
+For perpendicular unit directions $d,e$, the seven cells
+\[
+ U(d,e)=\{0,e,2e,d,2d,2e+d,2e+2d\}
+\]
+form an induced path with two parallel two-edge arms pointing in direction
+$d$. If both straight rows on an axis choose $d$, starts at $d$ and
+$2e+d$ stay on translated terminal edges, regardless of all next-state
+bits. Their distance is always two. Thus the straight directions are
+opposite, and independent coordinate reflections give the displayed
+normalization without exchanging the states.
+
+Index a straight path by increasing coordinates. If $f=(1,0)$, the
+six-cell path $0,\ldots,5$ with starts $2,4$ gives the two tagged cycles
+$(2_0,1_1)$ and $(4_0,3_1)$; the agents remain two cells apart.
+If $f=C_0$ and $R_0=1$, the five-cell path $0,\ldots,4$ with starts
+$0,4$ confines the right agent to $(4_0,3_1)$ and the left to $0,1,2$.
+Indeed the left word is $(0_0,1_0)^\infty$ when $L_0=0$, and
+$(0_0,1_1,2_0,1_0)^\infty$ when $L_0=1$.
+The regions are disjoint and the starts have equal color.
+If $f=C_1$ and $L_1=0$, use the same line with starts $1,3$.
+The left cycle is $(1_0,0_1)$; the right prefix
+$3_0\to2_1\to3_1$ enters the closed region $2,3,4$.
+At its positive endpoint, either return bit keeps it in that region.
+Again equal colors exclude adjacency.
+
+Two terminal-edge tests finish the restrictions. If $L_{f(0)}=0$,
+an inner state-zero start has cycle
+$I_0\to E_{f(0)}\to I_0$ at a negative terminal edge. Two copies
+in $U(d,e)$, with $d$ negative and inner starts, give a trap.
+If $R_0=R_{f(1)}=1$, an endpoint start at a positive terminal edge has
+word $E_0\to I_1\to E_{f(1)}\to I_1\to\cdots$.
+Clone these words in the positive-pointing $U(d,e)$, with endpoint
+starts. Both constructions keep the agents two units apart.
+The four possible two-bit maps, together with these exclusions, give
+exactly the necessary restrictions displayed above.
+\end{proof}
+
+For singleton masks write
+$\delta(q,\N)=(\N,n_q)$, and similarly $e_q,s_q,w_q$.
+Thus $(L,R)=(n,s)$ vertically and $(e,w)$ horizontally.
+For perpendicular directions $u,v$, put
+\[
+ L(u,v;a,b)=\{C,u_1,\ldots,u_a,v_1,\ldots,v_b\},
+ \qquad C=(0,0),\quad d_j=jd.
+\]
+This is an induced path with $a+b+1$ cells.
+
+\begin{lemma}[Reset pocket]\label{u:pocket}
+Suppose a straight state map resets to $\kappa$, and let $d$ be the
+direction selected by state $\kappa$. On a terminal arm
+$C,d_1,d_2,d_3$, a state-zero start at $d_2$ never reaches $C$.
+\end{lemma}
+
+\begin{proof}
+The tagged set
+$\{(d_1)_\kappa,(d_2)_0,(d_2)_1,(d_3)_\kappa\}$ is closed.
+At $d_2$, either action reaches $d_1$ or $d_3$ in state $\kappa$.
+From $(d_1)_\kappa$ the next move goes outward to $(d_2)_\kappa$;
+the endpoint $(d_3)_\kappa$ returns to $d_2$ in either state.
+The set contains the initial tagged position.
+\end{proof}
+
+\input{figures/reset_pocket}
+
+\begin{lemma}[Straight-axis rigidity]\label{u:rigidity}
+For a path survivor in the frame of Lemma~\ref{u:axis}, both
+straight state maps are the identity. Consequently
+\[
+ n_0=e_0=1,
+ \qquad (s_0,s_1),(w_0,w_1)\ne(1,1).
+\]
+\end{lemma}
+
+\begin{proof}
+If both axes reset, choose their outward reset directions $d_v,d_h$.
+On $L(d_v,d_h;3,3)$ start at $(d_v)_2,(d_h)_2$.
+Lemma~\ref{u:pocket} confines the agents to different three-cell
+arms, whose cross-distances are at least two. This treats all four
+choices of the two reset bits.
+
+If exactly one axis resets, interchange the axes simultaneously to
+make it vertical. The two remaining possibilities are
+$C_0/I$ and $C_1/I$. Lemmas~\ref{u:mixed0} and~\ref{u:mixed1}
+give explicit path obstructions for each in
+Appendix~\ref{u:appendix-mixed}. Their proofs use reset pockets,
+closed arms, and short transition words; all endpoint bits allowed by
+Lemma~\ref{u:axis} are retained. Thus neither mixed possibility can
+survive. The endpoint conclusions now follow from Lemma~\ref{u:axis}.
+\end{proof}
+
+\subsubsection{Corner compatibility and a nine-entry pattern}
+
+\begin{lemma}[Corner arrival]\label{u:arrival}
+Use the normalized straight directions of Lemma~\ref{u:axis}.
+Let $C,I,E$ be a terminal arm of two edges, with $I$ a straight cell
+and direction $d$ from $C$ into the arm. Every arrival at $C$ from
+this arm has state $a_d=f(q_{-d})$, where state $q_{-d}$ selects the
+straight direction toward $C$. If the corner action in state $a_d$
+points back into the arm, a state-zero start at $I$ remains in
+$C,I,E$. For identity straight maps,
+\[
+a_\N=a_\E=0,\qquad a_\Sdir=a_\W=1.
+\]
+\end{lemma}
+
+\begin{proof}
+The last move $I\to C$ gives the arrival formula. Endpoints return
+to $I$, straight moves stay in the arm or reach $C$ in that state,
+and the specified corner row sends such an arrival back to $I$.
+This proves closure from the stated initial position, with no
+restriction on endpoint or corner output bits.
+\end{proof}
+
+Call the condition in this lemma a \emph{locked arm}. Two corners
+two units apart, joined by their middle cell, can carry perpendicular
+two-edge arms on either side of the connector. If both arms are locked,
+starts at their inner cells stay in parallel rows or columns two
+units apart. Each construction is an induced seven-cell path.
+
+\begin{lemma}[Corner compatibility]\label{u:corners}
+After one further diagonal reflection, a path survivor satisfies
+\[
+\begin{array}{ll}
+\delta(0,\mathrm{NE})=(\E,1),&
+\delta(0,\mathrm{ES})=(\Sdir,0),\\
+\delta(1,\mathrm{ES})=(\E,1),&
+\delta(1,\mathrm{SW})=(\Sdir,0).
+\end{array}\tag{\ref{u:corners}a}
+\]
+\end{lemma}
+
+\begin{proof}
+The diagonal reflection exchanges the axes, preserves the four
+identity straight rows, and lets us choose the direction of
+$\delta(0,\mathrm{NE})$ to be $\E$. Its east arm is locked.
+The following three paired-arm obstructions force the other directions.
+First put an NE corner at $(0,0)$ with east arm and an SW corner at
+$(0,2)$ with west arm, joined through $(0,1)$. If SW in state 1
+chose west, both arms would be locked. Hence SW in state 1 chooses
+south. Next replace the upper corner by ES with an east arm; if ES
+in state 0 chose east, both east arms would be locked. Thus ES in
+state 0 chooses south. Finally use $U(\Sdir,\E)$: its two corners
+have masks ES and SW. The SW south arm is locked, so ES in state 1
+cannot also choose south. It must choose east. Starts in all three
+constructions are the inner cells of the two arms.
+
+These direction conclusions leave four output bits. The four
+six-cell obstructions in Lemma~\ref{u:bit-laws} force them to be,
+respectively, $1,0,1,0$. Each argument uses disjoint regions and
+equal-color starts, and none assumes any of the other three bit
+conclusions.
+\end{proof}
+
+\input{figures/corner_path}
+
+\begin{lemma}[Nine-entry pattern]\label{u:nine}
+Every path survivor admits a simultaneous compass frame in which
+the following entries hold:
+\[
+\begin{array}{c|c|c@{\qquad}c|c|c}
+M&q&\delta(q,M)&M&q&\delta(q,M)\\ \hline
+\N&0&(\N,1)&\mathrm{NE}&1&(\N,1)\\
+\E&0&(\E,1)&\mathrm{ES}&0&(\Sdir,0)\\
+\W&1&(\W,1)&\mathrm{ES}&1&(\E,1)\\
+\mathrm{EW}&1&(\E,1)&\mathrm{SW}&1&(\Sdir,0)\\
+\mathrm{NE}&0&(\E,1)&&&
+\end{array}\tag{\ref{u:nine}a}
+\]
+No junction entry is prescribed.
+\end{lemma}
+
+\begin{proof}
+Only $w_1=1$ and $\delta(1,\mathrm{NE})=(\N,1)$ remain to be
+proved. Use the path, in endpoint order,
+\[
+ (1,0),(0,0),(0,1),(0,2),(1,2),(2,2),(2,1),
+\]
+with state-zero starts $A=(0,0)$ and $Q=(2,1)$.
+Put $P=(1,0)$, $M=(0,1)$, and $D=(2,2)$.
+The right agent has cycle $Q_0\to D_1\to Q_0$.
+The left starts $A_0\to P_1$. If $w_1=0$, it returns to $A_0$
+and repeats. If $w_1=1$, it reaches $A_1$. Should the NE state-one
+row choose east, $A,P$ is closed; should it be $(\N,0)$, its only
+extra excursion is $A_1\to M_0\to A_0$. In every bad case the
+left stays in $A,P,M$, all at distance at least two from $Q,D$.
+Thus the two remaining entries are forced, and the other seven
+come from Lemmas~\ref{u:rigidity} and~\ref{u:corners}.
+\end{proof}
+
+\input{figures/final_path}
+
+\subsubsection{Completion at a junction}
+
+The last step uses only the nine entries of Lemma~\ref{u:nine}; all
+other rows remain arbitrary.
+
+\begin{lemma}[Junction completion]\label{u:junction}
+Every legal completion of the nine-entry pattern has a trap on one
+of the two seven-cell induced trees $G_1,G_2$ below.
+\end{lemma}
+
+\begin{proof}
+Write $\delta(1,\E)=(\E,\epsilon)$ and
+$u=\delta(0,\mathrm{NSW})$, $v=\delta(1,\mathrm{NSW})$.
+The common cells of the two trees are
+\[
+A=(0,1),\quad B=(1,0),\quad J=(1,1),\quad
+U=(1,2),\quad V=(2,2).
+\]
+For $G_1$ add $D=(2,0),F=(3,0)$ and start at $A,B$.
+For $G_2$ add $Q=(3,1),R=(3,2)$ and start at $B,Q$.
+All starts have state zero. The edge sets are
+\[
+\begin{array}{c|l}
+G_1&JA,JB,JU,UV,BD,DF,\\
+G_2&JA,JB,JU,UV,VR,RQ.
+\end{array}
+\]
+Direct coordinate comparison gives no other unit-distance pair.
+Each tree has one degree-three vertex $J$, with mask NSW.
+Choose $G_2$ precisely when
+\[
+ v=(\Sdir,0)\quad\text{or}\quad
+ \bigl[u=(\Sdir,0)\text{ and }
+ v\in\{(\N,0),(\W,1)\}\bigr].\tag{\ref{u:junction}a}
+\]
+Choose $G_1$ otherwise.
+
+On $G_1$, the B-started agent follows
+$B_0\to D_1\to F_1\to D_1\to\cdots$.
+The A-started agent begins $A_0\to J_1$. Its relevant nonjunction
+transitions are
+\[
+\begin{gathered}
+A_0\to J_1,\quad A_1\to J_\epsilon,\quad B_1\to J_1,\\
+U_0\to J_0,\quad U_1\to V_1,\quad V_1\to U_1.
+\end{gathered}
+\]
+If neither $u$ nor $v$ is $(\Sdir,0)$, these transitions and the
+allowed junction departures close the tagged set
+\[
+\{A_0,A_1,J_0,J_1,B_1,U_0,U_1,V_1\}.
+\]
+The remaining $G_1$ cases have $u=(\Sdir,0)$ and
+$v\in\{(\N,1),(\Sdir,1),(\W,0)\}$.
+They send the A-started agent, respectively, to the edge $UV$, to
+the state-one cycle on $JB$, or to $J_1\leftrightarrow A_0$.
+It never queries $J_0$, so the row $u$ is harmless.
+Thus from time one the two agents lie on disjoint regions, one on
+$DF$ and the other outside it. At time zero they are distinct and
+have equal checkerboard color, which excludes adjacency at every
+time. Hence $G_1$ is a trap in every case where it was selected.
+
+On $G_2$ the Q-started cycle is always $Q_0\leftrightarrow R_1$.
+The selection condition gives exactly the following B-started words:
+\[
+\begin{array}{l|l}
+v=(\Sdir,0)&(B_0,J_1)^\infty\\
+u=(\Sdir,0),\ v=(\N,0)&(B_0,J_1,U_0,J_0)^\infty\\
+u=(\Sdir,0),\ v=(\W,1),\ \epsilon=0
+ &(B_0,J_1,A_1,J_0)^\infty\\
+u=(\Sdir,0),\ v=(\W,1),\ \epsilon=1
+ &B_0,(J_1,A_1)^\infty.
+\end{array}
+\]
+Every indicated move is fixed by the nine entries or the displayed
+choice of $u,v,\epsilon$. At each integer time the distance from
+the other agent is exactly three, as follows directly from the
+coordinates. This includes all transients and finishes the proof.
+\end{proof}
+
+\input{figures/junctions}
+
+\begin{proposition}[Upper bound in a narrow tree class]\label{u:upper}
+Every controller with at most two states has a trap with at most
+seven cells that is either an induced path or an induced tree with
+exactly one vertex of degree three and no larger degree. In particular,
+$F(2)\le7$ and $F_{\mathrm{grid\ trees}}(2)\le7$.
+\end{proposition}
+
+\begin{proof}
+A two-state controller either already has a path trap of size at
+most seven, or is a path survivor. In the second case apply
+Lemma~\ref{u:nine}, then Lemma~\ref{u:junction}, and transport the
+resulting tree and starts back by the inverse compass symmetry.
+A one-state controller can be extended by a legal unused second
+state without changing any execution from its distinguished initial
+state. The two-state argument therefore covers it as well.
+\end{proof}

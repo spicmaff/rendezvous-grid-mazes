@@ -1,0 +1,233 @@
+\section{Local obstructions for the upper bound}\label{u:appendix}
+
+This appendix supplies the mixed-axis and corner-bit arguments used
+in Section~\ref{u:section}. Coordinates, masks, and next-state bits
+have the notation of that section. Every pair of starts below is
+in state zero. All displayed geometries are induced paths: for an
+$L$ or $U$ this follows from its defining coordinates, and for each
+listed endpoint order no nonconsecutive pair is at unit distance.
+
+\subsection{Excluding one reset axis}\label{u:appendix-mixed}
+
+\begin{lemma}\label{u:mixed0}
+A path survivor cannot have vertical straight map $C_0$ and
+horizontal straight map $I$ in the frame of Lemma~\ref{u:axis}.
+\end{lemma}
+
+\begin{proof}
+Here
+$\delta(0,\mathrm{NS})=(\Sdir,0)$,
+$\delta(1,\mathrm{NS})=(\N,0)$, and $n_0=e_0=1$.
+We force three corner rows and then contradict survival. Every
+unlisted corner or endpoint bit remains arbitrary.
+
+\emph{The ES state-zero row must be $(\Sdir,0)$.}
+If it chooses east, use $L(\Sdir,\E;3,2)$ with starts $S_2,C$.
+The southern agent stays in the reset pocket $S_1,S_2,S_3$.
+The corner-started agent stays in $C,E_1,E_2$: every return to $C$
+from the horizontal straight cell has state zero, and that corner
+row sends it east. The disjoint regions and even-colored starts
+give a trap.
+If instead the row is $(\Sdir,1)$, use $L(\Sdir,\E;4,1)$
+with starts $S_4,C$. The southern agent stays in $S_2,S_3,S_4$,
+with $S_2$ visited only in state zero: from $S_3$ either state
+reaches $S_2$ or $S_4$ in state zero, and the endpoint returns
+to $S_3$ in either state. The other agent has exact cycle
+$C_0\to(S_1)_1\to C_0$. The regions are disjoint and the starts
+are even. Only $(\Sdir,0)$ remains.
+
+\emph{The SW state-zero row must point west.}
+Use the upward U with endpoint order
+\[
+(0,0),(0,1),(0,2),(1,2),(2,2),(2,1),(2,0)
+\]
+and starts $(0,1),(2,1)$. Every arrival at either upper corner
+from its straight vertical arm has state zero. The ES corner
+returns south by the row just forced. If the SW state-zero row
+also chose south, both vertical columns would be closed and
+two units apart. Thus SW in state zero chooses west.
+
+\emph{The SW state-one row must be $(\Sdir,0)$.}
+If it chooses west, use $L(\Sdir,\W;3,2)$ with starts $S_3,W_1$.
+The pocket's closed tagged set contains $(S_3)_0$.
+The other agent begins
+\[
+(W_1)_0\to(W_2)_0\to(W_1)_1\to C_1,
+\]
+using $e_0=1$. Every later arrival at $C$ from the west arm also
+has state one, so that arm, including $C$, is closed. The regions
+are disjoint and both starts are odd.
+If the row is $(\Sdir,1)$, use $L(\Sdir,\W;4,2)$ with starts
+$S_4,W_2$. The southern agent remains in $S_2,S_3,S_4$ as above.
+The other begins $(W_2)_0\to(W_1)_1\to C_1$ and then
+\[
+C_1\to(S_1)_1\to C_0.
+\]
+The already forced west-pointing state-zero row returns it to the
+west arm; every return from that arm reaches $C_1$.
+Thus its whole trajectory lies in $W_2,W_1,C,S_1$, with $S_1$
+visited only in state one. These regions are disjoint and the
+starts are even. This excludes the second alternative and forces
+$(\Sdir,0)$.
+
+\emph{The forced rows give a trap.}
+Use
+\[
+(0,0),(0,1),(0,2),(1,2),(2,2),(2,1)
+\]
+with starts $(0,1),(2,1)$. The left three-cell column is closed
+by the vertical reset and the ES state-zero row. The right agent
+has exact cycle
+\[
+(2,1)_0\to(2,2)_1\to(2,1)_0
+\]
+by $n_0=1$ and the SW state-one row. Their horizontal coordinates
+remain zero and two, respectively. This contradicts path survival.
+\end{proof}
+
+\begin{lemma}\label{u:mixed1}
+A path survivor cannot have vertical straight map $C_1$ and
+horizontal straight map $I$ in the frame of Lemma~\ref{u:axis}.
+\end{lemma}
+
+\begin{proof}
+Now
+$\delta(0,\mathrm{NS})=(\Sdir,1)$,
+$\delta(1,\mathrm{NS})=(\N,1)$, and $e_0=1$.
+Reset pockets point north. We keep the initial state zero throughout;
+in particular, the free bit $s_1$ is treated in both of its cases.
+
+\emph{The NW state-one row must be $(\N,1)$.}
+If it chooses west, use $L(\N,\W;3,2)$ with starts $N_2,W_2$.
+The north pocket is closed, while the other agent starts
+$(W_2)_0\to(W_1)_1\to C_1$. Every later arrival from the west
+arm has state one, so its west-pointing corner row closes
+$W_2,W_1,C$. The regions are disjoint and the starts are even.
+If the row is $(\N,0)$, use $L(\N,\W;4,1)$ with starts $N_3,W_1$.
+The first agent stays in $N_2,N_3,N_4$: the closed pocket tagged
+set is $\{(N_2)_1,(N_3)_0,(N_3)_1,(N_4)_1\}$.
+The second has prefix $(W_1)_0\to C_1$ followed by
+$C_1\to(N_1)_0\to C_1$.
+The disjoint regions and odd starts again give a trap.
+This leaves only $(\N,1)$.
+
+\emph{The NE state-one row must point east.}
+Use the downward U, namely $U(\N,\E)$, with starts
+$(0,1),(2,1)$. Both arrivals at the lower corners from their
+vertical arms have state one. The right NW corner returns north.
+If the left NE state-one row also chose north, both columns would
+be closed and two units apart. It must therefore choose east.
+
+\emph{The NE state-zero row must be $(\N,1)$.}
+If it also chooses east, use $L(\N,\E;3,2)$ with starts $N_2,E_2$.
+The north pocket is closed, and both corner states point east,
+closing $C,E_1,E_2$. The regions are disjoint and the starts even.
+If the row is $(\N,0)$, use $L(\N,\E;4,2)$ with starts $N_4,E_2$.
+The first endpoint move reaches $N_3$ in either state. From there,
+state zero reaches $(N_2)_1$ and state one reaches $(N_4)_1$;
+thereafter $N_2,N_3,N_4$ remains closed, with $N_2$ only in state
+one. The second agent stays in $C,E_1,E_2,N_1$. Its only northern
+excursion is $C_0\to(N_1)_0\to C_1$, and the state-one corner
+row sends it east. The regions are disjoint and the original
+starts even. Hence the remaining row is $(\N,1)$.
+
+\emph{Both values of $s_1$ now give a trap.}
+For $s_1=0$, use
+\[
+(0,1),(0,0),(1,0),(2,0),(2,1),(2,2)
+\]
+with starts $(0,0),(2,2)$. The left agent has exact cycle
+$(0,0)_0\to(0,1)_1\to(0,0)_0$.
+The right column is closed because every corner arrival from
+its straight cell has state one and the NW row returns north.
+The columns are two units apart from time zero.
+For $s_1=1$, use $U(\N,\E)$ with starts $(0,0),(2,1)$.
+The complete entry prefixes are
+\[
+\begin{array}{l}
+(0,0)_0\to(0,1)_1\to(0,2)_1,\\
+(2,1)_0\to(2,0)_1\to(2,1)_1\to(2,2)_1.
+\end{array}
+\]
+Each is then followed by its upper edge in state one. Again the
+agents remain in their separate columns throughout. These two
+cases exhaust the endpoint bit and contradict path survival.
+\end{proof}
+
+\subsection{The four corner output bits}\label{u:appendix-bits}
+
+\begin{lemma}\label{u:bit-laws}
+Assume identity straight maps, $n_0=e_0=1$, and the direction
+conclusions
+\[
+\operatorname{dir}\delta(0,\mathrm{NE})=\E,\quad
+\operatorname{dir}\delta(0,\mathrm{ES})=\Sdir,\quad
+\operatorname{dir}\delta(1,\mathrm{ES})=\E,\quad
+\operatorname{dir}\delta(1,\mathrm{SW})=\Sdir.
+\]
+If the controller survives all induced paths through seven cells,
+their output states are, respectively, $1,0,1,0$.
+\end{lemma}
+
+\begin{proof}
+Each of the following six-cell paths excludes one wrong bit,
+independently of the other three output-bit conclusions.
+
+\emph{ES in state zero cannot output one.}
+Suppose $\delta(0,\mathrm{ES})=(\Sdir,1)$ and use
+\[
+(1,2),(0,2),(0,1),(0,0),(1,0),(2,0)
+\]
+with starts $C=(0,0)$ and $U=(0,2)$.
+Write $M=(0,1)$, $H=(1,0)$, $E=(2,0)$, and $P=(1,2)$.
+The first agent stays in $C,H,E$: every return from $H$ reaches
+$C$ in state zero, whose NE row points east.
+The second has closed tagged set
+\[
+\{U_0,U_1,M_1,P_0,P_1\}.
+\]
+Indeed $U_0\to M_1\to U_1$, the ES state-one row points to $P$,
+and endpoint $P$ returns to $U$ in either state. The two spatial
+regions are disjoint and the starts even, proving failure.
+
+\emph{ES in state one cannot output zero.}
+Suppose $\delta(1,\mathrm{ES})=(\E,0)$ and use
+\[
+(0,1),(0,2),(1,2),(2,2),(2,1),(2,0)
+\]
+with starts $P=(0,1)$ and $I=(2,1)$.
+Put $C=(0,2)$, $H=(1,2)$, $D=(2,2)$, $B=(2,0)$.
+The left prefix is
+$P_0\to C_1\to H_0\to C_0$.
+At $C_0$ the ES row points south to $P$, whose endpoint return
+may reach either state of $C$. Thus $P,C,H$ is closed, with $H$
+only in state zero. The right arm $B,I,D$ is closed: every
+arrival at $D$ from $I$ has state one and its SW row points south.
+The regions are disjoint and both starts odd.
+
+\emph{NE in state zero cannot output zero.}
+Suppose $\delta(0,\mathrm{NE})=(\E,0)$ and use
+\[
+(0,3),(0,2),(1,2),(2,2),(2,1),(2,0)
+\]
+with starts $(1,2),(2,1)$.
+The first agent has exact cycle $(1,2)_0\leftrightarrow(0,2)_0$.
+The second stays in the right three-cell column by the
+state-one SW direction and the corner-arrival rule.
+The spatial regions are disjoint and both starts odd.
+
+\emph{SW in state one cannot output one.}
+Suppose $\delta(1,\mathrm{SW})=(\Sdir,1)$ and use
+\[
+(0,2),(1,2),(1,1),(1,0),(2,0),(3,0)
+\]
+with starts $(0,2),(2,0)$.
+The upper agent's complete prefix and cycle are
+\[
+(0,2)_0\to(1,2)_1\to(1,1)_1\to(1,2)_1\to\cdots,
+\]
+using $e_0=1$. The lower agent stays in the horizontal arm
+$(1,0),(2,0),(3,0)$: every arrival at its NE corner $(1,0)$
+has state zero and is sent east. The regions are disjoint and
+both original starts even. This excludes the last wrong bit.
+\end{proof}

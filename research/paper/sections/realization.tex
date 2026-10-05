@@ -1,0 +1,385 @@
+\section{Three-state recurrent-cycle realization}\label{sec:realization}
+
+A recurrent word must satisfy both capacity and shared-table compatibility.
+We characterize the latter on three-state paths; initial-state accessibility remains
+a separate question. Figure~\ref{fig:realization-pipeline} previews the construction.
+
+\subsection{The normal form and its scope}
+
+\begin{proposition}[Three-state path normal form]\label{prop:three-normal-form}
+Let a simple three-state tagged cycle have used path support with $n\ge3$ vertices.
+Every edge multiplicity is one or two; the doubled edges form a matching.
+Up to cyclic shift its spatial word is the ordinary contour, with one passage of
+each doubled edge replaced by the three-step passage ``forward, back, forward.''
+The choice of the forward or backward contour passage is its insertion phase.
+\end{proposition}
+\begin{proof}
+For adjacent edges, capacity gives $k_{j-1}+k_j\le3$ and both multiplicities are
+positive. Hence every $k_j$ is one or two, and two doubled edges cannot be adjacent.
+A neighbouring single edge is crossed once in each direction. The additional two
+crossings of a doubled edge must therefore lie within one of its two contour
+passages; otherwise a neighbouring single-edge cut would be crossed again.
+They form the stated immediate backtrack. Endpoint insertions can have equivalent
+cyclic descriptions, so uniqueness of the parametrization is not asserted.
+\end{proof}
+
+For a one-edge support the multiplicity can instead be three; that case is not a
+matching input and is treated separately in Lemma~\ref{lem:one-edge-realization}.
+The normal-form necessity concerns used support and remains valid in a larger maze.
+The converse below uses the masks of the path itself. A proper interval of an ambient
+path requires the boundary-aware conditions in Appendix~\ref{app:boundary-aware}.
+
+Fix a finite induced grid path $P=(v_0,\ldots,v_{n-1})$, $n\ge2$, with its absolute
+compass orientation and exactly its own masks. Choose a matching
+$\mathcal D_2\subseteq\{0,\ldots,n-2\}$ and phases $\eta_e\in\{0,1\}$.
+In the contour $0,1,\ldots,n-1,n-2,\ldots,1$, replace the index-increasing passage
+of $e$ if $\eta_e=0$, and its index-decreasing passage if $\eta_e=1$, by the
+three-step backtrack. Denote this specification by $S$, and write
+\[
+ I=\Z/L\Z,\quad L=2(n-1)+2|\mathcal D_2|,\quad
+ w_i\in V(P),\quad \sigma(i)=i+1,\quad M_i=M_P(w_i).
+\]
+Let $d_i$ be the direction from $w_i$ to $w_{\sigma(i)}$.
+An occurrence means an index $i\in I$, not just its cell. Internal cells have load
+two or three, and endpoints load one or two. An internal cell of load three is
+\emph{saturated}. Realization asks for a legal three-state table and states $q_i$
+such that the $L$ distinct tags $(w_i,q_i)$ follow this cyclic word. No primitive
+spatial-word hypothesis or state-zero accessibility requirement is imposed.
+
+A necessary local condition is \emph{same-mask doubled-side consistency}: all
+saturated cells of one absolute mask must use the same port twice. We call this the
+direction condition. The finite profile family and matrices in the next theorem are
+constructed explicitly below from masks, occurrences and successor links.
+
+\begin{theorem}[Exact three-state realization]\label{thm:three-state-realization}
+For every specification $S$ just defined, the following are equivalent:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item $S$ is realized by a simple three-state tagged cycle on the path with its own masks;
+\item the direction condition holds and some $\theta\in\Theta(S)$ satisfies
+\[
+ \rank_{\Ftwo}A_\theta=\rank_{\Ftwo}[A_\theta\mid b_\theta];
+\]
+\item the direction condition holds and there is \emph{one} $\theta\in\Theta(S)$ such that
+\[
+ \forall\lambda:\quad\lambda^TA_\theta=0\ \Longrightarrow\ \lambda^Tb_\theta=0.
+\]
+\end{enumerate}
+From a consistent profile and its solution one constructs all $45$ legal controller
+rows. The resulting cycle has least tagged period exactly
+$L=2(n-1)+2|\mathcal D_2|$. Every realizing state assignment belongs to at least one
+profile. The same profile is used throughout all components of the specification.
+\end{theorem}
+
+\input{figures/realization_pipeline}
+
+\subsection{Two-input functionality and the finite profile}
+
+The algebraic mechanism concerns a function on two inputs, not an invertible
+successor map. Encode the three states by the nonzero vectors
+\[
+ H=\Ftwo^2,\qquad Q_3=H\setminus\{0\}=\{1,2,3\},
+\]
+where the numbers are binary vector codes and addition is XOR. The final controller
+names are obtained by $1\mapsto0$, $2\mapsto1$, $3\mapsto2$.
+
+\begin{lemma}[Two-input successor difference]\label{lem:successor-difference}
+For input bits $t_i\in\Ftwo$ and output states $Y_i\in Q_3$, the conditions
+\[
+ t_i=t_j\ \Longrightarrow\ Y_i=Y_j\quad\text{for all }i,j
+\]
+are equivalent to the existence of $\kappa\in H$ with
+\[
+ Y_i+Y_j=\kappa(t_i+t_j)\quad\text{for all }i,j.
+\]
+\end{lemma}
+\begin{proof}
+If only one input occurs, all outputs coincide and $\kappa=0$ works. If both occur,
+functionality gives two outputs $Y_0,Y_1$; take $\kappa=Y_0+Y_1$.
+Conversely, equal inputs make the right side zero and force equal outputs.
+The case $Y_0=Y_1$ is allowed and is exactly the zero difference.
+\end{proof}
+
+For two occurrences of $M=\N\W$ on its paired $\W$-side, take $\kappa=3=(1,1)$ and role bits
+$t_i=z_u$, $t_j=z_v$. If the observed successors are $Y_i=1$, $Y_j=2$,
+the lemma gives $3=3(z_u+z_v)$, hence $z_u+z_v=1$ over $\Ftwo$.
+Equal outputs instead require equal bits for this nonzero difference; $\kappa=0$
+allows both inputs to share an output. This is an algebraic illustration, not a
+claim that a separately prescribed path is realizable.
+
+Every internal vertex uses both ports. A realizing three-state direction map at its
+mask is therefore a surjection with fibres of sizes one and two. For each internal
+mask $M$ choose its singleton port $u_M$, its singleton state $a_M\in Q_3$, and let
+$p_M$ be the other port. If $M$ has a saturated representative, $p_M$ must be its
+doubled port, so $u_M$ is forced; otherwise both port choices are retained.
+Choose a successor difference $\kappa_M\in H$, restricted to $\kappa_M\ne0$ when
+$M$ is saturated. For each endpoint separately choose an injective assignment of
+its actual occurrences to $Q_3$. These choices form $\theta\in\Theta(S)$.
+They assign no arbitrary row outputs.
+
+Let $b(a)$ be the smaller numeric code in $Q_3\setminus\{a\}$.
+For every internal cell $v$ introduce one bit $z_v$. Define its occurrence states by
+\begin{equation}\label{eq:real-roles}
+ X_i=\begin{cases}
+ a_{M_i},&d_i=u_{M_i},\\
+ b(a_{M_i})+a_{M_i}t_i,&d_i=p_{M_i},
+ \end{cases}
+ \qquad t_i=z_{w_i}+\epsilon_i.
+\end{equation}
+At a load-two cell the unique paired-side occurrence has $\epsilon_i=0$.
+At a saturated cell the two such occurrences have $\epsilon=0,1$ in temporal
+order after choosing an origin of the cyclic word. Endpoint $X_i$ are the constants
+chosen in the profile. The two paired states are $b(a_M)$ and $b(a_M)+a_M$,
+both nonzero and different from $a_M$. Thus local injectivity is built in.
+The state absent over a load-two cell is still a possible row state of its mask;
+it cannot be discarded globally.
+
+\subsection{The canonical affine system}
+
+For an internal mask form
+\[
+ U_M=\{i:M_i=M,\ d_i=u_M\},\qquad
+ B_M=\{i:M_i=M,\ d_i=p_M\}.
+\]
+Both groups are nonempty. In each choose an anchor $j$, for example the least
+occurrence index. For every other occurrence $i$ impose respectively
+\begin{align}
+ X_{\sigma(i)}+X_{\sigma(j)}&=0 &&(i,j\in U_M),\label{eq:real-U}\\
+ X_{\sigma(i)}+X_{\sigma(j)}&=\kappa_M(t_i+t_j)
+ &&(i,j\in B_M).\label{eq:real-B}
+\end{align}
+Endpoint occurrences are grouped by the \emph{pair} consisting of their one-port
+mask and their chosen state. For every non-anchor member of such a group impose
+\begin{equation}\label{eq:real-E}
+ X_{\sigma(i)}+X_{\sigma(j)}=0.
+\end{equation}
+In particular, equal endpoint masks cannot be ignored. Equal states at different
+masks do not identify rows, and different states at the same endpoint mask are not
+identified either.
+
+For a fixed $\theta$, all $a_M$, $\kappa_M$ and endpoint assignments are constants.
+Expanding the vector equations into their two scalar coordinates gives
+\begin{equation}\label{eq:real-system}
+ A_\theta z=b_\theta,\qquad z\in\Ftwo^{n-2}.
+\end{equation}
+Constant equations are retained: $0=1$ rejects a profile. For $n=2$ there are no
+internal bits and the same construction is a zero-dimensional system.
+
+A group of $h$ occurrences contributes $h-1$ vector comparisons. There are fewer
+than $2L$ scalar rows, each involving at most two source bits and two successor bits.
+The symbolic object consequently has size $O(n)$ and is constructed without solving
+realizability. If $m_3$ internal masks have saturated representatives and $m_2$ do
+not, then $m_3+m_2\le6$ and
+\begin{equation}\label{eq:profile-bound}
+ |\Theta(S)|\le36\,9^{m_3}24^{m_2}\le36\,24^6.
+\end{equation}
+This deliberately coarse constant is independent of the path length. Profiles may
+overlap; uniqueness of representation is not required.
+
+\subsection{Proof of the realization theorem}
+
+\begin{proof}[Proof of Theorem~\ref{thm:three-state-realization}]
+\emph{Necessity.}
+Let a legal table realize the distinct tags. Encode its states in $Q_3$.
+At every internal mask both directions occur, so its direction fibres have sizes
+one and two. At a saturated cell all three states occur, with the two states on the
+doubled side distinct. Therefore every saturated representative of that mask doubles
+the same side. Extract $u_M,a_M,p_M$ from the table. At each cell the paired state
+or ordered pair determines a bit $z_v$ in \eqref{eq:real-roles}. The endpoint states
+give the required injections.
+
+All sources in $U_M$ have the same state and mask; deterministic successor states
+give \eqref{eq:real-U}. In $B_M$, source-state equality is equivalent to equality
+of $t_i$. Lemma~\ref{lem:successor-difference}, with $Y_i=X_{\sigma(i)}$,
+gives a $\kappa_M$ satisfying \eqref{eq:real-B}.
+When the mask is saturated, its two paired occurrences at one cell move to the
+same neighbour along the doubled edge. Their successor occurrences are distinct,
+and distinct tags over that neighbour have different states. Hence their difference
+is nonzero, as required in the profile. This also covers a doubled edge incident to
+an endpoint. Equal endpoint keys give exactly \eqref{eq:real-E}.
+Thus the extracted profile and bits solve \eqref{eq:real-system}; every row
+dependency has zero right-hand-side sum.
+
+These comparisons exhaust repeated keys. Different masks mean different rows.
+For the same internal mask, singleton and paired states are disjoint, and each
+fibre is handled above. A one-port endpoint mask cannot equal a two-port internal
+mask. The remaining endpoint coincidences are precisely the groups in
+\eqref{eq:real-E}. In particular no additional successor-row condition is missing.
+
+\emph{Linear consistency.}
+Row elimination over $\Ftwo$ produces an inconsistent equation exactly when a sum
+of original rows has zero left side and right side one. If no such row occurs,
+assign the free bits and back-substitute the pivot bits. This proves the equivalence
+of rank consistency, the stated balance condition, and existence of a solution,
+including the zero-dimensional case.
+
+\emph{Sufficiency and reconstruction.}
+Take one consistent profile and a solution. Equations~\eqref{eq:real-roles}
+produce nonzero state vectors. At a load-two cell the singleton and paired states
+are different. At a saturated cell the opposite $\epsilon$ values produce both
+paired states, distinct from each other and from the singleton. Endpoint injections
+are part of the profile. Hence all $L$ resulting tags are distinct.
+
+Apply the one global renaming to actual controller states $q_i\in\{0,1,2\}$ and
+prescribe every used row by
+\begin{equation}\label{eq:real-used-controller}
+ \delta(q_i,M_i)=(d_i,q_{\sigma(i)}).
+\end{equation}
+Suppose two prescriptions have the same key. At an internal mask both sources lie
+in the same direction fibre. In the singleton fibre, adding their anchor equations
+gives equal successors. In the paired fibre, equal states give $t_i=t_j$, and
+adding their anchor equations yields
+\[
+ X_{\sigma(i)}+X_{\sigma(j)}=\kappa_M(t_i+t_j)=0.
+\]
+The direction already agrees. At an endpoint the direction is unique, and
+\eqref{eq:real-E} gives equal successors for equal keys. Thus
+\eqref{eq:real-used-controller} is a function, not a conflicting set of assignments.
+
+Every used direction belongs to its mask. For each still unassigned key $(q,M)$,
+$M\ne\varnothing$, choose any $d\in M$ and any next state. This produces all
+$3(2^4-1)=45$ legal rows without changing a used row. If only one paired input was
+observed, its profile difference need not prescribe the absent row's output.
+In particular, one must not extrapolate it to a zero vector and treat that vector
+as a state. The observed difference may instead be replaced by zero without
+changing the realized assignments.
+
+Starting at $(w_0,q_0)$, the prescribed row takes the controller to
+$(w_{\sigma(0)},q_{\sigma(0)})$; induction follows the entire specified word.
+In each selected compass direction the next cell is the prescribed neighbour.
+The orbit returns after $L$ steps, and the preceding $L$ tags are distinct.
+Its least tagged period is therefore exactly $L$. This argument neither assumes
+nor needs that the spatial projection have least period $L$.
+\end{proof}
+
+The same key comparisons close all successor equalities. Within a fixed profile,
+linear elimination tests or projects partial assignments; across profiles, one takes
+a union. Unsaturated vertices therefore have no automatic completion rule.
+
+\subsection{Why one XOR system is not enough}
+
+Consider the fixed specification
+\[
+ \text{directions }\E\N\E\N\N\N\E,\qquad
+ \mathcal D_2=\{0,2,6\},\qquad \eta_e=0,
+\]
+whose masks are $\E,\N\W,\E\Sdir,\N\W,\N\Sdir,\N\Sdir,\E\Sdir,\W$.
+Its cyclic word is
+\[
+ (0,1,0,1,2,3,2,3,4,5,6,7,6,7,6,5,4,3,2,1).
+\]
+Let $x$ denote the same/swap correspondence of the ordered west-state pairs
+$(q_1,q_{19})$ and $(q_5,q_{17})$ at the two saturated $\N\W$ cells.
+Let $y$ denote that of the east-state pairs $(q_4,q_6)$ and $(q_{10},q_{12})$
+at the two saturated $\E\Sdir$ cells; zero means same and one swap.
+The two intervening $\N\Sdir$ cells are unsaturated.
+
+\begin{proposition}[A non-affine saturated correspondence relation]\label{prop:nand8}
+For this fixed spatial specification, the exact extendible relation is
+\[
+ \operatorname{Ext}(x,y)=\{00,01,10\}.
+\]
+\end{proposition}
+\begin{proof}
+The singleton $\N\W/\N$ rows give $q_3=q_7$ and $q_4=q_8$.
+The singleton $\E\Sdir/\Sdir$ rows give $q_{18}=q_{14}$ and $q_{19}=q_{15}$.
+If $x=1$, then $q_{17}=q_1\ne q_{19}$. Equality of the two $\N\Sdir/\Sdir$
+source states, $q_{16}=q_{15}$, would force $q_{17}=q_{16}=q_{19}$ by their
+successor rows. Thus two different south states are needed. If $y=1$, then
+$q_{10}=q_6\ne q_4=q_8$. Equality of the north states $q_8=q_9$ would force
+$q_9=q_{10}$, again a contradiction. Hence two different north states are needed.
+North and south states at the same mask cannot coincide. The assignment $11$
+would therefore need four states. Appendix~\ref{app:nand-witnesses} gives full
+realizing state assignments for the other three choices.
+\end{proof}
+
+An XOR solution set and its projections are affine, with one, two or four possible
+assignments on two bits, never three. Even auxiliary XOR variables therefore cannot
+describe these actual correspondences by one system. This excludes faithful
+correspondence encodings, not arbitrary hypothetical decision-only graphs. The
+insertion phases $\eta_e$ are fixed, distinct from $x,y$; the unpinned specification
+is realizable.
+
+\subsection{An infinite phase-locking family}\label{subsec:phase-locking}
+
+\begin{theorem}[Phase locking across arbitrary gaps]\label{thm:phase-locking}
+Let $r\ge1$ and $\ell_0,\ldots,\ell_r\ge1$. On the induced monotone path
+\[
+ \E^{\ell_0}\N\E^{\ell_1}\N\cdots\N\E^{\ell_r},
+\]
+double all $r$ north edges and no others, assigning phases $\eta_1,\ldots,\eta_r$.
+The specification is realizable with three states if and only if all phases are equal.
+\end{theorem}
+\begin{proof}
+The lower endpoint of each doubled north edge has mask $\N\W$ and singleton west
+state $w$; the upper endpoint has mask $\E\Sdir$ and singleton east state $e$.
+At the $j$th edge denote its temporal north states by $A_j,B_j$ and its south
+states by $C_j,D_j$. Then
+$\{A_j,B_j,w\}=Q$ and $\{C_j,D_j,e\}=Q$.
+For either insertion phase the south rows give
+\[
+ C_j\longmapsto B_j,\qquad D_j\longmapsto w.
+\]
+Two pairs $(C_j,D_j)$ and $(C_k,D_k)$ either agree or are swapped.
+A swap would identify $B_j$ with $w$, so the pairs agree; then $B_j=B_k$ and
+$A_j=A_k$. The north rows are
+\[
+\begin{array}{c|cc}
+\eta_j& A_j & B_j\\\hline
+0&C_j&e\\
+1&e&D_j
+\end{array}
+\]
+and distinct phases would identify a paired state with the singleton $e$.
+Thus all phases are equal, independently of the horizontal gaps.
+
+For sufficiency, use the following rows; the two rows for each phase list the
+three outputs in state order $0,1,2$:
+\[
+\begin{array}{c|ccc}
+ (\eta,M)&0&1&2\\\hline
+ (0,\N\W)&(\W,2)&(\N,1)&(\N,0)\\
+ (0,\E\Sdir)&(\E,1)&(\Sdir,2)&(\Sdir,0)\\
+ (1,\N\W)&(\W,2)&(\N,0)&(\N,1)\\
+ (1,\E\Sdir)&(\E,1)&(\Sdir,0)&(\Sdir,2)
+\end{array}
+\]
+For either phase add
+$\delta(1,\E\W)=(\E,1)$, $\delta(2,\E\W)=(\W,2)$,
+$\delta(2,\E)=(\E,1)$, and $\delta(1,\W)=(\W,2)$.
+Start at the left endpoint in state $2$. At phase zero the forward doubled-edge
+sequence is $\N\W_1,\E\Sdir_1,\N\W_2,\E\Sdir_0$, with backward sequence
+$\E\Sdir_2,\N\W_0$. At phase one the forward sequence is
+$\N\W_1,\E\Sdir_0$, and the backward sequence is
+$\E\Sdir_2,\N\W_2,\E\Sdir_1,\N\W_0$.
+Here a mask with a subscript denotes the occurrence at the corresponding endpoint
+of that edge with that state. Horizontal segments preserve state $1$ eastward and
+state $2$ westward. The endpoint rows close the word; all occurrences at one cell
+have different states. Completing unused rows gives the required simple cycle.
+\end{proof}
+
+With $r=2$ and all gaps one, unequal phases give the six-vertex staircase.
+Its contradiction is equivalently the three constraints $x=1$, $x+y=0$, $y=0$
+from the general successor comparisons, whose sum is $0=1$; an explicit derivation
+is recorded in Appendix~\ref{app:staircase}. Minimality of six among residual
+obstructions is a finite-check statement, not needed for this proof.
+More generally, for any fixed path radius $R$, choose gaps $(1,h,1)$ with
+$h>2R+2$ and phases $(0,1)$. Every radius-$R$ neighbourhood occurs in a realizable
+uniform-phase specification, but the whole specification is unrealizable.
+Thus bounded geometric neighbourhoods do not replace the global mask constraints.
+This is not a lower bound on the size of an algebraic certificate.
+
+\subsection{Recognition, reconstruction and the accessibility boundary}
+
+Enumerate the finite profiles after checking the direction condition, compile
+\eqref{eq:real-system}, and solve by Gaussian elimination. A successful branch
+constructs the table by \eqref{eq:real-used-controller}; rejection requires failure
+of every admissible profile. With $K$ bounded as in \eqref{eq:profile-bound}, this
+gives a coarse $O(Kn^3)$ time bound and $O(n^2)$ working space. Fixed-alphabet
+polynomiality is not asserted as a separate novelty: finitely many full tables already
+exist independently of $n$. The content is the special sparse normal form and
+constructive removal of arbitrary row outputs.
+
+Realization does not determine state-zero accessibility: two completions on one
+four-vertex path preserve the same contour while making it accessible from every
+state-zero start or from none. Appendix~\ref{app:basins} gives both tables and a
+conditional uniqueness criterion. Universal three-state rendezvous remains open.

@@ -1,0 +1,28 @@
+% Exact local grid scale, with the cut and its image distinguished.
+\begin{tikzpicture}[maze,x=8mm,y=8mm]
+ \begin{scope}
+  \node[paneltitle] at (-1,2.55) {BEFORE};
+  \draw[edge] (-1,0)--(0,0)--(1,0)--(2,0);
+  \foreach \x in {-1,0,1,2}{\node[cell] at (\x,0) {};}
+  \draw[rvMid,densely dashed] (.5,-.65)--(.5,1.05);
+  \node[font=\scriptsize,above] at (.5,1.05) {$x=k+\tfrac12$};
+  \node[font=\footnotesize,below] at (-.1,-.12) {$k$};
+  \node[font=\footnotesize,below] at (1.1,-.12) {$k+1$};
+  \node[note] at (-1,-1.15) {Unused crossing edge};
+ \end{scope}
+ \draw[flow,line width=.8pt] (3.25,.4)--(4.4,.4);
+ \begin{scope}[shift={(6.1,0)}]
+  \node[paneltitle] at (-1,2.55) {AFTER};
+  \node[note] at (1.4,2.55) {Right half translated by $4$};
+  \fill[rvGray!85] (1.65,-.43) rectangle (2.35,1.5);
+  \draw[edge] (-1,0)--(0,0)--(5,0)--(6,0);
+  \foreach \x in {-1,0,5,6}{\node[cell] at (\x,0) {};}
+  \foreach \x in {1,2,3,4}{\node[gate] at (\x,0) {};}
+  \draw[quiet] (2,0)--(2,1.5); \node[gate] at (2,1) {};
+  \node[font=\footnotesize,below] at (0,-.12) {$k$};
+  \node[font=\footnotesize,below] at (2,-.12) {$k+2$};
+  \node[font=\footnotesize,below] at (5,-.12) {$k+5$};
+  \node[note] at (-1,-1.15) {Old masks unchanged; lane $k+2$ protected.};
+ \end{scope}
+ \mazeCompass{13.3}{.75}
+\end{tikzpicture}

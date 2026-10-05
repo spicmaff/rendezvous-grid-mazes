@@ -1,0 +1,78 @@
+\subsection{The sharp path period at every state budget}\label{sec:sharp-period}
+
+Here $n$ counts vertices of the used support, not of a larger ambient maze.
+The following bound is attained by a common mask table, so it is stronger than
+optimizing the capacity inequalities in a vertex-dependent transition model.
+
+\begin{theorem}[Sharp maximum path period]\label{thm:sharp-period}
+For $s\ge2$ and $n\ge3$, the maximum least tagged period over all controllers with
+at most $s$ states and all fully used $n$-vertex induced grid paths is
+\[
+ L_{\max}(s,n)=
+ \begin{cases}
+ sn-2,&n\text{ even},\\
+ s(n-1),&n\text{ odd}.
+ \end{cases}
+\]
+For a standalone two-vertex path, $L_{\max}(s,2)=2s$.
+The displayed formula for $n\ge3$ is also an upper bound for any used path support
+in a larger maze, regardless of the external masks. Attainment is asserted over
+geometries and controllers, not on every fixed path.
+\end{theorem}
+\begin{proof}
+Let $k_0,\ldots,k_{n-2}$ be the positive edge multiplicities.
+When $n=2r+1$, partition the edges into $r$ consecutive pairs. Each pair has total
+multiplicity at most $s$ by Theorem~\ref{thm:support-capacity}, whence
+$L\le2rs=s(n-1)$. When $n=2r+2\ge4$, pair the first $2r$ edges in the same way.
+The remaining edge has multiplicity at most $s-1$, since its neighbour has positive
+multiplicity. Thus $L\le2(rs+s-1)=sn-2$.
+
+For attainment put $p=s-1$ and take the monotone path with direction word
+$\E\N\E\N\cdots$, beginning with $\E$. Every east edge has multiplicity $p$;
+every north edge has multiplicity one. On its forward passage replace an east step
+by $(\E\W)^{p-1}\E$; its backward passage is one west step. Use states
+$0,1,\ldots,p$ and the following common internal-mask rows:
+\[
+\begin{array}{c|ccc}
+ &0&1\le i<p&p\\\hline
+ \E\Sdir &(\Sdir,p)&(\E,i)&(\E,0)\\
+ \N\W &(\N,1)&(\W,i+1)&(\W,0)
+\end{array}
+\]
+At the left endpoint, of mask $\E$, set $\delta(0,\E)=(\E,0)$ if $p=1$.
+If $p\ge2$, use
+\[
+ \delta(0,\E)=(\E,1),\qquad
+ \delta(i,\E)=(\E,i)\ (2\le i<p),\qquad
+ \delta(p,\E)=(\E,0).
+\]
+For even $n$ the right endpoint has mask $\W$; use
+$\delta(0,\W)=(\W,0)$ and
+$\delta(i,\W)=(\W,i+1)$ for $1\le i<p$.
+For odd $n$ it has mask $\Sdir$; use $\delta(1,\Sdir)=(\Sdir,p)$.
+All other rows are completed by legal moves.
+
+For an internal east edge $u\to v$, the forward tags are
+\[
+ (u_i,v_i)_{i=1}^{p-1},\quad u_p,v_0.
+\]
+The last tag moves north in state $1$. On the backward contour the next
+$\E\Sdir$ vertex in state $0$ enters $v_p$, then $u_0$, and continues south.
+Thus each internal vertex uses all $s$ states exactly once. At the left endpoint
+replace the first $u_1$ by the starting tag $u_0$; the specified endpoint rows close
+the same sequence. The left endpoint uses $p$ tags. The right uses $p$ tags for even
+$n$ and one for odd $n$. All tags in the resulting closed word are distinct, giving
+exactly the claimed least periods. This one table for each $s$ works at every length
+of this alternating family.
+
+On a standalone edge use $\delta(i,\E)=(\E,i)$ and
+$\delta(i,\W)=(\W,i+1\bmod s)$ for $0\le i<s$. The resulting cycle has $2s$
+distinct tags, attaining the capacity bound there as well.
+\end{proof}
+
+For one state no recurrent tree support can have $n\ge3$ vertices. For two states
+all path multiplicities at $n\ge3$ are one, but not every prescribed contour is
+realizable by a shared table. At three states the possible doubled edges form a
+matching. Section~\ref{sec:realization} supplies the missing compatibility theorem;
+the period bound by itself is not a realization criterion.
+

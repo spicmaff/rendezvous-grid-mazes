@@ -1,0 +1,25 @@
+% Exact seven-cell path. Left highlight is a conditional closed region.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=9mm,y=9mm]
+ \coordinate (P) at (1,0); \coordinate (A) at (0,0);
+ \coordinate (M) at (0,1); \coordinate (T) at (0,2);
+ \coordinate (H) at (1,2); \coordinate (D) at (2,2);
+ \coordinate (Q) at (2,1);
+ \draw[quiet] (M)--(T)--(H)--(D);
+ \draw[supportA] (P)--(A)--(M); \draw[supportB] (Q)--(D);
+ \node[cell,label=below:{$P$}] at (P) {};
+ \node[startA,label=below left:{$A_0$}] at (A) {};
+ \node[cell,label=left:{$M$}] at (M) {};
+ \node[cell] at (T) {}; \node[cell] at (H) {};
+ \node[cell,label=above:{$D_1$}] at (D) {};
+ \node[startB,label=right:{$Q_0$}] at (Q) {};
+ \node[paneltitle] at (3.2,2.0) {The final two entries};
+ \node[note] at (3.2,1.25) {$Q_0\longleftrightarrow D_1$ is forced.};
+ \node[note] at (3.2,.55) {A failed entry confines $A_0$ to $\{A,P,M\}$.};
+ \node[note] at (3.2,-.15) {$\operatorname{dist}_1(\{A,P,M\},\{D,Q\})\ge2$};
+ \mazeCompass{10.1}{1.15}
+\end{tikzpicture}
+\caption{The final seven-cell path, anchored at $A=(0,0)$. If either remaining W9 entry fails, the left execution stays separated from the forced right-hand tagged two-cycle, including the transient.}
+\label{f:final-path}
+\end{figure}

@@ -1,0 +1,21 @@
+% Abstract a/b preferred directions. Horizontal ellipsis denotes omitted cells.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=9mm,y=9mm]
+ \coordinate (z) at (0,0); \coordinate (a) at (0,1);
+ \coordinate (b1) at (1,0); \coordinate (b2) at (2,0);
+ \coordinate (bk) at (3.6,0); \coordinate (bkp) at (4.6,0);
+ \draw[supportA] (a)--(z); \draw[quiet] (z)--(b1)--(b2);
+ \draw[quiet,densely dotted] (b2)--(bk); \draw[supportB] (bk)--(bkp);
+ \node[cell,label=below left:{$0$}] at (z) {};
+ \node[startA,label=left:{$a$}] at (a) {};
+ \node[cell,label=below:{$b$}] at (b1) {}; \node[cell,label=below:{$2b$}] at (b2) {};
+ \node[startB,label=below:{$kb$}] at (bk) {}; \node[cell,label=below:{$(k+1)b$}] at (bkp) {};
+ \node[font=\scriptsize,anchor=west] at (-.25,1.8) {Preferred directions $a\perp b$};
+ \node[paneltitle] at (6.1,1.55) {A constant radius gap};
+ \node[note] at (6.1,.75) {$(a,kb)\quad\longleftrightarrow\quad(0,(k+1)b)$};
+ \node[note] at (6.1,-.05) {$d_1=k+1>\rho$};
+\end{tikzpicture}
+\caption{Memoryless trap for $k=\lfloor\rho\rfloor\ge1$, with starts at $a$ and $kb$. The axes are preferred directions, not absolute compass labels; the long arm is schematic, with intermediate labels coalescing for $k=1,2$.}
+\label{fig:memoryless-l-trap}
+\end{figure}

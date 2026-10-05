@@ -1,0 +1,75 @@
+\section{Memoryless controllers at arbitrary radius}\label{sec:memoryless-radius}
+
+The one-state case admits an exact controller-by-controller law for every success radius.  Its radius-one specialization recovers the exact one-state threshold.
+
+\begin{theorem}[Memoryless radius law]\label{thm:memoryless-radius}
+Let $A$ be any one-state controller and let $\rho\ge0$.  For each
+\[
+ \mathcal C\in\{\mathcal P,\mathcal J,\mathcal T_{\rm grid},\mathcal G\},
+\]
+one has
+\[
+ \boxed{
+ \tau_{\mathcal C,\rho}(A)=F_{\mathcal C,\rho}(1)=
+ \begin{cases}
+ 2,&0\le\rho<1,\\[1mm]
+ \lfloor\rho\rfloor+3,&\rho\ge1.
+ \end{cases}}
+\]
+In particular, within each of these four classes every memoryless controller has the same least trap size.
+\end{theorem}
+\begin{proof}
+Write $k=\lfloor\rho\rfloor$.  By \eqref{eq:integer-radius}, radius $\rho$ and radius $k$ define exactly the same success event.
+
+First suppose $0\le\rho<1$, so success means coincidence.  On a two-cell edge, agents started at opposite endpoints are forced to exchange endpoints forever and never coincide.  A singleton has only a time-zero success.  Every listed class contains the two-cell path, so the exact value is two.
+
+Now let $k\ge1$.  We first prove a lower bound that does not use memorylessness.  If a connected maze $V$ with starts $x,y$ were a trap with $|V|\le k+2$, failure at time zero and connectedness would give
+\[
+ k+1\le d_1(x,y)\le d_V(x,y)\le |V|-1\le k+1.
+\]
+All inequalities are therefore equalities.  A shortest $x$--$y$ path has $|V|-1$ edges and visits every vertex.  Any extra edge joining nonconsecutive vertices of that path would shorten $d_V(x,y)$, so the whole maze graph is that induced path, with $x,y$ as its endpoints.  Compulsory motion forces both first moves inward.  If the path is
+\[
+ x=v_0,v_1,\ldots,v_k,v_{k+1}=y,
+\]
+then after one round the agents are at $v_1$ and $v_k$, and
+\[
+ d_1(v_1,v_k)\le d_V(v_1,v_k)=k-1\le k\le\rho.
+\]
+Thus every controller succeeds on every connected maze of at most $k+2$ cells.
+
+It remains to give a matching trap for an arbitrary one-state rule.  Write $r(M)\in M$ for the chosen direction at mask $M$ and set
+\[
+ h=r(\{\E,\W\}),\qquad v=r(\{\N,\Sdir\}).
+\]
+The unit vectors $h$ and $v$ are perpendicular.  On the corner mask $\{h,v\}$ let
+\[
+ a=r(\{h,v\}),\qquad \{a,b\}=\{h,v\}.
+\]
+Then
+\[
+ r(\{a,b\})=a,\qquad r(\{b,-b\})=b.
+\]
+Consider
+\[
+ V_k=\{0,a,b,2b,\ldots,(k+1)b\},
+\]
+whose path order is $a,0,b,2b,\ldots,(k+1)b$.  This is an induced path with $k+3$ cells.  Start the two agents at $a$ and $kb$.  The endpoint move from $a$ is forced, the corner at $0$ chooses $a$, an interior $b$-arm cell chooses $b$, and the outer endpoint is forced back.  Hence
+\[
+ (a,kb)\longleftrightarrow(0,(k+1)b).
+\]
+Both configurations have Manhattan separation $k+1>\rho$, so they form a trap.  The same witness belongs to all four listed maze classes.
+\end{proof}
+
+\input{figures/memoryless_l_trap}
+
+The class restriction in Theorem~\ref{thm:memoryless-radius} concerns only the matching upper witness: the small-maze lower bound holds for every class of connected induced grid mazes, while equality follows for any class containing the controller-adapted path $V_k$.
+
+\begin{corollary}[The original one-state threshold]\label{cor:one-state-radius-one}\label{thm:A}
+For the original radius-one model,
+\[
+ F_{\mathcal P,1}(1)=F_{\mathcal J,1}(1)
+ =F_{\mathcal T_{\rm grid},1}(1)=F(1)=4.
+\]
+\end{corollary}
+
+Thus the value four is the first nontrivial instance of the general law $\lfloor\rho\rfloor+3$, rather than a separate low-state phenomenon requiring its own proof.

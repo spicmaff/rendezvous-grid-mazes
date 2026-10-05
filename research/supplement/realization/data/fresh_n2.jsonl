@@ -1,0 +1,12 @@
+{"d":"E","p":"-","exact":1,"affine":1,"gate":1,"oracle_nodes":2,"q_exact":[0,0],"q_affine":[0,0],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1],"z":0}
+{"d":"E","p":"0","exact":1,"affine":1,"gate":1,"oracle_nodes":4,"q_exact":[0,0,1,1],"q_affine":[0,0,1,1],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1,2,2],"z":0}
+{"d":"E","p":"1","exact":1,"affine":1,"gate":1,"oracle_nodes":4,"q_exact":[0,0,1,1],"q_affine":[0,0,1,1],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1,2,2],"z":0}
+{"d":"N","p":"-","exact":1,"affine":1,"gate":1,"oracle_nodes":2,"q_exact":[0,0],"q_affine":[0,0],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1],"z":0}
+{"d":"N","p":"0","exact":1,"affine":1,"gate":1,"oracle_nodes":4,"q_exact":[0,0,1,1],"q_affine":[0,0,1,1],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1,2,2],"z":0}
+{"d":"N","p":"1","exact":1,"affine":1,"gate":1,"oracle_nodes":4,"q_exact":[0,0,1,1],"q_affine":[0,0,1,1],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1,2,2],"z":0}
+{"d":"W","p":"-","exact":1,"affine":1,"gate":1,"oracle_nodes":2,"q_exact":[0,0],"q_affine":[0,0],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1],"z":0}
+{"d":"W","p":"0","exact":1,"affine":1,"gate":1,"oracle_nodes":4,"q_exact":[0,0,1,1],"q_affine":[0,0,1,1],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1,2,2],"z":0}
+{"d":"W","p":"1","exact":1,"affine":1,"gate":1,"oracle_nodes":4,"q_exact":[0,0,1,1],"q_affine":[0,0,1,1],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1,2,2],"z":0}
+{"d":"S","p":"-","exact":1,"affine":1,"gate":1,"oracle_nodes":2,"q_exact":[0,0],"q_affine":[0,0],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1],"z":0}
+{"d":"S","p":"0","exact":1,"affine":1,"gate":1,"oracle_nodes":4,"q_exact":[0,0,1,1],"q_affine":[0,0,1,1],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1,2,2],"z":0}
+{"d":"S","p":"1","exact":1,"affine":1,"gate":1,"oracle_nodes":4,"q_exact":[0,0,1,1],"q_affine":[0,0,1,1],"masks":[],"singleton":[],"a":[],"kappa":[],"endpoint":[1,1,2,2],"z":0}

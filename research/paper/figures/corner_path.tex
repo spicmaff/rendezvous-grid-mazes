@@ -1,0 +1,25 @@
+% Exact six-cell grid geometry; highlighted regions are closed, not fixed cycles.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=9mm,y=9mm]
+ \coordinate (P) at (1,2); \coordinate (U) at (0,2);
+ \coordinate (M) at (0,1); \coordinate (C) at (0,0);
+ \coordinate (H) at (1,0); \coordinate (Eend) at (2,0);
+ \draw[quiet] (M)--(C);
+ \draw[supportB] (P)--(U)--(M);
+ \draw[supportA] (C)--(H)--(Eend);
+ \node[cell,label=right:{$P$}] at (P) {};
+ \node[startB,label=above left:{$U_0$}] at (U) {};
+ \node[cell,label=left:{$M_1$}] at (M) {};
+ \node[startA,label=below left:{$C_0$}] at (C) {};
+ \node[cell,label=below:{$H$}] at (H) {};
+ \node[cell,label=right:{$E$}] at (Eend) {};
+ \node[paneltitle] at (3.2,2.0) {Two closed regions};
+ \node[note] at (3.2,1.25) {Forbidden row: $\delta(0,ES)=(S,1)$};
+ \node[note] at (3.2,.55) {$C_0:\ \{C,H,E\}\qquad U_0:\ \{U,M,P\}$};
+ \node[note] at (3.2,-.15) {Disjoint visits; equal checkerboard colour.};
+ \mazeCompass{10.1}{1.15}
+\end{tikzpicture}
+\caption{Corner obstruction under the stated forbidden row and preceding rigidity hypotheses. The $U$-started execution reaches $M$ only in state $1$; disjointness excludes coincidence and parity excludes adjacency.}
+\label{f:corner-path}
+\end{figure}

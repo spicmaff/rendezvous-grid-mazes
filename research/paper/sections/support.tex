@@ -1,0 +1,120 @@
+\section{Recurrent support capacity and period}\label{sec:support-structure}
+
+A \emph{tag} is a pair $(v,q)$ of a maze cell and a controller state. Recurrent tagged cycles are taken in their least period, so their tags are distinct. If
+\[
+ \Gamma=((v_0,q_0),\ldots,(v_{L-1},q_{L-1}))
+\]
+is such a primitive cycle, its \emph{spatial support} is the graph whose vertices are the visited cells and whose edges are the grid edges actually traversed by the cycle.  An ambient maze edge is not placed in the support merely because both endpoints are visited.
+
+\input{figures/memory_geometry_hierarchy}
+
+\subsection{Capacity of a tree support}
+
+The number of internal states limits how much branching a recurrent tree support can carry.
+
+\begin{theorem}[Support capacity]\label{thm:support-capacity}
+Let $A$ be a compulsory-moving controller with $|Q_A|\le s$, and let $\Gamma$ be a primitive recurrent tagged cycle whose spatial support $T$ is a tree.  For each used edge $e$, let $k_e$ be the number of traversals of $e$ in either one of its two directions during one period, and let $r_v$ be the number of tags of $\Gamma$ lying over $v$.  Then
+\[
+ \boxed{r_v=\sum_{e\ni v}k_e\le s},
+ \qquad
+ \boxed{|\Gamma|=2\sum_{e\in E(T)}k_e},
+ \qquad k_e\ge1.
+\]
+Consequently
+\[
+ \Delta(T)\le s,
+\]
+and for a square-grid support
+\[
+ \Delta(T)\le\min(s,4).
+\]
+\end{theorem}
+\begin{proof}
+Fix a used edge $e$.  Deleting $e$ separates $T$ into components $U$ and $W$.  During one closed period let $N_{UW}$ and $N_{WU}$ be the numbers of crossings of $e$ from $U$ to $W$ and from $W$ to $U$.  The indicator of the current vertex lying in $U$ returns to its initial value after one period, so its net change is zero.  Hence
+\[
+ N_{UW}=N_{WU}=:k_e.
+\]
+The edge belongs to the used support, so $k_e\ge1$.
+
+Now fix $v\in V(T)$.  Every occurrence of $v$ in the cyclic spatial word has exactly one departure, because motion is compulsory.  Conversely every departure from $v$ corresponds to exactly one such occurrence.  Along each incident edge $e$, exactly $k_e$ traversals depart from $v$.  Therefore
+\[
+ r_v=\sum_{e\ni v}k_e.
+\]
+Since the tagged cycle is primitive, two occurrences over the same spatial vertex cannot carry the same state: otherwise that tag would repeat before the end of the period.  Thus $r_v\le |Q_A|\le s$.
+
+Finally,
+\[
+ |\Gamma|=\sum_v r_v
+ =\sum_v\sum_{e\ni v}k_e
+ =2\sum_e k_e.
+\]
+Since every incident multiplicity is positive,
+\[
+ \deg_T(v)\le\sum_{e\ni v}k_e=r_v\le s.
+\]
+The grid contributes the independent degree bound four.
+\end{proof}
+
+Least period is essential for the capacity inequality: writing a cycle twice doubles $r_v$ without adding states. Theorem~\ref{thm:support-capacity} applies to the unique least tagged period of each recurrent trajectory.
+
+\begin{corollary}[Low-state tree supports]\label{cor:low-state-tree-supports}
+For a recurrent cycle with tree support in the compulsory-motion model:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+ \item with one state, the support is a single edge;
+ \item with two states, the support is a path;
+ \item with three states, degree-three branching is no longer excluded by state capacity.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+A recurrent support contains at least one edge.  The first two claims follow from the bounds $\Delta(T)\le1$ and $\Delta(T)\le2$ for a connected tree.  For the third, the bound permits degree three, and the next sharpness construction realizes it.
+\end{proof}
+
+The degree bound is sharp on induced grid trees for every state budget up to the ambient degree.  Let $d=\min(s,4)$ and take a grid star with centre $c$ and leaves in distinct directions $d_0,\ldots,d_{d-1}$.  With states $0,\ldots,d-1$, define on the used rows
+\[
+ \delta(i,\{d_0,\ldots,d_{d-1}\})=(d_i,0),
+ \qquad
+ \delta(0,\{-d_i\})=(-d_i,i+1\!\!\pmod d).
+\]
+Completing the remaining rows arbitrarily gives the primitive cycle
+\[
+ c_0,\ell_{0,0},c_1,\ell_{1,0},\ldots,c_{d-1},\ell_{d-1,0},
+\]
+whose support has centre degree $d$.  Thus the local transition from path-like recurrence at $s=2$ to possible branching at $s=3$ is genuine.
+
+\input{sections/sharp_period}
+
+\subsection{Phase contact on a path}
+
+The second structural ingredient is independent of automata.
+
+\begin{theorem}[Phase contact]\label{thm:phase-contact}
+Let $p:\mathbb Z\to\mathbb Z$ be periodic with period $L\ge1$ and satisfy
+\[
+ |p(t+1)-p(t)|\le1\qquad(t\in\mathbb Z).
+\]
+For any phase offsets $\alpha,\beta\in\mathbb Z$, there exists $t\in\{0,\ldots,L-1\}$ such that
+\[
+ \boxed{|p(t+\alpha)-p(t+\beta)|\le1.}
+\]
+\end{theorem}
+\begin{proof}
+Set $d(t)=p(t+\alpha)-p(t+\beta)$.  Then $|d(t+1)-d(t)|\le2$.  Suppose $|d(t)|\ge2$ for every $t$.  Since $d$ is integer-valued, its sign cannot change between consecutive times: a change from at least $2$ to at most $-2$, or conversely, would require a jump of magnitude at least four.  Periodicity therefore forces one strict sign throughout the whole cyclic period.  On the other hand, cyclic reindexing gives
+\[
+ \sum_{t=0}^{L-1}d(t)
+ =\sum_{t=0}^{L-1}p(t+\alpha)-\sum_{t=0}^{L-1}p(t+\beta)=0,
+\]
+a contradiction.
+\end{proof}
+
+The theorem permits zero increments, so it remains true for lazy walks with WAIT.  It uses no state bound, no grid embedding, no simple tagged-cycle hypothesis, and no assumption that the ambient graph is a tree.
+
+\begin{corollary}[Same-cycle contact on path support]\label{cor:same-cycle-path-contact}
+Suppose two trajectories of the same controller eventually occupy phase shifts of one recurrent tagged cycle whose spatial support is a path.  Then at some integer time the two agents occupy the same or adjacent path vertices.
+\end{corollary}
+\begin{proof}
+Choose an integer coordinate along the support path.  The projection of one period of the recurrent cycle is a periodic integer walk with step size at most one.  Once both trajectories lie on that cycle, they are two phase shifts of this word.  Theorem~\ref{thm:phase-contact} applies.
+\end{proof}
+
+Path support cannot be replaced by a branching-tree hypothesis. An explicit
+three-state triod with a unique recurrent cycle and two eternally separated state-zero
+trajectories is given in Appendix~\ref{app:branching-example}.

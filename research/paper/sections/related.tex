@@ -1,0 +1,187 @@
+\section{Related work}
+\label{sec:related}
+
+The relevant comparisons concern three different tasks: visiting every vertex or
+edge, meeting at one vertex, and the distance-one contact required here. They also
+involve different ways of supplying direction information and different orders of
+quantification over controllers, graphs, labellings and starts. We organize the
+comparison around these distinctions, rather than treating all finite-state walkers
+as one model.
+
+\paragraph{Labyrinth automata, quantitative traps, and universal hosts.}
+Budach's work on labyrinth exploration~\cite{Budach1978} and the universal-trap
+paper of Antelmann, Budach and Rollik~\cite{AntelmannBudachRollik1979} are central
+historical predecessors. For their historical theorem statements we rely on the
+account of Kilibarda, Kudryavtsev and U\v{s}\'{c}umli\'{c}~\cite{KilibardaKudryavtsevUscumlic2003},
+not on uninspected originals. Hemmerling's monograph explicitly treats traps with a
+specified starting position and estimates their size in terms of internal
+states~\cite[pp.~133--134]{Hemmerling1989}. Thus neither state-dependent trap size
+nor a controller-dependent adversary is a new organizing principle.
+
+The observation interface can also be quite close. Hoffmann's inspected opening
+pages define plane mazes as full sublabyrinths of the square lattice, with free
+compass directions observed locally, and state a one-pebble exploration
+impossibility~\cite[pp.~433--434]{Hoffmann1981}. His finite-automaton definition
+uses a legal move at every step. Induced geometry and compulsory motion therefore
+do not, by themselves, separate our problem from that literature. What must still
+be transferred is the objective: an unvisited vertex is not a certificate that two
+moving copies always remain nonadjacent.
+
+A quantitative predecessor makes this limitation especially concrete.
+The survey~\cite[Theorem~4, p.~25]{KilibardaKudryavtsevUscumlic2003} attributes to
+Antelmann a proper planar exploration trap of size at most
+$C\exp\sqrt{2s\log_2(2s)}$ for an initialized $s$-state automaton. The cited statement
+does not specify a numerical $C$. Antelmann's original article and dissertation
+remain uninspected; neither an exact low-state constant nor a rendezvous conclusion
+is inferred from this asymptotic bound.
+
+Universal traps require an equally explicit qualification. Kilibarda proves
+universal exploration traps for finite families of automata~\cite[Theorems~1.2--1.3]{Kilibarda1990}.
+His later reduction paper gives a finite mosaic trap for each finite collective of independent automata and,
+in a separate theorem, one \emph{infinite} mosaic trap for all such
+collectives~\cite[Theorems~3.5 and~3.8]{KilibardaReduction2021}. Consequently our
+finite obstruction menu and fixed host are not presented as the invention of
+universal trapping. The specific assembly preserves the complete masks queried by
+two executions, produces an explicitly bounded finite induced subcubic grid tree,
+and permits only the bad starts to depend on the controller. Its failure predicate
+is perpetual nonadjacency. The earlier exploration theorems are genuine quantifier
+predecessors, but none of the cited statements supplies that entire conclusion.
+
+\paragraph{Finite-state exploration, exact small memory, and periodic traversal.}
+Graph exploration supplies both asymptotic and exact-state comparisons. The work
+of Fraigniaud, Ilcinkas, Peer, Pelc and Peleg~\cite{FraigniaudEtAl2005} studies
+port-based automata; a modern account of the space-complexity setting is given by
+Disser and Klimm~\cite{DisserKlimm2022}. The latter also makes explicit why vertices
+with the same observed incident colours are indistinguishable. This is a useful
+neighbor of our repeated-mask requirement, although exploration is a one-agent
+objective and its label conventions are not an absolute compass.
+
+The closest numerical trap bound is particularly important to acknowledge.
+Ilcinkas~\cite[Theorem~2.1, p.~52]{Ilcinkas2006} constructs, for every $K$-state
+port-based Moore automaton and $d\ge3$, a simple-graph exploration trap with at most
+$K+d+2$ vertices and maximum degree $d$. Substituting $K=2,d=3$ gives seven.
+The construction leaves a \emph{vertex} unvisited, so an edge-versus-vertex slogan
+would not distinguish it from our theorem. Instead, a transfer must preserve the
+controller interface and induced-grid geometry and must create a nonadjacent pair
+of executions. No such state-preserving transfer is established here.
+
+Exact one- and two-state classifications are also already available, rather than
+being a new kind of question. Fraigniaud, Ilcinkas and
+Pelc~\cite{FraigniaudIlcinkasPelc2008} classify regular graphs explorable by
+port-Mealy automata: the one-state class consists of the one-vertex graph, $K_2$ and
+cycles, while the two-state class consists of cliques and cycles. An automaton for
+a graph must work for every port assignment and initial position. These are strong
+predecessors for the small-memory viewpoint, but not determinations of our
+max--min trap parameters for a fixed compass-mask interface.
+
+For the structural results, Diks, Fraigniaud, Kranakis and
+Pelc~\cite{DiksEtAl2004} already use a degree-based state lower bound and the
+cyclic next-port rule for perpetual tree exploration. Kilibarda's
+Proposition~1.1~\cite{Kilibarda1990} states that every rotation system of a tree
+induces one contour; the same paper gives exact small-state exploration thresholds
+in a richer local-vision model. Thus the contour mechanism in
+Section~\ref{sec:paths} is classical. Our four-state table stores the incoming
+\emph{compass} port internally, because it is not supplied as an observation;
+the radius-one rendezvous conclusion additionally uses path phase contact.
+This is not a per-vertex rotor-memory model: the fixed tree has no writable local
+state.
+
+Periodic exploration is another close, but different, extremal problem.
+Ilcinkas~\cite{Ilcinkas2008Ports} gives a three-state explorer with period at most
+$4n-2$ after a suitable port assignment. That problem minimizes a guaranteed
+exploration period while permitting the designer to choose local orientations;
+its configurations include an incoming port. Our sharp-period theorem instead
+maximizes the least tagged period over allowed compass paths and controllers,
+under an internal-state budget. Neither the periodic-exploration bound nor the
+standard contour alone gives the weighted capacity and sharp all-state formula
+proved in Section~\ref{sec:support-structure}.
+
+\paragraph{Meeting identical agents: resources and port quantifiers.}
+Pelc's survey provides the broader deterministic network-rendezvous
+context~\cite{Pelc2012Survey}. A particularly relevant compass-labyrinth result is
+Kilibarda's type-meeting theorem~\cite[Theorem~10]{Kilibarda2021}. Its strong version
+uses two copies of one collective and same-vertex contact; the minimal universal
+types for finite mosaic labyrinths are $(1,2)$ and $(2,0)$. A type counts active
+automata and pebbles, not internal states. In particular, copying a collective of
+type $(2,0)$ is not a theorem about two single agents. The negative side concerns
+same-vertex meeting and does not supply a distance-one trap or the exact values
+four, seven or eight in our model.
+
+Bounded-memory rendezvous in port-labelled graphs is more developed than a
+comparison based only on a few constants would suggest. Czyzowicz, Kosowski and
+Pelc~\cite{CzyzowiczEtAl2012} establish log-space rendezvous bounds in arbitrary
+graphs. For trees, the distinction between the following two domains is essential.
+Fraigniaud and Pelc~\cite[Definitions~1.1--1.2 and Section~1.2]{FraigniaudPelc2011}
+require success for every port labelling and restrict admissible initial pairs by
+perfect symmetrizability. Their simultaneous-start result does not cover every pair
+that happens to be nonsymmetric under one fixed labelling. Czyzowicz, Kosowski and
+Pelc~\cite{CzyzowiczEtAl2014} prove a logarithmic memory lower bound even for
+simultaneous starts on lines in that latter, broader domain. The inspected author
+versions explicitly expose the correction to the earlier conference formulation.
+These are not conflicting bounds once the domains are kept distinct.
+
+Those models supply arrival-port information, permit waiting, and require
+same-node meeting. Our compass, compulsory motion, identical initial states and
+integer-time distance-one event must therefore all be retained when comparing the
+path threshold or the still-open three-state case. In particular, a lower bound on
+same-node rendezvous is not automatically a lower bound on distance-one contact,
+even if it already applies to simultaneous starts.
+
+\paragraph{Recent nearby models.}
+The 2026 preprint of Das and Pelc~\cite{DasPelc2026} is a close current finite-state
+comparison: it asks for a universal deterministic automaton on all feasible
+rendezvous instances of port-labelled graphs. Its negative result with finitely
+many stationary pebbles already has simultaneous-start line witnesses.
+Thus start delay alone cannot explain the separation from our positive path
+result. The same-node predicate, port observations and feasibility quantifiers
+remain decisive; the preprint does not settle our three-state question.
+
+Recent grid and neighborhood work illustrates two other boundaries.
+Gao and Pelc~\cite{GaoPelc2025} study identical agents with a coherent compass on
+the infinite grid, but allow waiting and permanent footprints, and require a common
+node. Eguchi, Kitamura and Izumi's \emph{neighborhood rendezvous}~\cite{EguchiEtAl2022}
+assumes initially adjacent agents and still seeks same-node meeting; it does not
+mean success at distance one. Its randomized, labelled-graph setting is also not a
+fixed small-state anonymous controller. These papers clarify model choices rather
+than provide numerical predecessors to our trap thresholds.
+
+\paragraph{Graph-walking realization and deterministic synthesis.}
+Local descriptions of finite-state computations have strong precedents.
+Martynova~\cite{Martynova2022} encodes graph-walking computations by attaching
+incoming and outgoing state sets to directions and imposing node consistency.
+Theorem~5 of the inspected author version transforms a \emph{given} automaton
+into a signature describing accepted graphs. Here a graph and a cyclic scenario
+are prescribed, while the common transition table is unknown. This reverses the
+synthesis direction; it does not make the use of local state annotations itself
+new.
+
+Similarly, Ulyantsev, Buzhinsky and Shalyto~\cite{UlyantsevBuzhinskyShalyto2016}
+identify deterministic machines from scenarios using state assignments and
+transition consistency. Our occurrence-colouring formulation belongs naturally to
+this exact-synthesis neighborhood. The content specific to
+Theorem~\ref{thm:three-state-realization} is a normal form for a restricted recurrent
+scenario: arbitrary row outputs are eliminated in favor of a finite common
+mask/difference profile and one bit per internal vertex. It is not a general theorem
+that scenario synthesis is new or that local annotations guarantee global
+realizability without further constraints.
+
+\paragraph{Algebraic consistency and the scope of the contribution.}
+Signed-graph balance and switching are classical; see
+Zaslavsky~\cite[Section~2, Proposition~2.1]{Zaslavsky1982}. Gain graphs generalize
+edge signs to group elements, with identity product around balanced
+cycles~\cite{Zaslavsky1989}. This is the correct context for our signed-graph
+special cases, but not for the entire realization criterion. A profile system may
+have rows involving more than two bits; it balances all linear dependencies of one
+matrix. Successor differences may be zero, and the existential choice of one common
+profile can produce non-affine phase projections. Replacing the full criterion by
+one signed graph or by permutation-only transport would change the theorem.
+
+Nor is polynomial recognition at a fixed state budget and alphabet asserted as a
+new complexity result: the set of complete controller tables is already finite
+independently of path length. The contribution claimed here is the proved
+combination of the exact model-specific trap thresholds, weighted recurrent-support
+bounds with sharp attainment, the special affine realization normal form, and
+observation-preserving obstruction assembly. The inspected predecessors do not
+supply this combination under the same hypotheses. That comparison is not an
+absolute priority claim; the access limitations on historical originals remain
+explicit.

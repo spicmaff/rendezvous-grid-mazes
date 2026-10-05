@@ -1,0 +1,9 @@
+{"normalization":"translation only; all four initial directions; no path reversal quotient","sizes":[
+{"n":2,"geometries":4,"specifications":12,"realizable":12,"direction_rejections":0,"residual_rejections":0,"oracle_nodes":40,"mismatches":0},
+{"n":3,"geometries":12,"specifications":60,"realizable":60,"direction_rejections":0,"residual_rejections":0,"oracle_nodes":336,"mismatches":0},
+{"n":4,"geometries":28,"specifications":308,"realizable":284,"direction_rejections":24,"residual_rejections":0,"oracle_nodes":3148,"mismatches":0},
+{"n":5,"geometries":68,"specifications":1428,"realizable":1172,"direction_rejections":256,"residual_rejections":0,"oracle_nodes":19304,"mismatches":0},
+{"n":6,"geometries":164,"specifications":7052,"realizable":4804,"direction_rejections":2232,"residual_rejections":16,"oracle_nodes":122140,"mismatches":0},
+{"n":7,"geometries":396,"specifications":33660,"realizable":18860,"direction_rejections":14464,"residual_rejections":336,"oracle_nodes":758480,"mismatches":0},
+{"n":8,"geometries":940,"specifications":160740,"realizable":69660,"direction_rejections":88152,"residual_rejections":2928,"oracle_nodes":4741724,"mismatches":0}
+]}

@@ -1,0 +1,39 @@
+% Four exact baseline representatives; all grid units are 7 mm.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[maze,x=1mm,y=1mm]
+ \draw[rvGray,line width=.6pt] (77,-10)--(77,51);
+ \draw[rvGray,line width=.6pt] (0,23)--(158,23);
+ \begin{scope}[shift={(10,31)},x=7mm,y=7mm]
+  \draw[edge] (0,0)--(0,1)--(0,2); \draw[edge] (0,1)--(1,1)--(2,1);
+  \foreach \x/\y in {0/0,0/1,0/2,1/1,2/1}{\node[cell] at (\x,\y) {};}
+  \node[font=\footnotesize,left] at (0,1) {$J$};
+ \end{scope}
+ \node[paneltitle] at (33,46) {$T$\quad Subcubic trees};
+ \node[note] at (33,35) {Remaining trees after\\excluding full vertices.};
+ \begin{scope}[shift={(96,38)},x=7mm,y=7mm]
+  \draw[edge] (-1,0)--(0,0)--(1,0)--(1,1)--(0,1)--(0,0)--(0,-1);
+  \foreach \x/\y in {0/0,0/1,1/0,0/-1,-1/0,1/1}{\node[cell] at (\x,\y) {};}
+  \node[font=\footnotesize,below left] at (0,0) {$p$};
+ \end{scope}
+ \node[paneltitle] at (116,46) {$X$\quad Full vertex};
+ \node[note] at (116,35) {Takes priority,\\even with a cycle.};
+ \begin{scope}[shift={(10,8)},x=7mm,y=7mm]
+  \draw[edge] (0,0)--(1,0)--(1,1)--(0,1)--(0,0)--(0,-1)--(0,-2);
+  \foreach \x/\y in {0/0,1/0,1/1,0/1,0/-1,0/-2}{\node[cell] at (\x,\y) {};}
+  \node[font=\footnotesize,left] at (0,0) {$a$};
+ \end{scope}
+ \node[paneltitle] at (33,13) {$Q$\quad One square};
+ \node[note] at (33,1) {At most two attached tree cells;\\no full vertex.};
+ \begin{scope}[shift={(89,4)},x=7mm,y=7mm]
+  \draw[edge] (0,0)--(1,0)--(2,0)--(2,1)--(1,1)--(0,1)--(0,0);
+  \draw[edge] (1,0)--(1,1);
+  \foreach \x/\y in {0/0,1/0,2/0,0/1,1/1,2/1}{\node[cell] at (\x,\y) {};}
+ \end{scope}
+ \node[paneltitle] at (116,13) {$R$\quad Rectangle};
+ \node[note] at (116,2) {$2\times3$; both absolute\\orientations.};
+ \begin{scope}[shift={(155,-8)},x=7mm,y=7mm]\mazeCompass{0}{0}\end{scope}
+\end{tikzpicture}
+\caption{The structural partition for $3\le |V|\le6$, at a common grid scale. These are geometric families, not compass symmetry classes; no start pair is selected.}
+\label{f:maze-families}
+\end{figure}

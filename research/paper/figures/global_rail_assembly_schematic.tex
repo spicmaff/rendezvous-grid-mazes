@@ -1,0 +1,26 @@
+% A schematic assembly, not the complete 5212-cell coordinate drawing.
+\begin{tikzpicture}[maze,x=7.5mm,y=6.5mm]
+ \draw[rvInk,line width=1.15pt] (.3,3.75)--(12.5,3.75);
+ \node[paneltitle] at (.25,4.48) {One host, fixed before the controller};
+ \foreach \x in {1.3,4.3,7.3,10.3}{
+  \draw[lightpanel] (\x-.83,-.1) rectangle (\x+.83,1.65);
+  \draw[rvInk,line width=.95pt] (\x,1.45)--(\x,3.75);
+  \node[cell] at (\x,3.75) {};
+  \node[gate] at (\x,1.45) {};
+ }
+ % Representative schematic trees inside three fragment boxes.
+ \draw[edge] (.8,.4)--(1.3,.4)--(1.3,1.45); \draw[edge] (1.3,.9)--(1.85,.9);
+ \draw[edge] (3.8,.4)--(4.3,.4)--(4.8,.4)--(4.8,1)--(4.3,1)--(4.3,1.45);
+ \draw[edge] (9.8,.4)--(10.3,.4)--(10.3,1.45); \draw[edge] (10.3,.9)--(10.85,.9);
+ \foreach \x/\y in {.8/.4,1.3/.4,1.3/.9,1.85/.9,3.8/.4,4.3/.4,4.8/.4,4.8/1,4.3/1,9.8/.4,10.3/.4,10.3/.9,10.85/.9}{\node[cell] at (\x,\y) {};}
+ \node at (7.3,.75) {$\cdots$};
+ \draw[rvMid,line width=.4pt] (12.5,3.75)--(12.9,3.75);
+ \draw[rvMid,line width=.4pt] (10.4,2.65)--(12.9,2.65);
+ \draw[rvMid,line width=.4pt] (11.15,1.4)--(12.9,1.4);
+ \node[note] at (13.1,3.75) {$1{,}430$ rail cells};
+ \node[note] at (13.1,2.65) {$990$ stalk cells};
+ \node[note] at (13.1,1.4) {$2{,}792$ fragment cells};
+ \node[note] at (.25,-.65) {$172$ fragments; separated boxes; one stalk per fragment};
+ \node[font=\small\bfseries] at (8.25,-1.65) {$2792+990+1430=5212$};
+ \mazeCompass{17.25}{-.25}
+\end{tikzpicture}
