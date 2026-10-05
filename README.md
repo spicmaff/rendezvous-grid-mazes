@@ -10,6 +10,10 @@ Two identical finite-state agents follow one deterministic rule in an induced sq
 
 The showcase includes an exact synchronous rendezvous sandbox, the support-capacity construction, an arbitrary-integer sharp-period calculator, a low-state result ladder, three-state positive/negative examples and basin comparisons, all 144 exact test instances with the certified 44 highlighted, and a canvas viewer of the actual 5212-cell universal host. Ten addressable views link directly to the frozen paper, data and checkers. The simulator is educational, not a proof engine; edited instances are explicitly illustrative.
 
+Replays keep one persistent SVG and move both agents on the same presentation clock. Contact and cycle checks still use only exact integer-time tags. The active transition-table entries follow those tags; stepping through the support and alternating-family constructions highlights the traversed contour. The opening witness replays its released A-star trace. The host camera eases between exact views, anchors wheel zoom at the pointer, and zooms out during long fragment jumps. Reset, pause, navigation, hidden tabs and reduced-motion preferences settle or cancel presentation frames without changing the model. Theme choice persists locally; selected candidate details precede the gallery on small screens.
+
+The motion preflight workflow runs the actual build in Chromium at a repository subpath before publication. It checks intermediate SVG positions, synchronous interpolation, exact endpoints, interrupted resets, camera flights, all canonical preset traces, mobile touch, themes and reduced motion; it saves screenshots and a real browser recording. The Pages workflow repeats the suite against the deployed bytes. Browser tooling stays outside the repository and is optional for the dependency-free build.
+
 | Result | Scope | Proof basis |
 | --- | --- | --- |
 | Recurrent support capacity and sharp path periods | Least tagged cycles; tree support; maximum path period over geometries/controllers | Deductive |
