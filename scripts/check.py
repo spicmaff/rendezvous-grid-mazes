@@ -2,7 +2,7 @@
 """Offline drift checks: claims, links, canonical labels, asset hashes, licenses."""
 from pathlib import Path
 from html.parser import HTMLParser
-from urllib.parse import urlsplit,unquote
+from urllib.parse import urlsplit,unquote,parse_qs
 import hashlib,json,re,subprocess,sys
 ROOT=Path(__file__).resolve().parents[1]
 class HTML(HTMLParser):
@@ -18,6 +18,15 @@ def main():
  p=HTML();p.feed((ROOT/'site/index.html').read_text());m=json.loads((ROOT/'public/claims.json').read_text());c={x['id']:x for x in m['components']}
  assert len(c)==len(m['components']);assert p.claims<=set(c),p.claims-set(c)
  app=(ROOT/'site/app.mjs').read_text()
+ # Each runtime URL carries the content hash of its actual built bytes.
+ built=(ROOT/'dist/index.html').read_text()
+ for name in ['style.css','app.mjs']:
+  url=re.search(r'(?:href|src)="('+re.escape(name)+r'\?v=[0-9a-f]+)"',built)
+  assert url, 'Missing runtime version: '+name
+  assert parse_qs(urlsplit(url[1]).query)['v']==[hashlib.sha256((ROOT/'dist'/name).read_bytes()).hexdigest()[:16]]
+ for name in ['model.mjs','motion.mjs']:
+  version=hashlib.sha256((ROOT/'dist'/name).read_bytes()).hexdigest()[:16]
+  assert "'./"+name+'?v='+version+"'" in (ROOT/'dist/app.mjs').read_text()
  assert set(re.findall(r"sourceHTML\('([^']+)'\)",app))<=set(c)
  assert all(x['claim'] in c for x in json.loads((ROOT/'site/data/examples.json').read_text())['presets'])
  for x in c.values():

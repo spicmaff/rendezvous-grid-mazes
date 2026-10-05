@@ -55,6 +55,9 @@ try{
  async function route(page,id){await page.locator(`nav a[href="#${id}"]`).click();await page.waitForFunction(id=>!document.getElementById(id).hidden,id);assert.equal(await page.locator('section.page:visible').count(),1);assert(await page.locator('#'+id+' h1').isVisible());}
  const desktop=await makePage({viewport:{width:1440,height:900},colorScheme:'light'},'desktop-light');
  const p=desktop.page;
+ const runtime=await p.evaluate(()=>[document.querySelector('script[type=module]').src,document.querySelector('link[rel=stylesheet]').href]);
+ for(const url of runtime){const u=new URL(url),file=u.pathname.split('/').at(-1),bytes=await fs.readFile(path.join(root,'dist',file));assert.equal(u.searchParams.get('v'),digest(bytes).slice(0,16));assert((await fetchBytes(u)).equals(bytes));}
+ assert.equal(await p.locator('#sim-grid .agent').count(),2);record('content-versioned-runtime-cache-refresh',{runtime});
  for(const id of routes){await route(p,id);await layout(p,'desktop-'+id);await shot(p,'desktop-'+id);}
  record('all-ten-desktop-views',{routes,viewport:{width:1440,height:900}});
  // Compare every visible position/state/time slice with the released Python-derived fixture traces.
