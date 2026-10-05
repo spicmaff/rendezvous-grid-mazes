@@ -355,6 +355,7 @@
         "scripts/visual_assets.py",
         "site/model.mjs",
         "site/style.css",
+        "tests/browser/live.mjs",
         "tests/model.test.mjs",
         "tests/ui-smoke.test.mjs"
       ],
