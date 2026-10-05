@@ -13,7 +13,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const out=path.resolve(process.env.BROWSER_QA_OUTPUT||path.join(root,'../browser-qa'));
 assert(!out.startsWith(root+path.sep),'Evidence must be outside repository source');
 const base=new URL(process.env.SHOWCASE_URL);
-assert.equal(base.protocol,'https:');
+assert(base.protocol==='https:'||(process.env.LOCAL_BROWSER_QA==='1'&&base.protocol==='http:'&&['127.0.0.1','localhost'].includes(base.hostname)),'HTTPS required except explicit loopback preflight');
 const sha=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
 const digest=b=>createHash('sha256').update(b).digest('hex');
 const read=async p=>JSON.parse(await fs.readFile(path.join(root,p),'utf8'));
@@ -50,7 +50,8 @@ try{
   assert(await page.locator('#load-error').isHidden());return {context,page};
  }
  async function layout(page,label){const data=await page.evaluate(()=>({viewport:{width:innerWidth,height:innerHeight},width:document.documentElement.scrollWidth,overflow:Array.from(document.querySelectorAll('body *')).filter(e=>{const r=e.getBoundingClientRect();return r.width>0&&r.right>innerWidth+1&&!e.closest('nav,.table-scroll,.comparison-scroll');}).slice(0,12).map(e=>({tag:e.tagName,id:e.id,class:e.className?.baseVal??e.className}))}));evidence.layouts.push({context:label,...data});assert(data.width<=data.viewport.width+1,`${label} whole-page overflow: ${JSON.stringify(data)}`);}
- async function shot(page,name,fullPage=true){await page.screenshot({path:path.join(out,'screenshots',name+'.png'),fullPage});evidence.screenshots.push(name+'.png');}
+ async function settled(page,id='host-canvas'){await page.waitForFunction(id=>document.getElementById(id).dataset.moving!=='true',id);}
+ async function shot(page,name,fullPage=true){await page.waitForFunction(()=>document.getAnimations().every(a=>a.playState!=='running'));if(await page.locator('#host').isVisible())await settled(page);await page.screenshot({path:path.join(out,'screenshots',name+'.png'),fullPage});evidence.screenshots.push(name+'.png');}
  async function route(page,id){await page.locator(`nav a[href="#${id}"]`).click();await page.waitForFunction(id=>!document.getElementById(id).hidden,id);assert.equal(await page.locator('section.page:visible').count(),1);assert(await page.locator('#'+id+' h1').isVisible());}
  const desktop=await makePage({viewport:{width:1440,height:900},colorScheme:'light'},'desktop-light');
  const p=desktop.page;
@@ -72,6 +73,19 @@ try{
   await p.locator('#reset').click();assert((await p.locator('#sim-status').innerText()).includes('Integer time 0'));
   record('preset-trace-'+preset.id,{terminal:run.status,time:run.time});
  }
+ // Read the visible SVG transforms: both copies must share one interpolation fraction.
+ await p.locator('#preset').selectOption('astar-u');await p.locator('#reset').click();
+ const points=()=>p.locator('#sim-grid .agent').evaluateAll(nodes=>nodes.map(a=>{const m=a.transform.baseVal.consolidate().matrix;return {x:m.e,y:m.f,tx:+a.dataset.x,ty:+a.dataset.y,cell:+a.dataset.cell,q:+a.dataset.state};}));
+ const initial=await points();await p.locator('#step').click();
+ await p.waitForFunction(()=>document.getElementById('sim-grid').dataset.moving==='true');
+ const sample=await p.evaluate(()=>new Promise(resolve=>setTimeout(()=>{resolve([...document.querySelectorAll('#sim-grid .agent')].map(a=>{const m=a.transform.baseVal.consolidate().matrix;return {x:m.e,y:m.f,tx:+a.dataset.x,ty:+a.dataset.y};}));},100)));
+ const fractions=sample.map((a,i)=>Math.hypot(a.x-initial[i].x,a.y-initial[i].y)/Math.hypot(a.tx-initial[i].x,a.ty-initial[i].y));
+ assert(fractions.every(t=>t>0&&t<1),'An actual intermediate position must be visible');assert(Math.abs(fractions[0]-fractions[1])<1e-9,'A and B must move synchronously');
+ await settled(p,'sim-grid');const end=await points();end.forEach(a=>{assert.equal(a.x,a.tx);assert.equal(a.y,a.ty);});
+ assert.equal(await p.locator('#transition-table td[data-agents="A"],#transition-table td[data-agents="AB"]').count(),1);assert.equal(await p.locator('#transition-table td[data-agents="B"],#transition-table td[data-agents="AB"]').count(),1);
+ await p.locator('#step').click();await p.locator('#reset').click();await p.waitForTimeout(450);assert.deepEqual(await points(),initial);assert.equal(await p.locator('#sim-grid').getAttribute('data-moving'),'false');
+ await p.locator('#speed').selectOption('350');await p.locator('#run').click();await p.waitForFunction(()=>document.getElementById('sim-grid').dataset.moving==='true');await p.locator('#run').click();await settled(p,'sim-grid');const paused=await points();await p.waitForTimeout(450);assert.deepEqual(await points(),paused);
+ record('synchronous-svg-interpolation-exact-endpoints-reset-and-pause',{fractions});
  await p.locator('#preset').selectOption('astar-u');await p.locator('#speed').selectOption('900');await p.locator('#run').click();assert.equal(await p.locator('#run').innerText(),'Pause');await p.locator('#run').click();assert.equal(await p.locator('#run').innerText(),'Run');await p.locator('#reset').click();
  await p.locator('#speed').selectOption('100');await p.locator('#run').click();await p.waitForFunction(()=>document.getElementById('sim-status').textContent.includes('exact product cycle'));await p.locator('#reset').click();record('run-pause-reset-cycle');
  await p.locator('#start-b').selectOption('0,1');assert((await p.locator('#sim-status').innerText()).includes('Rendezvous at integer time 0'));record('time-zero-adjacency');
@@ -91,11 +105,18 @@ try{
  await p.getByRole('link',{name:'Replay the accessible completion',exact:true}).click();await p.waitForFunction(()=>document.getElementById('preset').value==='basin-good');await route(p,'three');await p.getByRole('link',{name:'Replay the inaccessible completion',exact:true}).click();await p.waitForFunction(()=>document.getElementById('preset').value==='basin-bad');record('three-state-positive-negative-nand-and-basins');
  await route(p,'tests');assert((await p.locator('#tests').innerText()).includes('44 is optimal only inside the fixed 144 candidates'));assert.equal(await p.locator('#test-gallery button').count(),144);
  await p.locator('#test-selected').check();assert.equal(await p.locator('#test-gallery button').count(),44);await p.locator('#test-selected').uncheck();
- await p.locator('#test-search').fill('H091');assert.equal(await p.locator('#test-gallery button').count(),1);await p.locator('#test-gallery button').click();assert.equal(await p.locator('#test-detail h2').innerText(),'H091');await p.locator('#test-search').fill('');
+ await p.locator('#test-search').fill('H091');assert.equal(await p.locator('#test-gallery button').count(),1);await p.locator('#test-gallery button').click();assert.equal(await p.locator('#test-detail h2').innerText(),'H091');await p.locator('#test-search').fill('no-such-candidate');assert.equal(await p.locator('#test-gallery button').count(),0);assert.equal(await p.locator('#test-detail h2').innerText(),'No matching test');await p.locator('#test-search').fill('');assert.equal(await p.locator('#test-search').evaluate(e=>e===document.activeElement),true);
  for(const id of ['H001','H144']){await p.locator(`#test-gallery button[data-id="${id}"]`).click();assert.equal(await p.locator('#test-detail h2').innerText(),id);}
  await p.locator('#test-size').selectOption('7');assert((await p.locator('#test-gallery button').count())<144);await p.locator('#test-size').selectOption('all');await p.locator('#test-type').selectOption('tree');assert((await p.locator('#test-gallery button').count())<144);await p.locator('#test-type').selectOption('all');record('candidate-search-selection-filters-detail');
  await route(p,'host');assert((await p.locator('#host-check').innerText()).includes('5212 vertices · 5211 induced edges'));assert((await p.locator('#host').innerText()).includes('Neither exact minimum is known'));
- async function canvasHash(page){return digest(await page.locator('#host-canvas').screenshot());}
+ async function canvasHash(page){await settled(page);return digest(await page.locator('#host-canvas').screenshot());}
+ await p.locator('#host-piece').selectOption({index:1});await settled(p);
+ const camera=()=>p.locator('#host-canvas').evaluate(el=>({x:+el.dataset.cx,y:+el.dataset.cy,z:+el.dataset.zoom}));
+ const cameraStart=await camera();await p.locator('#host-piece').selectOption({index:172});
+ await p.waitForFunction(()=>document.getElementById('host-canvas').dataset.moving==='true');await p.waitForTimeout(100);const cameraMid=await camera();await settled(p);const cameraEnd=await camera();
+ assert(cameraMid.x>Math.min(cameraStart.x,cameraEnd.x)&&cameraMid.x<Math.max(cameraStart.x,cameraEnd.x));assert(cameraEnd.z>cameraMid.z,'Long travel must zoom back in to the exact selected fragment');
+ await p.locator('#host-plus').click();await p.locator('#host-fit').click();await settled(p);assert.equal(await p.locator('#host-piece').inputValue(),'all');
+ record('camera-interpolation-long-flight-and-interruption',{cameraStart,cameraMid,cameraEnd});
  await p.locator('#host-fit').click();await shot(p,'desktop-host-overview');let before=await canvasHash(p);await p.locator('#host-plus').click();assert.notEqual(await canvasHash(p),before);await p.locator('#host-minus').click();
  await p.locator('#host-piece').selectOption({index:1});await shot(p,'desktop-host-fragment');await p.locator('#host-piece-fit').click();before=await canvasHash(p);await p.locator('#host-right').click();assert.notEqual(await canvasHash(p),before);await p.locator('#host-left').click();
  await p.locator('#host-canvas').press('ArrowDown');await p.locator('#host-canvas').press('+');await p.locator('#host-canvas').press('-');await p.locator('#host-canvas').press('Home');
@@ -113,7 +134,11 @@ try{
  const cdp=await mobile.context.newCDPSession(m);before=await canvasHash(m);await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:mb.x+mb.width/2,y:mb.y+100}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:mb.x+mb.width/2-40,y:mb.y+130}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});assert.notEqual(await canvasHash(m),before);await m.locator('#host-fit').click();record('mobile-host-touch-pan');
  await route(p,'overview');await p.locator('#theme').click();assert.equal(await p.locator('html').getAttribute('data-theme'),'dark');await shot(p,'desktop-dark-overview');await route(p,'host');await p.locator('#host-piece').selectOption({index:1});await shot(p,'desktop-dark-host');await layout(p,'desktop-dark-host');await p.locator('#theme').click();
  await route(m,'overview');await m.locator('#theme').click();assert.equal(await m.locator('html').getAttribute('data-theme'),'dark');await shot(m,'mobile-dark-overview');record('light-dark-themes');
- await p.emulateMedia({reducedMotion:'reduce'});assert(await p.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));await route(p,'simulator');await p.locator('#preset').selectOption('astar-u');await p.locator('#step').click();assert((await p.locator('#sim-status').innerText()).includes('Integer time 1'));await route(p,'host');await p.locator('#host-fit').click();await shot(p,'desktop-reduced-motion-host');record('reduced-motion-interactions');
+ await p.emulateMedia({reducedMotion:'reduce'});assert(await p.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));await route(p,'simulator');await p.locator('#preset').selectOption('astar-u');await p.locator('#step').click();assert((await p.locator('#sim-status').innerText()).includes('Integer time 1'));await route(p,'host');await p.locator('#host-fit').click();await shot(p,'desktop-reduced-motion-host');assert.equal(await p.locator('#host-canvas').getAttribute('data-moving'),'false');assert.equal(await p.locator('#sim-grid').getAttribute('data-moving'),'false');assert.equal(await p.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running').length),0);record('reduced-motion-interactions');
+ // Capture a short real Chromium recording of the finished motion, not a generated mockup.
+ const film=await makePage({viewport:{width:1000,height:760},colorScheme:'light',recordVideo:{dir:path.join(out,'video'),size:{width:1000,height:760}}},'motion-film');
+ await route(film.page,'simulator');await film.page.locator('#sim-grid').scrollIntoViewIfNeeded();await film.page.locator('#speed').selectOption('900');await film.page.locator('#run').click();await film.page.waitForFunction(()=>document.getElementById('sim-status').textContent.includes('exact product cycle'));await settled(film.page,'sim-grid');await film.page.waitForTimeout(600);
+ await route(film.page,'host');await film.page.locator('#host-canvas').scrollIntoViewIfNeeded();await film.page.locator('#host-piece').selectOption({index:1});await settled(film.page);await film.page.locator('#host-piece').selectOption({index:172});await settled(film.page);await film.page.waitForTimeout(600);await film.context.close();record('real-chromium-motion-recording');
  assert.equal(evidence.exceptions.length,0,'Uncaught browser exceptions');assert.equal(evidence.console.filter(x=>x.type==='error').length,0,'Browser console errors');assert.equal(evidence.failed_requests.length,0,'Failed browser requests');assert.equal(evidence.bad_responses.length,0,'HTTP errors in browser');assert.equal(evidence.external_requests.length,0,'Unexpected external runtime request');
  record('console-network-health');await desktop.context.close();await mobile.context.close();evidence.status='PASS_LIVE_CHROMIUM_QA';
 }catch(e){evidence.status='FAIL_LIVE_CHROMIUM_QA';evidence.failure={message:e.message,stack:e.stack};process.exitCode=1;console.error(e.stack);}

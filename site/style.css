@@ -6,3 +6,39 @@
 @media(max-width:760px){.wrap{padding:0 20px}.top{padding:16px 0}.brand{font-size:12px;letter-spacing:0}.top-right>a{display:none}nav{gap:23px}.hero,.layout,.split,.family-layout,.host-fragment,.papers{grid-template-columns:1fr}.hero h1{font-size:43px;line-height:1.13}.hero-visual svg{height:270px}.hero-visual{margin-top:8px}.hero-visual .figure-caption{font-size:13px}section.page{padding:30px 0 45px}.page-head h1{font-size:37px}.lede{font-size:17px}.spine-head{display:block}.legend{margin-top:10px}.spine-grid{grid-template-columns:1fr 1fr;gap:25px}.spine-item:nth-child(3){padding-left:0;border:0}.spine-item:nth-child(2){padding-right:0}.spine-item{padding-left:18px}.spine h2{margin-bottom:10px}.number{font-size:34px}.next-note{display:block;padding:18px}.next-note>a{display:inline-block;margin-top:12px}.panel{padding:18px}.sticky{position:static}.family-gallery{grid-template-columns:repeat(3,1fr)}.test-card{padding:10px}.test-card svg{height:85px}.host-canvas{height:365px}.host-stat{grid-template-columns:1fr 1fr}.host-stat strong{font-size:22px}.big-result{font-size:55px}.footer-inner{display:block}.footer-inner p+p{margin-top:8px}.grid-figure{height:280px}.actions .button{flex:1;min-width:140px}.flow{flex-direction:column}.control-row{gap:10px}.control-row>label{min-width:120px}h2{font-size:29px}}
 @media(max-width:420px){.family-gallery{grid-template-columns:1fr 1fr}.hero h1{font-size:39px}.wrap{padding:0 16px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+/* Presentation motion follows exact integer-time states; geometry stays fixed. */
+body,header,footer,.panel,.hero-visual,.metric,.status-line,.host-frame{transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease}
+button,a.button,select,input,textarea{transition:background-color 160ms ease,border-color 160ms ease,box-shadow 160ms ease,transform 160ms ease}
+button:active:not(:disabled),a.button:active{transform:translateY(1px)}
+button:disabled{transform:none}
+button.primary:hover:not(:disabled),a.primary:hover{background:var(--teal);border-color:var(--teal);color:var(--panel)}
+.layout>.panel+.panel,.split>.panel+.panel,.host-fragment>.panel+.panel{margin-top:0}
+.grid-figure{display:block;overflow:visible}
+.grid-figure .maze-edges line{stroke-linecap:round;transition:stroke 180ms ease}
+.grid-figure .maze-edges line[data-visited=true]{stroke:var(--teal)}
+.grid-figure .maze-edges line[data-active=A]{stroke:var(--teal)}
+.grid-figure .maze-edges line[data-active=B]{stroke:var(--accent)}
+.grid-figure .maze-edges line[data-active=AB]{stroke:var(--ink)}
+.grid-figure .agent{pointer-events:none}
+.grid-figure .agent-a,.grid-figure .agent-b{filter:drop-shadow(0 2px 3px #12282720)}
+.build-in .maze-edges line{stroke-dasharray:1;animation:draw-edge 420ms ease both;animation-delay:calc(var(--order)*22ms)}
+.build-in .maze-cells rect{animation:reveal-cell 380ms ease both;animation-delay:calc(var(--order)*22ms)}
+.build-in .maze-labels{animation:reveal-cell 400ms ease 240ms both}
+@keyframes draw-edge{from{stroke-dashoffset:1;opacity:0}to{stroke-dashoffset:0;opacity:1}}
+@keyframes reveal-cell{from{opacity:0}to{opacity:1}}
+#transition-table td[data-mask]{position:relative;transition:background-color 180ms ease;}
+#transition-table td[data-agents=A]{background:var(--pale);box-shadow:inset 3px 0 var(--teal)}
+#transition-table td[data-agents=B]{background:var(--orange);box-shadow:inset 3px 0 var(--accent)}
+#transition-table td[data-agents=AB]{background:var(--pale);box-shadow:inset 3px 0 var(--teal),inset -3px 0 var(--accent)}
+#transition-table td[data-agents]:not([data-agents=""])::after{content:attr(data-agents);position:absolute;right:6px;top:0;font-size:9px;letter-spacing:.08em;font-weight:800;color:var(--muted)}
+.status-line[data-status=success]{border-left:3px solid var(--teal);background:var(--pale)}
+.status-line[data-status=cycle]{border-left:3px solid var(--accent);background:var(--orange)}
+.word span{transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 180ms ease}
+.word span.active{box-shadow:0 2px 6px #12282718}
+.test-card[aria-pressed=true]{background:var(--pale);outline-offset:0;border-color:var(--teal)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.test-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}}
+summary{cursor:pointer;min-height:32px}
+nav a{transition:color 160ms ease,box-shadow 160ms ease}
+.host-canvas{overscroll-behavior:contain}
+@media(max-width:760px){.family-layout>#test-detail{grid-row:1}.test-card{scroll-margin-top:20px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.build-in .maze-edges line{stroke-dasharray:none}}
